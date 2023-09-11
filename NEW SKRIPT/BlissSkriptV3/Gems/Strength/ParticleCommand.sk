@@ -1,9 +1,0 @@
-command /strengthcircle <number>: # number = Size of circle
-    trigger:
-        set {_step} to 14 # Set a larger step value here
-        set {_iterations} to 180 * arg-1 / {_step}
-        loop {_iterations} times:
-            set {_angle} to loop-value * {_step}
-            set {_v} to spherical vector radius arg-1, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the player
-            draw 1 of dust_color_transition using dustTransition(red, red, 1) at location of player ~ {_v}
-            draw 1 of dust_color_transition using dustTransition(black, black, 1) at location of player ~ {_v}

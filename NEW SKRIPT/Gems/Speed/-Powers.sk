@@ -1,0 +1,253 @@
+#speed powers
+
+every 1 second:
+	loop all players:
+		if loop-player's off hand item is a amethyst shard named "&e&lSpeed &f&lgem":
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {speed.cooldown.%loop-player%} is not true:
+					send action bar "&e🔺 &aReady!" to loop-player
+				if {strength.cooldown.%loop-player%} is true:
+					send action bar "&e🔺 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s" to loop-player
+			if {Bliss.Speed.%loop-player%} > 3:
+				execute console command "effect give %loop-player% speed 2 0 true"
+			if {Bliss.Speed.%loop-player%} > 4:
+				execute console command "effect give %loop-player% speed 2 1 true"
+		if loop-player is holding amethyst shard named "&e&lSpeed &f&lgem":
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {speed.cooldown.%loop-player%} is not true:
+					send action bar "&e🔺 &aReady!" to loop-player
+				if {strength.cooldown.%loop-player%} is true:
+					send action bar "&e🔺 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s" to loop-player
+			if {Bliss.Speed.%loop-player%} > 3:
+				execute console command "effect give %loop-player% speed 2 0 true"
+			if {Bliss.Speed.%loop-player%} > 4:
+				execute console command "effect give %loop-player% speed 2 1 true"
+		if loop-player is holding prismarine shard named "&e&lSpeed &f&lgem":
+			if {Bliss.Speed.%loop-player%} > 3:
+				execute console command "effect give %loop-player% speed 2 1 true"
+			if {Bliss.Speed.%loop-player%} > 4:
+				execute console command "effect give %loop-player% speed 2 2 true"
+				execute console command "effect give %loop-player% dolphins_grace 2 0 true"
+			if {Tier2.Strength.%loop-player%} is not true:
+				if {speed.cooldown.%loop-player%} is not true:
+					send action bar "&e⯁ &aReady!" to loop-player
+				if {speed.cooldown.%loop-player%} is true:
+					send action bar "&e⯁ &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s" to loop-player
+			if {Tier2.Stregnth.%loop-player%} is true:
+				if {speed.cooldown.%loop-player%} is not true:
+					if {speed.cooldown2.%loop-player%} is not true:
+						if {speed.cooldown3.%loop-player%} is not true:
+							send action bar "🎯 &aReady! &e🔮  &aReady! 🌩 &aReady!" to loop-player
+						if {speed.cooldown3.%loop-player%} is true:
+							send action bar "🎯 &aReady! &e🔮 &aReady! 🌩 &b%{SpeedMin3.%loop-player%}%m %{SpeedSec3.%loop-player%}%s" to loop-player
+				if {speed.cooldown.%loop-player%} is not true:
+					if {speed.cooldown2.%loop-player%} is true:
+						if {speed.cooldown3.%loop-player%} is true:
+							send action bar "🎯 &b%{SpeedMin2.%loop-player%}%m %{SpeedSec2.%loop-player%}%s &e🔮 &aReady! 🌩 &b%{SpeedMin3.%loop-player%}%m %{SpeedSec3.%loop-player%}%s" to loop-player
+						if {speed.cooldown3.%loop-player%} is not true:
+							send action bar "🎯 &b%{SpeedMin2.%loop-player%}%m %{SpeedSec2.%loop-player%}%s &e🔮 &aReady! 🌩 &aReady!" to loop-player
+				if {speed.cooldown.%loop-player%} is true:
+					if {speed.cooldown2.%loop-player%} is true:
+						if {speed.cooldown3.%loop-player%} is true:
+							send action bar "🎯 &b%{SpeedMin2.%loop-player%}%m %{SpeedSec2.%loop-player%}%s &e🔮 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s 🌩 &b%{StrengthMin3.%loop-player%}%m %{StrengthSec3.%loop-player%}%s" to loop-player
+						if {speed.cooldown3.%loop-player%} is not true:
+							send action bar "🎯 &b%{SpeedMin2.%loop-player%}%m %{SpeedSec2.%loop-player%}%s &e🔮 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s 🌩 &aReady!" to loop-player
+				if {speed.cooldown.%loop-player%} is true:
+					if {speed.cooldown2.%loop-player%} is not true:
+						if {speed.cooldown3.%loop-player%} is not true:
+							send action bar "🎯 &aReady! &e🔮 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s 🌩 &aReady!" to loop-player
+						if {speed.cooldown3.%loop-player%} is true:
+							send action bar "🎯 &aReady! &e🔮 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s 🌩 &b%{SpeedMin3.%loop-player%}%m %{SpeedSec3.%loop-player%}%s" to loop-player
+		if loop-player's off hand item is a prismarine shard named "&e&lSpeed &f&lgem":
+			if {Bliss.Speed.%loop-player%} > 3:
+				execute console command "effect give %loop-player% speed 2 1 true"
+			if {Bliss.Speed.%loop-player%} > 4:
+				execute console command "effect give %loop-player% speed 2 2 true"
+				execute console command "effect give %loop-player% dolphins_grace 2 0 true"
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {strength.cooldown.%loop-player%} is not true:
+					send action bar "&4🗡 &aReady!" to loop-player
+				if {strength.cooldown.%loop-player%} is true:
+					send action bar "&4🗡 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s" to loop-player
+			if {Tier2.Stregnth.%loop-player%} is true:
+				if {speed.cooldown.%loop-player%} is not true:
+					if {speed.cooldown2.%loop-player%} is not true:
+						if {speed.cooldown3.%loop-player%} is not true:
+							send action bar "🎯 &aReady! &e🔮 &aReady! 🌩 &aReady!" to loop-player
+						if {speed.cooldown3.%loop-player%} is true:
+							send action bar "🎯 &aReady! &e🔮 &aReady! 🌩 &b%{SpeedMin3.%loop-player%}%m %{SpeedSec3.%loop-player%}%s" to loop-player
+				if {speed.cooldown.%loop-player%} is not true:
+					if {speed.cooldown2.%loop-player%} is true:
+						if {speed.cooldown3.%loop-player%} is true:
+							send action bar "🎯 &b%{SpeedMin2.%loop-player%}%m %{SpeedSec2.%loop-player%}%s &e🔮 &aReady! 🌩 &b%{SpeedMin3.%loop-player%}%m %{SpeedSec3.%loop-player%}%s" to loop-player
+						if {speed.cooldown3.%loop-player%} is not true:
+							send action bar "🎯 &b%{SpeedMin2.%loop-player%}%m %{SpeedSec2.%loop-player%}%s &e🔮 &aReady! 🌩 &aReady!" to loop-player
+				if {speed.cooldown.%loop-player%} is true:
+					if {speed.cooldown2.%loop-player%} is true:
+						if {speed.cooldown3.%loop-player%} is true:
+							send action bar "🎯 &b%{SpeedMin2.%loop-player%}%m %{SpeedSec2.%loop-player%}%s &e🔮 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s 🌩 &b%{StrengthMin3.%loop-player%}%m %{StrengthSec3.%loop-player%}%s" to loop-player
+						if {speed.cooldown3.%loop-player%} is not true:
+							send action bar "🎯 &b%{SpeedMin2.%loop-player%}%m %{SpeedSec2.%loop-player%}%s &e🔮 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s 🌩 &aReady!" to loop-player
+				if {speed.cooldown.%loop-player%} is true:
+					if {speed.cooldown2.%loop-player%} is not true:
+						if {speed.cooldown3.%loop-player%} is not true:
+							send action bar "🎯 &aReady! &e🔮 &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s 🔮 &aReady!" to loop-player
+						if {speed.cooldown3.%loop-player%} is true:
+							send action bar "🎯 &aReady! &e🔮  &b%{SpeedMin.%loop-player%}%m %{SpeedSec.%loop-player%}%s 🔮 &b%{SpeedMin3.%loop-player%}%m %{SpeedSec3.%loop-player%}%s" to loop-player
+
+		if loop-player has a prismarine shard named "&e&lSpeed &f&lgem":
+			remove 1 from {SpeedSec.%loop-player%}
+			remove 1 from {SpeedSec2.%loop-player%}
+			remove 1 from {SpeedSec3.%loop-player%}
+			if {SpeedSec.%loop-player%} is -1:
+				remove 1 from {SpeedMin.%loop-player%}
+				set {SpeedSec.%loop-player%} to 59
+				if {SpeedMin.%loop-player%} is -1:
+					set {speed.cooldown.%loop-player%} to false
+			if {SpeedSec2.%loop-player%} is -1:
+				remove 1 from {SpeedMin2.%loop-player%}
+				set {SpeedSec2.%loop-player%} to 59
+				if {SpeedMin2.%loop-player%} is -1:
+					set {speed.cooldown2.%loop-player%} to false
+			if {SpeedSec3.%loop-player%} is -1:
+				remove 1 from {SpeedMin3.%loop-player%}
+				set {SpeedSec3.%loop-player%} to 59
+				if {SpeedMin3.%loop-player%} is -1:
+					set {speed.cooldown3.%loop-player%} to false
+		if loop-player has a amethyst shard named "&e&lSpeed &f&lgem":
+			remove 1 from {SpeedSec.%loop-player%}
+			remove 1 from {SpeedSec2.%loop-player%}
+			remove 1 from {SpeedSec3.%loop-player%}
+			if {SpeedSec.%loop-player%} is -1:
+				remove 1 from {SpeedMin.%loop-player%}
+				set {SpeedSec.%loop-player%} to 59
+				if {SpeedMin.%loop-player%} is -1:
+					set {speed.cooldown.%loop-player%} to false
+			if {SpeedSec2.%loop-player%} is -1:
+				remove 1 from {SpeedMin2.%loop-player%}
+				set {SpeedSec2.%loop-player%} to 59
+				if {SpeedMin2.%loop-player%} is -1:
+					set {speed.cooldown2.%loop-player%} to false
+			if {SpeedSec3.%loop-player%} is -1:
+				remove 1 from {SpeedMin3.%loop-player%}
+				set {SpeedSec3.%loop-player%} to 59
+				if {SpeedMin3.%loop-player%} is -1:
+					set {speed.cooldown2.%loop-player%} to false
+
+on sneak toggle:
+	if {Tag..%player%} is 0:
+		if player's off hand item is a amethyst shard named "&e&lSpeed &f&lgem":
+			if {Tier2.Stregnth.%player%} is not true:
+				execute console command "enchant %player% efficiency 2"
+				send "&aEnchanting Tool with &eefficiency &42"
+				set {SpeedMin.%player%} to 1
+				set {SpeedSec.%player%} to 59
+				set {speed.cooldown.%player%} to true
+		if player's off hand item is a prismarine shard named "&e&lSpeed &f&lgem":
+			if {Tier2.Stregnth.%player%} is true:
+				execute console command "enchant %player% efficiency 5"
+				send "&aEnchanting Tool with &eefficiency &45"
+				set {SpeedMin.%player%} to 1
+				set {SpeedSec.%player%} to 59
+				set {speed.cooldown.%player%} to true
+
+on damage:
+	if {Tag..%attacker%} is 0:
+		if attacker's held item is a prismarine shard named "&e&lSpeed &f&lgem":
+			if victim is a player:
+				if {speed.cooldown2.%attacker%} is not true:
+					send "you used &eSloth's Sedative" to attacker
+					execute console command "effect give %victim% mining_fatigue 20 1"
+					execute console command "effect give %victim% slowness 20 1"
+					if {Bliss.Speed.%attacker%} > 4:
+						set {SpeedMin2.%attacker%} to 3
+						set {SpeedSec2.%attacker%} to 59
+						set {speed.cooldown2.%attacker%} to true
+					if {Bliss.Speed.%attacker%} is 3:
+						set {SpeedMin2.%attacker%} to 5
+						set {SpeedSec2.%attacker%} to 59
+						set {speed.cooldown2.%attacker%} to true
+					if {Bliss.Speed.%attacker%} < 3:
+						set {SpeedMin2.%attacker%} to 7
+						set {SpeedSec2.%attacker%} to 59
+						set {speed.cooldown2.%attacker%} to true
+on left click:
+	if {Tag..%player%} is 0:
+		if player's held item is a prismarine shard named "&e&lSpeed &f&lgem":
+			if {speed.cooldown2.%player%} is not true:
+				send "you used &eSloth's Sedative &bGroup" to player
+				execute console command "execute as %player% at @s run effect give @e[distance=1..7] mining_fatigue 20 1"
+				execute console command "execute as %player% at @s run effect give @e[distance=1..7] slowness 20 1"
+				if {Bliss.Speed.%player%} > 4:
+					set {SpeedMin2.%player%} to 1
+					set {SpeedSec2.%player%} to 59
+					set {speed.cooldown2.%player%} to true
+				if {Bliss.Speed.%player%} is 3:
+					set {SpeedMin2.%player%} to 3
+					set {SpeedSec2.%player%} to 59
+					set {speed.cooldown2.%player%} to true
+				if {Bliss.Speed.%player%} < 3:
+					set {SpeedMin2.%player%} to 5
+					set {SpeedSec2.%player%} to 59
+					set {speed.cooldown2.%player%} to true
+
+
+on drop prismarine shard:
+	if event-item is prismarine shard named "&e&lSpeed &f&lgem":
+		cancel event
+on drop amethyst shard:
+	if event-item is amethyst shard named "&e&lSpeed &f&lgem":
+		cancel event
+	
+every 10 tick:
+	loop all players:
+		execute console command "execute as @e[type=armor_stand,tag=2] at @s run tp @a[tag=pp,distance=0.5..2.5] ~ ~ ~"
+		execute console command "execute as @e[tag=2] at @s run fill ~6 ~3 ~6 ~-6 ~-4 ~-6 air replace fire"
+		execute console command "execute as @e[tag=6] at @s run fill ~6 ~3 ~6 ~-6 ~-4 ~-6 air replace fire"
+	
+every 1 second:
+	loop all players:
+		execute console command "execute as @e[tag=6] at @s run execute as @e[distance=1..9,limit=1] at @s run summon lightning_bolt ~ ~2 ~"
+		execute console command "execute as @e[tag=6] at @s run effect give @a[tag=69,distance=0..9] instant_health 1 0 true"
+		execute console command "execute as @e[tag=6] at @s run effect give @a[tag=69,distance=0..9] speed 8 5 true"
+		execute console command "execute as @e[tag=6] at @s run effect give @a[tag=69,distance=0..9] haste 8 9 true"
+		execute console command "execute as @e[tag=6] at @s run particle minecraft:campfire_cosy_smoke ~ ~8 ~ 3 0 3 0 590 force @a"
+		execute console command "execute as @e[tag=2] at @s run fill ~6 ~3 ~6 ~-6 ~-4 ~-6 air replace fire"
+		execute console command "execute as @e[tag=6] at @s run fill ~6 ~3 ~6 ~-6 ~-4 ~-6 air replace fire"
+
+on right click:
+	if {Tag..%player%} is 0:
+		if player's held item is a prismarine shard named "&e&lSpeed &f&lgem":
+			if {Tier2.Stregnth.%player%} is true:
+				if {speed.cooldown3.%player%} is not true: 
+					send "&e🌧 &aYou activated &eSpeed Storm"
+					apply speed 6 to player for 4 seconds
+					execute console command "tag %player% add 69"
+					execute console command "execute as %player% at @s run execute as @a[distance=1.5..9] at @s run summon armor_stand ~ ~ ~ {Tags:[""2""],Invisible:1b}"
+					execute console command "execute as %player% at @s run summon armor_stand ~ ~ ~ {Tags:[""6""],Invisible:1b}"
+					execute console command "execute as %player% at @s run tag @a[distance=1..9] add pp"
+					execute player command "/speedcircle 0.5"
+					execute player command "/speedcircle 1"
+					execute player command "/speedcircle 1.5"
+					execute player command "/speedcircle 2"
+					execute player command "/speedcircle 2.5"
+					execute player command "/speedcircle 3"
+					execute player command "/speedcircle 3.5"
+					if {Bliss.Speed.%player%} > 4:
+						set {SpeedMin3.%player%} to 2
+						set {SpeedSec3.%player%} to 35
+						set {speed.cooldown3.%player%} to true
+					if {Bliss.Speed.%player%} is 3:
+						set {SpeedMin3.%player%} to 3
+						set {SpeedSec3.%player%} to 15
+						set {speed.cooldown3.%player%} to true
+					if {Bliss.Speed.%player%} < 3:
+						set {SpeedMin3.%player%} to 3
+						set {SpeedSec3.%player%} to 45
+						set {speed.cooldown3.%player%} to true
+					execute console command "execute as @e[tag=6] at @s run function particles:speed"
+					wait 15 seconds
+					execute console command "kill @e[tag=6]"
+					execute console command "kill @e[tag=2]"
+					execute console command "tag %player% remove 69"
+					execute console command "tag @a remove pp"

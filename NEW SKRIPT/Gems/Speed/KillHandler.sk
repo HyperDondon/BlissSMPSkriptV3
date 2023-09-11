@@ -1,0 +1,69 @@
+on death of player:
+	if attacker's off hand item is a prismarine shard named "&e&lSpeed &f&lgem":
+	
+		add 1 to {Bliss.Speed.%attacker%} 
+		if {Bliss.Speed.%attacker%} is 1:
+			set attacker's off hand item to prismarine shard with custom model data 96 named "&e&lSpeed &f&lgem" with lore "&4Broken Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 2:
+			set attacker's off hand item to prismarine shard with custom model data 88 named "&e&lSpeed &f&lgem" with lore "&cRuined Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 3:
+			set attacker's off hand item to prismarine shard with custom model data 68 named "&e&lSpeed &f&lgem" with lore "&dDamaged Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 4:
+			set attacker's off hand item to prismarine shard with custom model data 48 named "&e&lSpeed &f&lgem" with lore "&aCracked Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 5:
+			set attacker's off hand item to prismarine shard with custom model data 28 named "&e&lSpeed &f&lgem" with lore "&aScratched Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 6:
+			set attacker's off hand item to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 7:
+			set attacker's off hand item to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 1 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 8:
+			set attacker's off hand item to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 2 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 9:
+			set attacker's off hand item to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 3 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed"
+		if {Bliss.Speed.%attacker%} is 10:
+			set attacker's off hand item to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 4 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+		
+		if {Bliss.Speed.%attacker%} is 11:
+			set {item} to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 5 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+		
+		if {Bliss.Speed.%attacker%} is 12:
+			set {item} to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 6 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+
+		if {Bliss.Speed.%attacker%} is 13:
+			set {item} to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 7 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+
+		if {Bliss.Speed.%attacker%} is 14:
+			set {item} to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 8 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+
+		if {Bliss.Speed.%attacker%} is 15:
+			set {item} to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 9 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+
+		if {Bliss.Speed.%attacker%} > 15:
+			set {item} to prismarine shard with custom model data 8 named "&e&lSpeed &f&lgem" with lore "&bPristine + 10 Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+			
+	if attacker's off hand item is a amethyst shard named "&e&lSpeed &f&lgem":
+		add 1 to {Bliss.Speed.%attacker%}
+		if {Bliss.Speed.%attacker%} is 1:
+			set attacker's off hand item to amethyst shard with custom model data 95 named "&e&lSpeed &f&lgem" with lore "&4Broken Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+		if {Bliss.Speed.%attacker%} is 2:
+			set attacker's off hand item to amethyst shard with custom model data 95 named "&e&lSpeed &f&lgem" with lore "&4Broken Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+		if {Bliss.Speed.%attacker%} is 3:
+			set attacker's off hand item to amethyst shard with custom model data 95 named "&e&lSpeed &f&lgem" with lore "&4Broken Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+		if {Bliss.Speed.%attacker%} is 4:
+			set attacker's off hand item to amethyst shard with custom model data 95 named "&e&lSpeed &f&lgem" with lore "&4Broken Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+		if {Bliss.Speed.%attacker%} is 5:
+			set attacker's off hand item to amethyst shard with custom model data 95 named "&e&lSpeed &f&lgem" with lore "&4Broken Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 
+		if {Bliss.Speed.%attacker%} is 6:
+			set attacker's off hand item to amethyst shard with custom model data 95 named "&e&lSpeed &f&lgem" with lore "&4Broken Gem", "&aAuto enchant's axe and pickaxe with efficiency 2/5", ".", "&eSpeed Storm Speed 2/3/4" and "&e&lApply Slowness 2 to your victim and lower their attack speed" 

@@ -1,0 +1,530 @@
+#ᴀsᴛʀᴀ ɢᴇᴍ
+
+
+
+every 1 second:
+	loop all players:
+		if loop-player's off hand item is a amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {astra.cooldown.%loop-player%} is not true:
+					send action bar "<##4F00B7>🔺 &aReady!" to loop-player
+				if {astra.cooldown.%loop-player%} is true:
+					send action bar "<##4F00B7>🔺 &b%{AstraMin.%loop-player%}%m %{AstraSec.%loop-player%}%s" to loop-player
+		if loop-player is holding amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {astra.cooldown.%loop-player%} is not true:
+					send action bar "<##4F00B7>🔺 &aReady!" to loop-player
+				if {astra.cooldown.%loop-player%} is true:
+					send action bar "<##4F00B7>🔺 &b%{AstraMin.%loop-player%}%m %{AstraSec.%loop-player%}%s" to loop-player
+		if loop-player's off hand item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if {Tier2.Stregnth.%loop-player%} is true:
+				if {astra.cooldown2.%loop-player%} is not true:
+					if {astra.cooldown3.%loop-player%} is not true:
+						send action bar "?? &aReady! <##6100E0>🔮  &5👻 &aReady!" to loop-player
+					if {astra.cooldown3.%loop-player%} is true:
+						send action bar "🔪 &aReady! <##6100E0>🔮  &5👻 &b%{AstraMin3.%loop-player%}%m %{AstraSec3.%loop-player%}%s" to loop-player
+				if {astra.cooldown3.%loop-player%} is true:
+					if {astra.cooldown2.%loop-player%} is true:
+						send action bar "🔪 &b%{AstraMin2.%loop-player%}%m %{AstraSec2.%loop-player%}%s <##6100E0>🔮  &5👻 &b%{AstraMin3.%loop-player%}%m %{AstraSec3.%loop-player%}%s" to loop-player	
+				if {astra.cooldown3.%loop-player%} is not true:
+					if {astra.cooldown2.%loop-player%} is true:
+						send action bar "🔪 &b%{AstraMin2.%loop-player%}%m %{AstraSec2.%loop-player%}%s <##6100E0>🔮  &5👻 &aReady!" to loop-player
+
+		if loop-player's held item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if {Tier2.Stregnth.%loop-player%} is true:
+				if {astra.cooldown2.%loop-player%} is not true:
+					if {astra.cooldown3.%loop-player%} is not true:
+						send action bar "🔪 &aReady! <##6100E0>🔮  &5👻 &aReady!" to loop-player
+					if {astra.cooldown3.%loop-player%} is true:
+						send action bar "🔪 &aReady! <##6100E0>🔮  &5👻 &b%{AstraMin3.%loop-player%}%m %{AstraSec3.%loop-player%}%s" to loop-player
+				if {astra.cooldown3.%loop-player%} is true:
+					if {astra.cooldown2.%loop-player%} is true:
+						send action bar "🔪 &b%{AstraMin2.%loop-player%}%m %{AstraSec2.%loop-player%}%s <##6100E0>🔮  &5👻 &b%{AstraMin3.%loop-player%}%m %{AstraSec3.%loop-player%}%s" to loop-player	
+				if {astra.cooldown3.%loop-player%} is not true:
+					if {astra.cooldown2.%loop-player%} is true:
+						send action bar "🔪 &b%{AstraMin2.%loop-player%}%m %{AstraSec2.%loop-player%}%s <##6100E0>🔮  &5👻 &aReady!" to loop-player
+
+
+
+		if loop-player has a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if loop-player's health < 5:
+				apply resistance to loop-player for 1 second
+		if loop-player has a amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if loop-player's health < 5:
+				apply resistance to loop-player for 1 second
+		if loop-player has a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			remove 1 from {AstraSec.%loop-player%}
+			remove 1 from {AstraSec2.%loop-player%}
+			remove 1 from {AstraSec3.%loop-player%}
+			if {AstraSec.%loop-player%} is -1:
+				remove 1 from {AstraMin.%loop-player%}
+				set {AstraSec.%loop-player%} to 59
+				if {AstraMin.%loop-player%} is -1:
+					set {astra.cooldown.%loop-player%} to false
+			if {AstraSec2.%loop-player%} is -1:
+				remove 1 from {AstraMin2.%loop-player%}
+				set {AstraSec2.%loop-player%} to 59
+				if {AstraMin2.%loop-player%} is -1:
+					set {astra.cooldown2.%loop-player%} to false
+			if {AstraSec3.%loop-player%} < 0:
+				remove 1 from {AstraMin3.%loop-player%}
+				set {AstraSec3.%loop-player%} to 59
+				if {AstraMin3.%loop-player%} is -1:
+					set {astra.cooldown3.%loop-player%} to false
+		if loop-player has a amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			remove 1 from {AstraSec.%loop-player%}
+			if {AstraSec.%loop-player%} is -1:
+				remove 1 from {AstraMin.%loop-player%}
+				set {AstraSec.%loop-player%} to 59
+				if {AstraMin.%loop-player%} is -1:
+					set {astra.cooldown.%loop-player%} to false
+
+
+on right click on player:
+	if {ghoost...%player%} is true:
+		if player's held item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if {AstraProjection.%player%} is true:
+				execute console command "tp @a[name=""%player's name%""] @e[tag=%player's name%Astra,limit=1]"
+				execute console command "gamemode survival %player's name%"
+				execute console command "execute as %player's name% at @s run item"
+				execute console command "tag @a[tag=astrapart] remove astrapart"
+				set {AstraProjection.%player%} to false
+				set {Tag..%event-entity%} to 10
+				wait 2 ticks
+				execute console command "item replace entity @e[tag=%player's name%Astra] weapon.mainhand with air"
+				execute console command "item replace entity @e[tag=%player's name%Astra] weapon.offhand with air"
+				execute console command "kill @e[tag=%player's name%Astra]"
+on join:
+	set {Tag..%player%} to 0 
+on right click:
+	if player's held item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		if {Tag..%player%} is 0:
+			if {AstraProjection.%player%} is true:
+				execute console command "tp @a[name=""%player's name%""] @e[tag=%player's name%Astra,limit=1]"
+				execute console command "gamemode survival %player's name%"
+				execute console command "execute as %player's name% at @s run item"
+				execute console command "tag @a[tag=astrapart] remove astrapart"
+				set {AstraProjection.%player%} to false
+				wait 2 ticks
+				execute console command "item replace entity @e[tag=%player's name%Astra] weapon.mainhand with air"
+				execute console command "item replace entity @e[tag=%player's name%Astra] weapon.offhand with air"
+				execute console command "kill @e[tag=%player's name%Astra]"
+			if {astra.cooldown3.%player%} is true:
+				send "&5Astra Projection &fis on cooldown for &b30s" to player
+			if {astra.cooldown3.%player%} is not true:
+				if {AstraProjection.%player%} is not true:
+					spawn zombie at location of player
+					set name of last spawned entity to "%player%"
+					apply slowness 99 to last spawned entity for 2 minutes
+					execute console command "item replace entity @e[name=""%player%""] armor.head from entity %player% armor.head"
+					execute console command "item replace entity @e[name=""%player%""] armor.chest from entity %player% armor.chest"
+					execute console command "item replace entity @e[name=""%player%""] armor.legs from entity %player% armor.legs"
+					execute console command "item replace entity @e[name=""%player%""] armor.feet from entity %player% armor.feet"
+					execute console command "item replace entity @e[name=""%player%""] weapon.mainhand from entity %player% weapon.mainhand"
+					execute console command "item replace entity @e[name=""%player%""] weapon.offhand from entity %player% weapon.offhand"
+					execute console command "tag @e[name=%player%] add %player%Astra"
+					execute console command "tag %player% remove %player%Astra"
+					execute console command "tag %player% add astrapart"
+					set player's gamemode to spectator
+					set {AstraProjection.%player%} to true
+					set {AstraSec3.%player%} to 30
+					set {AstraMin3.%player%} to 0
+					set {astra.cooldown3.%player%} to true
+on teleport:
+	if player's gamemode is spectator:
+		cancel event
+on damage:
+	if victim is a zombie:
+		execute console command "tp @a[name=""%victim's name%""] @e[tag=%victim's name%Astra,limit=1]"
+		execute console command "gamemode survival %victim's name%"
+		execute console command "execute as %victim's name% at @s run item"
+		execute console command "tag @a[tag=astrapart] remove astrapart"
+		wait 2 ticks
+		execute console command "item replace entity @e[tag=%victim's name%Astra] weapon.mainhand with air"
+		execute console command "item replace entity @e[tag=%victim's name%Astra] weapon.offhand with air"
+		execute console command "kill @e[tag=%victim's name%Astra]"
+
+every 1 tick:
+	loop all players:
+		if {AstraProjection.%loop-player%} is true:
+			chance of 70%
+			execute console command "execute as @e[tag=astrapart] at @s run particle dust 0.52 0.11 0.67 1 ~ ~1.2 ~ 0.1 0.1 0.1 1 1 normal"
+		if {Shootdagger..%loop-player%} is 5:
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag] ^-1 ^ ^-.8 facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag2] ^1.2 ^ ^ facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag3] ^-1.2 ^ ^ facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag4] ^1 ^ ^-.8 facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag5] ^ ^ ^-1.2 facing ^ ^-1 ^8.75"
+		if {Shootdagger..%loop-player%} is 4:
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag] ^-1 ^ ^-.8 facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag2] ^1.2 ^ ^ facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag3] ^-1.2 ^ ^ facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag4] ^1 ^ ^-.8 facing ^ ^-1 ^8.75"
+			execute console command "execute as @e[type=arrow] at @s run tp @e[tag=%loop-player%dag5] ~ ~-1.5 ~ facing ^ ^ ^"
+		if {Shootdagger..%loop-player%} is 3:
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag] ^-1 ^ ^-.8 facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag2] ^1.2 ^ ^ facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag3] ^-1.2 ^ ^ facing ^ ^-1 ^8.75"
+			execute console command "execute as @e[type=arrow] at @s run tp @e[tag=%loop-player%dag4] ~ ~-1.5 ~ facing ^ ^-1 ^-7.45"
+		if {Shootdagger..%loop-player%} is 2:
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag] ^-1 ^ ^-.8 facing ^ ^-1 ^8.75"
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag2] ^1.2 ^ ^ facing ^ ^-1 ^8.75"
+			execute console command "execute as @e[type=arrow] at @s run tp @e[tag=%loop-player%dag3] ~ ~-1.5 ~ facing ^ ^ ^"
+		if {Shootdagger..%loop-player%} is 1:
+			execute console command "execute as %loop-player% at @s run tp @e[tag=%loop-player%dag] ^-1 ^ ^-.8 facing ^ ^-1 ^8.75"
+			execute console command "execute as @e[type=arrow] at @s run tp @e[tag=%loop-player%dag2] ~ ~-1.5 ~ facing ^ ^ ^"
+		if {Shootdagger..%loop-player%} is 0:
+			execute console command "execute as @e[type=arrow] at @s run tp @e[tag=%loop-player%dag] ~ ~-1.5 ~ facing ^ ^ ^"
+
+
+on projectile hit:
+	if {Shootdagger..%shooter%} is 4:
+		execute console command "kill @e[tag=%shooter%dag5]"
+		execute console command "kill @e[type=arrow]"
+		add 6 to {Tag..%victim%}
+		damage victim by 10 heart
+	if {Shootdagger..%shooter%} is 3:
+		execute console command "kill @e[tag=%shooter%dag4]"
+		execute console command "kill @e[type=arrow]"
+		add 6 to {Tag..%victim%}
+		damage victim by 10 heart
+	if {Shootdagger..%shooter%} is 2:
+		execute console command "kill @e[tag=%shooter%dag3]"
+		execute console command "kill @e[type=arrow]"
+		add 6 to {Tag..%victim%}
+		damage victim by 10 heart
+	if {Shootdagger..%shooter%} is 1:
+		execute console command "kill @e[tag=%shooter%dag2]"
+		execute console command "kill @e[type=arrow]"
+		add 6 to {Tag..%victim%}
+		damage victim by 10 heart
+	if {Shootdagger..%shooter%} is 0:
+		execute console command "kill @e[tag=%shooter%dag]"
+		execute console command "kill @e[type=arrow]"
+		add 6 to {Tag..%victim%}
+		damage victim by 10 heart
+
+on left click:
+	if player's held item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		if {Shootdagger..%player%} > 0:
+			remove 1 from {Shootdagger..%player%}
+			shoot arrow at speed 2.5
+			wait 30 seconds
+			if {Shootdagger..%player%} is 4:
+				execute console command "kill @e[tag=%player%dag5]"
+			if {Shootdagger..%player%} is 3:
+				execute console command "kill @e[tag=%player%dag4]"
+			if {Shootdagger..%player%} is 2:
+				execute console command "kill @e[tag=%player%dag3]"
+			if {Shootdagger..%player%} is 1:
+				execute console command "kill @e[tag=%player%dag2]"
+			if {Shootdagger..%player%} is 0:
+				execute console command "kill @e[tag=%player%dag]"
+	if player's off hand item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		if {Tag..%player%} is 0:
+			if {ghoost...%player%} is true:
+				remove 0.1 from player's health
+				set {ghoost...%player%} to false
+	if player's held item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		if {Tag..%player%} is 0:
+			if {Bliss.Astra.%player%} > 1:
+				if {astra.cooldown2.%player%} is true:
+					send "&5🔪 Spirit daggers &cAre on cooldown for &b%{AstraMin2.%player%}%m %{AstraSec2.%player%}%s"
+				if {astra.cooldown2.%player%} is not true:
+					wait 5 tick
+					set {Shootdagger..%player%} to 5
+					if {Bliss.Astra.%player%} > 3:
+						set {AstraMin2.%player%} to 2
+						set {AstraSec2.%player%} to 30
+						set {astra.cooldown2.%player%} to true
+					if {Bliss.Astra.%player%} is 3:
+						set {AstraMin2.%player%} to 2
+						set {AstraSec2.%player%} to 30
+						set {astra.cooldown2.%player%} to true
+					if {Bliss.Astra.%player%} < 3:
+						set {AstraMin2.%player%} to 2
+						set {AstraSec2.%player%} to 30
+						set {astra.cooldown2.%player%} to true
+					execute console command "summon armor_stand ~ ~ ~ {Small:1b,Invisible:1b,Tags:[""%player%dag""],ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+					execute console command "summon armor_stand ~ ~ ~ {Small:1b,Invisible:1b,Tags:[""%player%dag2""],ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+					execute console command "summon armor_stand ~ ~ ~ {Small:1b,Invisible:1b,Tags:[""%player%dag3""],ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+					execute console command "summon armor_stand ~ ~ ~ {Small:1b,Invisible:1b,Tags:[""%player%dag4""],ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+					execute console command "summon armor_stand ~ ~ ~ {Small:1b,Invisible:1b,Tags:[""%player%dag5""],ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+					wait 1 second
+					execute console command "item replace entity @e[tag=%player%dag5] armor.head with minecraft:nautilus_shell{Enchantments:[{id:""minecraft:sharpness"", lvl:0}],CustomModelData:230}"
+					execute console command "item replace entity @e[tag=%player%dag4] armor.head with minecraft:nautilus_shell{Enchantments:[{id:""minecraft:sharpness"", lvl:0}],CustomModelData:230}"
+					execute console command "item replace entity @e[tag=%player%dag3] armor.head with minecraft:nautilus_shell{Enchantments:[{id:""minecraft:sharpness"", lvl:0}],CustomModelData:230}"
+					execute console command "item replace entity @e[tag=%player%dag2] armor.head with minecraft:nautilus_shell{Enchantments:[{id:""minecraft:sharpness"", lvl:0}],CustomModelData:230}"
+					execute console command "item replace entity @e[tag=%player%dag] armor.head with minecraft:nautilus_shell{Enchantments:[{id:""minecraft:sharpness"", lvl:0}],CustomModelData:230}"
+
+
+every 1 tick:
+	loop all players:
+		if {Tag..%loop-player%} > 0:
+			send action bar "🔒 &8&lDISABLED: %{Tag..%loop-player%}%s" to loop-player
+
+every 1 second:
+	loop all players:
+		if {Tag..%loop-player%} > 0:
+			apply darkness to loop-player for 1 second
+			remove 1 from {Tag..%loop-player%}
+
+
+on damage:
+	if victim has a amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		chance of 10%
+		cancel event
+		apply invisibility to victim for 15 ticks
+	if victim has a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		chance of 15%
+		cancel event
+		apply invisibility to victim for 15 ticks
+on drop amethyst shard:
+	cancel event
+on drop prismarine shard:
+	cancel event
+
+on damage:
+	if {ghoost...%victim%} is true:
+		set victim's fly mode to false
+		set {ghoost...%victim%} to false
+
+on left click:
+	if clicked block is set:
+		if player's held item is a amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if {Sneaky...%player%} is true:
+				if {Entity,%player%} is 1:
+					spawn {entity.%player%} 1 block above event-block
+					remove 1 from {Entity,%player%} 
+				if {Entity,%player%} is 2:
+					spawn {entity2.%player%} 1 block above event-block
+					remove 1 from {Entity,%player%} 
+				if {Entity,%player%} is 3:
+					spawn {entity3.%player%} 1 block above event-block
+					remove 1 from {Entity,%player%}
+		if player's held item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+			if {Sneaky...%player%} is true:
+				if {Entity,%player%} is 1:
+					spawn {entity.%player%} 1 block above event-block
+					remove 1 from {Entity,%player%} 
+				if {Entity,%player%} is 2:
+					spawn {entity2.%player%} 1 block above event-block
+					remove 1 from {Entity,%player%} 
+				if {Entity,%player%} is 3:
+					spawn {entity3.%player%} 1 block above event-block
+					remove 1 from {Entity,%player%} 
+				if {Entity,%player%} is 4:
+					spawn {entity4.%player%} 1 block above event-block
+					remove 1 from {Entity,%player%} 
+				if {Entity,%player%} is 5:
+					spawn {entity5.%player%} 1 block above event-block
+					remove 1 from {Entity,%player%} 
+on sneak toggle:
+	set {Sneaky...%player%} to true
+	wait 10 seconds
+	set {Sneaky...%player%} to false
+
+on right click on entity:
+	if player's held item is a amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		if {Sneaky...%player%} is true:
+			if event-entity is a villager:
+				if {Entity,%player%} is 1:
+					set {entity.%player%} to event-entity's type
+				if {Entity,%player%} is 2:
+					set {entity2.%player%} to event-entity's type
+				if {Entity,%player%} is 3:
+					set {entity3.%player%} to event-entity's type
+
+
+
+on death:
+	if attacker's off hand item is a amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		if {Entity,%attacker%} is not 3:
+			add 1 to {Entity,%attacker%}
+			send "&c%{Entity,%attacker%}%" to attacker
+		if victim is a zombie:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to zombie
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to zombie
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to zombie
+		if victim is a powered creeper:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to powered creeper
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to powered creeper
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to powered creeper
+		if victim is a skeleton:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to skeleton
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to skeleton
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to skeleton
+		if victim is a spider:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to spider
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to spider
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to spider
+		if victim is a warden:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to warden
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to warden
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to warden
+		if victim is a villager:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to villager
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to villager
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to villager
+		if victim is a wither skeleton:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to wither skeleton
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to wither skeleton
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to wither skeleton
+		if victim is a chicken:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to chicken
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to chicken
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to chicken
+		if victim is a piglin:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to piglin
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to piglin
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to piglin
+		if victim is a creeper:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to  creeper
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to creeper
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to powered creeper
+		if victim is a cow:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to cow
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to cow
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to cow
+		if victim is a pig:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to pig
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to pig
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to pig
+		if victim is a iron golem:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to iron golem
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to iron golem
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to iron golem
+	if attacker's off hand item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		if {Entity,%attacker%} is not 3:
+			add 1 to {Entity,%attacker%}
+			send "&c%{Entity,%attacker%}%" to attacker
+		if victim is a zombie:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to zombie
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to zombie
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to zombie
+		if victim is a powered creeper:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to powered creeper
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to powered creeper
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to powered creeper
+		if victim is a skeleton:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to skeleton
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to skeleton
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to skeleton
+		if victim is a spider:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to spider
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to spider
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to spider
+		if victim is a warden:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to warden
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to warden
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to warden
+		if victim is a villager:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to villager
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to villager
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to villager
+		if victim is a wither skeleton:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to wither skeleton
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to wither skeleton
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to wither skeleton
+		if victim is a chicken:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to chicken
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to chicken
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to chicken
+		if victim is a piglin:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to piglin
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to piglin
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to piglin
+		if victim is a creeper:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to creeper
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to creeper
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to creeper
+		if victim is a cow:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to cow
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to cow
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to cow
+		if victim is a pig:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to pig
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to pig
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to pig
+		if victim is a iron golem:
+			if {Entity,%attacker%} is 1:
+				set {entity.%attacker%} to iron golem
+			if {Entity,%attacker%} is 2:
+				set {entity2.%attacker%} to iron golem
+			if {Entity,%attacker%} is 3:
+				set {entity3.%attacker%} to iron golem

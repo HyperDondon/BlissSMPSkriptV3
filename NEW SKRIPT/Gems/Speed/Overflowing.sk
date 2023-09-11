@@ -1,0 +1,20 @@
+every 1 tick:
+	loop all players:
+		if {Bliss.Speed.%loop-player%} > 11:
+			set {Bliss.Speed.%loop-player%} to 11
+			send "&aYou are overflowing" to loop-player
+		if {Bliss.Fire.%loop-player%} > 11:
+			set {Bliss.Fire.%loop-player%} to 11
+			send "&aYou are overflowing" to loop-player
+		if {Bliss.Puff.%loop-player%} > 11:
+			set {Bliss.Puff.%loop-player%} to 11
+			send "&aYou are overflowing" to loop-player
+		if {Bliss.Astra.%loop-player%} > 11:
+			set {Bliss.Astra.%loop-player%} to 11
+			send "&aYou are overflowing" to loop-player
+		if {Bliss.Strength.%loop-player%} > 11:
+			set {Bliss.Strength.%loop-player%} to 11
+			send "&aYou are overflowing" to loop-player
+		if {Bliss.Wealth.%loop-player%} > 11:
+			set {Bliss.Wealth.%loop-player%} to 11	
+			send "&aYou are overflowing" to loop-player

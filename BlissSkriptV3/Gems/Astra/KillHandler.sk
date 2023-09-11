@@ -1,0 +1,82 @@
+on death of player:
+	if attacker's off hand item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		add 1 to {Bliss.Astra.%attacker%} 
+		if {Bliss.Astra.%attacker%} is 1:
+			set attacker's off hand item to prismarine shard with custom model data 96 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&8Broken Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 2:
+			set attacker's off hand item to prismarine shard with custom model data 94 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&cRuined Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 3:
+			set attacker's off hand item to prismarine shard with custom model data 74 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&eDamaged Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 4:
+			set attacker's off hand item to prismarine shard with custom model data 54 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&aCracked Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 5:
+			set attacker's off hand item to prismarine shard with custom model data 34 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&aScratched Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 6:
+			set attacker's off hand item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 7:
+			set attacker's off hand item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 1 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 8:
+			set attacker's off hand item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 2 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 9:
+			set attacker's off hand item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 3 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 10:
+			set attacker's off hand item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 4 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} > 10:
+			set {item} to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 5 Gem", "&5?? Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+
+	if attacker's held item is a prismarine shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		add 1 to {Bliss.Astra.%attacker%} 
+		if {Bliss.Astra.%attacker%} is 1:
+			set attacker's held item to prismarine shard with custom model data 96 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&8Broken Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 2:
+			set attacker's held item to prismarine shard with custom model data 94 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&cRuined Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 3:
+			set attacker's held item to prismarine shard with custom model data 74 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&eDamaged Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 4:
+			set attacker's held item to prismarine shard with custom model data 54 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&aCracked Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 5:
+			set attacker's held item to prismarine shard with custom model data 34 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&aScratched Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 6:
+			set attacker's held item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 7:
+			set attacker's held item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 1 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 8:
+			set attacker's held item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 2 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 9:
+			set attacker's held item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 3 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 10:
+			set attacker's held item to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 4 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} > 10:
+			set {item} to prismarine shard with custom model data 14 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 5 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+
+	if attacker's off hand item is a amethyst shard named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ":
+		add 1 to {Bliss.Astra.%attacker%} 
+		if {Bliss.Astra.%attacker%} is 1:
+			set attacker's off hand item to amethyst shard with custom model data 95 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&8Broken Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 2:
+			set attacker's off hand item to amethyst shard with custom model data 93 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&cRuined Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 3:
+			set attacker's off hand item to amethyst shard with custom model data 73 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&eDamaged Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 4:
+			set attacker's off hand item to amethyst shard with custom model data 53 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&aCracked Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 5:
+			set attacker's off hand item to amethyst shard with custom model data 33 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&aScratched Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 6:
+			set attacker's off hand item to amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 7:
+			set attacker's off hand item to amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 8:
+			set attacker's off hand item to amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 2 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 9:
+			set attacker's off hand item to amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 3 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} is 10:
+			set attacker's off hand item to amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 4 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+		if {Bliss.Astra.%attacker%} > 10:
+			set {item} to amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 5 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+

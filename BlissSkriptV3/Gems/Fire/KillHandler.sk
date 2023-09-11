@@ -1,0 +1,108 @@
+on death of player:
+	if attacker's off hand item is a prismarine shard named "&6&lFire &lgem":
+		add 1 to {Bliss.Fire.%attacker%} 
+		if {Bliss.Fire.%attacker%} is 1:
+			set attacker's off hand item to prismarine shard with custom model data 96 named "&6&lFire &lgem" with lore "&8Broken Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 2:
+			set attacker's off hand item to prismarine shard with custom model data 82 named "&6&lFire &lgem" with lore "&cRuined Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 3:
+			set attacker's off hand item to prismarine shard with custom model data 62 named "&6&lFire &lgem" with lore "&eDamaged Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 4:
+			set attacker's off hand item to prismarine shard with custom model data 42 named "&6&lFire &lgem" with lore "&aCracked Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 5:
+			set attacker's off hand item to prismarine shard with custom model data 22 named "&6&lFire &lgem" with lore "&aScratched Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 6:
+			set attacker's off hand item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 7:
+			set attacker's off hand item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 1 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"  
+		if {Bliss.Fire.%attacker%} is 8:
+			set attacker's off hand item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 2 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 9:
+			set attacker's off hand item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 3 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 10:
+			set attacker's off hand item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 4 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} > 10:
+			set {item} to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 5 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+	if attacker's off hand item is a amethyst shard named "&6&lFire &lgem":
+		add 1 to {Bliss.Fire.%attacker%} 
+		if {Bliss.Fire.%attacker%} is 1:
+			set attacker's off hand item to amethyst shard with custom model data 95 named "&6&lFire &lgem" with lore "&8Broken Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" with custom model data 96
+		if {Bliss.Fire.%attacker%} is 2:
+			set attacker's off hand item to amethyst shard with custom model data 81 named "&6&lFire &lgem" with lore "&cRuined Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" with custom model data 1302
+		if {Bliss.Fire.%attacker%} is 3:
+			set attacker's off hand item to amethyst shard with custom model data 62 named "&6&lFire &lgem" with lore "&eDamaged Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" with custom model data 1303
+		if {Bliss.Fire.%attacker%} is 4:
+			set attacker's off hand item to amethyst shard with custom model data 42 named "&6&lFire &lgem" with lore "&aCracked Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" with custom model data 1304
+		if {Bliss.Fire.%attacker%} is 5:
+			set attacker's off hand item to amethyst shard with custom model data 21 named "&6&lFire &lgem" with lore "&aScratched Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" with custom model data 1305
+		if {Bliss.Fire.%attacker%} is 6:
+			set attacker's off hand item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 7:
+			set attacker's off hand item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 1 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 8:
+			set attacker's off hand item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 2 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 9:
+			set attacker's off hand item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 3 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 10:
+			set attacker's off hand item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 4 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} > 10:
+			set {item} to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 5 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+			set attacker's off hand item to {item}
+			enchant {item} with mending 1
+			
+	if attacker's held item is a amethyst shard named "&6&lFire &lgem":
+		add 1 to {Bliss.Fire.%attacker%} 
+		if {Bliss.Fire.%attacker%} is 1:
+			set attacker's held item to amethyst shard with custom model data 95 named "&6&lFire &lgem" with lore "&8Broken Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 2:
+			set attacker's held item to amethyst shard with custom model data 81 named "&6&lFire &lgem" with lore "&cRuined Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 3:
+			set attacker's held item to amethyst shard with custom model data 62 named "&6&lFire &lgem" with lore "&eDamaged Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 4:
+			set attacker's held item to amethyst shard with custom model data 42 named  "&6&lFire &lgem" with lore "&aCracked Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 5:
+			set attacker's held item to amethyst shard with custom model data 21 named  "&6&lFire &lgem" with lore "&aScratched Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+
+		if {Bliss.Fire.%attacker%} is 6:
+			set attacker's held item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 7:
+			set attacker's held item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 1 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 8:
+			set attacker's held item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 2 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} is 9:
+			set attacker's held item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 3 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+
+		if {Bliss.Fire.%attacker%} is 10:
+			set attacker's held item to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 4 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+		if {Bliss.Fire.%attacker%} > 10:
+			set {item} to amethyst shard with custom model data 1 named "&6&lFire &lgem" with lore "&bPristine + 5 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+			set attacker's held item to {item}
+			enchant {item} with mending 1
+	if attacker's held item is a prismarine shard named "&6&lFire &lgem":
+		add 1 to {Bliss.Fire.%attacker%} 
+		if {Bliss.Fire.%attacker%} is 1:
+			set attacker's held item to prismarine shard with custom model data 95 named "&6&lFire &lgem" with lore "&8Broken Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 2:
+			set attacker's held item to prismarine shard with custom model data 81 named "&6&lFire &lgem" with lore "&cRuined Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 3:
+			set attacker's held item to prismarine shard with custom model data 61 named "&6&lFire &lgem" with lore "&eDamaged Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 4:
+			set attacker's held item to prismarine shard with custom model data 41 named "&6&lFire &lgem" with lore "&aCracked Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 5:
+			set attacker's held item to prismarine shard with custom model data 21 named "&6&lFire &lgem" with lore "&aScratched Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 6:
+			set attacker's held item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 7:
+			set attacker's held item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 1 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 8:
+			set attacker's held item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 2 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 9:
+			set attacker's held item to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 3 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} is 10:
+			set attacker's held item to amethyst shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 4 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>" 
+		if {Bliss.Fire.%attacker%} > 10:
+			set {item} to prismarine shard with custom model data 2 named "&6&lFire &lgem" with lore "&bPristine + 5 Gem", "&aAuto Smelt if gem is in off hand", "enchant's sword with fire aspect 1/2" and "&6Fireball Can Charge for 4 seconds" and "<red>"
+			set attacker's held item to {item}
+			enchant {item} with mending 1

@@ -1,0 +1,223 @@
+#puff powers
+
+
+
+
+
+every 1 second:
+	loop all players:
+		if loop-player's off hand item is a amethyst shard named "&f&lPuff &lgem":
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {puff.cooldown.%loop-player%} is not true:
+					send action bar "🔺 &aReady!" to loop-player
+				if {puff.cooldown.%loop-player%} is true:
+					send action bar "🔺 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s" to loop-player
+		if loop-player is holding amethyst shard named "&f&lPuff &lgem":
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {puff.cooldown.%loop-player%} is not true:
+					send action bar "🔺 &aReady!" to loop-player
+				if {puff.cooldown.%loop-player%} is true:
+					send action bar "🔺 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s" to loop-player
+		if loop-player's off hand item is a prismarine shard named "&f&lPuff &lgem":
+			if {Tier2.Stregnth.%loop-player%} is true:
+				if {puff.cooldown.%loop-player%} is not true:
+					if {puff.cooldown2.%loop-player%} is not true:
+						if {puff.cooldown3.%loop-player%} is not true:
+							send action bar "⏫ &aReady! &f🔮  &aReady! &f☁ &aReady!" to loop-player
+						if {puff.cooldown3.%loop-player%} is true:
+							send action bar "⏫ &aReady! &f🔮 &aReady! &f☁ &b%{PuffMin3.%loop-player%}%m %{PuffSec3.%loop-player%}%s" to loop-player
+				if {puff.cooldown.%loop-player%} is not true:
+					if {puff.cooldown2.%loop-player%} is true:
+						if {puff.cooldown3.%loop-player%} is true:
+							send action bar "⏫ &b%{PuffMin2.%loop-player%}%m %{PuffSec2.%loop-player%}%s &f🔮 &aReady! &f☁ &b%{PuffMin3.%loop-player%}%m %{PuffSec3.%loop-player%}%s" to loop-player
+						if {puff.cooldown3.%loop-player%} is not true:
+							send action bar "⏫ &b%{PuffMin2.%loop-player%}%m %{PuffSec2.%loop-player%}%s &f🔮 &aReady! &f☁ &aReady!" to loop-player
+				if {puff.cooldown.%loop-player%} is true:
+					if {puff.cooldown2.%loop-player%} is true:
+						if {puff.cooldown3.%loop-player%} is true:
+							send action bar "⏫ &b%{PuffMin2.%loop-player%}%m %{PuffSec2.%loop-player%}%s &f🔮 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s &f☁ &b%{StrengthMin3.%loop-player%}%m %{StrengthSec3.%loop-player%}%s" to loop-player
+						if {puff.cooldown3.%loop-player%} is not true:
+							send action bar "⏫ &b%{PuffMin2.%loop-player%}%m %{PuffSec2.%loop-player%}%s &f🔮 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s &f☁ &aReady!" to loop-player
+				if {puff.cooldown.%loop-player%} is true:
+					if {puff.cooldown2.%loop-player%} is not true:
+						if {puff.cooldown3.%loop-player%} is not true:
+							send action bar "⏫ &aReady! &f🔮 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s &f☁ &aReady!" to loop-player
+						if {puff.cooldown3.%loop-player%} is true:
+							send action bar "⏫ &aReady! &f🔮 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s &f☁ &b%{PuffMin3.%loop-player%}%m %{PuffSec3.%loop-player%}%s" to loop-player
+
+		if loop-player's held item is a prismarine shard named "&f&lPuff &lgem":
+			if {Tier2.Stregnth.%loop-player%} is true:
+				if {puff.cooldown.%loop-player%} is not true:
+					if {puff.cooldown2.%loop-player%} is not true:
+						if {puff.cooldown3.%loop-player%} is not true:
+							send action bar "⏫ &aReady! &f🔮  &aReady! &f☁ &aReady!" to loop-player
+						if {puff.cooldown3.%loop-player%} is true:
+							send action bar "⏫ &aReady! &f🔮 &aReady! &f☁ &b%{PuffMin3.%loop-player%}%m %{PuffSec3.%loop-player%}%s" to loop-player
+				if {puff.cooldown.%loop-player%} is not true:
+					if {puff.cooldown2.%loop-player%} is true:
+						if {puff.cooldown3.%loop-player%} is true:
+							send action bar "⏫ &b%{PuffMin2.%loop-player%}%m %{PuffSec2.%loop-player%}%s &f🔮 &aReady! &f☁ &b%{PuffMin3.%loop-player%}%m %{PuffSec3.%loop-player%}%s" to loop-player
+						if {puff.cooldown3.%loop-player%} is not true:
+							send action bar "⏫ &b%{PuffMin2.%loop-player%}%m %{PuffSec2.%loop-player%}%s &f🔮 &aReady! &f☁ &aReady!" to loop-player
+				if {puff.cooldown.%loop-player%} is true:
+					if {puff.cooldown2.%loop-player%} is true:
+						if {puff.cooldown3.%loop-player%} is true:
+							send action bar "⏫ &b%{PuffMin2.%loop-player%}%m %{PuffSec2.%loop-player%}%s &f🔮 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s &f☁ &b%{StrengthMin3.%loop-player%}%m %{StrengthSec3.%loop-player%}%s" to loop-player
+						if {puff.cooldown3.%loop-player%} is not true:
+							send action bar "⏫ &b%{PuffMin2.%loop-player%}%m %{PuffSec2.%loop-player%}%s &f🔮 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s &f☁ &aReady!" to loop-player
+				if {puff.cooldown.%loop-player%} is true:
+					if {puff.cooldown2.%loop-player%} is not true:
+						if {puff.cooldown3.%loop-player%} is not true:
+							send action bar "⏫ &aReady! &f🔮 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s &f☁ &aReady!" to loop-player
+						if {puff.cooldown3.%loop-player%} is true:
+							send action bar "⏫ &aReady! &f🔮 &b%{PuffMin.%loop-player%}%m %{PuffSec.%loop-player%}%s &f☁ &b%{PuffMin3.%loop-player%}%m %{PuffSec3.%loop-player%}%s" to loop-player
+
+
+
+
+
+		if loop-player has a prismarine shard named "&f&lPuff &lgem":
+			remove 1 from {PuffSec.%loop-player%}
+			remove 1 from {PuffSec2.%loop-player%}
+			remove 1 from {PuffSec3.%loop-player%}
+			if {PuffSec.%loop-player%} is -1:
+				remove 1 from {PuffMin.%loop-player%}
+				set {PuffSec.%loop-player%} to 59
+				if {PuffMin.%loop-player%} is -1:
+					set {puff.cooldown.%loop-player%} to false
+			if {PuffSec2.%loop-player%} is -1:
+				remove 1 from {PuffMin2.%loop-player%}
+				set {PuffSec2.%loop-player%} to 59
+				if {PuffMin2.%loop-player%} is -1:
+					set {puff.cooldown2.%loop-player%} to false
+			if {PuffSec3.%loop-player%} < 0:
+				remove 1 from {PuffMin3.%loop-player%}
+				set {PuffSec3.%loop-player%} to 59
+				if {PuffMin3.%loop-player%} is -1:
+					set {puff.cooldown3.%loop-player%} to false
+		if loop-player has a amethyst shard named "&f&lPuff &lgem":
+			remove 1 from {PuffSec.%loop-player%}
+			if {PuffSec.%loop-player%} is -1:
+				remove 1 from {PuffMin.%loop-player%}
+				set {PuffSec.%loop-player%} to 59
+				if {PuffMin.%loop-player%} is -1:
+					set {puff.cooldown.%loop-player%} to false
+
+on sneak toggle:
+	if player's gamemode is not creative:
+		if player's off hand item is a amethyst shard named "&f&lPuff &lgem":
+			if {puff.cooldown.%player%} is not true:
+				if {Tag..%player%} is 0:
+					draw 5 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					push player forward at speed 0.4
+					push player up at speed 0.2
+					set {PuffMin.%player%} to 0
+					set {PuffSec.%player%} to 5
+					set {puff.cooldown.%player%} to true
+		if player's off hand item is a prismarine shard named "&f&lPuff &lgem":
+			if {puff.cooldown.%player%} is not true:
+				if {Tag..%player%} is 0:
+					push player forward at speed 0.5
+					draw 5 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					push player up at speed 0.3
+					set {PuffMin.%player%} to 0
+					set {PuffSec.%player%} to 5
+					set {puff.cooldown.%player%} to true
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 4 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+			
+on drop prismarine shard:
+	if event-item is prismarine shard named "&f&lPuff &lgem":
+		cancel event
+on drop amethyst shard:
+	if event-item is amethyst shard named "&f&lPuff &lgem":
+		cancel event		
+
+on damage:
+	if {Tag..%victim%} is 0:
+		if damage cause is fall:
+			if victim's held item is amethyst shard named "&f&lPuff &lgem":
+				cancel event
+			if victim's off hand item is amethyst shard named "&f&lPuff &lgem":
+				cancel event
+			if victim's offhand item is prismarine shard named "&f&lPuff &lgem":
+				cancel event
+			if victim's held item is prismarine shard named "&f&lPuff &lgem":
+				cancel event
+	if attacker's held item is a prismarine shard named "&f&lPuff &lgem":
+		if {Tag..%attacker%} is 0:
+			if block under attacker is air:
+				if {puff.cooldown3.%attacker%} is not true:
+					wait 10 ticks
+					push victim up at speed 7
+					send "&fYou used &bBreezy Bash on %victim%" to attacker
+					send "&fYou have been affected by &b☁ Breezy bash &fby %attacker%" to victim
+					if {Bliss.Puff.%attacker%} > 4:	
+						set {PuffMin3.%attacker%} to 0
+						set {PuffSec3.%attacker%} to 45
+						set {puff.cooldown3.%attacker%} to true
+					if {Bliss.Puff.%attacker%} is 3:	
+						set {PuffMin3.%attacker%} to 1
+						set {PuffSec3.%attacker%} to 15
+						set {puff.cooldown3.%attacker%} to true
+					if {Bliss.Puff.%attacker%} < 3:	
+						set {PuffMin3.%attacker%} to 1
+						set {PuffSec3.%attacker%} to 35
+						set {puff.cooldown3.%attacker%} to true
+					wait 2 seconds
+					push victim down at speed 2.5
+			
+			
+on left click:
+	if player's held item is a prismarine shard named "&f&lPuff &lgem":
+		if {puff.cooldown.%player%} is not true:
+			set {Breezy.%player%} to true
+			
+on right click:
+	if {Tag..%player%} is 0:
+		if player's held item is a prismarine shard named "&f&lPuff &lgem":
+			if {puff.cooldown2.%player%} is not true:
+				push player up at speed 1
+				set {PuffMin2.%player%} to 0
+				set {PuffSec2.%player%} to 18
+				set {puff.cooldown2.%player%} to true
+				push player forward at speed 3
+				set {Dash...%player%} to true
+				wait 8 seconds
+				set {Dash...%player%} to false
+
+
+every 5 ticks:
+	loop all players:
+		if {Dash...%loop-player%} is true:
+			loop all entities in radius 3 of loop-player:
+				remove 2 from loop-entity-2's health
+				add 2 to loop-player's health

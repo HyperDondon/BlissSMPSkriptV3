@@ -1,0 +1,292 @@
+#puff powers
+
+every 1 tick:
+	loop all players:
+		set {_uuid} to uuid of loop-player
+		
+		if loop-player's off hand item or loop-player's held item is a amethyst shard named "&f&lPuff &lgem":
+			send action bar "&f🔺%{Puff.Power2.DoubleJump.Display.%{_uuid}%}%" to loop-player
+
+
+
+		if loop-player's off hand item is prismarine shard named "&f&lPuff &lgem":
+
+			send action bar "%{Puff.Power3.Breezy.Display.%{_uuid}%}% &f🔮%{Puff.Power2.DoubleJump.Display.%{_uuid}%}% &f%{Puff.Power1.Dash.Display.%{_uuid}%}%" to loop-player
+		
+		
+		if loop-player's held item or loop-player's held item is a amethyst shard named "&f&lPuff &lgem":
+			send action bar "&f🔺%{Puff.Power2.DoubleJump.Display.%{_uuid}%}%" to loop-player
+
+
+
+		if loop-player's held item is prismarine shard named "&f&lPuff &lgem":
+			send action bar "%{Puff.Power3.Breezy.Display.%{_uuid}%}% &f🔮%{Puff.Power2.DoubleJump.Display.%{_uuid}%}% &f%{Puff.Power1.Dash.Display.%{_uuid}%}%" to loop-player
+
+
+
+
+
+
+every 1 second:
+	loop all players:
+		if loop-player has a prismarine shard or amethyst shard named "&f&lPuff &lgem":
+			set {_uuid} to uuid of loop-player
+			#Breezy
+			if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is true:
+				if {Puff.Power3.Breezy.Minute.%{_uuid}%} is 0:
+					set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Second.%{_uuid}%}%s"
+
+				else:
+					set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%{_uuid}%}%m %{Puff.Power3.Breezy.Second.%{_uuid}%}%s"		
+			if {Puff.Power3.Breezy.Second.%{_uuid}%} is not set:
+				set {Puff.Power3.Breezy.Second.%{_uuid}%} to 0
+				set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 0
+				set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+
+			if {Puff.Power3.Breezy.Display.%{_uuid}%} is not set:
+				set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%{_uuid}%}%m %{Puff.Power3.Breezy.Second.%{_uuid}%}%s"
+				
+		
+			if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is true:
+				if {Puff.Power3.Breezy.Minute.%{_uuid}%} is 0:
+					set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Second.%{_uuid}%}%s"
+
+				else:
+					set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%{_uuid}%}%m %{Puff.Power3.Breezy.Second.%{_uuid}%}%s"
+
+			if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is true:
+				remove 1 from {Puff.Power3.Breezy.Second.%{_uuid}%}
+
+
+
+			if {Puff.Power3.Breezy.Second.%{_uuid}%} is -1:
+				remove 1 from {Puff.Power3.Breezy.Minute.%{_uuid}%}
+				set {Puff.Power3.Breezy.Second.%{_uuid}%} to 59
+                
+			if {Puff.Power3.Breezy.Minute.%{_uuid}%} is -1:
+				set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to false
+				set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &aReady!"
+
+
+			#DoubleJump
+
+			if {Puff.Power2.DoubleJump.Second.%{_uuid}%} is not set:
+				set {Puff.Power2.DoubleJump.Second.%{_uuid}%} to 0
+				set {Puff.Power2.DoubleJump.Minute.%{_uuid}%} to 0
+				set {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} to true
+
+			if {Puff.Power2.DoubleJump.Minute.%{_uuid}%} is not set:
+				set {Puff.Power2.DoubleJump.Second.%{_uuid}%} to 0
+				set {Puff.Power2.DoubleJump.Minute.%{_uuid}%} to 0
+				set {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} to true
+
+
+			if {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} is not set:
+				set {Puff.Power2.DoubleJump.Second.%{_uuid}%} to 0
+				set {Puff.Power2.DoubleJump.Minute.%{_uuid}%} to 0
+				set {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} to true	
+				set {Puff.Power2.DoubleJump.Display.%{_uuid}%} to " &b%{Puff.Power2.DoubleJump.Minute.%{_uuid}%}%m %{Puff.Power2.DoubleJump.Second.%{_uuid}%}%s"
+
+			if {Puff.Power2.DoubleJump.Display.%{_uuid}%} is not set:
+				set {Puff.Power2.DoubleJump.Second.%{_uuid}%} to 0
+				set {Puff.Power2.DoubleJump.Minute.%{_uuid}%} to 0
+				set {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} to true	
+
+			if {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} is true:
+				set {Puff.Power2.DoubleJump.Display.%{_uuid}%} to "&b %{Puff.Power2.DoubleJump.Minute.%{_uuid}%}%m %{Puff.Power2.DoubleJump.Second.%{_uuid}%}%s"
+
+			if {Puff.Power2.DoubleJump.Display.%{_uuid}%} is not set:
+				set {Puff.Power2.DoubleJump.Display.%{_uuid}%} to " &b %{Puff.Power2.DoubleJump.Minute.%{_uuid}%}%m %{Puff.Power2.DoubleJump.Second.%{_uuid}%}%s"
+
+			if {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} is true:
+				if {Puff.Power2.DoubleJump.Minute.%{_uuid}%} is 0:
+					set {Puff.Power2.DoubleJump.Display.%{_uuid}%} to "&b %{Puff.Power2.DoubleJump.Second.%{_uuid}%}%s"
+
+				else:
+					set {Puff.Power2.DoubleJump.Display.%{_uuid}%} to "&b %{Puff.Power2.DoubleJump.Minute.%{_uuid}%}%m %{Puff.Power2.DoubleJump.Second.%{_uuid}%}%s"
+
+			if {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} is true:
+				remove 1 from {Puff.Power2.DoubleJump.Second.%{_uuid}%}
+
+
+			
+			if {Puff.Power2.DoubleJump.Second.%{_uuid}%} is -1:
+				remove 1 from {Puff.Power2.DoubleJump.Minute.%{_uuid}%}
+				set {Puff.Power2.DoubleJump.Second.%{_uuid}%} to 59
+                
+			if {Puff.Power2.DoubleJump.Minute.%{_uuid}%} is -1:
+				set {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} to false
+				set {Puff.Power2.DoubleJump.Display.%{_uuid}%} to " &aReady!"
+
+
+
+			#Dash
+
+
+
+
+
+			if {Puff.Power1.Dash.Cooldown.%{_uuid}%} is true:
+				remove 1 from {Puff.Power1.Dash.Second.%{_uuid}%}
+
+
+			
+			if {Puff.Power1.Dash.Second.%{_uuid}%} is -1:
+				remove 1 from {Puff.Power1.Dash.Minute.%{_uuid}%}
+				set {Puff.Power1.Dash.Second.%{_uuid}%} to 59
+
+
+			if {Puff.Power1.Dash.Cooldown.%{_uuid}%} is true:
+				if {Puff.Power1.Dash.Minute.%{_uuid}%} is 0:
+					set {Puff.Power1.Dash.Display.%{_uuid}%} to "&f⏫ &b%{Puff.Power1.Dash.Second.%{_uuid}%}%s"
+
+				else:
+					set {Puff.Power1.Dash.Display.%{_uuid}%} to "&f⏫ &b%{Puff.Power1.Dash.Minute.%{_uuid}%}%m %{Puff.Power1.Dash.Second.%{_uuid}%}%s"
+
+
+			if {Puff.Power1.Dash.Second.%{_uuid}%} is not set:
+				set {Puff.Power1.Dash.Second.%{_uuid}%} to 0
+				set {Puff.Power1.Dash.Minute.%{_uuid}%} to 0
+
+			if {Puff.Power1.Dash.Cooldown.%{_uuid}%} is not set:
+				set {Puff.Power1.Dash.Second.%{_uuid}%} to 0
+				set {Puff.Power1.Dash.Minute.%{_uuid}%} to 0
+				set {Puff.Power1.Dash.Cooldown.%{_uuid}%} to true	
+
+			if {Puff.Power1.Dash.Display.%{_uuid}%} is not set:
+				set {Puff.Power1.Dash.Second.%{_uuid}%} to 0
+				set {Puff.Power1.Dash.Minute.%{_uuid}%} to 0
+				set {Puff.Power1.Dash.Cooldown.%{_uuid}%} to true	
+
+
+			if {Puff.Power1.Dash.Display.%{_uuid}%} is not set:
+				set {Puff.Power1.Dash.Display.%{_uuid}%} to "&f⏫ &b%{Puff.Power1.Dash.Minute.%{_uuid}%}%m %{Puff.Power1.Dash.Second.%{_uuid}%}%s"
+
+
+
+			if {Puff.Power1.Dash.Minute.%{_uuid}%} is -1:
+				set {Puff.Power1.Dash.Cooldown.%{_uuid}%} to false
+				set {Puff.Power1.Dash.Display.%{_uuid}%} to "&f⏫ &aReady!"
+
+
+on sneak toggle:
+	if player's gamemode is not creative:
+		if player's off hand item is a amethyst shard named "&f&lPuff &lgem":
+			set {_uuid} to uuid of player
+			if {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} is not true:
+				if {Tag..%player%} is 0:
+					draw 5 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					push player forward at speed 0.4
+					push player up at speed 0.2
+					set {Puff.Power2.DoubleJump.Second.%{_uuid}%} to 5
+					set {Puff.Power2.DoubleJump.Minute.%{_uuid}%} to 0
+					set {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} to true	
+		if player's off hand item is a prismarine shard named "&f&lPuff &lgem":
+			set {_uuid} to uuid of player
+			if {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} is not true:
+				if {Tag..%player%} is 0:
+					push player forward at speed 0.5
+					draw 5 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					push player up at speed 0.3
+					set {Puff.Power2.DoubleJump.Second.%{_uuid}%} to 5
+					set {Puff.Power2.DoubleJump.Minute.%{_uuid}%} to 0
+					set {Puff.Power2.DoubleJump.Cooldown.%{_uuid}%} to true	
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 4 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+					wait 1 ticks
+					draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+			
+on drop prismarine shard:
+	if event-item is prismarine shard named "&f&lPuff &lgem":
+		cancel event
+on drop amethyst shard:
+	if event-item is amethyst shard named "&f&lPuff &lgem":
+		cancel event		
+
+on damage:
+	if {Tag..%victim%} is 0:
+		if damage cause is fall:
+			if victim's held item is amethyst shard named "&f&lPuff &lgem":
+				cancel event
+			if victim's off hand item is amethyst shard named "&f&lPuff &lgem":
+				cancel event
+			if victim's offhand item is prismarine shard named "&f&lPuff &lgem":
+				cancel event
+			if victim's held item is prismarine shard named "&f&lPuff &lgem":
+				cancel event
+	if attacker's held item is a prismarine shard named "&f&lPuff &lgem":
+		if {Tag..%attacker%} is 0:
+			if block under attacker is air:
+				set {_uuid} to uuid of attacker
+				if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is not true:
+					wait 1 ticks
+					push victim up at speed 7
+					send "&fYou used ☁ &bBreezy Bash on %victim%" to attacker
+					send "&fYou have been affected by ☁ &bBreezy bash &fby %attacker%" to victim
+					if {Bliss.Puff.%attacker%} > 4:	
+						set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 0
+						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 45
+						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					if {Bliss.Puff.%attacker%} is 3:	
+						set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 15
+						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					if {Bliss.Puff.%attacker%} < 3:	
+						set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 35
+						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					wait 2 seconds
+					push victim down at speed 2.5
+			
+			
+on left click:
+	if player's held item is a prismarine shard named "&f&lPuff &lgem":
+		if {puff.cooldown.%player%} is not true:
+			set {Breezy.%player%} to true
+			
+on right click:
+	if {Tag..%player%} is 0:
+		if player's held item is a prismarine shard named "&f&lPuff &lgem":
+			set {_uuid} to uuid of player
+			if {Puff.Power1.Dash.Cooldown.%{_uuid}%} is not true:
+				push player up at speed 1
+				set {Puff.Power1.Dash.Second.%{_uuid}%} to 30
+				set {Puff.Power1.Dash.Minute.%{_uuid}%} to 0
+				set {Puff.Power1.Dash.Cooldown.%{_uuid}%} to true
+				push player forward at speed 3
+				set {Dash...%player%} to true
+				wait 8 seconds
+				set {Dash...%player%} to false
+
+
+every 5 ticks:
+	loop all players:
+		if {Dash...%loop-player%} is true:
+			loop all entities in radius 3 of loop-player:
+

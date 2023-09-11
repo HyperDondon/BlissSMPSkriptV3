@@ -1,0 +1,281 @@
+#Life Powers
+
+
+
+
+every 1 second:
+	loop all players:
+		if loop-player's off hand item is a amethyst shard named "&d&lLife &lgem":
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {life.cooldown.%loop-player%} is not true:
+					send action bar "&d🔺 &aReady!" to loop-player
+				if {life.cooldown.%loop-player%} is true:
+					send action bar "&d🔺 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s" to loop-player
+		if loop-player is holding amethyst shard named "&d&lLife &lgem":
+			if {Tier2.Stregnth.%loop-player%} is not true:
+				if {life.cooldown.%loop-player%} is not true:
+					send action bar "&d🔺 &aReady!" to loop-player
+				if {life.cooldown.%loop-player%} is true:
+					send action bar "&d🔺 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s" to loop-player
+			if {Bliss.Life.%loop-player%} > 2:
+				execute console command "effect give %loop-player% regeneration 2 1"
+		if loop-player's off hand item is a prismarine shard named "&d&lLife &lgem":
+			if {Tier2.Stregnth.%loop-player%} is true:
+				if {life.cooldown.%loop-player%} is not true:
+					if {life.cooldown2.%loop-player%} is not true:
+						if {life.cooldown3.%loop-player%} is not true:
+							send action bar "💖 &aReady! &d🔮  &aReady! 💘 &aReady!" to loop-player
+						if {life.cooldown3.%loop-player%} is true:
+							send action bar "💖 &aReady! &d🔮 &aReady! 💘 &b%{LifeMin3.%loop-player%}%m %{LifeSec3.%loop-player%}%s" to loop-player
+				if {life.cooldown.%loop-player%} is not true:
+					if {life.cooldown2.%loop-player%} is true:
+						if {life.cooldown3.%loop-player%} is true:
+							send action bar "💖 &b%{LifeMin2.%loop-player%}%m %{LifeSec2.%loop-player%}%s &d🔮 &aReady! 💘 &b%{LifeMin3.%loop-player%}%m %{LifeSec3.%loop-player%}%s" to loop-player
+						if {life.cooldown3.%loop-player%} is not true:
+							send action bar "💖 &b%{LifeMin2.%loop-player%}%m %{LifeSec2.%loop-player%}%s &d🔮 &aReady! 💘 &aReady!" to loop-player
+				if {life.cooldown.%loop-player%} is true:
+					if {life.cooldown2.%loop-player%} is true:
+						if {life.cooldown3.%loop-player%} is true:
+							send action bar "💖 &b%{LifeMin2.%loop-player%}%m %{LifeSec2.%loop-player%}%s &d🔮 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s 💘 &b%{LifeMin3.%loop-player%}%m %{LifeSec3.%loop-player%}%s" to loop-player
+						if {life.cooldown3.%loop-player%} is not true:
+							send action bar "💖 &b%{LifeMin2.%loop-player%}%m %{LifeSec2.%loop-player%}%s &d🔮 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s 💘 &aReady!" to loop-player
+				if {life.cooldown.%loop-player%} is true:
+					if {life.cooldown2.%loop-player%} is not true:
+						if {life.cooldown3.%loop-player%} is not true:
+							send action bar "💖 &aReady! &d🔮 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s 💘 &aReady!" to loop-player
+						if {life.cooldown3.%loop-player%} is true:
+							send action bar "💖 &aReady! &d🔮 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s 💘 &b%{LifeMin3.%loop-player%}%m %{LifeSec3.%loop-player%}%s" to loop-player
+	
+
+		if loop-player's held item is a prismarine shard named "&d&lLife &lgem":
+			if {Tier2.Stregnth.%loop-player%} is true:
+				if {life.cooldown.%loop-player%} is not true:
+					if {life.cooldown2.%loop-player%} is not true:
+						if {life.cooldown3.%loop-player%} is not true:
+							send action bar "💖 &aReady! &d🔮  &aReady! 💘 &aReady!" to loop-player
+						if {life.cooldown3.%loop-player%} is true:
+							send action bar "💖 &aReady! &d🔮 &aReady! 💘 &b%{LifeMin3.%loop-player%}%m %{LifeSec3.%loop-player%}%s" to loop-player
+				if {life.cooldown.%loop-player%} is not true:
+					if {life.cooldown2.%loop-player%} is true:
+						if {life.cooldown3.%loop-player%} is true:
+							send action bar "💖 &b%{LifeMin2.%loop-player%}%m %{LifeSec2.%loop-player%}%s &d🔮 &aReady! 💘 &b%{LifeMin3.%loop-player%}%m %{LifeSec3.%loop-player%}%s" to loop-player
+						if {life.cooldown3.%loop-player%} is not true:
+							send action bar "💖 &b%{LifeMin2.%loop-player%}%m %{LifeSec2.%loop-player%}%s &d🔮 &aReady! 💘 &aReady!" to loop-player
+				if {life.cooldown.%loop-player%} is true:
+					if {life.cooldown2.%loop-player%} is true:
+						if {life.cooldown3.%loop-player%} is true:
+							send action bar "💖 &b%{LifeMin2.%loop-player%}%m %{LifeSec2.%loop-player%}%s &d🔮 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s 💘 &b%{LifeMin3.%loop-player%}%m %{LifeSec3.%loop-player%}%s" to loop-player
+						if {life.cooldown3.%loop-player%} is not true:
+							send action bar "💖 &b%{LifeMin2.%loop-player%}%m %{LifeSec2.%loop-player%}%s &d🔮 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s 💘 &aReady!" to loop-player
+				if {life.cooldown.%loop-player%} is true:
+					if {life.cooldown2.%loop-player%} is not true:
+						if {life.cooldown3.%loop-player%} is not true:
+							send action bar "💖 &aReady! &d🔮 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s 💘 &aReady!" to loop-player
+						if {life.cooldown3.%loop-player%} is true:
+							send action bar "💖 &aReady! &d🔮 &b%{LifeMin.%loop-player%}%m %{LifeSec.%loop-player%}%s 💘 &b%{LifeMin3.%loop-player%}%m %{LifeSec3.%loop-player%}%s" to loop-player
+
+
+
+		if loop-player has a prismarine shard named "&d&lLife &lgem":
+			remove 1 from {LifeSec.%loop-player%}
+			remove 1 from {LifeSec2.%loop-player%}
+			remove 1 from {LifeSec3.%loop-player%}
+			if {LifeSec.%loop-player%} is -1:
+				remove 1 from {LifeMin.%loop-player%}
+				set {LifeSec.%loop-player%} to 59
+				if {LifeMin.%loop-player%} is -1:
+					set {life.cooldown.%loop-player%} to true
+					add 0.5 to loop-player's health
+					set {LifeSec.%loop-player%} to 5
+					set {LifeMin.%loop-player%} to 0
+			if {LifeSec2.%loop-player%} is -1:
+				remove 1 from {LifeMin2.%loop-player%}
+				set {LifeSec2.%loop-player%} to 59
+				if {LifeMin2.%loop-player%} is -1:
+					set {life.cooldown2.%loop-player%} to false
+			if {LifeSec3.%loop-player%} < 0:
+				remove 1 from {LifeMin3.%loop-player%}
+				set {LifeSec3.%loop-player%} to 59
+				if {LifeMin3.%loop-player%} is -1:
+					set {life.cooldown3.%loop-player%} to false
+		if loop-player has a amethyst shard named "&d&lLife &lgem":
+			remove 1 from {LifeSec.%loop-player%}
+			if {LifeSec.%loop-player%} is -1:
+				remove 1 from {LifeMin.%loop-player%}
+				set {LifeSec.%loop-player%} to 59
+				if {LifeMin.%loop-player%} is -1:
+					set {life.cooldown.%loop-player%} to false
+			if {life.cooldown.%loop-player%} is not true:
+				set {life.cooldown.%loop-player%} to true
+				add 0.5 to loop-player's health
+				set {LifeSec.%loop-player%} to 5
+				set {LifeMin.%loop-player%} to 0
+			
+
+
+on eat:
+	apply saturation 2 without particles to player for 1 tick
+	
+				
+on tab complete for "/trust":
+    set tab completions for position 1 to "add" and "remove"
+		
+
+
+on drop prismarine shard:
+	if event-item is prismarine shard named "&d&lLife &lgem":
+		cancel event
+on drop amethyst shard:
+	if event-item is amethyst shard named "&d&lLife &lgem":
+		cancel event		
+
+
+on right click on wheat plant:
+	if player's off hand item is a amethyst shard named "&d&lLife &lgem":
+		set event-block to stage 3 wheat plant
+		chance of 40%
+		set event-block to stage 4 wheat plant
+		chance of 20%
+		set event-block to fully grown wheat plant
+	if player's off hand item is a prismarine shard named "&d&lLife &lgem":
+		set event-block to stage 3 wheat plant
+		chance of 40%
+		set event-block to stage 4 wheat plant
+		chance of 20%
+		set event-block to fully grown wheat plant
+on right click on stage 2 wheat plant:
+	if player's off hand item is a amethyst shard named "&d&lLife &lgem":
+		set event-block to stage 3 wheat plant
+		chance of 40%
+		set event-block to stage 4 wheat plant
+		chance of 20%
+		set event-block to fully grown wheat plant
+	if player's off hand item is a prismarine shard named "&d&lLife &lgem":
+		set event-block to stage 3 wheat plant
+		chance of 40%
+		set event-block to stage 4 wheat plant
+		chance of 20%
+		set event-block to fully grown wheat plant
+on right click on stage 3 wheat plant:
+	if player's off hand item is a amethyst shard named "&d&lLife &lgem":
+		chance of 20%
+		set event-block to stage 4 wheat plant
+		chance of 20%
+		set event-block to fully grown wheat plant
+	if player's off hand item is a prismarine shard named "&d&lLife &lgem":
+		chance of 40%
+		set event-block to stage 4 wheat plant
+		chance of 20%
+		set event-block to fully grown wheat plant
+on right click on stage 4 wheat plant:
+	if player's off hand item is a amethyst shard named "&d&lLife &lgem":
+		chance of 20%
+		set event-block to fully grown wheat plant
+	if player's off hand item is a prismarine shard named "&d&lLife &lgem":
+		chance of 20%
+		set event-block to fully grown wheat plant
+on eat golden apple:
+	if player's off hand item is a amethyst shard named "&d&lLife &lgem":
+		apply absorption 2 to player for 1 minute
+	if player's off hand item is a prismarine shard named "&d&lLife &lgem":
+		remove absorption from player
+		apply absorption 2 to player for 1 minute
+
+
+every 15 tick:
+	loop all players:
+		if loop-player has prismarine shard named "&d&lLife &lgem":
+			execute console command "execute as @e[tag=Life] at @s run function particles:life"
+	
+every 1 tick:
+	loop all players:
+		if loop-player has prismarine shard named "&d&lLife &lgem":
+			execute console command "execute as @e[tag=Life] at @s run function particles:life"
+			execute console command "execute as @e[tag=Life] at @s run execute as @a[distance=1.5..6,tag=!TrustedBy%loop-player%] at @s run attribute @s minecraft:generic.max_health base set %{Healt....%loop-player%}%"
+			execute console command "execute as @e[tag=Life] at @s run execute as @a[distance=7..99] at @s run attribute @s minecraft:generic.max_health base set 20"
+
+on damage:
+	if attacker's held item is a prismarine shard named "&d&lLife &lgem":
+		if {life.cooldown3.%attacker%} is not true:
+			if {Tag..%attacker%} is 0:
+				if {Bliss.Life.%attacker%} > 4:
+					set {LifeSec3.%attacker%} to 30
+					set {LifeMin3.%attacker%} to 2
+					set {life.cooldown3.%attacker%} to true
+				if {Bliss.Life.%attacker%} is 3:
+					set {LifeSec3.%attacker%} to 1
+					set {LifeMin3.%attacker%} to 3
+					set {life.cooldown3.%attacker%} to true
+				if {Bliss.Life.%attacker%} < 3:
+					set {LifeSec3.%attacker%} to 35
+					set {LifeMin3.%attacker%} to 3
+					set {life.cooldown3.%attacker%} to true
+				set {HP..%victim%} to a random integer between 1 and 4
+				if {HP..%victim%} is 1:
+					send "&dDecreased %victim%'s hp by 5%%" to attacker
+					send "&c%attacker% decreased &dyour hp by 5%%" to victim
+				if {HP..%victim%} is 2:
+					send "&dDecreased %victim%'s hp by 10%%" to attacker
+					send "&c%attacker% decreased &dyour hp by 10%%" to victim
+				if {HP..%victim%} is 3:
+					send "&dDecreased %victim%'s hp by 15%%" to attacker
+					send "&c%attacker% decreased &dyour hp by 15%%" to victim
+				if {HP..%victim%} is 4:
+					send "&dDecreased %victim%'s hp by 20%%" to attacker
+					send "&c%attacker% decreased &dyour hp by 20%%" to victim
+					remove 2 from victim's max health
+				wait 40 seconds
+				set victim's max health to 10
+
+
+on right click on entity:
+	if player's held item is a prismarine shard named "&d&lLife &lgem":
+		if {life.cooldown2.%player%} is not true:
+			if {Tag..%player%} is 0:
+				set {LifeSec2.%player%} to 59
+				set {LifeMin2.%player%} to 3
+				set {life.cooldown2.%player%} to true
+				set {HP..%event-entity%} to a random integer between 7 and 8
+				execute console command "tag %player% add Life"
+				if {HP..%event-entity%} is 1:
+					set {Healt....%player%} to 19
+					send "&dDecreased %event-entity%'s hp by 5%%" to player
+					send "&c%player% decreased &dyour hp by 5%%"
+				if {HP..%event-entity%} is 2:
+					set {Healt....%player%} to 18
+					send "&dDecreased %event-entity%'s hp by 10%%" to player
+					send "&c%player% decreased &dyour hp by 10%%"
+				if {HP..%event-entity%} is 3:
+					set {Healt....%player%} to 17
+					send "&dDecreased %event-entity%'s hp by 15%%" to player
+					send "&c%player% decreased &dyour hp by 15%%"
+				if {HP..%event-entity%} is 4:
+					set {Healt....%player%} to 16
+					send "&dDecreased %event-entity%'s hp by 20%%" to player
+					send "&c%player% decreased &dyour hp by 20%%"
+				if {HP..%event-entity%} is 5:
+					set {Healt....%player%} to 15
+					send "&dDecreased %event-entity%'s hp by 25%%" to player
+					send "&c%player% decreased &dyour hp by 25%%"
+				if {HP..%event-entity%} is 6:
+					set {Healt....%player%} to 14
+					send "&dDecreased %event-entity%'s hp by 30%%" to player
+					send "&c%player% decreased &dyour hp by 30%%"
+				if {HP..%event-entity%} is 7:
+					set {Healt....%player%} to 13
+					send "&dDecreased %event-entity%'s hp by 35%%" to player
+					send "&c%player% decreased &dyour hp by 35%%"
+				if {HP..%event-entity%} is 8:
+					set {Healt....%player%} to 12
+					send "&dDecreased %event-entity%'s hp by 40%%" to player
+					send "&c%player% decreased &dyour hp by 40%%"
+				wait 60 seconds
+				execute console command "execute as @a at @s run attribute @s minecraft:generic.max_health base set 20"
+				set {Healt....%player%} to false
+				execute console command "tag %player% remove Life"
+
+
+
+
+
+

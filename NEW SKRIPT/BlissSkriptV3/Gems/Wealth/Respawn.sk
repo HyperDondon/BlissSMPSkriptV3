@@ -1,0 +1,25 @@
+on respawn:
+	if {Bliss.Wealth.%player%} is 1:
+		give player amethyst shard with custom model data 95 named "&2&lWealth &lgem" with lore "&4Broken Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 2:
+		give player amethyst shard with custom model data 91 named "&2&lWealth &lgem" with lore "&cRuined Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 3:
+		give player amethyst shard with custom model data 71 named "&2&lWealth &lgem" with lore "&eDamaged Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 4:
+		give player amethyst shard with custom model data 51 named "&2&lWealth &lgem" with lore "&aCracked Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 5:
+		give player amethyst shard with custom model data 31 named "&2&lWealth &lgem" with lore "&aScratched Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 6:
+		give player amethyst shard with custom model data 11 named "&2&lWealth &lgem" with lore "&bPristine Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 7:
+		give player amethyst shard with custom model data 11 named "&2&lWealth &lgem" with lore "&bPristine + Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 8:
+		give player amethyst shard with custom model data 11 named "&2&lWealth &lgem" with lore "&bPristine + 2 Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 9:
+		give player amethyst shard with custom model data 11 named "&2&lWealth &lgem" with lore "&bPristine + 3 Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} is 10:
+		give player amethyst shard with custom model data 11 named "&2&lWealth &lgem" with lore "&bPristine + 4 Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+	if {Bliss.Wealth.%player%} > 10:
+		set {item} to amethyst shard with custom model data 11 named "&2&lWealth &lgem" with lore "&bPristine + 5 Gem", "&aAuto enchant's pickaxe and axe with fortune 1/3", "." and "&dPasive &aHero of the village" 
+		give player {item}
+		enchant {item} with mending 1

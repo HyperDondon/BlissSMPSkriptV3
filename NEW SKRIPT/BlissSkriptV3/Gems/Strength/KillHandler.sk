@@ -1,0 +1,205 @@
+on death of player:
+	if {Bliss.Strength.%attacker%} > 0:
+		if attacker's off hand item is not a amethyst shard named "&4&lStrength &e&lgem":
+			if {Tier2.Stregnth.%attacker%} is not true:
+				add 1 to {Bliss.Strength.%attacker%}
+				execute console command "clear %attacker% amethyst_shard"
+				if {Bliss.Strength.%attacker%} is 1:
+					give attacker a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&4Broken Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 2:
+					give attacker a amethyst shard with custom model data 89 named "&4&lStrength &e&lgem" with lore "&cRuined Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 3:
+					give attacker a amethyst shard with custom model data 69 named "&4&lStrength &e&lgem" with lore "&eDamaged Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 4:
+					give attacker a amethyst shard with custom model data 49 named "&4&lStrength &e&lgem" with lore "&aCracked Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 5:
+					give attacker a amethyst shard with custom model data 29 named "&4&lStrength &e&lgem" with lore "&aScratched Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 6:
+					give attacker a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 7:
+					give attacker a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 1 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 8:
+					give attacker a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 2 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 9:
+					give attacker a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 3 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				if {Bliss.Strength.%attacker%} is 10:
+					give attacker a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 4 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				
+				
+				if {Bliss.Strength.%attacker%} is 11:
+					set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 5 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1				
+				
+				
+				if {Bliss.Strength.%attacker%} is 12:
+					set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 6 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1				
+				
+				
+				if {Bliss.Strength.%attacker%} is 13:
+					set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 7 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1				
+				
+				if {Bliss.Strength.%attacker%} is 14:
+					set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 8 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1
+				
+				if {Bliss.Strength.%attacker%} is 15:
+					set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 9 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1
+
+				if {Bliss.Strength.%attacker%} > 15:
+					set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 10 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1
+
+
+		if attacker's off hand item is a amethyst shard named "&4&lStrength &e&lgem":
+			add 1 to {Bliss.Strength.%attacker%} 
+			if {Bliss.Strength.%attacker%} is 1:
+				set attacker's off hand item to a amethyst shard with custom model data 95 named "&4&lStrength &e&lgem" with lore "&4Broken Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+			if {Bliss.Strength.%attacker%} is 2:
+				set attacker's off hand item to a amethyst shard with custom model data 89 named "&4&lStrength &e&lgem" with lore "&cRuined Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+			if {Bliss.Strength.%attacker%} is 3:
+				set attacker's off hand item to a amethyst shard with custom model data 69 named "&4&lStrength &e&lgem" with lore "&eDamaged Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 4:
+				set attacker's off hand item to a amethyst shard with custom model data 49 named "&4&lStrength &e&lgem" with lore "&aCracked Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 5:
+				set attacker's off hand item to a amethyst shard with custom model data 29 named "&4&lStrength &e&lgem" with lore "&aScratched Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 6:
+				set attacker's off hand item to a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 7:
+				set attacker's off hand item to a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 8:
+				set attacker's off hand item to a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 2 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 9:
+				set attacker's off hand item to a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 3 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 10:
+				set attacker's off hand item to a amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 4 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			
+			if {Bliss.Strength.%attacker%} is 11:
+				set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 5 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				set attacker's off hand item to {item}
+				enchant {item} with mending 1			
+			
+			if {Bliss.Strength.%attacker%} is 12:
+				set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 6 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				set attacker's off hand item to {item}
+				enchant {item} with mending 1			
+
+			if {Bliss.Strength.%attacker%} is 13:
+				set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 7 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				set attacker's off hand item to {item}
+				enchant {item} with mending 1			
+			if {Bliss.Strength.%attacker%} is 14:
+				set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 8 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				set attacker's off hand item to {item}
+				enchant {item} with mending 1	
+
+			if {Bliss.Strength.%attacker%} is 15:
+				set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 9 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				set attacker's off hand item to {item}
+				enchant {item} with mending 1
+
+			if {Bliss.Strength.%attacker%} > 15:
+				
+				set {item} to amethyst shard with custom model data 9 named "&4&lStrength &e&lgem" with lore "&bPristine + 10 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				set attacker's off hand item to {item}
+				enchant {item} with mending 1
+
+		if attacker's off hand item is not a prismarine shard named "&4&lStrength &e&lgem":
+			if {Tier2.Stregnth.%attacker%} is true:
+				add 1 to {Bliss.Strength.%attacker%} 
+				execute console command "clear %attacker% prismarine_shard"
+				
+				if {Bliss.Strength.%attacker%} is 1:
+					give attacker a prismarine shard with custom model data 96 named "&4&lStrength &e&lgem" with lore "&4Broken Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 2:
+					give attacker a prismarine shard with custom model data 90 named "&4&lStrength &e&lgem" with lore "&cRuined Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 3:
+					give attacker a prismarine shard with custom model data 70 named "&4&lStrength &e&lgem" with lore "&eDamaged Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 4:
+					give attacker a prismarine shard with custom model data 50 named "&4&lStrength &e&lgem" with lore "&aCracked Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 5:
+					give attacker a prismarine shard with custom model data 30 named "&4&lStrength &e&lgem" with lore "&aScratched Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 6:
+					give attacker a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 7:
+					give attacker a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 8:
+					give attacker a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 2 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 9:
+					give attacker a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 3 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 10:
+					give attacker a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 4 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+				
+				if {Bliss.Strength.%attacker%} is 11:
+					set {item} to prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 5 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+					give attacker {item}
+					enchant {item} with mending 1
+				
+				if {Bliss.Strength.%attacker%} is 12:
+					set {item} to prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 6 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1
+				
+				if {Bliss.Strength.%attacker%} is 13:
+					set {item} to prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 7 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1				
+				
+				if {Bliss.Strength.%attacker%} is 14:
+					set {item} to prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 8 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1
+				
+				if {Bliss.Strength.%attacker%} is 15:
+					set {item} to prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 9 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1
+				
+				if {Bliss.Strength.%attacker%} > 15:
+					set {item} to prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 10 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+					give attacker {item}
+					enchant {item} with mending 1
+		
+		if attacker's off hand item is a prismarine shard named "&4&lStrength &e&lgem":
+			add 1 to {Bliss.Strength.%attacker%} 
+			if {Bliss.Strength.%attacker%} is 1:
+				set attacker's off hand item to a prismarine shard with custom model data 96 named "&4&lStrength &e&lgem" with lore "&4Broken Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 2:
+				set attacker's off hand item to a prismarine shard with custom model data 90 named "&4&lStrength &e&lgem" with lore "&cRuined Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+			if {Bliss.Strength.%attacker%} is 3:
+				set attacker's off hand item to a prismarine shard with custom model data 70 named "&4&lStrength &e&lgem" with lore "&eDamaged Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 4:
+				set attacker's off hand item to a prismarine shard with custom model data 50 named "&4&lStrength &e&lgem" with lore "&aCracked Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 5:
+				set attacker's off hand item to a prismarine shard with custom model data 30 named "&4&lStrength &e&lgem" with lore "&aScratched Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 6:
+				set attacker's off hand item to a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 7:
+				set attacker's off hand item to a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 8:
+				set attacker's off hand item to a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 2 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 9:
+				set attacker's off hand item to a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 3 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} is 10:
+				set attacker's off hand item to a prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 4 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength" 
+			if {Bliss.Strength.%attacker%} > 11:
+				set {item} to prismarine shard with custom model data 10 named "&4&lStrength &e&lgem" with lore "&bPristine + 5 Gem", "&aAuto enchant's swords with sharpness 2/4", "." and "&dPasive Strength"
+				set attacker's off hand item to {item}
+				enchant {item} with mending 1

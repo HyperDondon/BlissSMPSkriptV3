@@ -1,0 +1,23 @@
+on respawn:
+	if {Bliss.Astra.%player%} is 1:
+		give player a amethyst shard with custom model data 95 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&8Broken Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+	if {Bliss.Astra.%player%} is 2:
+		give player a amethyst shard with custom model data 93 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&cRuined Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them"
+	if {Bliss.Astra.%player%} is 3:
+		give player a amethyst shard with custom model data 73 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&eDamaged Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+	if {Bliss.Astra.%player%} is 4:
+		give player a amethyst shard with custom model data 53 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&aCracked Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them"
+	if {Bliss.Astra.%player%} is 5:
+		give player a amethyst shard with custom model data 33 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&aScratched Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them"
+	if {Bliss.Astra.%player%} is 6:
+		give player a amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them"
+	if {Bliss.Astra.%player%} is 7:
+		give player a amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them"
+	if {Bliss.Astra.%player%} is 8:
+		give player a amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 2 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+	if {Bliss.Astra.%player%} is 9:
+		give player a amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 3 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+	if {Bliss.Astra.%player%} is 10:
+		give player a amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 4 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 
+	if {Bliss.Astra.%player%} > 11:
+		give player a amethyst shard with custom model data 13 named "&5ᴀsᴛʀᴀ &8ɢᴇᴍ" with lore "&bPristine + 5 Gem", "&5🔮 Power 3 Astra Projection Become Spectator/in survival", "&7Shoot spirit daggers" and "&7Take Souls of the Mobs you kill and can respawn them" 

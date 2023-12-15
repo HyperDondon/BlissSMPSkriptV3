@@ -1,0 +1,82 @@
+#Haha get scammed
+command /testgoldfr:
+    permission: op
+    trigger:
+        puffrailer(player)
+        wealthrailer(player)
+        astrarailer(player)
+        liferailer(player)
+        strengthrailer(player)
+        firerailer(player)
+        speedrailer(player)
+        loop 2 times:
+            play sound "minecraft:entity.warden.sonic_boom" with volume 1 at player 
+
+
+
+
+
+
+
+
+
+function puffrailer(p: player):
+    set {_puffn} to 1
+    loop 10 times:
+        set {_puffloc1} to location {_puffn} metres infront and 4 metres above {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(239, 239, 239), 500) at {_puffloc1} with extra 0 with force
+        add 1 to {_puffn}
+
+
+function wealthrailer(p: player):
+    set {_wealthn} to 1
+    loop 10 times:
+        set {_wealthloc1} to location {_wealthn} metres infront and 3 metres above and 2 right {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(14, 201, 18), 500) at {_wealthloc1} with extra 0 with force
+        add 1 to {_wealthn}
+
+function astrarailer(p: player):
+    set {_astran} to 1
+    loop 10 times:
+        set {_astraloc1} to location {_astran} metres infront and 3 metres above and 2 left {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(160, 31, 255), 500) at {_astraloc1} with extra 0 with force
+        add 1 to {_astran}
+
+function liferailer(p: player):
+    set {_lifen} to 1
+    loop 10 times:
+        set {_lifeloc1} to location {_lifen} metres infront and 1 metres above and 2 right {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(254, 4, 180), 500) at {_lifeloc1} with extra 0 with force
+        add 1 to {_lifen}
+
+
+function strengthrailer(p: player):
+    set {_strengthn} to 1
+    loop 10 times:
+        set {_strengthloc1} to location {_strengthn} metres infront and 1 metres above and 2 left {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(241, 3, 3), 500) at {_strengthloc1} with extra 0 with force
+        add 1 to {_strengthn}
+
+
+function firerailer(p: player):
+    set {_firen} to 1
+    loop 10 times:
+        set {_fireloc1} to location {_firen} metres infront and 1 left {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(254, 129, 32), 500) at {_fireloc1} with extra 0 with force
+        add 1 to {_firen}
+
+
+function speedrailer(p: player):
+    set {_speedn} to 1
+    loop 10 times:
+        set {_speedloc1} to location {_speedn} metres infront and 1 right {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(254, 253, 23), 500) at {_speedloc1} with extra 0 with force
+        add 1 to {_speedn}
+

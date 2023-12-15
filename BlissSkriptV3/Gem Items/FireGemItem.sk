@@ -4,70 +4,70 @@ on load:
         #Prstine + 5
 		set {Gems.Fire.Pristine+5.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+ <##A0EEEE>5" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 1
 		enchant {Gems.Fire.Pristine+5.Tier.1} with mending 1
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+5.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+5.Tier.1}
         #Prstine + 4
 		set {Gems.Fire.Pristine+4.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+ <##A0EEEE>4" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 1
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+4.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+4.Tier.1}
 		#Prstine + 3
 		set {Gems.Fire.Pristine+3.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+ <##A0EEEE>3" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 1
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+3.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+3.Tier.1}
 		#Prstine + 2
 		set {Gems.Fire.Pristine+2.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+ <##A0EEEE>2" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 1
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+2.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+2.Tier.1}
         #Prstine + 1
 		set {Gems.Fire.Pristine+1.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 1
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+1.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+1.Tier.1}
         #Prstine
 		set {Gems.Fire.Pristine.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 1
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine.Tier.1}
         #Scratched
 		set {Gems.Fire.Scratched.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##9DF200>Scratched" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 21
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Scratched.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Scratched.Tier.1}
         #Cracked
 		set {Gems.Fire.Cracked.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##3F00D1>Cracked" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 41
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Cracked.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Cracked.Tier.1}
 		#Damaged
 		set {Gems.Fire.Damaged.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##EAC700>Damaged" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 61
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Damaged.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Damaged.Tier.1}
 		#Ruined
 		set {Gems.Fire.Ruined.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##F10303>Ruined" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 81
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Ruined.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Ruined.Tier.1}
 		#Broken
 		set {Gems.Fire.Broken.Tier.1} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "&7Broken" and " <##FE8120>🔺 &7Autosmelting, Fire Res, FireThorns" and " &7Auto Enchant Flame & Fire Aspect" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##FE8120>🔮 &f&lrequired" with hidden enchants flag with custom model data 95
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Broken.Tier.1}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Broken.Tier.1}
 
 	#Tier 2
 		#Pristine + 5
 		set {Gems.Fire.Pristine+5.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+ <##A0EEEE>5" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 2
 		enchant {Gems.Fire.Pristine+5.Tier.2} with mending 1
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+5.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+5.Tier.2}
 		#Pristine + 4
 		set {Gems.Fire.Pristine+4.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+ <##A0EEEE>4" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 2
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+4.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+4.Tier.2}
 		#Pristine + 3
 		set {Gems.Fire.Pristine+3.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+ <##A0EEEE>3" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 2
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+3.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+3.Tier.2}
 		#Pristine + 2
 		set {Gems.Fire.Pristine+2.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+ <##A0EEEE>2" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 2
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+2.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+2.Tier.2}
 		#Pristine + 1
 		set {Gems.Fire.Pristine+1.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine &f+" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 2
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine+1.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine+1.Tier.2}
         #Prstine
 		set {Gems.Fire.Pristine.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 2
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Pristine.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Pristine.Tier.2}
         #Scratched
 		set {Gems.Fire.Scratched.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##9DF200>Scratched" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 22
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Scratched.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Scratched.Tier.2}
         #Cracked
 		set {Gems.Fire.Cracked.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##3F00D1>Cracked" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 42
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Cracked.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Cracked.Tier.2}
 		#Damaged
 		set {Gems.Fire.Damaged.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##EAC700>Damaged" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 62
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Damaged.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Damaged.Tier.2}
 		#Ruined
 		set {Gems.Fire.Ruined.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##F10303>Ruined" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 82
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Ruined.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Ruined.Tier.2}
 		#Broken
 		set {Gems.Fire.Broken.Tier.2} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴍᴀɴɪᴘᴜʟᴀᴛᴇ ғɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "&7Broken" and " <##FE8120>🔮 &7Auto Smelting Longer FireThorns" and " &7Auto Enchant Flame & Fire Aspect 2" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🧨 <##FF5F33>ғɪʀᴇʙᴀʟʟ" and " &7Spawns a fireball that charges up passively" and " &7When on fire blocks charges 2x as fast" and " &7Deals more damage the more you charge it" and "" and "&7-&f🥾 <##248FD1>ᴄᴏᴢʏ Cᴀᴍᴘғɪʀᴇ" and " &7Spawns a campfire that heals 2 hearts and hunger" and " &7a second in a 5 block radius" with hidden enchants flag with custom model data 96
-		add nbt compound from "{Tags:""GemTagNBT""}" to nbt compound of {Gems.Fire.Broken.Tier.2}
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Fire.Broken.Tier.2}

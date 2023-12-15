@@ -168,6 +168,459 @@
 #		if event-item's lore contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
 #			cancel event
 
+function capitalizeFirst(text: texts) :: texts:
+	loop {_text::*}:
+		set {_first-char} to first character of loop-value
+		set {_remaining} to last (length of loop-value - 1) characters of loop-value
+		set {_output::%loop-index%} to "%{_first-char} in upper case%%{_remaining}%"
+		return {_output::*}
+
+every 1 tick:
+	loop all players:
+		set {_uuid} to uuid of loop-player
+		set {_p} to loop-player
+		if {_p}'s held item is prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+				send "<##F10303>🔮 <##A4FEF1>Auto Enchanting" to {_p}
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 14
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+		
+		if {_p}'s held item is amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+				send "<##F10303>🔺 <##A4FEF1>Auto Enchanting" to {_p}
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 14
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+
+
+
+		if {_p}'s held item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+			if {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+				send "<##EFEFEF>🔮 <##A4FEF1>Auto Enchanting" to {_p}
+				set {Puff.Power2.Enchanting.Minute.%{_uuid}%} to 14
+				set {Puff.Power2.Enchanting.Second.%{_uuid}%} to 59
+				set {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+		
+		if {_p}'s held item is amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+			if {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+				send "<##EFEFEF>🔺 <##A4FEF1>Auto Enchanting" to {_p}
+				set {Puff.Power2.Enchanting.Minute.%{_uuid}%} to 14
+				set {Puff.Power2.Enchanting.Second.%{_uuid}%} to 59
+				set {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+
+
+	if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+		set {Strength.Power2.Enchanting.Display.%{_uuid}%} to "&aReady!"
+		if {_p}'s held item is prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+				send "<##F10303>🔮 <##A4FEF1>Auto Enchanting" to {_p}
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 14
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+		
+		if {_p}'s held item is amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+				send "<##F10303>🔺 <##A4FEF1>Auto Enchanting" to {_p}
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 14
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+every 1 tick:
+	loop all players:
+		set {_uuid} to uuid of loop-player
+		if {Disabled.%{_uuid}%} > 1:
+
+		else:
+			set {_uuid} to uuid of loop-player
+						
+				
+			if loop-player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+				
+				send action bar "&f🤺 %{Strength.Power1.Frailer.Display.%{_uuid}%}%  <##F10303>🔮 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%  &f⚔ %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
+					
+			else:
+
+				if loop-player's held item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+						
+					send action bar "<##F10303>🔺 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+				
+				else:
+				
+
+
+
+
+
+
+
+
+
+
+
+
+					if loop-player's held item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+						send action bar "%{Speed.Power1.SlothSedative.Display.%{_uuid}%}%  <##FEFD17>🔮%{Speed.Power2.Enchanting.Display.%{_uuid}%}%  &f%{Speed.Power3.SpeedStorm.Display.%{_uuid}%}%" to loop-player
+			
+					else:
+							
+
+						if loop-player's held item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+							send action bar "<##FEFD17>🔺%{Speed.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+				
+				
+						else:
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+							if loop-player's held item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+								send action bar "%{Fire.Power1.Fireball.Display.%{_uuid}%}%  <##FE8120>🔮 %{Fire.Power2.Enchanting.Display.%{_uuid}%}%  %{Fire.Power3.Campfire.Display.%{_uuid}%}%" to loop-player
+					
+					
+							else:
+
+								if loop-player's held item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+									send action bar "<##FE8120>🔺 %{Fire.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+						
+									
+								else:
+
+
+
+
+
+
+
+
+
+
+
+									if loop-player's held item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+										send action bar "&f%{Life.Power1.HeartDrainer.Display.%{_uuid}%}%  <##FE04B4>🔮%{Life.Power2.Healer.Display.%{_uuid}%}%  &f%{Life.Power3.CircleOfLfe.Display.%{_uuid}%}%" to loop-player
+							
+							
+							
+									else:
+										if loop-player's held item is a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+											send action bar "<##FE04B4>🔺%{Life.Power2.Healer.Display.%{_uuid}%}%" to loop-player
+								
+										
+
+
+
+
+
+
+
+
+
+
+
+
+
+										else:
+
+											if loop-player's held item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+												send action bar "%{Puff.Power3.Breezy.Display.%{_uuid}%}%  <##efefef>🔮%{Puff.Power2.Enchanting.Display.%{_uuid}%}%  &f%{Puff.Power1.Dash.Display.%{_uuid}%}%" to loop-player
+									
+									
+									
+											else:
+
+												if loop-player's held item is a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+													send action bar "<##efefef>🔺%{Puff.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+										
+												else:
+
+
+
+
+
+
+
+
+
+
+
+													if loop-player's held item is prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+												
+														send action bar "%{Wealth.Power1.Unfortunate.Display.%{_uuid}%}%  <##0EC912>🔮%{Wealth.Power2.Enchanting.Display.%{_uuid}%}%  %{Wealth.Power3.RichRush.Display.%{_uuid}%}%" to loop-player
+											
+						
+														
+											
+														
+													else:
+														if loop-player's held item is a amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+
+															send action bar "<##0EC912>🔺%{Wealth.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+							
+
+
+
+
+
+
+
+
+
+
+
+														else:
+
+															if loop-player's held item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+															
+																if {Astra.Power3.Projection.Activated.%{_uuid}%} is not true:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																	send action bar "%{Astra.Power1.Daggers.Display.%{_uuid}%}%  <##A01FFF>🔮 %{entity3.%loop-player%::*}%  &f%{Astra.Power3.Projection.Display.%{_uuid}%}%" to loop-player
+													
+													
+															else:
+
+																if loop-player's held item is a amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+																	
+																	send action bar "<##A01FFF>🔺%{Astra.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player		
+																	
+																else:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																	if loop-player's off hand item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			
+																		send action bar "&f🤺 %{Strength.Power1.Frailer.Display.%{_uuid}%}%  <##F10303>🔮 %{Strength.Power2.Enchanting.Display.%{_uuid}%}% &f⚔ %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
+																			
+																	else:
+															
+																		if loop-player's off hand item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+																				
+																			send action bar "<##F10303>🔺 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+																		
+																		else:
+																		
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+																			if loop-player's off hand item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+																				send action bar "%{Speed.Power1.SlothSedative.Display.%{_uuid}%}%  <##FEFD17>🔮%{Speed.Power2.Enchanting.Display.%{_uuid}%}%  &f%{Speed.Power3.SpeedStorm.Display.%{_uuid}%}%" to loop-player
+																	
+																			else:
+																					
+															
+																				if loop-player's off hand item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+																					send action bar "<##FEFD17>🔺%{Speed.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+																		
+																		
+																				else:
+																			
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+																					if loop-player's off hand item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+																						send action bar "%{Fire.Power1.Fireball.Display.%{_uuid}%}%  <##FE8120>🔮 %{Fire.Power2.Enchanting.Display.%{_uuid}%}%  %{Fire.Power3.Campfire.Display.%{_uuid}%}%" to loop-player
+																			
+																			
+																					else:
+															
+																						if loop-player's off hand item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+																							send action bar "<##FE8120>🔺 %{Fire.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+																				
+																							
+																						else:
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+																							if loop-player's off hand item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+																								send action bar "&f%{Life.Power1.HeartDrainer.Display.%{_uuid}%}%  <##FE04B4>🔮%{Life.Power2.Healer.Display.%{_uuid}%}%  &f%{Life.Power3.CircleOfLfe.Display.%{_uuid}%}%" to loop-player
+																					
+																					
+																					
+																							else:
+																								if loop-player's off hand item is a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+																									send action bar "<##FE04B4>🔺%{Life.Power2.Healer.Display.%{_uuid}%}%" to loop-player
+																						
+																								
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+																								else:
+															
+																									if loop-player's off hand item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+																										send action bar "%{Puff.Power3.Breezy.Display.%{_uuid}%}%  <##efefef>🔮%{Puff.Power2.Enchanting.Display.%{_uuid}%}%  &f%{Puff.Power1.Dash.Display.%{_uuid}%}%" to loop-player
+																							
+																							
+																							
+																									else:
+															
+																										if loop-player's off hand item is a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+																											send action bar "<##efefef>🔺%{Puff.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+																								
+																										else:
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+																											if loop-player's off hand item is prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+																										
+																												send action bar "%{Wealth.Power1.Unfortunate.Display.%{_uuid}%}%  <##0EC912>🔮%{Wealth.Power2.Enchanting.Display.%{_uuid}%}%  %{Wealth.Power3.RichRush.Display.%{_uuid}%}%" to loop-player
+																									
+																				
+																												
+																									
+																												
+																											else:
+																												if loop-player's off hand item is a amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+															
+																													send action bar "<##0EC912>🔺%{Wealth.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+																					
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+															
+																												else:
+														
+																													if loop-player's off hand item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+																														if {Astra.Power3.Projection.Activated.%{_uuid}%} is not true:
+	
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
+																															send action bar "%{Astra.Power1.Daggers.Display.%{_uuid}%}%  <##A01FFF>🔮 %{entity3.%loop-player%::*}%  &f%{Astra.Power3.Projection.Display.%{_uuid}%}%" to loop-player
+																																																				
+																											
+																													else:
+														
+																														if loop-player's off hand item is a amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+																															send action bar "<##A01FFF>🔺%{Astra.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player	
+
+
+
+on join:
+	set {_uuid} to uuid of player
+	if {Disabled.%{_uuid}%} is not set:
+		set {Disabled.%{_uuid}%} to 0
+
+
 
 on inventory click:
 	if name of event-inventory is "CHEST":
@@ -226,6 +679,11 @@ on inventory click:
 	if name of event-inventory is "Dispenser":
 		if lore of item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
 			cancel event
+
+	if name of event-inventory is "Repair & Name":
+		if lore of item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
+			cancel event
+
 			
 
 
@@ -233,16 +691,27 @@ on inventory click:
 on inventory click:
 	if event-inventory is crafting table inventory:
 		if index of event-slot is 1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9:
-			if lore of event-item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs" or "&f&lᴜsᴇʟᴇss":
+			if lore of event-item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
 				cancel event
-			if lore of event-item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs" or "&f&lᴜsᴇʟᴇss":
+			if lore of event-item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
 				cancel event
 
 
 on inventory click:
 	if click type is number key:
-		if lore of slot hotbar button of player's inventory contains "<##FFE4AB>ᴘᴀssɪᴠᴇs" or "&f&lᴜsᴇʟᴇss":
+		if lore of slot hotbar button of player's inventory contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
 			cancel event
+
+on inventory click:
+	if click type is swap offhand:
+		if lore of player's off hand item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
+			cancel event
+
+on inventory click:
+	if click type is shift+lmb:
+		if lore of slot hotbar button of player's inventory contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
+			cancel event
+
 
 #item frame fix
 on right click on itemframe:
@@ -267,6 +736,8 @@ on join:
 		set {Bliss.GemHealth.%{_uuid}%} to 6
 	if {Bliss.Tier.%{_uuid}%} is not set:
 		set {Bliss.Tier.%{_uuid}%} to 1
+	if {reviveselected.%uuid of player%} is not set:
+		set {reviveselected.%uuid of player%} to true
 
 
 
@@ -280,13 +751,28 @@ on join:
 #Death MSG's
 
 
-command invsee <offline player>:
-  permission: op
-  trigger:
-    if arg is online:
-      open inventory of arg to player
 
-		
+
+
+on drop amethyst shard:
+	if lore of event-item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
+		cancel event
+
+on drop prismarine shard:
+	if lore of event-item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
+		cancel event
+
+
+command /shard:
+	permission: op
+	trigger:
+		give player nautilus shell with custom model data 240 named "&fShards" 
+
+
+
+
+
+
 
 
 #on tab complete for "/bliss gem":
@@ -329,6 +815,9 @@ command invsee <offline player>:
 
 
 
+
+
+
 on death of warden:
 	if victim's name is "&cNetherite Warden":
 		drop netherite leggings
@@ -363,22 +852,6 @@ on damage:
 
 
 
-command /upgrader:
-	permission: op
-	trigger:
-		set {_i} to a player head with lore "&7ʀɪɢʜᴛ-ᴄʟɪᴄᴋ ᴛᴏ ᴜᴘɢʀᴀᴅᴇ ʏᴏᴜʀ ɢᴇᴍ" and "" and "&cᴡᴀʀɴɪɴɢ: ᴜᴘɢʀᴀᴅᴇʀ ᴡɪʟʟ ᴅʀᴏᴘ ᴏɴ ᴅᴇᴀᴛʜ"
-		set {_n} to nbt compound of {_i}
-		add nbt compound of "{display:{Name:'{""text"":""ᴜᴘɢʀᴀᴅᴇʀ"",""bold"":true,""color"":""##ACFF82"",""italic"":false}'},SkullOwner:{Id:[I;660124231,2128364985,-1717330005,146378663],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDk5MmU0YThmNDNjNzdhYzJlMmQ3OTJkOTYwNGY2MWYzNDM4N2M4NzdhYmEzNzEyZTQwNDdiNzQwYzU3OCJ9fX0=""}]}}}" to {_n}
-		give 64 of {Upgrader} to player
-
-
-command /givetrader <player>:
-	permission: op
-	trigger:
-		set {_i} to a player head with lore "&7ʀɪɢʜᴛ-ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ɢᴇᴍ ᴛʏᴘᴇ" and "&7ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴀɴᴅᴏᴍ ᴛɪᴇʀ ᴏɴᴇ ɢᴇᴍ" and "" and "&cᴡᴀʀɴɪɴɢ: ᴜsɪɴɢ ᴛʜɪs ᴡɪʟʟ ʟᴏsᴇ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ɢᴇᴍ"
-		set {_n} to nbt compound of {_i}
-		add nbt compound of "{display:{Name:'{""text"":""ᴛʀᴀᴅᴇʀ"",""bold"":true,""color"":""##E9C2FF"",""italic"":false}'},SkullOwner:{Id:[I;-1135994195,374558533,-1713180762,2053437446],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmY2MjRhNDRlNzdiOTVkYmUxY2M3MzU1MzY5NTNlODQwYmE2YzE5YjAxNTdjNTQ5ZDliODI1MzQ2NDhjOGNlNCJ9fX0=""}]}}}" to {_n}
-		give 64 of {Trader} with custom model data 2 to player 
 
 command /cooldown <player>:
 	permission: op
@@ -402,8 +875,9 @@ command /cooldown <player>:
 		#Puff
 
 		set {Puff.Power3.Breezy.Minute.%{_uuid}%} to -1
-		set {Puff.Power2.DoubleJump.Minute.%{_uuid}%} to -1
+		set {Puff.Power2.Enchanting.Minute.%{_uuid}%} to -1
 		set {Puff.Power1.Dash.Minute.%{_uuid}%} to -1
+		set {Puff.Power4.Doublejump.Second.%{_uuid}%} to 0
 
 
 		#Speed
@@ -423,9 +897,9 @@ command /cooldown <player>:
 		set {Life.Power3.HeartDrainer.Minute.%{_uuid}%} to -1
 		
 		# Wealth
-		set {Wealth.Power3.Unfortunate.Minute.%{_uuid}%} to -1
+		set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to -1
 		set {Wealth.Power2.Enchanting.Minute.%{_uuid}%} to -1
-		set {Wealth.Power1.RiceRush.Minute.%{_uuid}%} to -1
+		set {Wealth.Power3.RichRush.Minute.%{_uuid}%} to -1
 
 		# Life
 		set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to -1
@@ -445,38 +919,15 @@ command /cooldown <player>:
 
 
 
-
-
-every 1 second:
-	loop all players:
-		if {Trader...%loop-player%} is not 0:
-			remove 20 from {Trader...%loop-player%}
 		
 
 
 
 
-on join:
-	if {Tag..%player%} is not set:
-		set {Tag..%player%} to 0
 
 
 
 
-command /fixsomebugs:
-	trigger:
-		set {Tag..%player%} to 0
-
-
-command /bottleenergy:
-	trigger:
-		set {_uuid} to uuid of player
-		if {Bliss.GemHealth.%{_uuid}%} < 12:
-			if {Bliss.GemHealth.%{_uuid}%} is not 1:
-				remove 1 from {Bliss.GemHealth.%{_uuid}%}
-				give player nautilus shell with custom model data 300 named "<##A4FEF1>&lᴇɴᴇʀɢʏ <##C8BC9D>ɪɴ ᴀ ʙᴏᴛᴛʟᴇ"
-				send "<##FFE4AB>🔮 <##AB8233>Bottled &f1 <##A4FEF1>ᴇɴᴇʀɢʏ"
-				execute console command "setcorrectgems %player%"
 				
 #on join:
 #	set {_uuid} to uuid of player
@@ -490,117 +941,127 @@ on join:
 		set {Bliss.GemHealth.%{_uuid}%} to 6
 		set {Bliss.Tier.%{_uuid}%} to 1
 		execute console command "firstgem %player%"
-	if {Tag..%player%} is not set:
-		set {Tag..%player%} to 0
+
+	if {Disabled.%{_uuid}%} is not set:
+		set {Disabled.%{_uuid}%} to 0
+
 	if {ShotFireball.%{_uuid}%} is not set:
 		set {ShotFireball.%{_uuid}%} to false
+	if {Particles.Selected.%{_uuid}%} is not set:
+		add player to {Particles.Normal::*}
 
 
 #Anti drop
 
 
-	#Strength
-		#Tier 2
-
-on death of player:
-    set {_death.cancel::*} to prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-		#Tier 1
-on death of player:
-    set {_death.cancel::*} to amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-	#Speed
-		#Tier 2
-
-on death of player:
-    set {_death.cancel::*} to prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-		#Tier 1
-on death of player:
-    set {_death.cancel::*} to amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-	#Fire
-		#Tier 2
-
-on death of player:
-    set {_death.cancel::*} to prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-		#Tier 1
-on death of player:
-    set {_death.cancel::*} to amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-	#Life
-		#Tier 2
-
-on death of player:
-    set {_death.cancel::*} to prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-		#Tier 1
-on death of player:
-    set {_death.cancel::*} to amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-	#Wealth
-		#Tier 2
-
-on death of player:
-    set {_death.cancel::*} to prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-		#Tier 1
-on death of player:
-    set {_death.cancel::*} to amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-	#Astra
-		#Tier 2
-
-on death of player:
-    set {_death.cancel::*} to prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
-
-		#Tier 1
-on death of player:
-    set {_death.cancel::*} to amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ"
-    remove {_death.cancel::*} from the drops
-
 
 
 on death of player:
-	set {_death.cancel::*} to amethyst Shard
-	if lore of {_death.cancel::*} contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
-		remove {_death.cancel::*} from the drops
-
-
-on death of player:
-	set {_death.cancel::*} to prismarine Shard
-	if lore of {_death.cancel::*} contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
-		remove {_death.cancel::*} from the drops
+	loop the drops:
+		if lore of loop-value contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
+			remove loop-value from the drops
 
 
 
-on death of player:
-	loop all dropped items:
-		if lore of loop-item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
-			remove loop-item from the drops
+
+on join:
+	if {revived.%uuid of player%} is true:
+		if player does not have a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+			if player does not have a amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+				if player does not have a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+					if player does not have a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+						if player does not have a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+							if player does not have a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+								if player does not have a prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+									if player does not have a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+										if player does not have a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+											if player does not have a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+												if player does not have a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+													if player does not have a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+														if player does not have a prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+															if player does not have a amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+																execute console command "givegems %player%"
+
+		execute console command "setcorrectgems %player%"
+		set {revived.%uuid of player%} to false
+
+
+
+command /trust [<text>] [<offlineplayer>]:
+	trigger:
+		set {_uuid} to uuid of player
+		set {_arguuid} to uuid of arg-2
+		if arg-1 is "list":
+			set {_s} to 0
+			set {_Bliss.Trusted.GUI} to a new chest inventory with 3 row with name "<##FFE4AB>ᴛʀᴜsᴛᴇᴅ ᴘʟᴀʏᴇʀs"
+			loop {Bliss.Trusted.%{_uuid}%::*}:
+
+				set {_p} to loop-value parsed as offline player
+				set slot {_s} of {_Bliss.Trusted.GUI} to {_p}'s skull named "&e%{_p}%" with lore "&cClick to remove"
+				add 1 to {_s}
+
+			open {_Bliss.Trusted.GUI} to player
+
+		if arg-1 is "add":
+			if arg-2 is set:
+				if {Bliss.Trusted.%{_uuid}%::*} contains {_arguuid}:
+					send "<##FFE4AB>🔮 <##A4FEF1>%arg-2% &cis already trusted!" to player
+
+
+
+
+				else:
+					
+					set {_uuid} to uuid of player
+					add {_arguuid} to {Bliss.Trusted.%{_uuid}%::*}
+
+					send "<##FFE4AB>🔮 &aTrusted <##A4FEF1>%arg-2%" to player
+					
+
+		if arg-1 is "remove":
+			if arg-2 is set:
+				if {Bliss.Trusted.%{_uuid}%::*} contains {_arguuid}:
+					send "<##FFE4AB>🔮 &cUntrusted <##A4FEF1>%arg-2%" to player
+					remove {_arguuid} from {Bliss.Trusted.%{_uuid}%::*}
+
+on inventory click:
+	if name of event-inventory is "<##FFE4AB>ᴛʀᴜsᴛᴇᴅ ᴘʟᴀʏᴇʀs":
+		cancel event
+		if event-item is a player head:
+			close player's inventory
+
+			set {_T} to "%event-item's name%"
+			replace all "&e" with "" in {_T}
+			replace all "§e" with "" in {_T}
+			set {_Tplayer} to "%{_T}%" parsed as offline player
+			broadcast {_Tplayer}
+
+			set {_uuid} to uuid of player
+			send "<##FFE4AB>🔮 &cUntrusted <##A4FEF1>%{_T}%" to player
+			remove {_Tplayer}'s uuid from {Bliss.Trusted.%{_uuid}%::*}
+		
+
+on inventory click:
+	if name of event-inventory is "<##FFE4AB>ᴛʀᴜsᴛᴇᴅ ᴘʟᴀʏᴇʀs":
+		cancel event
+
+
+#on inventory click:
+#    set {_clickedslot} to clicked slot
+
+#    if lore of {_clickedslot} contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
+#        if {_clickedslot} is not player's inventory:
+#            cancel event
+
+
+
+
+
+
+on tab complete for "/trust":
+    set tab completions for position 1 to "add" and "remove" and "list"
+					
+
 
 
 

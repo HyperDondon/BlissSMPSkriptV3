@@ -1,0 +1,86 @@
+command /menu [<player>]:
+    permission: op
+    trigger:
+        if arg-1 is set:
+            set {Menu.GUI.Bliss} to a new chest inventory with 6 row with name "Remote Control"
+            open {Menu.GUI.Bliss} for arg-1
+            set slot 19 of arg-1's current inventory to {Gems.Strength.Pristine.Tier.2}
+            set slot 20 of arg-1's current inventory to {Gems.Speed.Pristine.Tier.2}
+            set slot 21 of arg-1's current inventory to {Gems.Fire.Pristine.Tier.2}
+            set slot 22 of arg-1's current inventory to {Gems.Life.Pristine.Tier.2}
+            set slot 23 of arg-1's current inventory to {Gems.Puff.Pristine.Tier.2}
+            set slot 24 of arg-1's current inventory to {Gems.Wealth.Pristine.Tier.2}
+            set slot 25 of arg-1's current inventory to {Gems.Astra.Pristine.Tier.2}
+            #play sound "minecraft:ui.button.click" to player
+
+        else:
+            set {Menu.GUI.Bliss} to a new chest inventory with 6 row with name "Remote Control"
+            open {Menu.GUI.Bliss} for player
+            set slot 19 of player's current inventory to {Gems.Strength.Pristine.Tier.2}
+            set slot 20 of player's current inventory to {Gems.Speed.Pristine.Tier.2}
+            set slot 21 of player's current inventory to {Gems.Fire.Pristine.Tier.2}
+            set slot 22 of player's current inventory to {Gems.Life.Pristine.Tier.2}
+            set slot 23 of player's current inventory to {Gems.Puff.Pristine.Tier.2}
+            set slot 24 of player's current inventory to {Gems.Wealth.Pristine.Tier.2}
+            set slot 25 of player's current inventory to {Gems.Astra.Pristine.Tier.2}
+            #play sound "minecraft:ui.button.click" to player
+
+
+on inventory click:
+    if event-item is {Gems.Strength.Pristine.Tier.2}:
+        if name of event-inventory is "Remote Control":
+            cancel event
+            close player's inventory
+            execute console command "bliss setgem strength %player%"
+
+
+    if event-item is {Gems.Speed.Pristine.Tier.2}:
+        if name of event-inventory is "Remote Control":
+            cancel event
+            close player's inventory
+            execute console command "bliss setgem speed %player%"
+
+
+    if event-item is {Gems.Fire.Pristine.Tier.2}:
+        if name of event-inventory is "Remote Control":
+            cancel event
+            close player's inventory
+            execute console command "bliss setgem fire %player%"
+
+
+    if event-item is {Gems.Life.Pristine.Tier.2}:
+        if name of event-inventory is "Remote Control":
+            cancel event
+            close player's inventory
+            execute console command "bliss setgem life %player%"
+
+
+    if event-item is {Gems.Puff.Pristine.Tier.2}:
+        if name of event-inventory is "Remote Control":
+            cancel event
+            close player's inventory
+            execute console command "bliss setgem puff %player%"
+
+
+    if event-item is {Gems.Wealth.Pristine.Tier.2}:
+        if name of event-inventory is "Remote Control":
+            cancel event
+            close player's inventory
+            execute console command "bliss setgem wealth %player%"
+
+        
+
+    if event-item is {Gems.Astra.Pristine.Tier.2}:
+        if name of event-inventory is "Remote Control":
+            cancel event
+            close player's inventory
+            execute console command "bliss setgem astra %player%"
+
+
+
+
+
+
+on right click:
+    if player's held item is a globe banner pattern named "&7[&e&l⭐&7] <##75FDFF>Remote <##FFCF75>Control":
+        execute console command "menu %player%"

@@ -1,0 +1,533 @@
+command /firstgem <player>:
+	permission: op
+	trigger:
+		set {_uuid} to uuid of arg-1
+
+		
+		
+		#Strength Gem
+		remove 999 of prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ" from arg-1
+		
+		remove 999 of amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ" from arg-1
+		
+		
+		#Speed Gem
+		remove 999 of prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ" from arg-1
+		
+		remove 999 of amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ" from arg-1
+		
+		
+		#Puff Gem
+		remove 999 of prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ" from arg-1
+		
+		remove 999 of amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ" from arg-1
+		
+		
+		#Fire Gem
+		remove 999 of prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" from arg-1
+		
+		remove 999 of amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" from arg-1
+		
+		
+		#Astra Gem
+		remove 999 of prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ" from arg-1
+		
+		remove 999 of amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ" from arg-1
+		
+		
+		#Life Gem
+		
+		remove 999 of prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ" from arg-1
+		
+		remove 999 of amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ" from arg-1
+		
+
+		#Wealth Gem
+		
+		remove 999 of prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ" from arg-1
+		
+		remove 999 of amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ" from arg-1
+
+		
+
+		set {Gemrandom.%{_uuid}%} to a random integer between 1 and 6
+
+		if {Gemrandom.%{_uuid}%} is 1:
+			set {Gem.%{_uuid}%} to "Strength"
+			if {Bliss.GemHealth.%{_uuid}%} is 11:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Pristine+5.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Pristine+5.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 10:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Pristine+4.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Pristine+4.Tier.2}		
+
+			if {Bliss.GemHealth.%{_uuid}%} is 9:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Pristine+3.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Pristine+3.Tier.2}	
+						
+			if {Bliss.GemHealth.%{_uuid}%} is 8:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Pristine+2.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Pristine+2.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 7:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Pristine+1.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Pristine+1.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 6:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Pristine.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Pristine.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 5:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Scratched.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Scratched.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 4:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Cracked.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Cracked.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 3:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Damaged.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Damaged.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 2:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Ruined.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Ruined.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 1:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Strength.Broken.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Strength.Broken.Tier.2}
+
+
+		if {Gemrandom.%{_uuid}%} is 2:
+			set {Gem.%{_uuid}%} to "Speed"
+			if {Bliss.GemHealth.%{_uuid}%} is 11:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Pristine+5.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Pristine+5.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 10:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Pristine+4.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Pristine+4.Tier.2}		
+
+			if {Bliss.GemHealth.%{_uuid}%} is 9:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Pristine+3.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Pristine+3.Tier.2}	
+						
+			if {Bliss.GemHealth.%{_uuid}%} is 8:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Pristine+2.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Pristine+2.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 7:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Pristine+1.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Pristine+1.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 6:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Pristine.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Pristine.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 5:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Scratched.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Scratched.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 4:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Cracked.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Cracked.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 3:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Damaged.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Damaged.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 2:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Ruined.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Ruined.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 1:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Speed.Broken.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Speed.Broken.Tier.2}	
+					
+		if {Gemrandom.%{_uuid}%} is 3:
+			set {Gem.%{_uuid}%} to "Fire"
+			if {Bliss.GemHealth.%{_uuid}%} is 11:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Pristine+5.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Pristine+5.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 10:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Pristine+4.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Pristine+4.Tier.2}		
+
+			if {Bliss.GemHealth.%{_uuid}%} is 9:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Pristine+3.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Pristine+3.Tier.2}	
+						
+			if {Bliss.GemHealth.%{_uuid}%} is 8:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Pristine+2.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Pristine+2.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 7:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Pristine+1.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Pristine+1.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 6:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Pristine.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Pristine.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 5:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Scratched.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Scratched.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 4:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Cracked.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Cracked.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 3:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Damaged.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Damaged.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 2:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Ruined.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Ruined.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 1:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Fire.Broken.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Fire.Broken.Tier.2}	
+					
+		if {Gemrandom.%{_uuid}%} is 4:
+			set {Gem.%{_uuid}%} to "Life"
+			if {Bliss.GemHealth.%{_uuid}%} is 11:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Pristine+5.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Pristine+5.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 10:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Pristine+4.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Pristine+4.Tier.2}		
+
+			if {Bliss.GemHealth.%{_uuid}%} is 9:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Pristine+3.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Pristine+3.Tier.2}	
+						
+			if {Bliss.GemHealth.%{_uuid}%} is 8:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Pristine+2.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Pristine+2.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 7:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Pristine+1.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Pristine+1.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 6:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Pristine.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Pristine.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 5:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Scratched.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Scratched.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 4:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Cracked.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Cracked.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 3:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Damaged.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Damaged.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 2:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Ruined.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Ruined.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 1:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Life.Broken.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Life.Broken.Tier.2}	
+
+
+		if {Gemrandom.%{_uuid}%} is 5:
+			set {Gem.%{_uuid}%} to "Puff"
+			if {Bliss.GemHealth.%{_uuid}%} is 11:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Pristine+5.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Pristine+5.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 10:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Pristine+4.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Pristine+4.Tier.2}		
+
+			if {Bliss.GemHealth.%{_uuid}%} is 9:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Pristine+3.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Pristine+3.Tier.2}	
+						
+			if {Bliss.GemHealth.%{_uuid}%} is 8:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Pristine+2.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Pristine+2.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 7:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Pristine+1.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Pristine+1.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 6:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Pristine.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Pristine.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 5:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Scratched.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Scratched.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 4:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Cracked.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Cracked.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 3:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Damaged.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Damaged.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 2:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Ruined.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Ruined.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 1:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Puff.Broken.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Puff.Broken.Tier.2}	
+
+		if {Gemrandom.%{_uuid}%} is 6:
+			set {Gem.%{_uuid}%} to "Wealth"
+			if {Bliss.GemHealth.%{_uuid}%} is 11:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Pristine+5.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Pristine+5.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 10:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Pristine+4.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Pristine+4.Tier.2}		
+
+			if {Bliss.GemHealth.%{_uuid}%} is 9:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Pristine+3.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Pristine+3.Tier.2}	
+						
+			if {Bliss.GemHealth.%{_uuid}%} is 8:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Pristine+2.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Pristine+2.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 7:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Pristine+1.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Pristine+1.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 6:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Pristine.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Pristine.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 5:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Scratched.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Scratched.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 4:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Cracked.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Cracked.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 3:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Damaged.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Damaged.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 2:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Ruined.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Ruined.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 1:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Wealth.Broken.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Wealth.Broken.Tier.2}	
+
+
+		if {Gemrandom.%{_uuid}%} is 7:
+			set {Gem.%{_uuid}%} to "Astra"
+			if {Bliss.GemHealth.%{_uuid}%} is 11:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Pristine+5.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Pristine+5.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 10:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Pristine+4.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Pristine+4.Tier.2}		
+
+			if {Bliss.GemHealth.%{_uuid}%} is 9:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Pristine+3.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Pristine+3.Tier.2}	
+						
+			if {Bliss.GemHealth.%{_uuid}%} is 8:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Pristine+2.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Pristine+2.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 7:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Pristine+1.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Pristine+1.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 6:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Pristine.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Pristine.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 5:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Scratched.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Scratched.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 4:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Cracked.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Cracked.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 3:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Damaged.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Damaged.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 2:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Ruined.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Ruined.Tier.2}
+
+			if {Bliss.GemHealth.%{_uuid}%} is 1:
+				if {Bliss.Tier.%{_uuid}%} is 1:
+					give arg-1 {Gems.Astra.Broken.Tier.1}
+				if {Bliss.Tier.%{_uuid}%} is 2:
+					give arg-1 {Gems.Astra.Broken.Tier.2}	
+

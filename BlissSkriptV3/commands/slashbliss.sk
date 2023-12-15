@@ -1,0 +1,367 @@
+command /bliss [<text>] [<text>] [<player>] [<integer>]:
+	permission: op
+	trigger:
+			
+
+
+
+		if arg-1 is "gamemode":
+			if player does not have permission "skript.admin":
+				send "&cNo Permission"
+			if player has permission "skript.admin":
+				if arg-2 is not set:
+					send "/bliss gamemode <Survival/Creative/Spectator>"
+				if arg-2 is "creative":
+					send "&a!Set gamemode to &lCreative"
+					set player's gamemode to creative
+				if arg-2 is "survival":
+					send "&a!Set gamemode to &lSurvival"
+					set player's gamemode to survival
+
+
+		if arg-1 is "GiveItem":
+
+			if arg-2 is "ReviveTome":
+				if arg-4 is set:
+					if arg-3 is set:
+						give arg-4 of {Revive} to arg-3
+					else:
+						give arg-4 of {Revive} to player
+
+				else if arg-4 is not set:
+
+					if arg-3 is set:
+						give 1 of {Revive} to arg-3
+					else:
+						give 1 of {Revive} to player
+
+			if arg-2 is "RepairKit":
+				if arg-4 is set:
+
+					if arg-3 is set:
+						give arg-4 of {repair} to arg-3
+					else:
+						give arg-4 of {repair} to player
+
+					
+
+
+				else if arg-4 is not set:
+					if arg-3 is set:
+						give 1 of {repair} to arg-3
+					else:
+						give 1 of {repair} to player
+
+
+					
+			if arg-2 is "Token":
+				if arg-4 is set:
+					give arg-4 of {Token} to arg-3
+				else if arg-4 is not set:
+					give 1 of {Token} to arg-3
+
+			if arg-2 is "EnergyBottle":
+				if arg-4 is set:
+					give arg-4 of nautilus shell with custom model data 300 named "<##A4FEF1>&lᴇɴᴇʀɢʏ <##C8BC9D>ɪɴ ᴀ ʙᴏᴛᴛʟᴇ" to arg-3
+				else if arg-4 is not set:
+					give 1 of nautilus shell with custom model data 300 named "<##A4FEF1>&lᴇɴᴇʀɢʏ <##C8BC9D>ɪɴ ᴀ ʙᴏᴛᴛʟᴇ" to arg-3
+
+			if arg-2 is "GemFragment":
+				if arg-4 is set:
+					give arg-4 of {gemfragment} to arg-3
+				else if arg-4 is not set:
+					give 1 of {gemfragment} to arg-3
+
+			if arg-2 is "Remote":
+				if arg-4 is set:
+					set {RemoteControl} to a globe banner pattern named "&7[&e&l⭐&7] <##75FDFF>Remote <##FFCF75>Control" with lore "<##8EFF75>Right click for <##FFF386>&l/<##D1EEA4>&lm<##A3E9C3>&le<##74E3E1>&ln<##46DEFF>&lu" with custom model data 310
+					enchant {RemoteControl} with sharpness 1
+					give arg-4 of {RemoteControl} to arg-3
+				else if arg-4 is not set:
+					set {RemoteControl} to a globe banner pattern named "&7[&e&l⭐&7] <##75FDFF>Remote <##FFCF75>Control" with lore "<##8EFF75>Right click for <##FFF386>&l/<##D1EEA4>&lm<##A3E9C3>&le<##74E3E1>&ln<##46DEFF>&lu" with custom model data 310
+					enchant {RemoteControl} with sharpness 1
+					give 1 of {RemoteControl} to arg-3
+
+			if arg-2 is "Upgrader":
+				if arg-4 is set:
+					give arg-4 of {Upgrader} to arg-3
+				else if arg-4 is not set:
+					give 1 of {Upgrader} to arg-3
+
+			if arg-2 is "Trader":
+				if arg-4 is set:
+					give arg-4 of {Trader} to arg-3
+				else if arg-4 is not set:
+					give 1 of {Trader} to arg-3
+
+
+
+
+		if arg-1 is "setenergy":
+			if player has permission "skript.admin":
+				set {_number} to arg-2 parsed as an integer
+				set {_uuid} to uuid of arg-3
+				if arg-2 is set:
+					if {_number} < 12:
+						if {_number} > 0:
+							set {Bliss.GemHealth.%{_uuid}%} to {_number}
+							execute console command "setcorrectgems %arg-3%"
+						else:
+							send "&4 You can't set a player's energy to below 1"
+					else:
+						send "&4 You can't set a player's energy to above 11"
+		if arg-1 is "givegem":
+			if arg-2 is "StrengthTier1.Pristine+5":
+				send "%{Gems.Strength.Pristine+5.Tier.1}%" to arg-3
+				give arg-3 {Gems.Strength.Pristine+5.Tier.1}
+
+			if arg-2 is "StrengthTier1.Pristine":
+				send "%{Gems.Strength.Pristine.Tier.1}%" to arg-3
+				give arg-3 {Gems.Strength.Pristine.Tier.1}
+
+			if arg-2 is "StrengthTier1.Scratched":
+				send "%{Gems.Strength.Scratched.Tier.1}%" to arg-3
+				give arg-3 {Gems.Strength.Scratched.Tier.1}
+ 
+			if arg-2 is "StrengthTier1.Cracked":
+				send "%{Gems.Strength.Cracked.Tier.1}%" to arg-3
+				give arg-3 {Gems.Strength.Cracked.Tier.1}
+			
+			if arg-2 is "StrengthTier1.Damaged":
+				send "%{Gems.Strength.Damaged.Tier.1}%" to arg-3
+				give arg-3 {Gems.Strength.Damaged.Tier.1}
+
+			if arg-2 is "StrengthTier1.Ruined":
+				send "%{Gems.Strength.Ruined.Tier.1}%" to arg-3
+				give arg-3 {Gems.Strength.Ruined.Tier.1}
+
+			if arg-2 is "StrengthTier1.Broken":
+				send "%{Gems.Strength.Broken.Tier.1}%" to arg-3
+				give arg-3 {Gems.Strength.Broken.Tier.1}
+
+
+			if arg-2 is "StrengthTier2.Pristine+5":
+				send "%{Gems.Strength.Pristine+5.Tier.1}%" to arg-3
+				give arg-3 {Gems.Strength.Pristine+5.Tier.2}
+
+			if arg-2 is "StrengthTier2.Pristine":
+				send "%{Gems.Strength.Pristine.Tier.2}%" to arg-3
+				give arg-3 {Gems.Strength.Pristine.Tier.2}
+
+			if arg-2 is "StrengthTier2.Scratched":
+				send "%{Gems.Strength.Scractched.Tier.2}%" to arg-3
+				give arg-3 {Gems.Strength.Scratched.Tier.2}
+
+			if arg-2 is "StrengthTier2.Cracked":
+				send "%{Gems.Strength.Cracked.Tier.2}%" to arg-3
+				give arg-3 {Gems.Strength.Cracked.Tier.2}
+
+			if arg-2 is "StrengthTier2.Damaged":
+				send "%{Gems.Strength.Damaged.Tier.2}%" to arg-3
+				give arg-3 {Gems.Strength.Damaged.Tier.2}
+
+			if arg-2 is "StrengthTier2.Ruined":
+				send "%{Gems.Strength.Ruined.Tier.2}%" to arg-3
+				give arg-3 {Gems.Strength.Ruined.Tier.2}
+
+			if arg-2 is "StrengthTier2.Broken":
+				send "%{Gems.Strength.Broken.Tier.2}%" to arg-3
+				give arg-3 {Gems.Strength.Broken.Tier.2}
+			
+			if arg-2 is "SpeedTier1.Pristine+5":
+				send "%{Gems.Speed.Pristine+5.Tier.1}%" to arg-3
+				give arg-3 {Gems.Speed.Pristine+5.Tier.1}
+
+			if arg-2 is "SpeedTier2.Pristine+5":
+				send "%{Gems.Speed.Pristine+5.Tier.2}%" to arg-3
+				give arg-3 {Gems.Speed.Pristine+5.Tier.2}
+
+			if arg-2 is "AstraTier1.Pristine+5":
+				send "%{Gems.Astra.Pristine+5.Tier.1}%" to arg-3
+				give arg-3 {Gems.Astra.Pristine+5.Tier.1}
+
+			if arg-2 is "AstraTier2.Pristine+5":
+				send "%{Gems.Astra.Pristine+5.Tier.2}%" to arg-3
+				give arg-3 {Gems.Astra.Pristine+5.Tier.2}
+
+			if arg-2 is "FireTier1.Pristine+5":
+				send "%{Gems.Fire.Pristine+5.Tier.1}%" to arg-3
+				give arg-3 {Gems.Fire.Pristine+5.Tier.1}
+
+			if arg-2 is "FireTier2.Pristine+5":
+				send "%{Gems.Fire.Pristine+5.Tier.2}%" to arg-3
+				give arg-3 {Gems.Fire.Pristine+5.Tier.2}
+
+			if arg-2 is "LifeTier1.Pristine+5":
+				send "%{Gems.Life.Pristine+5.Tier.1}%" to arg-3
+				give arg-3 {Gems.Life.Pristine+5.Tier.1}
+
+			if arg-2 is "LifeTier2.Pristine+5":
+				send "%{Gems.Life.Pristine+5.Tier.2}%" to arg-3
+				give arg-3 {Gems.Life.Pristine+5.Tier.2}
+
+			if arg-2 is "PuffTier1.Pristine+5":
+				send "%{Gems.Puff.Pristine+5.Tier.1}%" to arg-3
+				give arg-3 {Gems.Puff.Pristine+5.Tier.1}
+
+			if arg-2 is "PuffTier2.Pristine+5":
+				send "%{Gems.Puff.Pristine+5.Tier.2}%" to arg-3
+				give arg-3 {Gems.Puff.Pristine+5.Tier.2}
+	
+			if arg-2 is "WealthTier1.Pristine+5":
+				send "%{Gems.Wealth.Pristine+5.Tier.1}%" to arg-3
+				give arg-3 {Gems.Wealth.Pristine+5.Tier.1}
+
+			if arg-2 is "WealthTier2.Pristine+5":
+				send "%{Gems.Wealth.Pristine+5.Tier.2}%" to arg-3
+				give arg-3 {Gems.Wealth.Pristine+5.Tier.2}
+
+		if arg-1 is "setgem":
+			if arg-2 is "Strength":
+				set {_uuid} to uuid of arg-3
+				set {Gem.%{_uuid}%} to "Strength"
+
+				
+				execute console command "setcorrectgems %arg-3%"
+
+
+			if arg-2 is "Fire":
+				set {_uuid} to uuid of arg-3
+				set {Gem.%{_uuid}%} to "Fire"
+
+				
+				execute console command "setcorrectgems %arg-3%"
+	
+
+			if arg-2 is "Life":
+				set {_uuid} to uuid of arg-3
+				set {Gem.%{_uuid}%} to "Life"
+
+				
+				execute console command "setcorrectgems %arg-3%"
+
+
+			if arg-2 is "Puff":
+				set {_uuid} to uuid of arg-3
+				set {Gem.%{_uuid}%} to "Puff"
+
+				
+				execute console command "setcorrectgems %arg-3%"
+					
+			if arg-2 is "Wealth":
+				set {_uuid} to uuid of arg-3
+				set {Gem.%{_uuid}%} to "Wealth"
+
+				
+				execute console command "setcorrectgems %arg-3%"
+
+
+
+			if arg-2 is "Speed":
+				set {_uuid} to uuid of arg-3
+				set {Gem.%{_uuid}%} to "Speed"
+
+				
+				execute console command "setcorrectgems %arg-3%"
+
+
+			if arg-2 is "Astra":
+				set {_uuid} to uuid of arg-3
+				set {Gem.%{_uuid}%} to "Astra"
+
+				
+				execute console command "setcorrectgems %arg-3%"
+
+		if arg-1 is "setenergy":
+			set {_uuid} to uuid of arg-3
+			if arg-2 is "1":
+				set {Bliss.GemHealth.%{_uuid}%} to 1
+
+			if arg-2 is "2":
+				set {Bliss.GemHealth.%{_uuid}%} to 2
+
+			if arg-2 is "3":
+				set {Bliss.GemHealth.%{_uuid}%} to 3
+
+			if arg-2 is "4":
+				set {Bliss.GemHealth.%{_uuid}%} to 4
+
+			if arg-2 is "5":
+				set {Bliss.GemHealth.%{_uuid}%} to 5
+
+			if arg-2 is "6":
+				set {Bliss.GemHealth.%{_uuid}%} to 6
+
+			if arg-2 is "7":
+				set {Bliss.GemHealth.%{_uuid}%} to 7
+
+			if arg-2 is "8":
+				set {Bliss.GemHealth.%{_uuid}%} to 8
+
+			if arg-2 is "9":
+				set {Bliss.GemHealth.%{_uuid}%} to 9
+
+			if arg-2 is "10":
+				set {Bliss.GemHealth.%{_uuid}%} to 10
+
+			if arg-2 is "11":
+				set {Bliss.GemHealth.%{_uuid}%} to 11
+				
+			
+
+
+
+		if arg-1 is "setTier":
+			set {_uuid} to uuid of arg-3
+			if arg-2 is "1":
+				set {Bliss.Tier.%{_uuid}%} to 1
+				execute console command "setcorrectgems %arg-3%"
+
+			if arg-2 is "2":
+				set {Bliss.Tier.%{_uuid}%} to 2
+				execute console command "setcorrectgems %arg-3%"
+
+				
+			
+
+
+
+
+
+
+
+
+
+on tab complete for "/bliss":
+    add "gamemode" to tab completions
+    add "givegem" to tab completions
+    add "setenergy" to tab completions
+    add "setgem" to tab completions
+    add "setTier" to tab completions
+    add "GiveItem" to tab completions
+
+
+
+
+
+
+on tab complete of "/bliss":
+	if tab arg-1 = "givegem":
+		set tab completions for position 2 to "StrengthTier1.Pristine", "StrengthTier1.Scratched", "StrengthTier1.Cracked", "StrengthTier1.Damaged", "StrengthTier1.Ruined", "StrengthTier1.Broken", "StrengthTier2.Pristine+5", "StrengthTier2.Pristine", "StrengthTier2.Scratched", "StrengthTier2.Cracked", "StrengthTier2.Damaged", "StrengthTier2.Ruined", "StrengthTier2.Broken", "SpeedTier1.Pristine+5", "SpeedTier2.Pristine+5", "AstraTier1.Pristine+5", "AstraTier2.Pristine+5", "FireTier1.Pristine+5", "FireTier2.Pristine+5", "LifeTier1.Pristine+5", "LifeTier2.Pristine+5", "PuffTier1.Pristine+5", "PuffTier2.Pristine+5", "WealthTier1.Pristine+5" and "WealthTier2.Pristine+5"
+	
+	if tab arg-1 = "setenergy":
+		set tab completions for position 2 to "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" and "11"
+
+	if tab arg-1 = "setgem":
+		set tab completions for position 2 to "Strength", "Fire", "Life", "Puff", "Wealth", "Speed" and "Astra"
+
+
+	if tab arg-1 = "setenergy":
+		set tab completions for position 2 to 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 and 11
+		
+	if tab arg-1 = "setTier":
+		set tab completions for position 2 to 1 and 2 
+
+	if tab arg-1 = "GiveItem":
+		set tab completions for position 2 to "EnergyBottle", "Token", "RepairKit", "ReviveTome", "GemFragment", "Remote", "Upgrader" and "Trader"
+

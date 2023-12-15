@@ -1,0 +1,10 @@
+command /setskriptvariable <text> <text>:
+    permission: op
+    trigger:
+        set {Examplevariable} to 1
+        set {%arg-1%} to arg-2
+        send "&b{%arg-1%} has been set to %arg-2%"
+        if arg-1 is "Examplevariable":
+            send "%{Examplevariable}%" to player
+
+

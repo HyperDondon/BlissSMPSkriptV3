@@ -1,0 +1,23 @@
+on drop:
+    if event-item is a nautilus shell with custom model data 210:
+        if all blocks in radius 5 of player contains "gold block":
+            if block is not in {block.%uuid of player%.goldenblocks::list}:
+                add block to {block.%uuid of player%.goldenblocks::list}
+                add 1 to {_num.%uuid of player%.numberblock}
+ 
+            if block is a ancient debris:
+                set {_ancientcheck} to true
+ 
+            if block is a beacon:
+                set {_beaconcheck} to true
+
+
+
+on drop:
+	if item is {item::revive}:
+		if "%all blocks in radius 3 of player%" contains "beacon":
+			if "%all blocks in radius 3 of player%" contains "ancient debris":
+				if "%all blocks in radius 5 of player%" contains "gold block":
+					if "%all blocks in radius 5 of player%" contains "gilded blackstone":
+						set {Reviving::%player%} to true
+						execute player command "reviveadmin %player%"

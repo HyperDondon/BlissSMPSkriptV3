@@ -1,101 +1,121 @@
-#Gem Strength Powers
 
 every 1 tick:
 	loop all players:
 		set {_uuid} to uuid of loop-player
-		if loop-player's off hand item or loop-player's held item is a amethyst shard named "&4&lStrength &e&lgem":
-			
-			send action bar "&c🔺 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
-			
-
-
-		if loop-player's off hand item is prismarine shard named "&4&lStrength &e&lgem":
-
-			send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% &4🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
+		#Tier 1
+					
 		
-		if loop-player's held item or loop-player's held item is a amethyst shard named "&4&lStrength &e&lgem":
+		
+		if loop-player's off hand item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+					
+			send action bar "<##F10303>🔺%{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+		
+		
+		if loop-player's held item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+					
+			send action bar "<##F10303>🔺%{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+				
+				
+		
+		
+		
+		
+	#Tier 2
+		
+		
+		
+		if loop-player's off hand item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+		
+			send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% <##F10303>🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
+				
+		if loop-player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+		
+			send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% <##F10303>🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
 
-			send action bar "&c🔺 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+
+#Gem Strength Powers
 
 
-
-		if loop-player's held item is prismarine shard named "&4&lStrength &e&lgem":
-
-			send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% &4🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
+	
 
 
 
 every 1 second:
 	loop all players:
 		set {_uuid} to uuid of loop-player
-		if loop-player has a prismarine shard or amethyst shard named "&4&lStrength &e&lgem":
-
+		if loop-player has prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
 
 			#Chad
 			if {Strength.Power3.Chad.Second.%{_uuid}%} is not set:
-				set {Strength.Power3.Chad.Second.%{_uuid}%} to 1
-				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 59
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
 				set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
 
 			if {Strength.Power3.Chad.Minute.%{_uuid}%} is not set:
-				set {Strength.Power3.Chad.Second.%{_uuid}%} to 1
-				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 59
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
 				set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
 
 			if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is not set:
-				set {Strength.Power3.Chad.Second.%{_uuid}%} to 1
-				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 59
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
 				set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
 		
 			if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is true:
-				set {Strength.Power3.Chad.Display.%{_uuid}%} to "&c⚔ &b%{Strength.Power3.Chad.Minute.%{_uuid}%}%m %{Strength.Power3.Chad.Second.%{_uuid}%}%s"
+				if {Strength.Power3.Chad.Minute.%{_uuid}%} is 0:
+					set {Strength.Power3.Chad.Display.%{_uuid}%} to "&f⚔ &b%{Strength.Power3.Chad.Second.%{_uuid}%}%s"
+				else:
+					set {Strength.Power3.Chad.Display.%{_uuid}%} to "&f⚔ &b%{Strength.Power3.Chad.Minute.%{_uuid}%}%m %{Strength.Power3.Chad.Second.%{_uuid}%}%s"
 			
 			if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is true:
 				remove 1 from {Strength.Power3.Chad.Second.%{_uuid}%}
 
 
 			
-			if {Strength.Power3.Chad.Second.%{_uuid}%} is -1:
+			if {Strength.Power3.Chad.Second.%{_uuid}%} < 0:
 				remove 1 from {Strength.Power3.Chad.Minute.%{_uuid}%}
 				set {Strength.Power3.Chad.Second.%{_uuid}%} to 59
                 
-			if {Strength.Power3.Chad.Minute.%{_uuid}%} is -1:
+			if {Strength.Power3.Chad.Minute.%{_uuid}%} < 0:
 				set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to false
-				set {Strength.Power3.Chad.Second.%{_uuid}%} to 59
-				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 1
-				set {Strength.Power3.Chad.Display.%{_uuid}%} to "&c⚔ &aReady!"
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Display.%{_uuid}%} to "&f⚔ &aReady!"
 
 
 			#Enchanting
 
 			if {Strength.Power2.Enchanting.Second.%{_uuid}%} is not set:
-				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
-				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 1
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
 				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
 
 			if {Strength.Power2.Enchanting.Minute.%{_uuid}%} is not set:
-				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
-				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 1
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
 				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
 
 			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is not set:
-				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
-				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 1
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
 				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
 
 			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-				set {Strength.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Strength.Power2.Enchanting.Minute.%{_uuid}%}%m %{Strength.Power2.Enchanting.Second.%{_uuid}%}%s"
+				if {Strength.Power2.Enchanting.Minute.%{_uuid}%} is 0:
+					set {Strength.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Strength.Power2.Enchanting.Second.%{_uuid}%}%s"
+				else:
+					set {Strength.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Strength.Power2.Enchanting.Minute.%{_uuid}%}%m %{Strength.Power2.Enchanting.Second.%{_uuid}%}%s"
 			
 			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
 				remove 1 from {Strength.Power2.Enchanting.Second.%{_uuid}%}
 
 
 			
-			if {Strength.Power2.Enchanting.Second.%{_uuid}%} is -1:
+			if {Strength.Power2.Enchanting.Second.%{_uuid}%} < 0:
 				remove 1 from {Strength.Power2.Enchanting.Minute.%{_uuid}%}
 				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
                 
-			if {Strength.Power2.Enchanting.Minute.%{_uuid}%} is -1:
+			if {Strength.Power2.Enchanting.Minute.%{_uuid}%} < 0:
 				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to false
 
 				set {Strength.Power2.Enchanting.Display.%{_uuid}%} to " &aReady!"
@@ -114,31 +134,34 @@ every 1 second:
 
 
 			
-			if {Strength.Power1.Frailer.Second.%{_uuid}%} is -1:
+			if {Strength.Power1.Frailer.Second.%{_uuid}%} < 0:
 				remove 1 from {Strength.Power1.Frailer.Minute.%{_uuid}%}
 				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 59
 
 
 			if {Strength.Power1.Frailer.Second.%{_uuid}%} is not set:
-				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 59
-				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 1
+				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
 				set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
 
 			if {Strength.Power1.Frailer.Display.%{_uuid}%} is not set:
-				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 59
-				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 1
+				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
 				set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
 
                 
 			if {Strength.Power1.Frailer.Cooldown.%{_uuid}%} is true:
-				set {Strength.Power1.Frailer.Display.%{_uuid}%} to "🤺 &b%{Strength.Power1.Frailer.Minute.%{_uuid}%}%m %{Strength.Power1.Frailer.Second.%{_uuid}%}%s"
+				if {Strength.Power1.Frailer.Minute.%{_uuid}%} is 0:
+					set {Strength.Power1.Frailer.Display.%{_uuid}%} to "🤺 &b%{Strength.Power1.Frailer.Second.%{_uuid}%}%s"
+				else:
+					set {Strength.Power1.Frailer.Display.%{_uuid}%} to "🤺 &b%{Strength.Power1.Frailer.Minute.%{_uuid}%}%m %{Strength.Power1.Frailer.Second.%{_uuid}%}%s"
 
 
 
-			if {Strength.Power1.Frailer.Minute.%{_uuid}%} is -1:
+			if {Strength.Power1.Frailer.Minute.%{_uuid}%} < 0:
 				set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to false
-				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 59
-				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 1
+				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
 				set {Strength.Power1.Frailer.Display.%{_uuid}%} to "🤺 &aReady!"
 
 
@@ -147,64 +170,211 @@ every 1 second:
 			if {Tag..%loop-player%} is not set:
 				set {Tag..%loop-player%} to 0
 
-			if loop-player's off hand item or loop-player's held item is a amethyst shard named "&4&lStrength &e&lgem":
 
-				send action bar "&c🔺 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+						
+		#Tier 1
+						
 			
+			
+			if loop-player's off hand item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+						
+				send action bar "<##F10303>🔺%{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+			
+			
+			if loop-player's held item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+						
+				send action bar "<##F10303>🔺%{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+					
+					
+			
+			
+			
+			
+		#Tier 2
+			
+			
+			
+			if loop-player's off hand item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			
+				send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% <##F10303>🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
+					
+			if loop-player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			
+				send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% <##F10303>🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
 
 
-			if loop-player's off hand item is prismarine shard named "&4&lStrength &e&lgem":
 
-				send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% &4🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
+
+every 1 second:
+	loop all players:
+		set {_uuid} to uuid of loop-player
+		if loop-player has amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+
+			#Chad
+			if {Strength.Power3.Chad.Second.%{_uuid}%} is not set:
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+
+			if {Strength.Power3.Chad.Minute.%{_uuid}%} is not set:
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+
+			if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is not set:
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
 		
-			if loop-player's held item or loop-player's held item is a amethyst shard named "&4&lStrength &e&lgem":
-
-				send action bar "&c🔺 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
-
-
-
-			if loop-player's held item is prismarine shard named "&4&lStrength &e&lgem":
-
-				send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% &4🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
-
+			if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is true:
+				if {Strength.Power3.Chad.Minute.%{_uuid}%} is 0:
+					set {Strength.Power3.Chad.Display.%{_uuid}%} to "&f⚔ &b%{Strength.Power3.Chad.Second.%{_uuid}%}%s"
+				else:
+					set {Strength.Power3.Chad.Display.%{_uuid}%} to "&f⚔ &b%{Strength.Power3.Chad.Minute.%{_uuid}%}%m %{Strength.Power3.Chad.Second.%{_uuid}%}%s"
+			
+			if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is true:
+				remove 1 from {Strength.Power3.Chad.Second.%{_uuid}%}
 
 
+			
+			if {Strength.Power3.Chad.Second.%{_uuid}%} < 0:
+				remove 1 from {Strength.Power3.Chad.Minute.%{_uuid}%}
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 59
+                
+			if {Strength.Power3.Chad.Minute.%{_uuid}%} < 0:
+				set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to false
+				set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
+				set {Strength.Power3.Chad.Display.%{_uuid}%} to "&f⚔ &aReady!"
 
 
-on sneak toggle:
-	if {Tag..%player%} is 0:
-		set {_uuid} to uuid of player
-		if player's off hand item is a amethyst shard named "&4&lStrength &e&lgem":
+			#Enchanting
 
-			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
-				execute console command "enchant %player% sharpness 2"
-				send "&aEnchanting Tool with &csharpness &42"
-				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 1
-				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
+			if {Strength.Power2.Enchanting.Second.%{_uuid}%} is not set:
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
 				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-		if player's off hand item is a prismarine shard named "&4&lStrength &e&lgem":
+
+			if {Strength.Power2.Enchanting.Minute.%{_uuid}%} is not set:
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is not set:
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
+				if {Strength.Power2.Enchanting.Minute.%{_uuid}%} is 0:
+					set {Strength.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Strength.Power2.Enchanting.Second.%{_uuid}%}%s"
+				else:
+					set {Strength.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Strength.Power2.Enchanting.Minute.%{_uuid}%}%m %{Strength.Power2.Enchanting.Second.%{_uuid}%}%s"
+			
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
+				remove 1 from {Strength.Power2.Enchanting.Second.%{_uuid}%}
+
+
+			
+			if {Strength.Power2.Enchanting.Second.%{_uuid}%} < 0:
+				remove 1 from {Strength.Power2.Enchanting.Minute.%{_uuid}%}
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
+                
+			if {Strength.Power2.Enchanting.Minute.%{_uuid}%} < 0:
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to false
+
+				set {Strength.Power2.Enchanting.Display.%{_uuid}%} to " &aReady!"
 
 			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
-				if player's held item is any sword:
-					enchant the player's tool with sharpness 5
-					send "&c🔮&bEnchanting Tool"
-					set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 1
-					set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
-					set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-				if player's held item is any axe:
-					enchant the player's tool with sharpness 5
-					send "&c🔮&bEnchanting Tool"
-					set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 1
-					set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
-					set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+				set {Strength.Power2.Enchanting.Display.%{_uuid}%} to " &aReady!"
 
+			#Frailer
+
+
+
+
+
+			if {Strength.Power1.Frailer.Cooldown.%{_uuid}%} is true:
+				remove 1 from {Strength.Power1.Frailer.Second.%{_uuid}%}
+
+
+			
+			if {Strength.Power1.Frailer.Second.%{_uuid}%} < 0:
+				remove 1 from {Strength.Power1.Frailer.Minute.%{_uuid}%}
+				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 59
+
+
+			if {Strength.Power1.Frailer.Second.%{_uuid}%} is not set:
+				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
+
+			if {Strength.Power1.Frailer.Display.%{_uuid}%} is not set:
+				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
+
+                
+			if {Strength.Power1.Frailer.Cooldown.%{_uuid}%} is true:
+				if {Strength.Power1.Frailer.Minute.%{_uuid}%} is 0:
+					set {Strength.Power1.Frailer.Display.%{_uuid}%} to "🤺 &b%{Strength.Power1.Frailer.Second.%{_uuid}%}%s"
+				else:
+					set {Strength.Power1.Frailer.Display.%{_uuid}%} to "🤺 &b%{Strength.Power1.Frailer.Minute.%{_uuid}%}%m %{Strength.Power1.Frailer.Second.%{_uuid}%}%s"
+
+
+
+			if {Strength.Power1.Frailer.Minute.%{_uuid}%} < 0:
+				set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to false
+				set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
+				set {Strength.Power1.Frailer.Display.%{_uuid}%} to "🤺 &aReady!"
+
+
+
+
+			if {Tag..%loop-player%} is not set:
+				set {Tag..%loop-player%} to 0
+
+
+
+
+
+		#Tier 1
+						
+			
+			
+			if loop-player's off hand item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+						
+				send action bar "<##F10303>🔺%{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+			
+			
+			if loop-player's held item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+						
+				send action bar "<##F10303>🔺%{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+					
+					
+			
+			
+			
+			
+		#Tier 2
+			
+			
+			
+			if loop-player's off hand item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			
+				send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% <##F10303>🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
+					
+			if loop-player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			
+				send action bar "%{Strength.Power1.Frailer.Display.%{_uuid}%}% <##F10303>🔮%{Strength.Power2.Enchanting.Display.%{_uuid}%}% %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
 
 
 
 on damage:	
 	if {Tag..%attacker%} is 0:
 		if {Bliss.Strength.%attacker%} > 0:
-			if attacker's off hand item is a prismarine shard named "&4&lStrength &e&lgem":
+			if attacker's off hand item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
 				if attacker's health < 3:
 					add 8 to damage
 				if attacker's health is 3:
@@ -223,7 +393,7 @@ on damage:
 					add 1 to damage
 				if attacker's health is 6.5:
 					add 0.5 to damage
-			if attacker's off hand item is a amethyst shard named "&4&lStrength &e&lgem":
+			if attacker's off hand item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
 				if attacker's health < 2:
 					add 6 to damage
 				if attacker's health is 2.5:
@@ -247,46 +417,122 @@ on damage:
 
 
 
-on right click on entity:
-	if {Tag..%player%} is 0:
-		if player's held item is a prismarine shard named "&4&lStrength &e&lgem":
-			set {_uuid} to uuid of player
-			if event-entity is a player:
+on damage:
+	if {Tag..%attacker%} is 0:
+		if attacker's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			set {_uuid} to uuid of attacker
+			if victim is victim:
+				set {singlefrailer %{_uuid}%} to true
 				if {Strength.Power1.Frailer.Cooldown.%{_uuid}%} is false:
-					send "&byou used &4Frailer &fon &4%event-entity%" to player
-					send "&byou have been affected by &4Frailer &bfrom %player%" to event-entity
-					execute console command "effect clear %event-entity%"
-					apply weakness to event-entity for 20 seconds
-					execute player command "/strengthcircle 0.5"
-					execute player command "/strengthcircle 1"
-					execute player command "/strengthcircle 1.5"
-					execute player command "/strengthcircle 2"
-					execute player command "/strengthcircle 2.5"
-					execute player command "/strengthcircle 3"
-					execute player command "/strengthcircle 3.5"
-					if {Bliss.Strength.%player%} > 4:
+					send "<##F10303>🔮 <##B2FFF6>You have activated &f🤺&4Frailer <##B2FFF6>skill on &4%victim%" to attacker
+					send "<##F10303>🔮 <##B2FFF6>You have been affected with &f🤺&4Frailer <##B2FFF6>by &4%attacker%" to victim
+					execute console command "effect clear %victim%"
+					apply weakness to victim for 20 seconds
+					if {Bliss.GemHealth.%{_uuid}%} > 4:
 						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 1
 						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 15
 						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
-					if {Bliss.Strength.%player%} is 3:
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
 						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 1
 						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 45
 						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
-					if {Bliss.Strength.%player%} < 3:
+					if {Bliss.GemHealth.%{_uuid}%} < 3:
 						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 2
 						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 25
 						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
+					
+					set {Particle_frailer_%uuid of victim%} to true
+					wait 1 tick
+					set {singlefrailer %{_uuid}%} to false
+					loop 80 times:
+						if victim is alive:
+							if attacker is online:
+								set {_v} to vector from attacker's head to victim's head
+								set vector length of {_v} to 0.1
+								set {_loc} to the location 0.7 meters under attacker's head
+								loop (distance between {_loc} and victim) / 0.1 times:
+					
+									draw 1 dust_color_transition using dustTransition(rgb(192, 3, 5), rgb(192, 3, 5), 1.4) at {_loc} with force
+									draw 1 dust_color_transition using dustTransition(black, black, 1.4) at {_loc} with force
+									set {_loc} to {_loc} ~ {_v}
+			
+								wait 0.25 seconds
+						else:
+							set {_uuid} to uuid of attacker
+							if {Strength.Power1.Frailer.Minute.%{_uuid}%} < 1:
+								send "<##F10303>🔮 &cYour &f🤺&4Frailer &cskill is on cooldown for &4%{Strength.Power1.Frailer.Second.%{_uuid}%}%s" to attacker
+							else:
+								send "<##F10303>🔮 &cYour &f🤺&4Frailer &cskill is on cooldown for &4%{Strength.Power1.Frailer.Minute.%{_uuid}%}%m %{Strength.Power1.Frailer.Second.%{_uuid}%}%s" to attacker
 
-                            
+on left click:
+	if {Tag..%player%} is 0:
+		if player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			set {_uuid} to uuid of player
+			wait 2 ticks
+			if {singlefrailer %{_uuid}%} is false:
+				if {Strength.Power1.Frailer.Cooldown.%{_uuid}%} is false:
+					send "<##F10303>🔮 <##B2FFF6>You have activated group &f🤺&4Frailer <##B2FFF6>skill" to player
+					execute console command "effect clear %event-entity%"
+					
+					if {Bliss.GemHealth.%{_uuid}%} > 4:
+						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 1
+						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 45
+						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 2
+						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 15
+						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} < 3:
+						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 2
+						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 55
+						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true	
+					execute console command "strengthcircle 1 %player%"
+					execute console command "strengthcircle 1.5 %player%"
+					execute console command "strengthcircle 2 %player%"
+					execute console command "strengthcircle 2.5 %player%"
+					execute console command "strengthcircle 3 %player%"
+					execute console command "strengthcircle 3.5 %player%"
+					execute console command "strengthcirclelast 4 %player%"
+					set {_strengthholder} to player
+					loop all entities within 4 blocks of the player:
+						if loop-entity is not {_strengthholder}:
+							#if {_FrailerGroup %uuid of loop-entity%} is false:
+							execute console command "effect clear %loop-entity%"
+							apply potion of weakness of tier 1 to loop-entity for 20 seconds
+							send "<##F10303>🔮 <##B2FFF6>You have been affected with &f🤺&4Frailer <##B2FFF6>by &4%{_strengthholder}%" to loop-entity
 
+				else:
+					set {_uuid} to uuid of player
+					if {Strength.Power1.Frailer.Minute.%{_uuid}%} < 1:
+						send "<##F10303>🔮 &cYour &f🤺&4Frailer &cskill is on cooldown for &4%{Strength.Power1.Frailer.Second.%{_uuid}%}%s" to player
+					else:
+						send "<##F10303>🔮 &cYour &f🤺&4Frailer &cskill is on cooldown for &4%{Strength.Power1.Frailer.Minute.%{_uuid}%}%m %{Strength.Power1.Frailer.Second.%{_uuid}%}%s" to player
+
+
+
+
+
+every 1 second:
+	loop all players:
+		if {singlefrailer %{_uuid}%} is not set:
+			set {_uuid} to uuid of loop-player
+			set {singlefrailer %{_uuid}%} to false
+
+		if {singlechad %{_uuid}%} is not set:
+			set {_uuid} to uuid of loop-player
+			set {singlechad %{_uuid}%} to false
+
+on death:
+	if victim is a player:
+		set {Particle_frailer_%uuid of victim%} to false
 on drop prismarine shard:
-	if event-item is prismarine shard named "&4&lStrength &e&lgem":
+	if event-item is prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
 		cancel event
 on drop amethyst shard:
-	if event-item is amethyst shard named "&4&lStrength &e&lgem":
+	if event-item is amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
 		cancel event
 
-every 4 ticks:
+every 0.1 second:
 	loop all players:
 		if {ChadStrength..%loop-player%} is true:
 			draw 5 of dust using dustOption(dark red, 1) at loop-player
@@ -325,53 +571,175 @@ on damage:
 				add 1 to {Test.Double.%attacker%}
 
 
+on damage:
+	if {dmg..%attacker%} > 11:
+		set {dmg..%attacker%} to 12
+	if {%victim% affected by %attacker%} is true:
+		if fall distance of attacker is less than 0.7:
+			
+			if {dmg..%attacker%} > 14:
+				set {dmg..%attacker%} to 14
+			if {Test.Double.%attacker%} is 3:
+				add {dmg..%attacker%} to damage
+				set {dmg..%attacker%} to damage
+				set {Test.Double.%attacker%} to 0
+				set {ChadSkill...%attacker%} to false
+				set {ChadSkill...%attacker%} to false
+				set {ChadStrength..%attacker%} to false
+			if {Test.Double.%attacker%} is 2:
+				set {dmg..%attacker%} to damage
+				add 1 to {Test.Double.%attacker%}
+			if {Test.Double.%attacker%} is 1:
+				set {dmg..%attacker%} to damage
+				add 1 to {Test.Double.%attacker%}
+			if {Test.Double.%attacker%} < 1:
+				set {dmg..%attacker%} to damage
+				add 1 to {Test.Double.%attacker%}
 
-
-on left click:
+on right click:
 	if {Tag..%player%} is 0:
-		if player's held item is a prismarine shard named "&4&lStrength &e&lgem":
+		if player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			set {_uuid} to uuid of player
+			wait 2 tick
+			if {singlechad %{_uuid}%} is false:
+			
+				if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is false:
+				
+					set {singlechad %{_uuid}%} to false
+					set {Test.Double.%player%} to 1
+					send "<##F10303>🔮 <##B2FFF6>You activated &f⚔&4Chad Strength" to player
+					set {Doubledamage.%player%} to -5
+					set {ChadStrength..%player%} to true
+					if {Bliss.GemHealth.%{_uuid}%} > 4:
+						set {Strength.Power3.Chad.Minute.%{_uuid}%} to 3
+						set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
+						set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						set {Strength.Power3.Chad.Minute.%{_uuid}%} to 3
+						set {Strength.Power3.Chad.Second.%{_uuid}%} to 30
+						set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} < 3:
+						set {Strength.Power3.Chad.Minute.%{_uuid}%} to 4
+						set {Strength.Power3.Chad.Second.%{_uuid}%} to 5
+						set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+
+					if {ChadStrength..%player%} is true:
+						set {ChadStrength...%player%} to true
+	
+				else:
+					set {_uuid} to uuid of player
+					if {Strength.Power3.Chad.Minute.%{_uuid}%} < 1:
+						send "<##F10303>🔮 &cYour &f⚔&4Chad Strength &cskill is on cooldown for &4%{Strength.Power3.Chad.Second.%{_uuid}%}%s" to player
+					else:
+						send "<##F10303>🔮 &cYour &f⚔&4Chad Strength &cskill is on cooldown for &4%{Strength.Power3.Chad.Minute.%{_uuid}%}%m %{Strength.Power3.Chad.Second.%{_uuid}%}%s" to player
+
+			
+
+
+on right click on entity:
+	#send "%event-entity% is the event-entity and %player% is the player" to all players
+	if {Tag..%player%} is 0:
+		if player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			set {_uuid} to uuid of player
+			set {singlechad %{_uuid}%} to true
 			set {_uuid} to uuid of player
 			if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is false:
-				set {Test.Double.%player%} to 0
-				send "&4⚔&cYou activated &4Chad Strength &bGroup"
+				set {Test.Double.%player%} to 1
+				send "<##F10303>🔮 <##B2FFF6>You activated &f⚔&4Chad Strength <##B2FFF6>on &4%event-entity%" to player
+				send "<##F10303>🔮 <##B2FFF6>You have been affected with &f⚔&4Chad Strength <##B2FFF6>by &4%player%" to event-entity
+				set {%event-entity% affected by %player%} to true
 				set {Doubledamage.%player%} to -5
-				set {ChadStrength..%player%} to true
-				if {Bliss.Strength.%player%} > 4:
+				
+				if {Bliss.GemHealth.%{_uuid}%} > 4:
 					set {Strength.Power3.Chad.Minute.%{_uuid}%} to 2
 					set {Strength.Power3.Chad.Second.%{_uuid}%} to 30
 					set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
-				if {Bliss.Strength.%player%} is 3:
+				if {Bliss.GemHealth.%{_uuid}%} is 3:
 					set {Strength.Power3.Chad.Minute.%{_uuid}%} to 3
 					set {Strength.Power3.Chad.Second.%{_uuid}%} to 1
 					set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
-				if {Bliss.Strength.%player%} < 3:
+				if {Bliss.GemHealth.%{_uuid}%} < 3:
 					set {Strength.Power3.Chad.Minute.%{_uuid}%} to 3
 					set {Strength.Power3.Chad.Second.%{_uuid}%} to 35
 					set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+					
 
-			if {ChadStrength..%player%} is true:
-				set {ChadStrength...%player%} to true
+				wait 3 ticks
+				set {singlechad %{_uuid}%} to false
+				wait 20 seconds
+				set {%event-entity% affected by %player%} to false
 
+on join:
+	set {_uuid} to uuid of player
+	set {singlefrailer %{_uuid}%} to false
+	set {singlechad %{_uuid}%} to false
 
-on left click:
+on right click:
 	if {Tag..%player%} is 0:
-		if player's held item is a prismarine shard named "&4&lStrength &e&lgem":
+		if player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
 			if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is false:
 				wait 10 seconds
 				set {ChadStrength...%player%} to false
 				set {ChadStrength..%player%} to false
+every 1 second:
+	loop all players:
+		if {ChadStrength...%loop-player%} is true:
+			wait 10 seconds
+			set {ChadStrength...%loop-player%} to false
 
+		if {ChadStrength..%loop-player%} is true:
+			wait 10 seconds
+			set {ChadStrength..%loop-player%} to false
 
 every 1 second:
 	loop all players:
-		if loop-player's off hand item is a amethyst shard named "&4&lStrength &e&lgem":
-			apply potion of strength of tier 1 to loop-player for 1.03 second
+		if loop-player's off hand item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+			apply potion of strength of tier 1 to loop-player for 1.021 second
 
-		if loop-player's held item is a amethyst shard named "&4&lStrength &e&lgem":
-			apply potion of strength of tier 1 to loop-player for 1.03 seconds
+		if loop-player's held item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+			apply potion of strength of tier 1 to loop-player for 1.021 seconds
 
-		if loop-player's off hand item is a prismarine shard named "&4&lStrength &e&lgem":
-			apply potion of strength of tier 2 to loop-player for 1.03 seconds
+		if loop-player's off hand item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			apply potion of strength of tier 2 to loop-player for 1.021 seconds
 
-		if loop-player's held item is a prismarine shard named "&4&lStrength &e&lgem":
-			apply potion of strength of tier 2 to loop-player for 1.03 seconds
+		if loop-player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			apply potion of strength of tier 2 to loop-player for 1.021 seconds
+
+
+
+on player's held item change:
+	set {_uuid} to uuid of player
+	if {Tag..%player%} is 0:
+		if player's off hand item is prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is not true:
+				if player's held item is a any sword:
+					enchant player's held item with sharpness 5
+					send "<##F10303>🔮 <##B2FFF6>Auto Enchanting"
+					set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 14
+					set {Strength.Power2.Enchanting.Second.%{_uuid}%}  to 59
+					set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+		
+		if player's off hand item is amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is not true:
+				if player's held item is a any sword:
+					enchant player's held item with sharpness 2
+					send "<##F10303>🔺 <##B2FFF6>Auto Enchanting"
+					set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 14
+					set {Strength.Power2.Enchanting.Second.%{_uuid}%}  to 59
+					set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+		if player's held item is prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+				send "<##F10303>🔮 <##B2FFF6>Auto Enchanting"
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 14
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%}  to 59
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+		
+		if player's held item is amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+			if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
+				send "<##F10303>🔺 <##B2FFF6>Auto Enchanting"
+				set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 14
+				set {Strength.Power2.Enchanting.Second.%{_uuid}%}  to 59
+				set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+			

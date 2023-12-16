@@ -16,5 +16,7 @@ Requirements:
   [ https://github.com/SkQuery/SkQuery/releases 4.1.10](https://github.com/SkQuery/SkQuery/releases/tag/4.1.10)
 
   [https://github.com/eyesniper2/skRayFall/releases/ 1.3](https://github.com/eyesniper2/skRayFall/releases/tag/1.3)
-  
+
+
+  This is forked from: https://www.spigotmc.org/resources/bliss-smp-skript.110127/
   

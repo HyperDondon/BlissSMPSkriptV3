@@ -5,7 +5,7 @@ U NEED SKRIPT 2.6.4 CUZ ADDONS ARE OLD
 
 Requirements:
 
-  https://github.com/SkriptLang/Skript/releases/tag/2.6.4
+  The Required Skript Version: https://github.com/SkriptLang/Skript/releases/tag/2.6.4
 
   [https://github.com/JakeGBLP/Lusk/releases 1.03](https://github.com/JakeGBLP/Lusk/releases/tag/1.0.3)
 

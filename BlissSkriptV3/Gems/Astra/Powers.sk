@@ -2,10 +2,6 @@
 
 
 
-
-every 1 tick:
-	loop all players:
-		set {_uuid} to uuid of loop-player
 		
 
 
@@ -250,8 +246,8 @@ on left click:
 
 every 1 tick:
 	loop all players:
-		set {_uuid} to uuid of loop-player
-		if {Astra.Power3.Projection.Activated.%{_uuid}%} is true:
+		if {Astra.Power3.Projection.Activated.%uuid of loop-player%} is true:
+			set {_uuid} to uuid of loop-player
 			set {_loc} to location of loop-player
 			if the distance between {_loc} and {Astra.Power3.Projection.Location.%{_uuid}%} > 150:
 				set {Astra.Power3.Projection.Activated.%{_uuid}%} to false
@@ -899,17 +895,16 @@ every 1 tick:
 			if loop-entity-1 is not loop-entity-2:
 				if loop-entity-2 is a armor stand:
 					if loop-entity-2's helmet is a nautilus shell:
-						set {_uuid} to uuid of loop-entity-1
-						if loop-entity-2 is not {Daggers.1.%{_uuid}%.real}:
-							if loop-entity-2 is not {Daggers.2.%{_uuid}%.real}:
-								if loop-entity-2 is not {Daggers.3.%{_uuid}%.real}:
-									if loop-entity-2 is not {Daggers.4.%{_uuid}%.real}:
-										if loop-entity-2 is not {Daggers.5.%{_uuid}%.real}:
-											if loop-entity-2 is not {Daggers.1.%{_uuid}%}:
-												if loop-entity-2 is not {Daggers.2.%{_uuid}%}:
-													if loop-entity-2 is not {Daggers.3.%{_uuid}%}:
-														if loop-entity-2 is not {Daggers.4.%{_uuid}%}:
-															if loop-entity-2 is not {Daggers.5.%{_uuid}%}:
+						if loop-entity-2 is not {Daggers.1.%uuid of loop-entity-1%.real}:
+							if loop-entity-2 is not {Daggers.2.%uuid of loop-entity-1%.real}:
+								if loop-entity-2 is not {Daggers.3.%uuid of loop-entity-1%.real}:
+									if loop-entity-2 is not {Daggers.4.%uuid of loop-entity-1%.real}:
+										if loop-entity-2 is not {Daggers.5.%uuid of loop-entity-1%.real}:
+											if loop-entity-2 is not {Daggers.1.%uuid of loop-entity-1%}:
+												if loop-entity-2 is not {Daggers.2.%uuid of loop-entity-1%}:
+													if loop-entity-2 is not {Daggers.3.%uuid of loop-entity-1%}:
+														if loop-entity-2 is not {Daggers.4.%uuid of loop-entity-1%}:
+															if loop-entity-2 is not {Daggers.5.%uuid of loop-entity-1%}:
 																if loop-entity-1's helmet is not a nautilus shell:
 
 																	loop {Daggers::*}:

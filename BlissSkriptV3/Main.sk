@@ -727,6 +727,13 @@ on itemframe place:
 	if lore of event-item contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
 		cancel event
 
+	if event-item is player head named "<##E9C2FF><bold>ᴛʀᴀᴅᴇʀ":
+		cancel event
+
+	if event-item is player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		cancel event
+
+
 
 
 
@@ -841,13 +848,6 @@ command /warden:
 
 
 
-
-
-on damage:
-	if victim is a warden:
-		add 5 to damage
-	if attacker is a warden:
-		remove 3 from damage
 
 
 

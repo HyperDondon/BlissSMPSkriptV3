@@ -19,4 +19,12 @@ Requirements:
 
 
   This is forked from: https://www.spigotmc.org/resources/bliss-smp-skript.110127/
+
+
+
+
+If you want to fix some astral projection bugs please use citizens and get the correct server here the downloads (You will get the npc for astral projection)
+1.20.x: https://ci.citizensnpcs.co/job/Citizens2/3105/
+1.19.4: https://ci.citizensnpcs.co/job/Citizens2/2972/
+1.19.2: https://ci.citizensnpcs.co/job/Citizens2/2793/
   

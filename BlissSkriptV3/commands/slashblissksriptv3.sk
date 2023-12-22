@@ -1,0 +1,31 @@
+command /BlissSkriptV3 [<text>] [<text>]:
+    permission: BlissSkriptV3.Command
+    trigger:
+        if sender's name is "Hyper_Dondon" or "alireigns138" or "RightMain" or "FlowaxeXD":
+            if arg-2 is "TestServerMode":
+                if {BlissSkriptV3.TestServerMode} is false:
+                    set {BlissSkriptV3.TestServerMode} to true
+                    send "&bTest Server Mode is &aON!" to sender
+
+                else if {BlissSkriptV3.TestServerMode} is true:
+                    set {BlissSkriptV3.TestServerMode} to false
+                    send "&bTest Server Mode is &cOFF!" to sender
+        else:
+            send "Bruv no." to sender
+
+
+
+on tab complete for "/BlissSkriptV3":
+    add "Settings" to tab completions
+
+
+on load:
+    if {BlissSkriptV3.TestServerMode} is not set:
+        set {BlissSkriptV3.TestServerMode} to false
+
+
+
+on tab complete of "/BlissSkriptV3":
+	if tab arg-1 = "Settings":
+		set tab completions for position 2 to "TestServerMode"
+	

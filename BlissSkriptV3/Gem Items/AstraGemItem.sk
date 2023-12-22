@@ -1,0 +1,99 @@
+on load:
+#Astra
+	#Tier 1
+		#Prstine
+		set {Gems.Astra.Pristine.Tier.1} to amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴᴀɢᴇ ᴛʜᴇ ᴛɪᴅᴇs ᴏғ ᴛʜᴇ ᴄᴏsᴍᴏs" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " <##A01FFF>🔺&7 10%% of attacks will phase through you" and " &7Summon player and mob auras upon a kill" and " &7When walked over it will heal you 2 hearts (mob), 4 (player)" and " &7You can capture one mob in your gem after consuming the aura" and " &7release them by crouch right clicking" and " &7Resistence Protection, when below" and " &7four hearts get resistence 1" and "" and "<##A01FFF>&lᴘᴏᴡᴇʀs" and "<##A01FFF>🔮 &f&lrequired" with hidden enchants flag with custom model data 13
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Astra.Pristine.Tier.1}
+
+        #Prstine + 5
+		set {Gems.Astra.Pristine+5.Tier.1} to {Gems.Astra.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Astra.Pristine+5.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Astra.Pristine+5.Tier.1} with mending 1
+
+        #Prstine + 4
+		set {Gems.Astra.Pristine+4.Tier.1} to {Gems.Astra.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Astra.Pristine+4.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Astra.Pristine+3.Tier.1} to {Gems.Astra.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Astra.Pristine+3.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Astra.Pristine+2.Tier.1} to {Gems.Astra.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Astra.Pristine+2.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Astra.Pristine+1.Tier.1} to {Gems.Astra.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Astra.Pristine+1.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Astra.Scratched.Tier.1} to {Gems.Astra.Pristine.Tier.1} with custom model data 33
+		set line 3 of lore of {Gems.Astra.Scratched.Tier.1} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Astra.Cracked.Tier.1} to {Gems.Astra.Pristine.Tier.1} with custom model data 53
+		set line 3 of lore of {Gems.Astra.Cracked.Tier.1} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Astra.Damaged.Tier.1} to {Gems.Astra.Pristine.Tier.1} with custom model data 73
+		set line 3 of lore of {Gems.Astra.Damaged.Tier.1} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Astra.Ruined.Tier.1} to {Gems.Astra.Pristine.Tier.1} with custom model data 93
+		set line 3 of lore of {Gems.Astra.Ruined.Tier.1} to "<##F10303>Ruined"
+
+		#Broken
+		set {Gems.Astra.Broken.Tier.1} to {Gems.Astra.Pristine.Tier.1} with custom model data 95
+		set line 3 of lore of {Gems.Astra.Broken.Tier.1} to "&7Broken"
+
+		set custom model data of {Gems.Astra.Pristine.Tier.1} to 13
+		
+	#Tier 2
+		#Prstine
+		set {Gems.Astra.Pristine.Tier.2} to prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴍᴀɴᴀɢᴇ ᴛʜᴇ ᴛɪᴅᴇs ᴏғ ᴛʜᴇ ᴄᴏsᴍᴏs" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " <##A01FFF>🔮&7 15%% of attacks will phase" and " &7through you, Eating mobs souls will heal" and " &7you 5 hearts if mob, 10 if a player" and " &7capture 2 mobs inside your gem, releasing" and " &7them in the order they were captured." and " &7Resistence Protection, when low get" and " &7resistence 2" and "" and "<##A01FFF>&lᴘᴏᴡᴇʀs" and "&f🔪 <##BFB8B8>ᴅᴀɢɢᴇʀs" and "&7Shoot 5 daggers, if a player is hit with one" and " &7dagger they take 10 damage and their gem is" and " &7disabled for 10 seconds for every dagger they're hit with." and "&4🤼 &7Enter the body of that player, exit by crouching or" and " &7when that player recives damage. Leaving the body" and " &7will haunt them disabling their gem for 10 seconds" and "" and "&7-&f👻 <##AABBBF>ᴀsᴛʀᴀʟ ᴘʀᴏᴊᴇᴄᴛɪᴏɴ" and " &7Become a projection and explore in a 150 block" and " &7radius Spook players by left clicking with your gem," and " &7radius or tagging them with right click." and " &7You exit the Astral state if your npc is hit," and " &7or you click the air with an empty hand" with hidden enchants flag with custom model data 14
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Astra.Pristine.Tier.2}
+
+        #Prstine + 5
+		set {Gems.Astra.Pristine+5.Tier.2} to {Gems.Astra.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Astra.Pristine+5.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Astra.Pristine+5.Tier.2} with mending 1
+
+        #Prstine + 4
+		set {Gems.Astra.Pristine+4.Tier.2} to {Gems.Astra.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Astra.Pristine+4.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Astra.Pristine+3.Tier.2} to {Gems.Astra.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Astra.Pristine+3.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Astra.Pristine+2.Tier.2} to {Gems.Astra.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Astra.Pristine+2.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Astra.Pristine+1.Tier.2} to {Gems.Astra.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Astra.Pristine+1.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Astra.Scratched.Tier.2} to {Gems.Astra.Pristine.Tier.2} with custom model data 34
+		set line 3 of lore of {Gems.Astra.Scratched.Tier.2} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Astra.Cracked.Tier.2} to {Gems.Astra.Pristine.Tier.2} with custom model data 54
+		set line 3 of lore of {Gems.Astra.Cracked.Tier.2} to "<##3F00D2>Cracked"
+
+		#Damaged
+		set {Gems.Astra.Damaged.Tier.2} to {Gems.Astra.Pristine.Tier.2} with custom model data 74
+		set line 3 of lore of {Gems.Astra.Damaged.Tier.2} to "<##EAC700>Damaged"
+
+
+		#Ruined
+		set {Gems.Astra.Ruined.Tier.2} to {Gems.Astra.Pristine.Tier.2} with custom model data 94
+		set line 3 of lore of {Gems.Astra.Ruined.Tier.2} to "<##F20303>Ruined"
+
+		#Broken
+		set {Gems.Astra.Broken.Tier.2} to {Gems.Astra.Pristine.Tier.2} with custom model data 96
+		set line 3 of lore of {Gems.Astra.Broken.Tier.2} to "&7Broken"
+
+		set custom model data of {Gems.Astra.Pristine.Tier.2} to 14
+		

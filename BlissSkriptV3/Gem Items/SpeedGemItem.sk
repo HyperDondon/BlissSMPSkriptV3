@@ -1,0 +1,98 @@
+on load:
+#Speed
+	#Tier 1
+        #Prstine
+		set {Gems.Speed.Pristine.Tier.1} to amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴡᴀᴛᴄʜ ᴛʜᴇ ᴡᴏʀʟᴅ ᴀʀᴏᴜɴᴅ ʏᴏᴜ ᴛᴜʀɴ ɪɴᴛᴏ ᴀ ʙʟᴜʀ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " &e🔺&7 Speed 2, Immune to soul sand" and " &7Auto enchant efficiency 2" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&e🔮 &f&lrequired" with hidden enchants flag with custom model data 7
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Speed.Pristine.Tier.1}
+
+		#Prstine + 5
+		set {Gems.Speed.Pristine+5.Tier.1} to {Gems.Speed.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Speed.Pristine+5.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Speed.Pristine+5.Tier.1} with mending 1
+
+        #Prstine + 4
+		set {Gems.Speed.Pristine+4.Tier.1} to {Gems.Speed.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Speed.Pristine+4.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Speed.Pristine+3.Tier.1} to {Gems.Speed.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Speed.Pristine+3.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Speed.Pristine+2.Tier.1} to {Gems.Speed.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Speed.Pristine+2.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Speed.Pristine+1.Tier.1} to {Gems.Speed.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Speed.Pristine+1.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Speed.Scratched.Tier.1} to {Gems.Speed.Pristine.Tier.1} with custom model data 27
+		set line 3 of lore of {Gems.Speed.Scratched.Tier.1} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Speed.Cracked.Tier.1} to {Gems.Speed.Pristine.Tier.1} with custom model data 47
+		set line 3 of lore of {Gems.Speed.Cracked.Tier.1} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Speed.Damaged.Tier.1} to {Gems.Speed.Pristine.Tier.1} with custom model data 67
+		set line 3 of lore of {Gems.Speed.Damaged.Tier.1} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Speed.Ruined.Tier.1} to {Gems.Speed.Pristine.Tier.1} with custom model data 87
+		set line 3 of lore of {Gems.Speed.Ruined.Tier.1} to "<##F10303>Ruined" 
+
+		#Broken
+		set {Gems.Speed.Broken.Tier.1} to {Gems.Speed.Pristine.Tier.1} with custom model data 95
+		set line 3 of lore of {Gems.Speed.Broken.Tier.1} to "&7Broken"
+
+		set custom model data of {Gems.Speed.Pristine.Tier.1} to 7
+
+	#Tier 2
+        #Prstine
+		set {Gems.Speed.Pristine.Tier.2} to prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴡᴀᴛᴄʜ ᴛʜᴇ ᴡᴏʀʟᴅ ᴀʀᴏᴜɴᴅ ʏᴏᴜ ᴛᴜʀɴ ɪɴᴛᴏ ᴀ ʙʟᴜʀ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " &e🔮&7 Speed 3, Dolphins Grace" and " &7and Immune to soul sand, auto-enchants efficiency 5" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&r&e 🎯&fsʟᴏᴛʜs sᴇᴅᴀᴛɪᴠᴇ" and " &4🤼🏻 &7Slowness 2, mining fatigue 3" and " &7Clears speed effects, 0.8x slower crits, &f30s, R4" and " &4🧑🏻&7Slowness 4, mining fatigue 3" and " &7Clears speed effect, 0.5x slower crits, &f40s, R4" and "" and "&7-&r&f🌩 <##61FFEA>sᴘᴇᴇᴅʏ sᴛᴏʀᴍ &f40s R4" and " &a🧑🏻&7Spawns a Thunder Storm with lightning strikes" and " &7the caster gets constant 1.5x faster crits while" and " &7the storm is active and speed 3 while in the storm." and " &7Trusted get 1.3x faster crits and speed 3 in the storm" and " &7If trusted or caster get struck by thunder they get" and " &7Speed 6 and 2.2x faster crits, If untrusted is struck" and " &7by thunder they are stuned for 2s" and " &a🤼&7Gives trusted 1.5x faster crits and speed 3." with hidden enchants flag with custom model data 8
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Speed.Pristine.Tier.2}
+
+		#Prstine + 5
+		set {Gems.Speed.Pristine+5.Tier.2} to {Gems.Speed.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Speed.Pristine+5.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Speed.Pristine+5.Tier.2} with mending 1
+
+        #Prstine + 4
+		set {Gems.Speed.Pristine+4.Tier.2} to {Gems.Speed.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Speed.Pristine+4.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Speed.Pristine+3.Tier.2} to {Gems.Speed.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Speed.Pristine+3.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Speed.Pristine+2.Tier.2} to {Gems.Speed.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Speed.Pristine+2.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Speed.Pristine+1.Tier.2} to {Gems.Speed.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Speed.Pristine+1.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Speed.Scratched.Tier.2} to {Gems.Speed.Pristine.Tier.2} with custom model data 28
+		set line 3 of lore of {Gems.Speed.Scratched.Tier.2} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Speed.Cracked.Tier.2} to {Gems.Speed.Pristine.Tier.2} with custom model data 48
+		set line 3 of lore of {Gems.Speed.Cracked.Tier.2} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Speed.Damaged.Tier.2} to {Gems.Speed.Pristine.Tier.2} with custom model data 68
+		set line 3 of lore of {Gems.Speed.Damaged.Tier.2} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Speed.Ruined.Tier.2} to {Gems.Speed.Pristine.Tier.2} with custom model data 88
+		set line 3 of lore of {Gems.Speed.Ruined.Tier.2} to "<##F10303>Ruined"
+
+		#Broken
+		set {Gems.Speed.Broken.Tier.2} to {Gems.Speed.Pristine.Tier.2} with custom model data 96
+		set line 3 of lore of {Gems.Speed.Broken.Tier.2} to "&7Broken"
+
+		set custom model data of {Gems.Speed.Pristine.Tier.2} to 8
+

@@ -1,0 +1,97 @@
+on load:
+#Wealth
+	#Tier 1
+        #Prstine
+		set {Gems.Wealth.Pristine.Tier.1} to amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lғᴜᴇʟ ᴀ ᴇᴍᴘɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " <##0EC912>🔺 &7Cheaper villager trades, Luck" and " &7Auto enchants looting, fortune & mending" and " &7get one more ore for every 3 ores mined" and " &7Chip enemies durabilty" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "<##0EC912>🔮 &f&lrequired" with hidden enchants flag with custom model data 11
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Wealth.Pristine.Tier.1}
+
+		#Prstine + 5
+		set {Gems.Wealth.Pristine+5.Tier.1} to {Gems.Wealth.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Wealth.Pristine+5.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Wealth.Pristine+5.Tier.1} with mending 1
+
+        #Prstine + 4
+		set {Gems.Wealth.Pristine+4.Tier.1} to {Gems.Wealth.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Wealth.Pristine+4.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Wealth.Pristine+3.Tier.1} to {Gems.Wealth.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Wealth.Pristine+3.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Wealth.Pristine+2.Tier.1} to {Gems.Wealth.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Wealth.Pristine+2.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Wealth.Pristine+1.Tier.1} to {Gems.Wealth.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Wealth.Pristine+1.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Wealth.Scratched.Tier.1} to {Gems.Wealth.Pristine.Tier.1} with custom model data 31
+		set line 3 of lore of {Gems.Wealth.Scratched.Tier.1} to "<##9DF200>Scratched" 
+
+        #Cracked
+		set {Gems.Wealth.Cracked.Tier.1} to {Gems.Wealth.Pristine.Tier.1} with custom model data 51
+		set line 3 of lore of {Gems.Wealth.Cracked.Tier.1} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Wealth.Damaged.Tier.1} to {Gems.Wealth.Pristine.Tier.1} with custom model data 71
+		set line 3 of lore of {Gems.Wealth.Damaged.Tier.1} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Wealth.Ruined.Tier.1} to {Gems.Wealth.Pristine.Tier.1} with custom model data 91
+		set line 3 of lore of {Gems.Wealth.Ruined.Tier.1} to "<##F10303>Ruined"
+
+		#Broken
+		set {Gems.Wealth.Broken.Tier.1} to {Gems.Wealth.Pristine.Tier.1} with custom model data 95
+		set line 3 of lore of {Gems.Wealth.Broken.Tier.1} to "&7Broken"
+
+		set custom model data of {Gems.Wealth.Pristine.Tier.1} to 11
+
+	#Tier 2
+        #Prstine
+		set {Gems.Wealth.Pristine.Tier.2} to prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ" with lore "&f&lғᴜᴇʟ ᴀ ᴇᴍᴘɪʀᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " <##0EC912>🔮 &7Even cheaper villager trades, Luck" and " &7Auto enchants looting 3, fortune 3, mending" and " &7Get two more ore for every 3 ores mined" and " &72x the netherite scrap when taken out of furnace" and " &7Chip more of your enemies durability" and "" and "<##A4F4FE>&lᴘᴏᴡᴇʀs" and "&7-&f🍀 &cᴜɴғᴏʀᴛᴜɴᴇ" and " &4🤼 &71/3 of actions canceled &f40s, R2" and " &4🧑🏻 &71/2 of actions canceled &f40s" and "" and "&7-&f💸 <##F3CF06>ʀɪᴄʜ ʀᴜsʜ" and " &7Double the ores, and double the mob drops for 5 minutes" with hidden enchants flag with custom model data 12
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Wealth.Pristine.Tier.2}
+
+		#Prstine + 5
+		set {Gems.Wealth.Pristine+5.Tier.2} to {Gems.Wealth.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Wealth.Pristine+5.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Wealth.Pristine+5.Tier.2} with mending 1
+
+        #Prstine + 4
+		set {Gems.Wealth.Pristine+4.Tier.2} to {Gems.Wealth.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Wealth.Pristine+4.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Wealth.Pristine+3.Tier.2} to {Gems.Wealth.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Wealth.Pristine+3.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Wealth.Pristine+2.Tier.2} to {Gems.Wealth.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Wealth.Pristine+2.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Wealth.Pristine+1.Tier.2} to {Gems.Wealth.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Wealth.Pristine+1.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Wealth.Scratched.Tier.2} to {Gems.Wealth.Pristine.Tier.2} with custom model data 32
+		set line 3 of lore of {Gems.Wealth.Scratched.Tier.2} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Wealth.Cracked.Tier.2} to {Gems.Wealth.Pristine.Tier.2} with custom model data 52
+		set line 3 of lore of {Gems.Wealth.Cracked.Tier.2} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Wealth.Damaged.Tier.2} to {Gems.Wealth.Pristine.Tier.2} with custom model data 72
+		set line 3 of lore of {Gems.Wealth.Damaged.Tier.2} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Wealth.Ruined.Tier.2} to {Gems.Wealth.Pristine.Tier.2} with custom model data 92
+		set line 3 of lore of {Gems.Wealth.Ruined.Tier.2} to "<##F10303>Ruined"
+
+		#Broken
+		set {Gems.Wealth.Broken.Tier.2} to {Gems.Wealth.Pristine.Tier.2} with custom model data 95
+		set line 3 of lore of {Gems.Wealth.Broken.Tier.2} to "&7Broken"
+
+		set custom model data of {Gems.Wealth.Pristine.Tier.2} to 12

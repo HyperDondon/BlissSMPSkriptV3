@@ -1,0 +1,97 @@
+on load:
+#Puff
+	#Tier 1
+        #Prstine
+		set {Gems.Puff.Pristine.Tier.1} to amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lʙᴇ ᴛʜᴇ ʙɪɢɢᴇsᴛ ʙɪʀᴅ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " &f🔺 &7No fall damage" and " &7Auto Enchant Power 3 & Punch" and " &7and feather falling 2" and " &7double jump" and "" and "<##B8FFFB>&lᴘᴏᴡᴇʀs" and "&f🔮 &f&lrequired" with hidden enchants flag with custom model data 5
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Puff.Pristine.Tier.1}
+
+		#Prstine + 5
+		set {Gems.Puff.Pristine+5.Tier.1} to {Gems.Puff.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Puff.Pristine+5.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Puff.Pristine+5.Tier.1} with mending 1
+
+        #Prstine + 4
+		set {Gems.Puff.Pristine+4.Tier.1} to {Gems.Puff.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Puff.Pristine+4.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Puff.Pristine+3.Tier.1} to {Gems.Puff.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Puff.Pristine+3.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Puff.Pristine+2.Tier.1} to {Gems.Puff.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Puff.Pristine+2.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Puff.Pristine+1.Tier.1} to {Gems.Puff.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Puff.Pristine+1.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Puff.Scratched.Tier.1} to {Gems.Puff.Pristine.Tier.1} with custom model data 25
+		set line 3 of lore of {Gems.Puff.Scratched.Tier.1} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Puff.Cracked.Tier.1} to {Gems.Puff.Pristine.Tier.1} with custom model data 45
+		set line 3 of lore of {Gems.Puff.Cracked.Tier.1} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Puff.Damaged.Tier.1} to {Gems.Puff.Pristine.Tier.1} with custom model data 65
+		set line 3 of lore of {Gems.Puff.Damaged.Tier.1} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Puff.Ruined.Tier.1} to {Gems.Puff.Pristine.Tier.1} with custom model data 85
+		set line 3 of lore of {Gems.Puff.Ruined.Tier.1} to "<##F10303>Ruined"
+
+		#Broken
+		set {Gems.Puff.Broken.Tier.1} to {Gems.Puff.Pristine.Tier.1} with custom model data 95
+		set line 3 of lore of {Gems.Puff.Broken.Tier.1} to "&7Broken"
+
+		set custom model data of {Gems.Puff.Pristine.Tier.1} to 5
+
+	#Tier 2
+        #Prstine
+		set {Gems.Puff.Pristine.Tier.2} to prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ" with lore "&f&lʙᴇ ᴛʜᴇ ʙɪɢɢᴇsᴛ ʙɪʀᴅ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " &f🔮&7No fall damage, double jump" and " &7Auto enchant Power 5 and Punch 2" and " &7and feather falling 4" and "" and "<##B8FFFB>&lᴘᴏᴡᴇʀs" and "&7-&f☁<##FAE7E6>ʙʀᴇᴇᴢʏ ʙᴀsʜ" and " &4🧑🏻 &7Lifts player 35 blocks and smashes" and " &7them down at a high velocity" and " &4🤼 &7Pushes enemies away from you" and "" and "&7-&f⏫ ᴅᴀsʜ" and " &7Dashes you in the direction you are looking" and " &7deals 2 hearts of damage regardless the protection" and " &7to players and mobs upon contact" with hidden enchants flag with custom model data 6
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Puff.Pristine.Tier.2}
+
+		#Prstine + 5
+		set {Gems.Puff.Pristine+5.Tier.2} to {Gems.Puff.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Puff.Pristine+5.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Puff.Pristine+5.Tier.2} with mending 1
+
+        #Prstine + 4
+		set {Gems.Puff.Pristine+4.Tier.2} to {Gems.Puff.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Puff.Pristine+4.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Puff.Pristine+3.Tier.2} to {Gems.Puff.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Puff.Pristine+3.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Puff.Pristine+2.Tier.2} to {Gems.Puff.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Puff.Pristine+2.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Puff.Pristine+1.Tier.2} to {Gems.Puff.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Puff.Pristine+1.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Puff.Scratched.Tier.2} to {Gems.Puff.Pristine.Tier.2} with custom model data 26
+		set line 3 of lore of {Gems.Puff.Scratched.Tier.2} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Puff.Cracked.Tier.2} to {Gems.Puff.Pristine.Tier.2} with custom model data 46
+		set line 3 of lore of {Gems.Puff.Cracked.Tier.2} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Puff.Damaged.Tier.2} to {Gems.Puff.Pristine.Tier.2} with custom model data 66
+		set line 3 of lore of {Gems.Puff.Damaged.Tier.2} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Puff.Ruined.Tier.2} to {Gems.Puff.Pristine.Tier.2} with custom model data 86
+		set line 3 of lore of {Gems.Puff.Ruined.Tier.2} to "<##F10303>Ruined"
+
+		#Broken
+		set {Gems.Puff.Broken.Tier.2} to {Gems.Puff.Pristine.Tier.2} with custom model data 96
+		set line 3 of lore of {Gems.Puff.Broken.Tier.2} to "&7Broken"
+
+		set custom model data of {Gems.Puff.Pristine.Tier.2} to 6

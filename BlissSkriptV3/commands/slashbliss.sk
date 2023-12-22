@@ -1,0 +1,992 @@
+command /bliss [<text>] [<text>] [<player>] [<integer>]:
+	trigger:
+		if arg-3 is set:
+			set {_p} to arg-3
+
+		else:
+			
+			set {_p} to player
+
+		if arg-1 is "withdraw":
+			set {_uuid} to uuid of sender
+			if {Bliss.GemHealth.%{_uuid}%} < 12:
+				if {Bliss.GemHealth.%{_uuid}%} is not 1:
+					remove 1 from {Bliss.GemHealth.%{_uuid}%}
+					give player nautilus shell with custom model data 300 named "<##96FFD9>&lᴇɴᴇʀɢʏ <##FFE4AB>ɪɴ ᴀ ʙᴏᴛᴛʟᴇ" with lore "<##A4FEF1>&lFrom: <##FFE4AB>%player%"
+					send "<##FFE4AB>🔮 Bottled &f1 <##A4FEF1>ᴇɴᴇʀɢʏ"
+					execute console command "setcorrectgems %sender% energy"
+
+		if sender has permission "BlissSkriptV3.Bliss":
+			if arg-1 is "gamemode":
+				if arg-2 is "creative" or "c":
+					set sender's gamemode to creative
+					send "&a[!] Your gamemode has been changed to &bCREATIVE&a!" to sender
+
+				if arg-2 is "survival" or "s":
+					set sender's gamemode to survival
+					send "&a[!] Your gamemode has been changed to &bSURVIVAL&a!" to sender
+
+				if arg-2 is "adventure" or "a":
+					set sender's gamemode to adventure
+					send "&a[!] Your gamemode has been changed to &bADVENTURE&a!" to sender
+
+				if arg-2 is "spectator":
+					set sender's gamemode to spectator
+					send "&a[!] Your gamemode has been changed to &bSPECTATOR&a!" to sender
+
+
+
+			if arg-1 is "revive":
+				set {_uuid} to uuid of arg-2 parsed as offline player
+				remove {_uuid} from {BannedPlayers::*}
+				remove arg-2 from {BannedPlayers::*}
+
+				set {Bliss.GemHealth.%{_uuid}%} to 6
+				unban arg-2
+
+
+			if arg-1 is "item":
+
+				if arg-2 is "ReviveTome":
+					if arg-4 is set:
+						if {_p} is set:
+							give arg-4 of {Revive} to {_p}
+
+						else:
+							give arg-4 of {Revive} to player
+
+					else if arg-4 is not set:
+
+						if {_p} is set:
+							give 1 of {Revive} to {_p}
+						else:
+							give 1 of {Revive} to player
+
+
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##ffe4ab>%{_p}% %{Revive}'s name%" to player
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received %{Revive}'s name%" to {_p}
+
+				if arg-2 is "RepairKit":
+					if arg-4 is set:
+
+						if {_p} is set:
+							give arg-4 of {Repair} to {_p}
+						else:
+							give arg-4 of {Repair} to player
+
+						
+
+
+					else if arg-4 is not set:
+						if {_p} is set:
+							give 1 of {Repair} to {_p}
+						else:
+							give 1 of {Repair} to player
+
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##ffe4ab>%{_p}% %{Repair}'s name%" to player
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received %{Repair}'s name%" to {_p}
+
+
+						
+				if arg-2 is "Token":
+					if arg-4 is set:
+						give arg-4 of {Token} to {_p}
+
+					else if arg-4 is not set:
+						give 1 of {Token} to {_p}
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##ffe4ab>%{_p}% %{Token}'s name%" to player
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received %{Token}'s name%" to {_p}
+
+				if arg-2 is "EnergyBottle":
+					if arg-4 is set:
+						give arg-4 of nautilus shell with custom model data 300 named "<##96FFD9>&lᴇɴᴇʀɢʏ <##FFE4AB>ɪɴ ᴀ ʙᴏᴛᴛʟᴇ" to {_p}
+					else if arg-4 is not set:
+						give 1 of nautilus shell with custom model data 300 named "<##96FFD9>&lᴇɴᴇʀɢʏ <##FFE4AB>ɪɴ ᴀ ʙᴏᴛᴛʟᴇ" to {_p}
+
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##ffe4ab>%{_p}% <##96FFD9>&lᴇɴᴇʀɢʏ <##FFE4AB>ɪɴ ᴀ ʙᴏᴛᴛʟᴇ" to player
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##96FFD9>&lᴇɴᴇʀɢʏ <##FFE4AB>ɪɴ ᴀ ʙᴏᴛᴛʟᴇ" to {_p}
+
+
+				if arg-2 is "GemFragment":
+					if arg-4 is set:
+						give arg-4 of {gemfragment} to {_p}
+					else if arg-4 is not set:
+						give 1 of {gemfragment} to {_p}
+
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##ffe4ab>%{_p}% %{gemfragment}'s name%" to player
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received %{gemfragment}'s name%" to {_p}
+
+				if arg-2 is "Remote":
+					if arg-4 is set:
+						set {RemoteControl} to a globe banner pattern named "&7[&e&l⭐&7] <##75FDFF>Remote <##FFCF75>Control" with lore "<##8EFF75>Right click for <##FFF386>&l/<##D1EEA4>&lm<##A3E9C3>&le<##74E3E1>&ln<##46DEFF>&lu" with custom model data 310
+						enchant {RemoteControl} with sharpness 1
+						give arg-4 of {RemoteControl} to {_p}
+					else if arg-4 is not set:
+						set {RemoteControl} to a globe banner pattern named "&7[&e&l⭐&7] <##75FDFF>Remote <##FFCF75>Control" with lore "<##8EFF75>Right click for <##FFF386>&l/<##D1EEA4>&lm<##A3E9C3>&le<##74E3E1>&ln<##46DEFF>&lu" with custom model data 310
+						enchant {RemoteControl} with sharpness 1
+						give 1 of {RemoteControl} to {_p}
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##ffe4ab>%{_p}% %{RemoteControl}'s name%" to player
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received %{RemoteControl}'s name%" to {_p}
+
+				if arg-2 is "Upgrader":
+					if arg-4 is set:
+						give arg-4 of {Upgrader} to {_p}
+					else if arg-4 is not set:
+						give 1 of {Upgrader} to {_p}
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##ffe4ab>%{_p}% %{Upgrader}'s name%" to player
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received %{Upgrader}'s name%" to {_p}
+
+				if arg-2 is "Trader":
+					if arg-4 is set:
+						give arg-4 of {Trader} to {_p}
+					else if arg-4 is not set:
+						give 1 of {Trader} to {_p}
+
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##ffe4ab>%{_p}% %{Trader}'s name%" to player
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received %{Trader}'s name%" to {_p}
+
+
+
+
+			if arg-1 is "setenergy":
+				if sender is sender:
+					set {_number} to arg-2 parsed as an integer
+					if arg-2 is set:
+						if {_p} is not set:
+							set {_uuid} to uuid of sender
+							if {_number} < 12:
+								if {_number} > 0:
+									set {Bliss.GemHealth.%{_uuid}%} to {_number}
+									execute console command "setcorrectgems %sender% energy"
+								else:
+									send "&4 You can't set a player's energy to below 1"
+							else:
+								send "&4 You can't set a player's energy to above 11"
+
+						else:
+							set {_uuid} to uuid of {_p}
+							if {_number} < 12:
+								if {_number} > 0:
+									set {Bliss.GemHealth.%{_uuid}%} to {_number}
+									execute console command "setcorrectgems %{_p}% energy"
+									
+								else:
+									send "&4 You can't set a player's energy to below 1"
+							else:
+								send "&4 You can't set a player's energy to above 11"
+
+
+					
+
+				else:
+
+					if {_p} is player:
+						set {_number} to arg-2 parsed as an integer
+						
+						if arg-2 is set:
+							if {_p} is not set:
+								set {_uuid} to uuid of sender
+								if {_number} < 12:
+									if {_number} > 0:
+										set {Bliss.GemHealth.%{_uuid}%} to {_number}
+										execute console command "setcorrectgems %sender% energy"
+									else:
+										send "&4 You can't set a player's energy to below 1"
+								else:
+									send "&4 You can't set a player's energy to above 11"
+
+						else:
+							set {_uuid} to uuid of sender
+							if {_number} < 12:
+								if {_number} > 0:
+									set {Bliss.GemHealth.%{_uuid}%} to {_number}
+									execute console command "setcorrectgems %{_p}% energy"
+								else:
+									send "&4 You can't set a player's energy to below 1"
+							else:
+								send "&4 You can't set a player's energy to above 11"
+
+
+				
+					else:
+						send "No, bozo." to sender
+
+
+			if arg-1 is "givegem":
+				
+				if arg-2 is "StrengthTier1":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##F10303>&lsᴛʀᴇɴɢᴛʜ <##A4FEF1>gem &7Tier <##A4FEF1>1" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##F10303>&lsᴛʀᴇɴɢᴛʜ <##A4FEF1>gem &7Tier <##A4FEF1>2" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Strength.Pristine+5.Tier.1}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Strength.Pristine+4.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Strength.Pristine+3.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Strength.Pristine+2.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Strength.Pristine+1.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Strength.Pristine.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Strength.Scratched.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Strength.Cracked.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Strength.Damaged.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Strength.Ruined.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Strength.Broken.Tier.1}
+
+
+				if arg-2 is "StrengthTier2":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##F10303>&lsᴛʀᴇɴɢᴛʜ <##A4FEF1>gem &7Tier <##A4FEF1>2" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##F10303>&lsᴛʀᴇɴɢᴛʜ <##A4FEF1>gem &7Tier <##A4FEF1>2" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Strength.Pristine+5.Tier.2}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Strength.Pristine+4.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Strength.Pristine+3.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Strength.Pristine+2.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Strength.Pristine+1.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Strength.Pristine.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Strength.Scratched.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Strength.Cracked.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Strength.Damaged.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Strength.Ruined.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Strength.Broken.Tier.2}
+
+				if arg-2 is "SpeedTier1":
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##FEFD17>&lsᴘᴇᴇᴅ <##A4FEF1>gem &7Tier <##A4FEF1>1" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##FEFD17>&lsᴘᴇᴇᴅ <##A4FEF1>gem &7Tier <##A4FEF1>1" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Speed.Pristine+5.Tier.1}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Speed.Pristine+4.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Speed.Pristine+3.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Speed.Pristine+2.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Speed.Pristine+1.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Speed.Pristine.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Speed.Scratched.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Speed.Cracked.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Speed.Damaged.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Speed.Ruined.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Speed.Broken.Tier.1}
+	
+				if arg-2 is "SpeedTier2":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##FEFD17>&lsᴘᴇᴇᴅ <##A4FEF1>gem &7Tier <##A4FEF1>2" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##FEFD17>&lsᴘᴇᴇᴅ <##A4FEF1>gem &7Tier <##A4FEF1>2" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Speed.Pristine+5.Tier.2}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Speed.Pristine+4.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Speed.Pristine+3.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Speed.Pristine+2.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Speed.Pristine+1.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Speed.Pristine.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Speed.Scratched.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Speed.Cracked.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Speed.Damaged.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Speed.Ruined.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Speed.Broken.Tier.2}
+				
+				if arg-2 is "FireTier1":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##FE8120>&lғɪʀᴇ <##A4FEF1>gem &7Tier <##A4FEF1>1" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##FE8120>&lғɪʀᴇ <##A4FEF1>gem &7Tier <##A4FEF1>1" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Fire.Pristine+5.Tier.1}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Fire.Pristine+4.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Fire.Pristine+3.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Fire.Pristine+2.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Fire.Pristine+1.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Fire.Pristine.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Fire.Scratched.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Fire.Cracked.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Fire.Damaged.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Fire.Ruined.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Fire.Broken.Tier.1}
+
+
+				if arg-2 is "FireTier2":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##FE8120>&lғɪʀᴇ <##A4FEF1>gem &7Tier <##A4FEF1>2" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##FE8120>&lғɪʀᴇ <##A4FEF1>gem &7Tier <##A4FEF1>2" to {_p}
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Fire.Pristine+5.Tier.2}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Fire.Pristine+4.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Fire.Pristine+3.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Fire.Pristine+2.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Fire.Pristine+1.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Fire.Pristine.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Fire.Scratched.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Fire.Cracked.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Fire.Damaged.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Fire.Ruined.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Fire.Broken.Tier.2}
+
+				if arg-2 is "LifeTier1":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##FE04B4>&lʟɪғᴇ <##A4FEF1>gem &7Tier <##A4FEF1>1" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##FE04B4>&lʟɪғᴇ <##A4FEF1>gem &7Tier <##A4FEF1>1" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Life.Pristine+5.Tier.1}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Life.Pristine+4.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Life.Pristine+3.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Life.Pristine+2.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Life.Pristine+1.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Life.Pristine.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Life.Scratched.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Life.Cracked.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Life.Damaged.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Life.Ruined.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Life.Broken.Tier.1}
+
+
+				if arg-2 is "LifeTier2":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##FE04B4>&lʟɪғᴇ <##A4FEF1>gem &7Tier <##A4FEF1>2" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##FE04B4>&lʟɪғᴇ <##A4FEF1>gem &7Tier <##A4FEF1>2" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Life.Pristine+5.Tier.2}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Life.Pristine+4.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Life.Pristine+3.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Life.Pristine+2.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Life.Pristine+1.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Life.Pristine.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Life.Scratched.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Life.Cracked.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Life.Damaged.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Life.Ruined.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Life.Broken.Tier.2}
+
+
+				if arg-2 is "PuffTier1":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##EFEFEF>&lᴘᴜғғ <##A4FEF1>gem &7Tier <##A4FEF1>1" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##EFEFEF>&lᴘᴜғғ <##A4FEF1>gem &7Tier <##A4FEF1>1" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Puff.Pristine+5.Tier.1}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Puff.Pristine+4.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Puff.Pristine+3.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Puff.Pristine+2.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Puff.Pristine+1.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Puff.Pristine.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Puff.Scratched.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Puff.Cracked.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Puff.Damaged.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Puff.Ruined.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Puff.Broken.Tier.1}
+
+
+				if arg-2 is "PuffTier2":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##EFEFEF>&lᴘᴜғғ <##A4FEF1>gem &7Tier <##A4FEF1>2" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##EFEFEF>&lᴘᴜғғ <##A4FEF1>gem &7Tier <##A4FEF1>2" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Puff.Pristine+5.Tier.2}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Puff.Pristine+4.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Puff.Pristine+3.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Puff.Pristine+2.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Puff.Pristine+1.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Puff.Pristine.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Puff.Scratched.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Puff.Cracked.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Puff.Damaged.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Puff.Ruined.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Puff.Broken.Tier.2}
+
+				if arg-2 is "WealthTier1":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##0EC912>&lᴡᴇᴀʟᴛʜ <##A4FEF1>gem &7Tier <##A4FEF1>1" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##0EC912>&lᴡᴇᴀʟᴛʜ <##A4FEF1>gem &7Tier <##A4FEF1>1" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Wealth.Pristine+5.Tier.1}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Wealth.Pristine+4.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Wealth.Pristine+3.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Wealth.Pristine+2.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Wealth.Pristine+1.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Wealth.Pristine.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Wealth.Scratched.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Wealth.Cracked.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Wealth.Damaged.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Wealth.Ruined.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Wealth.Broken.Tier.1}
+
+				if arg-2 is "WealthTier2":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##0EC912>&lᴡᴇᴀʟᴛʜ <##A4FEF1>gem &7Tier <##A4FEF1>2" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##0EC912>&lᴡᴇᴀʟᴛʜ <##A4FEF1>gem &7Tier <##A4FEF1>2" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Wealth.Pristine+5.Tier.2}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Wealth.Pristine+4.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Wealth.Pristine+3.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Wealth.Pristine+2.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Wealth.Pristine+1.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Wealth.Pristine.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Wealth.Scratched.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Wealth.Cracked.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Wealth.Damaged.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Wealth.Ruined.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Wealth.Broken.Tier.2}
+
+				if arg-2 is "AstraTier1":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##A01FFF>&lᴀsᴛʀᴀ <##A4FEF1>gem &7Tier <##A4FEF1>1" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##A01FFF>&lᴀsᴛʀᴀ <##A4FEF1>gem &7Tier <##A4FEF1>1" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Astra.Pristine+5.Tier.1}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Astra.Pristine+4.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Astra.Pristine+3.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Astra.Pristine+2.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Astra.Pristine+1.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Astra.Pristine.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Astra.Scratched.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Astra.Cracked.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Astra.Damaged.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Astra.Ruined.Tier.1}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Astra.Broken.Tier.1}
+
+
+				if arg-2 is "AstraTier2":
+
+					send "<##FFE4AB>🔮 <##A4FEF1>You have given <##FFE4AB>%{_p}% <##A01FFF>&lᴀsᴛʀᴀ <##A4FEF1>gem &7Tier <##A4FEF1>2" to player
+					send "<##FFE4AB>🔮 <##A4FEF1>You have received <##A01FFF>&lᴀsᴛʀᴀ <##A4FEF1>gem &7Tier <##A4FEF1>2" to {_p}
+
+					set {_uuid} to uuid of {_p}
+					if {Bliss.GemHealth.%{_uuid}%} is 11:
+						give {_p} {Gems.Astra.Pristine+5.Tier.2}
+					
+					if {Bliss.GemHealth.%{_uuid}%} is 10:
+						give {_p} {Gems.Astra.Pristine+4.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 9:
+						give {_p} {Gems.Astra.Pristine+3.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 8:
+						give {_p} {Gems.Astra.Pristine+2.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 7:
+						give {_p} {Gems.Astra.Pristine+1.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 6:
+						give {_p} {Gems.Astra.Pristine.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 5:
+						give {_p} {Gems.Astra.Scratched.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 4:
+						give {_p} {Gems.Astra.Cracked.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						give {_p} {Gems.Astra.Damaged.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 2:
+						give {_p} {Gems.Astra.Ruined.Tier.2}
+		
+					if {Bliss.GemHealth.%{_uuid}%} is 1:
+						give {_p} {Gems.Astra.Broken.Tier.2}
+				
+
+			if arg-1 is "gem":
+				if sender is sender:
+					if arg-2 is "Strength":
+						set {_uuid} to uuid of {_p}
+						set {Gem.%{_uuid}%} to "Strength"
+
+						
+						execute console command "setcorrectgems %{_p}%"
+
+
+					if arg-2 is "Fire":
+						set {_uuid} to uuid of {_p}
+						set {Gem.%{_uuid}%} to "Fire"
+
+						
+						execute console command "setcorrectgems %{_p}%"
+			
+
+					if arg-2 is "Life":
+						set {_uuid} to uuid of {_p}
+						set {Gem.%{_uuid}%} to "Life"
+
+						
+						execute console command "setcorrectgems %{_p}%"
+
+
+					if arg-2 is "Puff":
+						set {_uuid} to uuid of {_p}
+						set {Gem.%{_uuid}%} to "Puff"
+
+						
+						execute console command "setcorrectgems %{_p}%"
+							
+					if arg-2 is "Wealth":
+						set {_uuid} to uuid of {_p}
+						set {Gem.%{_uuid}%} to "Wealth"
+
+						
+						execute console command "setcorrectgems %{_p}%"
+
+
+
+					if arg-2 is "Speed":
+						set {_uuid} to uuid of {_p}
+						set {Gem.%{_uuid}%} to "Speed"
+
+						
+						execute console command "setcorrectgems %{_p}%"
+
+
+					if arg-2 is "Astra":
+						set {_uuid} to uuid of {_p}
+						set {Gem.%{_uuid}%} to "Astra"
+
+						
+						execute console command "setcorrectgems %{_p}%"
+
+				else:
+					if {_p} is player:
+						if arg-2 is "Strength":
+							set {_uuid} to uuid of {_p}
+							set {Gem.%{_uuid}%} to "Strength"
+		
+							
+							execute console command "setcorrectgems %{_p}%"
+		
+		
+						if arg-2 is "Fire":
+							set {_uuid} to uuid of {_p}
+							set {Gem.%{_uuid}%} to "Fire"
+		
+							
+							execute console command "setcorrectgems %{_p}%"
+				
+		
+						if arg-2 is "Life":
+							set {_uuid} to uuid of {_p}
+							set {Gem.%{_uuid}%} to "Life"
+		
+							
+							execute console command "setcorrectgems %{_p}%"
+		
+		
+						if arg-2 is "Puff":
+							set {_uuid} to uuid of {_p}
+							set {Gem.%{_uuid}%} to "Puff"
+		
+							
+							execute console command "setcorrectgems %{_p}%"
+								
+						if arg-2 is "Wealth":
+							set {_uuid} to uuid of {_p}
+							set {Gem.%{_uuid}%} to "Wealth"
+		
+							
+							execute console command "setcorrectgems %{_p}%"
+		
+		
+		
+						if arg-2 is "Speed":
+							set {_uuid} to uuid of {_p}
+							set {Gem.%{_uuid}%} to "Speed"
+		
+							
+							execute console command "setcorrectgems %{_p}%"
+		
+		
+						if arg-2 is "Astra":
+							set {_uuid} to uuid of {_p}
+							set {Gem.%{_uuid}%} to "Astra"
+		
+							
+							execute console command "setcorrectgems %{_p}%"
+
+					else:
+
+						send "No, bozo." to sender				
+
+
+					
+				
+
+
+
+			if arg-1 is "setTier":
+				if sender is sender:
+					set {_uuid} to uuid of {_p}
+					if arg-2 is "1":
+						set {Bliss.Tier.%{_uuid}%} to 1
+						execute console command "setcorrectgems %{_p}% energy"
+					
+
+					if arg-2 is "2":
+						set {Bliss.Tier.%{_uuid}%} to 2
+						execute console command "setcorrectgems %{_p}% energy"
+				else:
+					if {_p} is player:
+						set {_uuid} to uuid of {_p}
+						if arg-2 is "1":
+							set {Bliss.Tier.%{_uuid}%} to 1
+							execute console command "setcorrectgems %{_p}% energy"
+						
+		
+						if arg-2 is "2":
+							set {Bliss.Tier.%{_uuid}%} to 2
+							execute console command "setcorrectgems %{_p}% energy"
+					else:
+						send "Dont put your username or someone else's username! This is to prevent others from using /bliss on u" to sender
+
+
+		else:
+			if arg-1 is not "withdraw":
+				send "<##FFE4AB>🔮 &cYou don't have permission to use that!"
+				
+
+
+
+
+
+
+
+
+
+on tab complete for "/bliss":
+    add "givegem" to tab completions
+    add "setenergy" to tab completions
+    add "gem" to tab completions
+    add "setTier" to tab completions
+    add "item" to tab completions
+    add "gamemode" to tab completions
+    add "revive" to tab completions
+    add "withdraw" to tab completions
+
+
+
+
+
+on tab complete of "/bliss":
+	if tab arg-1 = "givegem":
+		set tab completions for position 2 to "StrengthTier1", "StrengthTier2", "SpeedTier1", "SpeedTier2", "FireTier1", "FireTier2", "LifeTier1", "LifeTier2", "PuffTier1", "PuffTier2", "WealthTier1", "WealthTier2", "AstraTier1" and "AstraTier1"
+	
+	if tab arg-1 = "setenergy":
+		set tab completions for position 2 to "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" and "11"
+
+	if tab arg-1 = "gem":
+		set tab completions for position 2 to "Strength", "Fire", "Life", "Puff", "Wealth", "Speed" and "Astra"
+
+
+	if tab arg-1 = "setenergy":
+		set tab completions for position 2 to 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 and 11
+		
+	if tab arg-1 = "setTier":
+		set tab completions for position 2 to 1 and 2 
+
+	if tab arg-1 = "item":
+		set tab completions for position 2 to "EnergyBottle", "Token", "RepairKit", "ReviveTome", "GemFragment", "Remote", "Upgrader" and "Trader"
+
+	if tab arg-1 = "gamemode":
+		set tab completions for position 2 to "creative", "c", "s", "survival", "a", "adventure", "spectator"
+
+	if tab arg-1 = "revive":
+		set {_s::*} to {BannedPlayers::*}
+
+		loop {_s::*}:
+			set {_t} to loop-value parsed as offline player
+			add {_t} to {_ss::*}
+
+		set tab completions for position 2 to {_ss::*}
+

@@ -2,173 +2,166 @@
 
 
 
-		
-
-
 every 1 second:
 	loop all players:
-		set {_uuid} to uuid of loop-player
-		set {_make_gem_not_do_cooldown_more_than_1_times} to false
 		loop all items in loop-player's inventory:
-			if name of loop-slot contains "<##A01FFF>&lᴀsᴛʀᴀ":
-				if {_make_gem_not_do_cooldown_more_than_1_times} is false:
-					set {_make_gem_not_do_cooldown_more_than_1_times} to true
+			if name of loop-slot contains "<##A01FFF>&lᴀsᴛʀᴀ" or "<##ffcc26>&lGold Gem":
 
-					#Daggers
-					
-					if {Astra.Power1.Daggers.Second.%{_uuid}%} is not set:
-						set {Astra.Power1.Daggers.Second.%{_uuid}%} to 0
-						set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 0
-						set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
-
-					if {Astra.Power1.Daggers.Minute.%{_uuid}%} is not set:
-						set {Astra.Power1.Daggers.Second.%{_uuid}%} to 0
-						set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 0
-						set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
-
-					if {Astra.Power1.Daggers.Cooldown.%{_uuid}%} is not set:
-						set {Astra.Power1.Daggers.Second.%{_uuid}%} to 0
-						set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 0
-						set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
-
-					if {Astra.Power1.Daggers.Display.%{_uuid}%} is not set:
-						set {Astra.Power1.Daggers.Display.%{_uuid}%} to "🔪 &b%{Astra.Power1.Daggers.Minute.%{_uuid}%}%m %{Astra.Power1.Daggers.Second.%{_uuid}%}%s"
-						
+				#Daggers
 				
-					if {Astra.Power1.Daggers.Cooldown.%{_uuid}%} is true:
-						if {Astra.Power1.Daggers.Minute.%{_uuid}%} is 0:
-							set {Astra.Power1.Daggers.Display.%{_uuid}%} to "🔪 &b%{Astra.Power1.Daggers.Second.%{_uuid}%}%s"
+				if {Astra.Power1.Daggers.Second.%uuid of loop-player%} is not set:
+					set {Astra.Power1.Daggers.Second.%uuid of loop-player%} to 0
+					set {Astra.Power1.Daggers.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power1.Daggers.Cooldown.%uuid of loop-player%} to true
 
-						else:
-							set {Astra.Power1.Daggers.Display.%{_uuid}%} to "🔪 &b%{Astra.Power1.Daggers.Minute.%{_uuid}%}%m %{Astra.Power1.Daggers.Second.%{_uuid}%}%s"
+				if {Astra.Power1.Daggers.Minute.%uuid of loop-player%} is not set:
+					set {Astra.Power1.Daggers.Second.%uuid of loop-player%} to 0
+					set {Astra.Power1.Daggers.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power1.Daggers.Cooldown.%uuid of loop-player%} to true
+
+				if {Astra.Power1.Daggers.Cooldown.%uuid of loop-player%} is not set:
+					set {Astra.Power1.Daggers.Second.%uuid of loop-player%} to 0
+					set {Astra.Power1.Daggers.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power1.Daggers.Cooldown.%uuid of loop-player%} to true
+
+				if {Astra.Power1.Daggers.Display.%uuid of loop-player%} is not set:
+					set {Astra.Power1.Daggers.Display.%uuid of loop-player%} to "🔪 &b%{Astra.Power1.Daggers.Minute.%uuid of loop-player%}%m %{Astra.Power1.Daggers.Second.%uuid of loop-player%}%s"
+					
+			
+				if {Astra.Power1.Daggers.Cooldown.%uuid of loop-player%} is true:
+					if {Astra.Power1.Daggers.Minute.%uuid of loop-player%} is 0:
+						set {Astra.Power1.Daggers.Display.%uuid of loop-player%} to "🔪 &b%{Astra.Power1.Daggers.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Astra.Power1.Daggers.Display.%uuid of loop-player%} to "🔪 &b%{Astra.Power1.Daggers.Minute.%uuid of loop-player%}%m %{Astra.Power1.Daggers.Second.%uuid of loop-player%}%s"
 
 
-					if {Astra.Power1.Daggers.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Astra.Power1.Daggers.Second.%{_uuid}%}
-
-
-
-					if {Astra.Power1.Daggers.Second.%{_uuid}%} < 0:
-						remove 1 from {Astra.Power1.Daggers.Minute.%{_uuid}%}
-						set {Astra.Power1.Daggers.Second.%{_uuid}%} to 59
-						
-					if {Astra.Power1.Daggers.Minute.%{_uuid}%} < 0: 
-						set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to false
-						set {Astra.Power1.Daggers.Display.%{_uuid}%} to "🔪 &aReady!"
-
-
-					#Enchanting
-
-					if {Astra.Power2.Enchanting.Second.%{_uuid}%} is not set:
-						set {Astra.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Astra.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Astra.Power2.Enchanting.Minute.%{_uuid}%} is not set:
-						set {Astra.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Astra.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+				if {Astra.Power1.Daggers.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Astra.Power1.Daggers.Second.%uuid of loop-player%}
 
 
 
-					if {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} is not set:
-						set {Astra.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Astra.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} to true	
-						set {Astra.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Astra.Power2.Enchanting.Minute.%{_uuid}%}%m %{Astra.Power2.Enchanting.Second.%{_uuid}%}%s"
+				if {Astra.Power1.Daggers.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Astra.Power1.Daggers.Minute.%uuid of loop-player%}
+					set {Astra.Power1.Daggers.Second.%uuid of loop-player%} to 59
+					
+				if {Astra.Power1.Daggers.Minute.%uuid of loop-player%} < 0: 
+					set {Astra.Power1.Daggers.Cooldown.%uuid of loop-player%} to false
+					set {Astra.Power1.Daggers.Display.%uuid of loop-player%} to "🔪 &aReady!"
 
-					if {Astra.Power2.Enchanting.Display.%{_uuid}%} is not set:
-						set {Astra.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Astra.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} to true	
 
-					if {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						set {Astra.Power2.Enchanting.Display.%{_uuid}%} to "&b %{Astra.Power2.Enchanting.Minute.%{_uuid}%}%m %{Astra.Power2.Enchanting.Second.%{_uuid}%}%s"
+				#Enchanting
 
-					if {Astra.Power2.Enchanting.Display.%{_uuid}%} is not set:
-						set {Astra.Power2.Enchanting.Display.%{_uuid}%} to " &b %{Astra.Power2.Enchanting.Minute.%{_uuid}%}%m %{Astra.Power2.Enchanting.Second.%{_uuid}%}%s"
+				if {Astra.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Astra.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Astra.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
 
-					if {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						if {Astra.Power2.Enchanting.Minute.%{_uuid}%} is 0:
-							set {Astra.Power2.Enchanting.Display.%{_uuid}%} to "&b %{Astra.Power2.Enchanting.Second.%{_uuid}%}%s"
+				if {Astra.Power2.Enchanting.Minute.%uuid of loop-player%} is not set:
+					set {Astra.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Astra.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
 
-						else:
-							set {Astra.Power2.Enchanting.Display.%{_uuid}%} to "&b %{Astra.Power2.Enchanting.Minute.%{_uuid}%}%m %{Astra.Power2.Enchanting.Second.%{_uuid}%}%s"
 
-					if {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Astra.Power2.Enchanting.Second.%{_uuid}%}
 
+				if {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} is not set:
+					set {Astra.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Astra.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true	
+					set {Astra.Power2.Enchanting.Display.%uuid of loop-player%} to " &b%{Astra.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Astra.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Astra.Power2.Enchanting.Display.%uuid of loop-player%} is not set:
+					set {Astra.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Astra.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true	
+
+				if {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					set {Astra.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Astra.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Astra.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Astra.Power2.Enchanting.Display.%uuid of loop-player%} is not set:
+					set {Astra.Power2.Enchanting.Display.%uuid of loop-player%} to " &b %{Astra.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Astra.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Astra.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Astra.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Astra.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Astra.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Astra.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Astra.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Astra.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
+				
+				if {Astra.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Astra.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Astra.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					
+				if {Astra.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Astra.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
+					set {Astra.Power2.Enchanting.Display.%uuid of loop-player%} to " &aReady!"
+
+
+
+				#Projection
+
+
+
+
+
+				if {Astra.Power3.Projection.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Astra.Power3.Projection.Second.%uuid of loop-player%}
+
+
+				
+				if {Astra.Power3.Projection.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Astra.Power3.Projection.Minute.%uuid of loop-player%}
+					set {Astra.Power3.Projection.Second.%uuid of loop-player%} to 59
+
+
+				if {Astra.Power3.Projection.Cooldown.%uuid of loop-player%} is true:
+					if {Astra.Power3.Projection.Minute.%uuid of loop-player%} is 0:
+						set {Astra.Power3.Projection.Display.%uuid of loop-player%} to "👻 &b%{Astra.Power3.Projection.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Astra.Power3.Projection.Display.%uuid of loop-player%} to "👻 &b%{Astra.Power3.Projection.Minute.%uuid of loop-player%}%m %{Astra.Power3.Projection.Second.%uuid of loop-player%}%s"
+
+
+				if {Astra.Power3.Projection.Second.%uuid of loop-player%} is not set:
+					set {Astra.Power3.Projection.Second.%uuid of loop-player%} to 0
+					set {Astra.Power3.Projection.Minute.%uuid of loop-player%} to 0
+
+				if {Astra.Power3.Projection.Cooldown.%uuid of loop-player%} is not set:
+					set {Astra.Power3.Projection.Second.%uuid of loop-player%} to 0
+					set {Astra.Power3.Projection.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power3.Projection.Cooldown.%uuid of loop-player%} to true	
+					set {Astra.Power3.Projection.Display.%uuid of loop-player%} to "👻 &b%{Astra.Power3.Projection.Minute.%uuid of loop-player%}%m %{Astra.Power3.Projection.Second.%uuid of loop-player%}%s"
+
+				if {Astra.Power3.Projection.Display.%uuid of loop-player%} is not set:
+					set {Astra.Power3.Projection.Second.%uuid of loop-player%} to 0
+					set {Astra.Power3.Projection.Minute.%uuid of loop-player%} to 0
+					set {Astra.Power3.Projection.Cooldown.%uuid of loop-player%} to true	
+
+
+
+				if {Astra.Power3.Projection.Display.%uuid of loop-player%} is not set:
+					set {Astra.Power3.Projection.Display.%uuid of loop-player%} to "👻 &b%{Astra.Power3.Projection.Minute.%uuid of loop-player%}%m %{Astra.Power3.Projection.Second.%uuid of loop-player%}%s"
 
 					
-					if {Astra.Power2.Enchanting.Second.%{_uuid}%} < 0:
-						remove 1 from {Astra.Power2.Enchanting.Minute.%{_uuid}%}
-						set {Astra.Power2.Enchanting.Second.%{_uuid}%} to 59
-						
-					if {Astra.Power2.Enchanting.Minute.%{_uuid}%} < 0:
-						set {Astra.Power2.Enchanting.Cooldown.%{_uuid}%} to false
-						set {Astra.Power2.Enchanting.Display.%{_uuid}%} to " &aReady!"
-
-
-
-					#Projection
 
 
 
 
-
-					if {Astra.Power3.Projection.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Astra.Power3.Projection.Second.%{_uuid}%}
-
-
-					
-					if {Astra.Power3.Projection.Second.%{_uuid}%} < 0:
-						remove 1 from {Astra.Power3.Projection.Minute.%{_uuid}%}
-						set {Astra.Power3.Projection.Second.%{_uuid}%} to 59
-
-
-					if {Astra.Power3.Projection.Cooldown.%{_uuid}%} is true:
-						if {Astra.Power3.Projection.Minute.%{_uuid}%} is 0:
-							set {Astra.Power3.Projection.Display.%{_uuid}%} to "👻 &b%{Astra.Power3.Projection.Second.%{_uuid}%}%s"
-
-						else:
-							set {Astra.Power3.Projection.Display.%{_uuid}%} to "👻 &b%{Astra.Power3.Projection.Minute.%{_uuid}%}%m %{Astra.Power3.Projection.Second.%{_uuid}%}%s"
-
-
-					if {Astra.Power3.Projection.Second.%{_uuid}%} is not set:
-						set {Astra.Power3.Projection.Second.%{_uuid}%} to 0
-						set {Astra.Power3.Projection.Minute.%{_uuid}%} to 0
-
-					if {Astra.Power3.Projection.Cooldown.%{_uuid}%} is not set:
-						set {Astra.Power3.Projection.Second.%{_uuid}%} to 0
-						set {Astra.Power3.Projection.Minute.%{_uuid}%} to 0
-						set {Astra.Power3.Projection.Cooldown.%{_uuid}%} to true	
-						set {Astra.Power3.Projection.Display.%{_uuid}%} to "👻 &b%{Astra.Power3.Projection.Minute.%{_uuid}%}%m %{Astra.Power3.Projection.Second.%{_uuid}%}%s"
-
-					if {Astra.Power3.Projection.Display.%{_uuid}%} is not set:
-						set {Astra.Power3.Projection.Second.%{_uuid}%} to 0
-						set {Astra.Power3.Projection.Minute.%{_uuid}%} to 0
-						set {Astra.Power3.Projection.Cooldown.%{_uuid}%} to true	
+				if {Astra.Power3.Projection.Minute.%uuid of loop-player%} < 0:
+					set {Astra.Power3.Projection.Cooldown.%uuid of loop-player%} to false
+					set {Astra.Power3.Projection.Display.%uuid of loop-player%} to "👻 &aReady!"
 
 
 
-					if {Astra.Power3.Projection.Display.%{_uuid}%} is not set:
-						set {Astra.Power3.Projection.Display.%{_uuid}%} to "👻 &b%{Astra.Power3.Projection.Minute.%{_uuid}%}%m %{Astra.Power3.Projection.Second.%{_uuid}%}%s"
+				# Set Stuff
 
-						
-
-
-
-
-					if {Astra.Power3.Projection.Minute.%{_uuid}%} < 0:
-						set {Astra.Power3.Projection.Cooldown.%{_uuid}%} to false
-						set {Astra.Power3.Projection.Display.%{_uuid}%} to "👻 &aReady!"
-
-
-
-					# Set Stuff
-
-					if {entity3.%loop-player%} is not set:
-						set {entity3.%loop-player%} to ""
+				if {entity3.%loop-player%} is not set:
+					set {entity3.%loop-player%} to ""
 
  
 on left click:
@@ -185,7 +178,7 @@ on left click:
 			teleport loop-player to {Astra.Power3.Projection.Location.%{_uuid}%}
 
 			set {_slot} to 0
-			clear player's inventory
+			clear loop-player's inventory
 			loop {Astra.Power3.Projection.Inventory.%{_uuid}%::*}:
 				set slot {_slot} of loop-player's inventory to loop-value-2
 				add 1 to {_slot}
@@ -194,6 +187,7 @@ on left click:
 
 			destroy citizen {AstralNPC.%{_uuid}%.ID}
 			remove invisibility from loop-player
+			execute console command "effect clear %loop-player% minecraft:invisibility"
 
 
 on npc left click:
@@ -220,6 +214,7 @@ on npc left click:
 
 			destroy citizen {AstralNPC.%{_uuid}%.ID}
 			remove invisibility from loop-player
+			execute console command "effect clear %loop-player% minecraft:invisibility"
 		
 on left click:
 	set {_uuid} to uuid of player
@@ -243,6 +238,8 @@ on left click:
 
 			destroy citizen {AstralNPC.%{_uuid}%.ID}
 			remove invisibility from player
+			execute console command "effect clear %player% minecraft:invisibility"
+			kill {AstralNPC.%{_uuid}%}
 
 every 1 tick:
 	loop all players:
@@ -267,6 +264,7 @@ every 1 tick:
 	
 				destroy citizen {AstralNPC.%{_uuid}%.ID}
 				remove invisibility from loop-player
+				execute console command "effect clear %loop-player% minecraft:invisibility"
 	
 
 on disconnect:
@@ -290,6 +288,7 @@ on disconnect:
 		destroy citizen {AstralNPC.%{_uuid}%.ID}
 		kill {AstralNPC.%{_uuid}%}
 		remove invisibility from player
+		execute console command "effect clear %player% minecraft:invisibility"
 
 
 on server stop:
@@ -311,6 +310,7 @@ on server stop:
 			destroy citizen {AstralNPC.%{_uuid}%.ID}
 			kill {AstralNPC.%{_uuid}%}
 			remove invisibility from loop-player
+			execute console command "effect clear %loop-player% minecraft:invisibility"
 	
 	
 
@@ -341,6 +341,7 @@ on damage:
 
 			kill {AstralNPC.%{_uuid}%}
 			remove invisibility from loop-player
+			execute console command "effect clear %loop-player% minecraft:invisibility"
 		
 
 on damage:
@@ -357,106 +358,98 @@ on damage:
 
 
 on right click:
-	set {_uuid} to uuid of player 
+	
 	if player's held item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
-		set {_uuid} to uuid of player
+		set {_uuid} to uuid of player 
 		if {Disabled.%{_uuid}%} < 1:
-			set {_uuid} to uuid of player 
-			if {Astra.Power3.Projection.Cooldown.%{_uuid}%} is false:
-				set {_uuid} to uuid of player
-				set {Astra.Power3.Projection.Second.%{_uuid}%} to 30
-				set {Astra.Power3.Projection.Minute.%{_uuid}%} to 0
-				set {Astra.Power3.Projection.Cooldown.%{_uuid}%} to true
-				set {Astra.Power3.Projection.Location.%{_uuid}%} to location of player
-				send "<##A01FFF>🔮 <##A4FEF1>You have activated &7Astral Projection"
+			if {Astra.Power3.Projection.Activated.%{_uuid}%} is not true:
+				if {Astra.Power3.Projection.Cooldown.%{_uuid}%} is not true:
+					if {Daggers.on.%{_uuid}%} is not true:
+						set {_uuid} to uuid of player
+						set {Astra.Power3.Projection.Second.%{_uuid}%} to 30
+						set {Astra.Power3.Projection.Minute.%{_uuid}%} to 0
+						set {Astra.Power3.Projection.Cooldown.%{_uuid}%} to true
+						set {Astra.Power3.Projection.Location.%{_uuid}%} to location of player
+						send "<##A01FFF>🔮 <##A4FEF1>You have activated <##C7C7C7>Astral Projection"
 
-				set {Astra.Power3.Projection.Activated.%{_uuid}%} to true
-				
-				set {Astra.Power3.Projection.Inventory.%{_uuid}%.Helmet} to player's helmet
-				set {Astra.Power3.Projection.Inventory.%{_uuid}%.Chestplate} to player's chestplate
-				set {Astra.Power3.Projection.Inventory.%{_uuid}%.Leggings} to player's leggings
-				set {Astra.Power3.Projection.Inventory.%{_uuid}%.Boots} to player's boots
+						set {Astra.Power3.Projection.Activated.%{_uuid}%} to true
+						
+						set {Astra.Power3.Projection.Inventory.%{_uuid}%.Helmet} to player's helmet
+						set {Astra.Power3.Projection.Inventory.%{_uuid}%.Chestplate} to player's chestplate
+						set {Astra.Power3.Projection.Inventory.%{_uuid}%.Leggings} to player's leggings
+						set {Astra.Power3.Projection.Inventory.%{_uuid}%.Boots} to player's boots
 
-				remove player from bossbar players of {Dagger.Bar.%{_uuid}%}
-				set {Daggers.1.%{_uuid}%.shotdagger} to true
-				set {Daggers.2.%{_uuid}%.shotdagger} to true
-				set {Daggers.3.%{_uuid}%.shotdagger} to true
-				set {Daggers.4.%{_uuid}%.shotdagger} to true
-				set {Daggers.5.%{_uuid}%.shotdagger} to true
-				set {Shootdagger.%{_uuid}%} to 0
-	
-				set {Daggers.on.%{_uuid}%} to false
-	
-				if {Daggers.5.%{_uuid}%} is not {Daggers.5.%{_uuid}%.real}:
-					kill {Daggers.5.%{_uuid}%}
-	
-				if {Daggers.4.%{_uuid}%} is not {Daggers.4.%{_uuid}%.real}:
-					kill {Daggers.4.%{_uuid}%}
-	
-				if {Daggers.3.%{_uuid}%} is not {Daggers.3.%{_uuid}%.real}:
-					kill {Daggers.3.%{_uuid}%}
-	
-				if {Daggers.2.%{_uuid}%} is not {Daggers.2.%{_uuid}%.real}:
-					kill {Daggers.2.%{_uuid}%}
-	
-				if {Daggers.1.%{_uuid}%} is not {Daggers.1.%{_uuid}%.real}:
-					kill {Daggers.1.%{_uuid}%}
-	
-
-				set {_s} to 0
-				loop 40 times:
-					clear {Astra.Power3.Projection.Inventory.%{_uuid}%.Indexes.%{_s}%}
-					add 1 to {_s}
-
-				clear {Astra.Power3.Projection.Inventory.%{_uuid}%::*}
-
-				loop all items in player's inventory:
-					set {Astra.Power3.Projection.Inventory.%{_uuid}%.Indexes.%index of loop-item%} to loop-item
-				
-
+						remove player from bossbar players of {Dagger.Bar.%{_uuid}%}
+						set {Daggers.1.%{_uuid}%.shotdagger} to true
+						set {Daggers.2.%{_uuid}%.shotdagger} to true
+						set {Daggers.3.%{_uuid}%.shotdagger} to true
+						set {Daggers.4.%{_uuid}%.shotdagger} to true
+						set {Daggers.5.%{_uuid}%.shotdagger} to true
+						set {Shootdagger.%{_uuid}%} to 0
 			
-				set {_i} to player's held item
-				clear player's inventory
-				set player's held item to {_i}
-				apply invisibility without particles to player for 9999999999999999999 seconds
-				set fly mode of player to true
-				if plugin "Citizens" is enabled:
+						set {Daggers.on.%{_uuid}%} to false
+			
+						if {Daggers.5.%{_uuid}%} is not {Daggers.5.%{_uuid}%.real}:
+							kill {Daggers.5.%{_uuid}%}
+			
+						if {Daggers.4.%{_uuid}%} is not {Daggers.4.%{_uuid}%.real}:
+							kill {Daggers.4.%{_uuid}%}
+			
+						if {Daggers.3.%{_uuid}%} is not {Daggers.3.%{_uuid}%.real}:
+							kill {Daggers.3.%{_uuid}%}
+			
+						if {Daggers.2.%{_uuid}%} is not {Daggers.2.%{_uuid}%.real}:
+							kill {Daggers.2.%{_uuid}%}
+			
+						if {Daggers.1.%{_uuid}%} is not {Daggers.1.%{_uuid}%.real}:
+							kill {Daggers.1.%{_uuid}%}
+			
 
-					create citizen named "%player%" at player
+						set {_s} to 0
+						loop 41 times:
+							clear {Astra.Power3.Projection.Inventory.%{_uuid}%.Indexes.%{_s}%}
+							add 1 to {_s}
+
+						clear {Astra.Power3.Projection.Inventory.%{_uuid}%::*}
+
+						loop all items in player's inventory:
+							set {Astra.Power3.Projection.Inventory.%{_uuid}%.Indexes.%index of loop-item%} to loop-item
+						
+
 					
+						set {_i} to player's held item
+						clear player's inventory
+						set player's held item to {_i}
+						apply invisibility without particles to player for 9999999999999999999 seconds
+						set fly mode of player to true
+						if plugin "Citizens" is enabled:
 
-					set {AstralNPC.%{_uuid}%} to last spawned entity
+							create citizen named "%player%" at player
+							
 
-					set {AstralNPC.%{_uuid}%.ID} to last created citizen id
+							set {AstralNPC.%{_uuid}%} to last spawned entity
 
-					make citizen {AstralNPC.%{_uuid}%.ID} hold player's held item
+							set {AstralNPC.%{_uuid}%.ID} to last created citizen id
 
-					make citizen {AstralNPC.%{_uuid}%.ID} vulnerable
+							make citizen {AstralNPC.%{_uuid}%.ID} hold player's held item
 
-					set citizen {AstralNPC.%{_uuid}%.ID}'s helmet to player's helmet
-					equip citizen {AstralNPC.%{_uuid}%.ID} with player's chestplate
-					equip citizen {AstralNPC.%{_uuid}%.ID} with player's leggings
-					equip citizen {AstralNPC.%{_uuid}%.ID} with player's boots
+							make citizen {AstralNPC.%{_uuid}%.ID} vulnerable
+
+							set citizen {AstralNPC.%{_uuid}%.ID}'s helmet to player's helmet
+							equip citizen {AstralNPC.%{_uuid}%.ID} with player's chestplate
+							equip citizen {AstralNPC.%{_uuid}%.ID} with player's leggings
+							equip citizen {AstralNPC.%{_uuid}%.ID} with player's boots
 
 
-				else:
+						else:
 
 
-					spawn zombified piglin at player
-					set {AstralNPC.%{_uuid}%} to last spawned entity
-					set {AstralNPC.%{_uuid}%.NBT} to nbt compound of {AstralNPC.%{_uuid}%}
-					add nbt compound of "{NoAI:1}" to {AstralNPC.%{_uuid}%.NBT}
-				
-					set {AstralNPC.%{_uuid}%}'s name to "%player%"
-command /tests:
-	permission: op
-	trigger:
-		send "%index of player's helmet%" to player
-		send "%index of player's chestplate%" to player
-		send "%index of player's leggings%" to player
-		send "%index of player's boots%" to player
-		loop all items in player's inventory:
-			send "%index of loop-item%" to player
+							spawn zombified piglin at player
+							set {AstralNPC.%{_uuid}%} to last spawned entity
+							set {AstralNPC.%{_uuid}%.NBT} to nbt compound of {AstralNPC.%{_uuid}%}
+							add nbt compound of "{NoAI:1}" to {AstralNPC.%{_uuid}%.NBT}
+						
+							set {AstralNPC.%{_uuid}%}'s name to "%player%"
 
 on break:
 	set {_uuid} to uuid of player
@@ -472,7 +465,7 @@ every 1 tick:
 	loop all players:
 		if {Astra.Power3.Projection.Activated.%uuid of loop-player%} is true:
 			
-			draw 8 of dust using dustOption(rgb(160, 31, 255), 1) at location 1 block above loop-player with offset vector(0.3, 0.4, 0.3) with extra 0
+			draw 20 of dust using dustOption(rgb(160, 31, 255), 1) at location 1 block above loop-player with offset vector(0.3, 0.4, 0.3) with extra 0
 
 			if loop-player's held item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
 				if {entity3.%loop-player%::*} is not "<none><none>":
@@ -483,7 +476,12 @@ every 1 tick:
 
 					send action bar "&f🧊 &bSPOOK  <##A01FFF>🔮  &f🌟&bTAG" to loop-player
 
-			
+on inventory click:
+	if {Astra.Power3.Projection.Activated.%uuid of player%} is true:
+		if event-item is not a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+			if event-item is not air:
+				if event-item is not player head named "<##E9C2FF><bold>ᴛʀᴀᴅᴇʀ":
+					cancel event
 
 on damage:
 	if attacker's held item is prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
@@ -502,11 +500,13 @@ on damage:
 				set fly mode of attacker to false
 			teleport attacker to {Astra.Power3.Projection.Location.%{_uuid}%}
 
+			
+
+			clear attacker's inventory
 			set {_slot} to 0
 			loop 41 times:
 				set slot {_slot} of attacker's inventory to {Astra.Power3.Projection.Inventory.%{_uuid}%.Indexes.%{_slot}%}
 				add 1 to {_slot}
-			
 
 			destroy citizen {AstralNPC.%{_uuid}%.ID}
 			kill {AstralNPC.%{_uuid}%}
@@ -761,92 +761,110 @@ on disconnect:
 		set {_v} to {Astra.Power1.Daggers.ActivatedSpec.%{_uuid}%.Spect}
 		add 10 to {Disabled.%uuid of {_v}%}
 
+function AstraCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust_color_transition using dustTransition(rgb(160, 31, 255), rgb(160, 31, 255), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+
+function AstraCircleLast(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	
+	loop {_iterations} times:
+		loop 10 times:
+			set {_angle} to loop-value-1 * {_step}
+			set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+			draw 1 of dust_color_transition using dustTransition(rgb(160, 31, 255), rgb(160, 31, 255), 1) at {_pl} ~ {_v} with extra 0.000000001
+			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
 
 on left click:
-	if player's off hand item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
-		set {_uuid} to uuid of player
-		if {Disabled.%{_uuid}%} < 1:
-			if {ghoost...%player%} is true:
-				remove 0.1 from player's health
-				set {ghoost...%player%} to false
 	if player's held item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
 		set {_uuid} to uuid of player
 		if {Disabled.%{_uuid}%} < 1:
 			set {_uuid} to uuid of player
 			if {Astra.Power1.Daggers.Cooldown.%{_uuid}%} is true:
-				if {Daggers.on.%{_uuid}%} is false:
-					set {_message} to {Astra.Power1.Daggers.Display.%{_uuid}%}
-					replace "&b" and "🔪" with "" in {_message}
-					send "<##A01FFF>🔮 &cYour &rUnbounded &cskill is on cooldown for<##A01FFF>%{_message}%"
+				if {Astra.Power3.Projection.Activated.%{_uuid}%} is not true:
+					if {Daggers.on.%{_uuid}%} is false:
+						set {_message} to {Astra.Power1.Daggers.Display.%{_uuid}%}
+						replace "&b" and "🔪" with "" in {_message}
+						send "<##A01FFF>🔮 &cYour <##C7C7C7>Unbounded &cskill is on cooldown for<##A01FFF>%{_message}%"
 
 			if {Astra.Power1.Daggers.Cooldown.%{_uuid}%} is false:
 				if {Shootdagger.%{_uuid}%} is not set:
 					set {Shootdagger.%{_uuid}%} to 0
+
 				if {Daggers.on.%{_uuid}%} is false:
-					set {Daggers.on.%{_uuid}%} to true
-					set {Shootdagger.%{_uuid}%} to 5
-					set {_uuid} to uuid of player
-					set bar progress of {Dagger.Bar.%{_uuid}%} to 100
-					set {Dagger.Bar.%{_uuid}%} to boss bar with id "%{_uuid}%sdaggers" with title "&fDaggers" with color aqua with progress 100
-					set bar style of {Dagger.Bar.%{_uuid}%} to solid bar
+					if {Astra.Power3.Projection.Activated.%{_uuid}%} is not true:
+						set {Daggers.on.%{_uuid}%} to true
+						set {Shootdagger.%{_uuid}%} to 5
+						set {_uuid} to uuid of player
+						set bar progress of {Dagger.Bar.%{_uuid}%} to 100
+						set {Dagger.Bar.%{_uuid}%} to boss bar with id "%{_uuid}%sdaggers" with title "&fDaggers" with color aqua with progress 100
+						set bar style of {Dagger.Bar.%{_uuid}%} to solid bar
 
 
 
 
-					add player to bossbar players of {Dagger.Bar.%{_uuid}%}
+						add player to bossbar players of {Dagger.Bar.%{_uuid}%}
 
-					if {Bliss.GemHealth.%{_uuid}%} > 3:
-						set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 2
-						set {Astra.Power1.Daggers.Second.%{_uuid}%} to 30
-						set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
-					if {Bliss.GemHealth.%{_uuid}%} is 3:
-						set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 2
-						set {Astra.Power1.Daggers.Second.%{_uuid}%} to 30
-						set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
-					if {Bliss.GemHealth.%{_uuid}%} < 3:
-						set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 2
-						set {Astra.Power1.Daggers.Second.%{_uuid}%} to 30
-						set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
+						if {Bliss.GemHealth.%{_uuid}%} > 3:
+							set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 2
+							set {Astra.Power1.Daggers.Second.%{_uuid}%} to 30
+							set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
+						if {Bliss.GemHealth.%{_uuid}%} is 3:
+							set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 2
+							set {Astra.Power1.Daggers.Second.%{_uuid}%} to 30
+							set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
+						if {Bliss.GemHealth.%{_uuid}%} < 3:
+							set {Astra.Power1.Daggers.Minute.%{_uuid}%} to 2
+							set {Astra.Power1.Daggers.Second.%{_uuid}%} to 30
+							set {Astra.Power1.Daggers.Cooldown.%{_uuid}%} to true
 
-					set {Daggers.5.%{_uuid}%.shotdagger} to false
-					set {Daggers.4.%{_uuid}%.shotdagger} to false
-					set {Daggers.3.%{_uuid}%.shotdagger} to false
-					set {Daggers.2.%{_uuid}%.shotdagger} to false
-					set {Daggers.1.%{_uuid}%.shotdagger} to false
-
-
-
-
-					spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
-					set {Daggers.1.%{_uuid}%} to last spawned entity
-					add last spawned entity to {Daggers::*}
-					#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
-
-					spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag2"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
-					set {Daggers.2.%{_uuid}%} to last spawned entity
-					add last spawned entity to {Daggers::*}
-					#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
-
-
-					spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag3"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
-					set {Daggers.3.%{_uuid}%} to last spawned entity
-					add last spawned entity to {Daggers::*}
-					#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
+						set {Daggers.5.%{_uuid}%.shotdagger} to false
+						set {Daggers.4.%{_uuid}%.shotdagger} to false
+						set {Daggers.3.%{_uuid}%.shotdagger} to false
+						set {Daggers.2.%{_uuid}%.shotdagger} to false
+						set {Daggers.1.%{_uuid}%.shotdagger} to false
 
 
 
-					spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag4"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
-					set {Daggers.4.%{_uuid}%} to last spawned entity
-					add last spawned entity to {Daggers::*}
-					#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
+
+						spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+						set {Daggers.1.%{_uuid}%} to last spawned entity
+						add last spawned entity to {Daggers::*}
+						#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
+
+						spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag2"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+						set {Daggers.2.%{_uuid}%} to last spawned entity
+						add last spawned entity to {Daggers::*}
+						#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
 
 
-					spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag5"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
-					set {Daggers.5.%{_uuid}%} to last spawned entity
-					add last spawned entity to {Daggers::*}
-					#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
+						spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag3"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+						set {Daggers.3.%{_uuid}%} to last spawned entity
+						add last spawned entity to {Daggers::*}
+						#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
 
-					
+
+
+						spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag4"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+						set {Daggers.4.%{_uuid}%} to last spawned entity
+						add last spawned entity to {Daggers::*}
+						#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
+
+
+						spawn armor stand at location of player with nbt compound from "{Marker:1b,Invisible:1b,Tags:""%player%dag5"",ArmorItems:[{},{},{},{id:nautilus_shell,tag:{CustomModelData:230},Count:1}],ArmorDropChances:[0f,0f,0f,0f]}"
+						set {Daggers.5.%{_uuid}%} to last spawned entity
+						add last spawned entity to {Daggers::*}
+						#broadcast "%{Daggers.1.%{_uuid}%}'s x coordinate% %{Daggers.1.%{_uuid}%}'s y coordinate% %{Daggers.1.%{_uuid}%}'s z coordinate%"
+
+						
 
 
 every 1 tick:
@@ -911,12 +929,41 @@ every 1 tick:
 																		if loop-entity-2 is loop-value-3:
 																			set {_no} to true
 
+																	loop all offline players:
+																		if loop-entity-2 is {Daggers.1.%uuid of loop-offlineplayer%.real}:
+																			if "%{Bliss.Trusted.%uuid of loop-offlineplayer%::*}%" contains "%loop-entity-1's uuid%":
+																				set {_no} to true
+																				send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to loop-offlineplayer
+
+																		else if loop-entity-2 is {Daggers.2.%uuid of loop-offlineplayer%.real}:
+																			if "%{Bliss.Trusted.%uuid of loop-offlineplayer%::*}%" contains "%loop-entity-1's uuid%":
+																				set {_no} to true
+																				send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to loop-offlineplayer
+
+																		else if loop-entity-2 is {Daggers.3.%uuid of loop-offlineplayer%.real}:
+																			if "%{Bliss.Trusted.%uuid of loop-offlineplayer%::*}%" contains "%loop-entity-1's uuid%":
+																				set {_no} to true
+																				send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to loop-offlineplayer
+
+																		else if loop-entity-2 is {Daggers.4.%uuid of loop-offlineplayer%.real}:
+																			if "%{Bliss.Trusted.%uuid of loop-offlineplayer%::*}%" contains "%loop-entity-1's uuid%":
+																				set {_no} to true
+																				send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to loop-offlineplayer
+
+																		else if loop-entity-2 is {Daggers.5.%uuid of loop-offlineplayer%.real}:
+																			if "%{Bliss.Trusted.%uuid of loop-offlineplayer%::*}%" contains "%loop-entity-1's uuid%":
+																				set {_no} to true
+																				send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to loop-offlineplayer
+																		
+
 																	if {_no} is not true:
 																		set {_aa} to loop-entity-1
 																		if {_aa}'s helmet is not a nautilus shell:
-																			damage loop-entity-1 by 5
-																			push loop-entity-1 backwards at speed 0.4
-																			push loop-entity-1 up at speed 0.2
+																			damage loop-entity-1 by 0.00000000001 hearts
+
+																			set {_aa}'s health to {_aa}'s health - 6
+
+
 																			add 10 to {Disabled.%uuid of loop-entity-1%}
 																			
 																			kill loop-entity-2

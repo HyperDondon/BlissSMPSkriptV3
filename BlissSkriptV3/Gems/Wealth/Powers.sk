@@ -3,139 +3,135 @@
 
 every 1 second:
 	loop all players:
-		set {_uuid} to uuid of loop-player
-		set {_make_gem_not_do_cooldown_more_than_1_times} to false
 		loop all items in loop-player's inventory:
-			if name of loop-slot contains "<##0EC912>&lᴡᴇᴀʟᴛʜ":
-				if {_make_gem_not_do_cooldown_more_than_1_times} is false:
-					set {_make_gem_not_do_cooldown_more_than_1_times} to true
+			if name of loop-slot contains "<##0EC912>&lᴡᴇᴀʟᴛʜ" or "<##ffcc26>&lGold Gem":
 
 
-					#Unfortunate
+				#Unfortunate
 
-					if {Wealth.Power1.Unfortunate.Second.%{_uuid}%} is not set:
-						set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 59
-						set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 1
-						set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+				if {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} is not set:
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} to true
 
-					if {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} is not set:
-						set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 59
-						set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 1
-						set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+				if {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} is not set:
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} to true
 
-					if {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} is not set:
-						set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 59
-						set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 1
-						set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+				if {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} is not set:
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} to true
+			
+				if {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} is true:
+					if {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} is 0:
+						set {Wealth.Power1.Unfortunate.Display.%uuid of loop-player%} to "🍀 &b%{Wealth.Power1.Unfortunate.Second.%uuid of loop-player%}%s"
+					else:
+						set {Wealth.Power1.Unfortunate.Display.%uuid of loop-player%} to "🍀 &b%{Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%}%m %{Wealth.Power1.Unfortunate.Second.%uuid of loop-player%}%s"
 				
-					if {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} is true:
-						if {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} is 0:
-							set {Wealth.Power1.Unfortunate.Display.%{_uuid}%} to "🍀 &b%{Wealth.Power1.Unfortunate.Second.%{_uuid}%}%s"
-						else:
-							set {Wealth.Power1.Unfortunate.Display.%{_uuid}%} to "🍀 &b%{Wealth.Power1.Unfortunate.Minute.%{_uuid}%}%m %{Wealth.Power1.Unfortunate.Second.%{_uuid}%}%s"
+				if {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%}
+
+
+				
+				if {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%}
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
 					
-					if {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Wealth.Power1.Unfortunate.Second.%{_uuid}%}
+				if {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} < 0:
+					set {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} to false
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power1.Unfortunate.Display.%uuid of loop-player%} to "🍀 &aReady!"
 
+
+				#Enchanting
+
+				if {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} is not set:
+					set {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} is not set:
+					set {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Wealth.Power2.Enchanting.Display.%uuid of loop-player%} to " &b%{Wealth.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+					else:
+						set {Wealth.Power2.Enchanting.Display.%uuid of loop-player%} to " &b%{Wealth.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Wealth.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+				
+				if {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Wealth.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
+				
+				if {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					
+				if {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
+
+					set {Wealth.Power2.Enchanting.Display.%uuid of loop-player%} to " &aReady!"
+
+				if {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} is false:
+					set {Wealth.Power2.Enchanting.Display.%uuid of loop-player%} to " &aReady!"
+
+				#RichRush
+
+
+
+
+
+				if {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Wealth.Power3.RichRush.Second.%uuid of loop-player%}
+
+
+				
+				if {Wealth.Power3.RichRush.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Wealth.Power3.RichRush.Minute.%uuid of loop-player%}
+					set {Wealth.Power3.RichRush.Second.%uuid of loop-player%} to 59
+
+
+				if {Wealth.Power3.RichRush.Second.%uuid of loop-player%} is not set:
+					set {Wealth.Power3.RichRush.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power3.RichRush.Display.%uuid of loop-player%} is not set:
+					set {Wealth.Power3.RichRush.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} to true
 
 					
-					if {Wealth.Power1.Unfortunate.Second.%{_uuid}%} < 0:
-						remove 1 from {Wealth.Power1.Unfortunate.Minute.%{_uuid}%}
-						set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 59
-						
-					if {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} < 0:
-						set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to false
-						set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 59
-						set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 1
-						set {Wealth.Power1.Unfortunate.Display.%{_uuid}%} to "🍀 &aReady!"
+				if {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} is true:
+					if {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} is 0:
+						set {Wealth.Power3.RichRush.Display.%uuid of loop-player%} to "💸 &b%{Wealth.Power3.RichRush.Second.%uuid of loop-player%}%s"
+					else:
+						set {Wealth.Power3.RichRush.Display.%uuid of loop-player%} to "💸 &b%{Wealth.Power3.RichRush.Minute.%uuid of loop-player%}%m %{Wealth.Power3.RichRush.Second.%uuid of loop-player%}%s"
 
 
-					#Enchanting
 
-					if {Wealth.Power2.Enchanting.Second.%{_uuid}%} is not set:
-						set {Wealth.Power2.Enchanting.Second.%{_uuid}%} to 59
-						set {Wealth.Power2.Enchanting.Minute.%{_uuid}%} to 1
-						set {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Wealth.Power2.Enchanting.Minute.%{_uuid}%} is not set:
-						set {Wealth.Power2.Enchanting.Second.%{_uuid}%} to 59
-						set {Wealth.Power2.Enchanting.Minute.%{_uuid}%} to 1
-						set {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} is not set:
-						set {Wealth.Power2.Enchanting.Second.%{_uuid}%} to 59
-						set {Wealth.Power2.Enchanting.Minute.%{_uuid}%} to 1
-						set {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						if {Wealth.Power2.Enchanting.Minute.%{_uuid}%} is 0:
-							set {Wealth.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Wealth.Power2.Enchanting.Second.%{_uuid}%}%s"
-						else:
-							set {Wealth.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Wealth.Power2.Enchanting.Minute.%{_uuid}%}%m %{Wealth.Power2.Enchanting.Second.%{_uuid}%}%s"
-					
-					if {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Wealth.Power2.Enchanting.Second.%{_uuid}%}
-
-
-					
-					if {Wealth.Power2.Enchanting.Second.%{_uuid}%} < 0:
-						remove 1 from {Wealth.Power2.Enchanting.Minute.%{_uuid}%}
-						set {Wealth.Power2.Enchanting.Second.%{_uuid}%} to 59
-						
-					if {Wealth.Power2.Enchanting.Minute.%{_uuid}%} < 0:
-						set {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} to false
-
-						set {Wealth.Power2.Enchanting.Display.%{_uuid}%} to " &aReady!"
-
-					if {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} is false:
-						set {Wealth.Power2.Enchanting.Display.%{_uuid}%} to " &aReady!"
-
-					#RichRush
+				if {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} < 0:
+					set {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} to false
+					set {Wealth.Power3.RichRush.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power3.RichRush.Display.%uuid of loop-player%} to "💸 &aReady!"
 
 
 
 
-
-					if {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Wealth.Power3.RichRush.Second.%{_uuid}%}
-
-
-					
-					if {Wealth.Power3.RichRush.Second.%{_uuid}%} < 0:
-						remove 1 from {Wealth.Power3.RichRush.Minute.%{_uuid}%}
-						set {Wealth.Power3.RichRush.Second.%{_uuid}%} to 59
-
-
-					if {Wealth.Power3.RichRush.Second.%{_uuid}%} is not set:
-						set {Wealth.Power3.RichRush.Second.%{_uuid}%} to 59
-						set {Wealth.Power3.RichRush.Minute.%{_uuid}%} to 1
-						set {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} to true
-
-					if {Wealth.Power3.RichRush.Display.%{_uuid}%} is not set:
-						set {Wealth.Power3.RichRush.Second.%{_uuid}%} to 59
-						set {Wealth.Power3.RichRush.Minute.%{_uuid}%} to 1
-						set {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} to true
-
-						
-					if {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} is true:
-						if {Wealth.Power3.RichRush.Minute.%{_uuid}%} is 0:
-							set {Wealth.Power3.RichRush.Display.%{_uuid}%} to "💸 &b%{Wealth.Power3.RichRush.Second.%{_uuid}%}%s"
-						else:
-							set {Wealth.Power3.RichRush.Display.%{_uuid}%} to "💸 &b%{Wealth.Power3.RichRush.Minute.%{_uuid}%}%m %{Wealth.Power3.RichRush.Second.%{_uuid}%}%s"
-
-
-
-					if {Wealth.Power3.RichRush.Minute.%{_uuid}%} < 0:
-						set {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} to false
-						set {Wealth.Power3.RichRush.Second.%{_uuid}%} to 59
-						set {Wealth.Power3.RichRush.Minute.%{_uuid}%} to 1
-						set {Wealth.Power3.RichRush.Display.%{_uuid}%} to "💸 &aReady!"
-
-
-
-
-					if {Disabled.%{_uuid}%} is not set:
-						set {Disabled.%{_uuid}%} to 0
+				if {Disabled.%uuid of loop-player%} is not set:
+					set {Disabled.%uuid of loop-player%} to 0
 
 
 
@@ -311,7 +307,8 @@ on left click:
 								send "<##0EC912>🔮 <##A4FEF1>You have been affected with &f🍀<##0EC912>Unfortunate <##A4FEF1>by <##0EC912>%{_wealthholder}%" to loop-entity
 								wait 40 seconds
 								set {Unfortune %loop-entity's uuid%.group} to false
-
+							else:
+								send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to {_wealthholder}
 
 on damage:
 	set {_uuid} to uuid of attacker
@@ -424,9 +421,9 @@ on damage:
 					send "<##0EC912>🔮 <##A4FEF1>You have been affected with &f🍀<##0EC912>Unfortunate <##A4FEF1>by <##0EC912>%{_wealthholder}%" to victim
 					set {Unfortune %victim's uuid%.single} to true
 
-					loop 400 times:
-						WealthLine(victim, attacker)
-						wait 0.1 seconds
+					set {WealthLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 40 seconds
+					set {WealthLine.%attacker's uuid%.%victim's uuid%} to false
 
 					set {Unfortune %victim's uuid%.single} to false
 					
@@ -547,31 +544,40 @@ function WealthCirclelast(s: number, p: player):
 			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
 		wait 0.4 seconds
 
-function WealthLine(p1: entity, p2: entity):
-	if {_p2} is a player:
-		if {Particle_unfortunate_%uuid of {_p2}%} is true:
-			if {Particle_unfortunate_%uuid of {_p1}%} is true:
-				set {_v} to vector from {_p1}'s head to {_p2}'s head
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+every 1 tick:
+	loop all players:
+		loop all entities:
+			if {WealthLine.%loop-player-1's uuid%.%loop-entity-2's uuid%} is true:
+				set {_v} to vector from loop-player-1's head to loop-entity-2's head
 				set vector length of {_v} to 0.1
-				set {_loc} to the location 0.7 meters under {_p1}'s head
-				loop (distance between {_loc} and {_p2}) / 0.1 times:
+				set {_loc} to the location 0.7 meters under loop-player-1's head
+				loop (distance between {_loc} and loop-entity-2) / 0.1 times:
 
 					draw 1 dust using dustOption(rgb(14, 201, 18), 1) at {_loc} with force
 					draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
 					set {_loc} to {_loc} ~ {_v}	
 
-	else:
-		if {_p2} is alive:
-			if {Particle_unfortunate_%uuid of {_p2}%} is true:
-				if {Particle_unfortunate_%uuid of {_p1}%} is true:
-					set {_v} to vector from {_p1}'s head to {_p2}'s head
-					set vector length of {_v} to 0.1
-					set {_loc} to the location 0.7 meters under {_p1}'s head
-					loop (distance between {_loc} and {_p2}) / 0.1 times:
 
-						draw 1 dust using dustOption(rgb(14, 201, 18), 1) at {_loc} with force
-						draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
-						set {_loc} to {_loc} ~ {_v}	
+
+
+
+
+
+
 
 on death:
 	if victim is a player:

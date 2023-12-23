@@ -21,6 +21,10 @@ on load:
     set {Upgrader.nbt} to nbt compound of {Upgrader}
     add nbt compound of "{Tags:""UpgraderItemNBT"",SkullOwner:{Id:[I;660124231,2128364985,-1717330005,146378663],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDk5MmU0YThmNDNjNzdhYzJlMmQ3OTJkOTYwNGY2MWYzNDM4N2M4NzdhYmEzNzEyZTQwNDdiNzQwYzU3OCJ9fX0=""}]}}}" to {Upgrader.nbt}
 
+    set {UpgraderGray} to a player head named "&8<bold>ᴜᴘɢʀᴀᴅᴇʀ" with lore "&7ʀɪɢʜᴛ-ᴄʟɪᴄᴋ ᴛᴏ ᴜᴘɢʀᴀᴅᴇ ʏᴏᴜʀ ɢᴇᴍ" and "&cᴡᴀʀɴɪɴɢ: ᴜᴘɢʀᴀᴅᴇʀ ᴡɪʟʟ ᴅʀᴏᴘ ᴏɴ ᴅᴇᴀᴛʜ" with custom model data 1 with hidden enchants flag
+    set {UpgraderGray.nbt} to nbt compound of {UpgraderGray}
+    add nbt compound of "{Tags:""UpgraderGrayItemNBT"",SkullOwner:{Id:[I;1586457474,-1706211847,-1155448085,-1718512651],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTY4MmRlNzJiZjYxYzZkMjMzNjRlMmZlMmQ3Y2MyOGRkZjgzMTQ1ZDE4ZjE5Mzg1N2QzNjljZjlkZjY5MiJ9fX0=""}]}}}" to {UpgraderGray.nbt}
+
 
     set {GemFragment} to a nautilus shell named "Gem Fragment" with custom model data 240
 

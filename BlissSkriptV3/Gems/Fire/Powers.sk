@@ -16,114 +16,111 @@ on load:
 
 every 1 second:
 	loop all players:
-		set {_uuid} to uuid of loop-player
-		set {_make_gem_not_do_cooldown_more_than_1_times} to false
 		loop all items in loop-player's inventory:
-			if name of loop-slot contains "<##FE8120>&lғɪʀᴇ":
-				if {_make_gem_not_do_cooldown_more_than_1_times} is false:
-					set {_make_gem_not_do_cooldown_more_than_1_times} to true
+			if name of loop-slot contains "<##FE8120>&lғɪʀᴇ" or "<##ffcc26>&lGold Gem":
 
-					#Campfire
-					
-					if {Fire.Power3.Campfire.Second.%{_uuid}%} is not set:
-						set {Fire.Power3.Campfire.Second.%{_uuid}%} to 0
-						set {Fire.Power3.Campfire.Minute.%{_uuid}%} to 0
-						set {Fire.Power3.Campfire.Cooldown.%{_uuid}%} to true
+				#Campfire
 				
-					if {Fire.Power3.Campfire.Cooldown.%{_uuid}%} is true:
-						if {Fire.Power3.Campfire.Minute.%{_uuid}%} is 0:
-							set {Fire.Power3.Campfire.Display.%{_uuid}%} to "&f🥾 &b%{Fire.Power3.Campfire.Second.%{_uuid}%}%s"
+				if {Fire.Power3.Campfire.Second.%uuid of loop-player%} is not set:
+					set {Fire.Power3.Campfire.Second.%uuid of loop-player%} to 0
+					set {Fire.Power3.Campfire.Minute.%uuid of loop-player%} to 0
+					set {Fire.Power3.Campfire.Cooldown.%uuid of loop-player%} to true
+			
+				if {Fire.Power3.Campfire.Cooldown.%uuid of loop-player%} is true:
+					if {Fire.Power3.Campfire.Minute.%uuid of loop-player%} is 0:
+						set {Fire.Power3.Campfire.Display.%uuid of loop-player%} to "&f🥾 &b%{Fire.Power3.Campfire.Second.%uuid of loop-player%}%s"
 
-						else:
-							set {Fire.Power3.Campfire.Display.%{_uuid}%} to "&f🥾 &b%{Fire.Power3.Campfire.Minute.%{_uuid}%}%m %{Fire.Power3.Campfire.Second.%{_uuid}%}%s"
+					else:
+						set {Fire.Power3.Campfire.Display.%uuid of loop-player%} to "&f🥾 &b%{Fire.Power3.Campfire.Minute.%uuid of loop-player%}%m %{Fire.Power3.Campfire.Second.%uuid of loop-player%}%s"
 
-					if {Fire.Power3.Campfire.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Fire.Power3.Campfire.Second.%{_uuid}%}
+				if {Fire.Power3.Campfire.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Fire.Power3.Campfire.Second.%uuid of loop-player%}
 
+
+				
+				if {Fire.Power3.Campfire.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Fire.Power3.Campfire.Minute.%uuid of loop-player%}
+					set {Fire.Power3.Campfire.Second.%uuid of loop-player%} to 59
+					
+				if {Fire.Power3.Campfire.Minute.%uuid of loop-player%} < 0:
+					set {Fire.Power3.Campfire.Cooldown.%uuid of loop-player%} to false
+					set {Fire.Power3.Campfire.Second.%uuid of loop-player%} to 0
+					set {Fire.Power3.Campfire.Minute.%uuid of loop-player%} to 0
+					set {Fire.Power3.Campfire.Display.%uuid of loop-player%} to "&f🥾 &aReady!"
+
+
+				#Enchanting
+
+				if {Fire.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Fire.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Fire.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					set {Fire.Power2.Enchanting.Display.%uuid of loop-player%} to "&b%{Fire.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Fire.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+				
+				if {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Fire.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Fire.Power2.Enchanting.Display.%uuid of loop-player%} to "&b%{Fire.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Fire.Power2.Enchanting.Display.%uuid of loop-player%} to "&b%{Fire.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Fire.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Fire.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
+				
+				if {Fire.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Fire.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Fire.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					
+				if {Fire.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
+					set {Fire.Power2.Enchanting.Display.%uuid of loop-player%} to "&aReady!"
+
+
+
+				#Fireball
+
+
+
+
+
+				if {Fire.Power1.Fireball.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Fire.Power1.Fireball.Second.%uuid of loop-player%}
+
+
+				
+				if {Fire.Power1.Fireball.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Fire.Power1.Fireball.Minute.%uuid of loop-player%}
+					set {Fire.Power1.Fireball.Second.%uuid of loop-player%} to 59
+
+
+				if {Fire.Power1.Fireball.Cooldown.%uuid of loop-player%} is true:
+					if {Fire.Power1.Fireball.Minute.%uuid of loop-player%} is 0:
+						set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &b%{Fire.Power1.Fireball.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &b%{Fire.Power1.Fireball.Minute.%uuid of loop-player%}%m %{Fire.Power1.Fireball.Second.%uuid of loop-player%}%s"
+
+
+				if {Fire.Power1.Fireball.Second.%uuid of loop-player%} is not set:
+					set {Fire.Power1.Fireball.Second.%uuid of loop-player%} to 0
+					set {Fire.Power1.Fireball.Minute.%uuid of loop-player%} to 0
+					set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &aReady!"
+
+				if {Fire.Power1.Fireball.Display.%uuid of loop-player%} is not set:
+					set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &b%{Fire.Power1.Fireball.Minute.%uuid of loop-player%}%m %{Fire.Power1.Fireball.Second.%uuid of loop-player%}%s"
 
 					
-					if {Fire.Power3.Campfire.Second.%{_uuid}%} < 0:
-						remove 1 from {Fire.Power3.Campfire.Minute.%{_uuid}%}
-						set {Fire.Power3.Campfire.Second.%{_uuid}%} to 59
-						
-					if {Fire.Power3.Campfire.Minute.%{_uuid}%} < 0:
-						set {Fire.Power3.Campfire.Cooldown.%{_uuid}%} to false
-						set {Fire.Power3.Campfire.Second.%{_uuid}%} to 0
-						set {Fire.Power3.Campfire.Minute.%{_uuid}%} to 0
-						set {Fire.Power3.Campfire.Display.%{_uuid}%} to "&f🥾 &aReady!"
-
-
-					#Enchanting
-
-					if {Fire.Power2.Enchanting.Second.%{_uuid}%} is not set:
-						set {Fire.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Fire.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						set {Fire.Power2.Enchanting.Display.%{_uuid}%} to "&b%{Fire.Power2.Enchanting.Minute.%{_uuid}%}%m %{Fire.Power2.Enchanting.Second.%{_uuid}%}%s"
-					
-					if {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						if {Fire.Power2.Enchanting.Minute.%{_uuid}%} is 0:
-							set {Fire.Power2.Enchanting.Display.%{_uuid}%} to "&b%{Fire.Power2.Enchanting.Second.%{_uuid}%}%s"
-
-						else:
-							set {Fire.Power2.Enchanting.Display.%{_uuid}%} to "&b%{Fire.Power2.Enchanting.Minute.%{_uuid}%}%m %{Fire.Power2.Enchanting.Second.%{_uuid}%}%s"
-
-					if {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Fire.Power2.Enchanting.Second.%{_uuid}%}
-
-
-					
-					if {Fire.Power2.Enchanting.Second.%{_uuid}%} < 0:
-						remove 1 from {Fire.Power2.Enchanting.Minute.%{_uuid}%}
-						set {Fire.Power2.Enchanting.Second.%{_uuid}%} to 59
-						
-					if {Fire.Power2.Enchanting.Minute.%{_uuid}%} < 0:
-						set {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} to false
-						set {Fire.Power2.Enchanting.Display.%{_uuid}%} to "&aReady!"
 
 
 
-					#Fireball
+				if {Fire.Power1.Fireball.Minute.%uuid of loop-player%} < 0:
+					set {Fire.Power1.Fireball.Cooldown.%uuid of loop-player%} to false
 
-
-
-
-
-					if {Fire.Power1.Fireball.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Fire.Power1.Fireball.Second.%{_uuid}%}
-
-
-					
-					if {Fire.Power1.Fireball.Second.%{_uuid}%} < 0:
-						remove 1 from {Fire.Power1.Fireball.Minute.%{_uuid}%}
-						set {Fire.Power1.Fireball.Second.%{_uuid}%} to 59
-
-
-					if {Fire.Power1.Fireball.Cooldown.%{_uuid}%} is true:
-						if {Fire.Power1.Fireball.Minute.%{_uuid}%} is 0:
-							set {Fire.Power1.Fireball.Display.%{_uuid}%} to "&f🧨 &b%{Fire.Power1.Fireball.Second.%{_uuid}%}%s"
-
-						else:
-							set {Fire.Power1.Fireball.Display.%{_uuid}%} to "&f🧨 &b%{Fire.Power1.Fireball.Minute.%{_uuid}%}%m %{Fire.Power1.Fireball.Second.%{_uuid}%}%s"
-
-
-					if {Fire.Power1.Fireball.Second.%{_uuid}%} is not set:
-						set {Fire.Power1.Fireball.Second.%{_uuid}%} to 0
-						set {Fire.Power1.Fireball.Minute.%{_uuid}%} to 0
-
-					if {Fire.Power1.Fireball.Display.%{_uuid}%} is not set:
-						set {Fire.Power1.Fireball.Display.%{_uuid}%} to "&f🧨 &b%{Fire.Power1.Fireball.Minute.%{_uuid}%}%m %{Fire.Power1.Fireball.Second.%{_uuid}%}%s"
-
-						
-
-
-
-					if {Fire.Power1.Fireball.Minute.%{_uuid}%} < 0:
-						set {Fire.Power1.Fireball.Cooldown.%{_uuid}%} to false
-
-						set {Fire.Power1.Fireball.Display.%{_uuid}%} to "&f🧨 &aReady!"
+					set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &aReady!"
 
 
 
@@ -225,7 +222,15 @@ on right click:
 						send "<##FE8120>🔮 &cYour &f🥾&cCozy Campfire &cskill is on cooldown for &f%{Fire.Power3.Campfire.Minute.%{_uuid}%}%m %{Fire.Power3.Campfire.Second.%{_uuid}%}%s" to player
 				
 
-							
+function FireCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust using dustOption(rgb(254, 129, 32), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force						
 
 
 
@@ -665,18 +670,6 @@ on left click:
 						remove {_bar} from boss bars of player
 						set bar visibility of {_bar} to false
 
-
-
-		
-command /testfire:
-	permission: op
-	trigger:
-		set {_loc} to the location 0.4 meters under player's head
-		
-		set {_yaw} to yaw of player
-		set {_pitch} to pitch of player
-		
-		spawn 1 fireball at {_loc} with nbt compound from "{ExplosionPower:10, Motion:[%{_yaw}%,%{_pitch}%,0.0]}"
 
 		
 on projectile hit:

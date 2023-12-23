@@ -94,4 +94,4 @@ on load:
 		set {Gems.Life.Broken.Tier.2} to {Gems.Life.Pristine.Tier.2} with custom model data 44
 		set line 3 of lore of {Gems.Life.Broken.Tier.2} to "&7Broken"
 
-		set custom model data of {Gems.Life.Pristine.Tier.1} to 4
+		set custom model data of {Gems.Life.Pristine.Tier.2} to 4

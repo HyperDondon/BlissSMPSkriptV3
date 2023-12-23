@@ -5,139 +5,135 @@
 
 every 1 second:
 	loop all players:
-		set {_uuid} to uuid of loop-player
-		set {_make_gem_not_do_cooldown_more_than_1_times} to false
 		loop all items in loop-player's inventory:
-			if name of loop-slot contains "<##F10303>sᴛʀᴇɴɢᴛʜ" or "<##F10303>&lsᴛʀᴇɴɢᴛʜ":
-				if {_make_gem_not_do_cooldown_more_than_1_times} is false:
-					set {_make_gem_not_do_cooldown_more_than_1_times} to true
-					#Chad
-					if {Strength.Power3.Chad.Second.%{_uuid}%} is not set:
-						set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
-						set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
-						set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+			if name of loop-slot contains "<##F10303>sᴛʀᴇɴɢᴛʜ" or "<##F10303>&lsᴛʀᴇɴɢᴛʜ" or "<##ffcc26>&lGold Gem":
+				#Chad
+				if {Strength.Power3.Chad.Second.%uuid of loop-player%} is not set:
+					set {Strength.Power3.Chad.Second.%uuid of loop-player%} to 0
+					set {Strength.Power3.Chad.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power3.Chad.Cooldown.%uuid of loop-player%} to true
 
-					if {Strength.Power3.Chad.Minute.%{_uuid}%} is not set:
-						set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
-						set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
-						set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+				if {Strength.Power3.Chad.Minute.%uuid of loop-player%} is not set:
+					set {Strength.Power3.Chad.Second.%uuid of loop-player%} to 0
+					set {Strength.Power3.Chad.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power3.Chad.Cooldown.%uuid of loop-player%} to true
 
-					if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is not set:
-						set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
-						set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
-						set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to true
+				if {Strength.Power3.Chad.Cooldown.%uuid of loop-player%} is not set:
+					set {Strength.Power3.Chad.Second.%uuid of loop-player%} to 0
+					set {Strength.Power3.Chad.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power3.Chad.Cooldown.%uuid of loop-player%} to true
+			
+				if {Strength.Power3.Chad.Cooldown.%uuid of loop-player%} is true:
+					if {Strength.Power3.Chad.Minute.%uuid of loop-player%} is 0:
+						set {Strength.Power3.Chad.Display.%uuid of loop-player%} to "&b%{Strength.Power3.Chad.Second.%uuid of loop-player%}%s"
+					else:
+						set {Strength.Power3.Chad.Display.%uuid of loop-player%} to "&b%{Strength.Power3.Chad.Minute.%uuid of loop-player%}%m %{Strength.Power3.Chad.Second.%uuid of loop-player%}%s"
 				
-					if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is true:
-						if {Strength.Power3.Chad.Minute.%{_uuid}%} is 0:
-							set {Strength.Power3.Chad.Display.%{_uuid}%} to "&b%{Strength.Power3.Chad.Second.%{_uuid}%}%s"
-						else:
-							set {Strength.Power3.Chad.Display.%{_uuid}%} to "&b%{Strength.Power3.Chad.Minute.%{_uuid}%}%m %{Strength.Power3.Chad.Second.%{_uuid}%}%s"
+				if {Strength.Power3.Chad.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Strength.Power3.Chad.Second.%uuid of loop-player%}
+
+
+				
+				if {Strength.Power3.Chad.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Strength.Power3.Chad.Minute.%uuid of loop-player%}
+					set {Strength.Power3.Chad.Second.%uuid of loop-player%} to 59
 					
-					if {Strength.Power3.Chad.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Strength.Power3.Chad.Second.%{_uuid}%}
+				if {Strength.Power3.Chad.Minute.%uuid of loop-player%} < 0:
+					set {Strength.Power3.Chad.Cooldown.%uuid of loop-player%} to false
+					set {Strength.Power3.Chad.Second.%uuid of loop-player%} to 0
+					set {Strength.Power3.Chad.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power3.Chad.Display.%uuid of loop-player%} to "&aReady!"
 
 
+				#Enchanting
+
+				if {Strength.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Strength.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Strength.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Strength.Power2.Enchanting.Minute.%uuid of loop-player%} is not set:
+					set {Strength.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Strength.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Strength.Power2.Enchanting.Cooldown.%uuid of loop-player%} is not set:
+					set {Strength.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Strength.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Strength.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Strength.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Strength.Power2.Enchanting.Display.%uuid of loop-player%} to "&b%{Strength.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+					else:
+						set {Strength.Power2.Enchanting.Display.%uuid of loop-player%} to "&b%{Strength.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Strength.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+				
+				if {Strength.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Strength.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
+				
+				if {Strength.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Strength.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Strength.Power2.Enchanting.Second.%uuid of loop-player%} to 59
 					
-					if {Strength.Power3.Chad.Second.%{_uuid}%} < 0:
-						remove 1 from {Strength.Power3.Chad.Minute.%{_uuid}%}
-						set {Strength.Power3.Chad.Second.%{_uuid}%} to 59
-						
-					if {Strength.Power3.Chad.Minute.%{_uuid}%} < 0:
-						set {Strength.Power3.Chad.Cooldown.%{_uuid}%} to false
-						set {Strength.Power3.Chad.Second.%{_uuid}%} to 0
-						set {Strength.Power3.Chad.Minute.%{_uuid}%} to 0
-						set {Strength.Power3.Chad.Display.%{_uuid}%} to "&aReady!"
+				if {Strength.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Strength.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
 
-
-					#Enchanting
-
-					if {Strength.Power2.Enchanting.Second.%{_uuid}%} is not set:
-						set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Strength.Power2.Enchanting.Minute.%{_uuid}%} is not set:
-						set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is not set:
-						set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Strength.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						if {Strength.Power2.Enchanting.Minute.%{_uuid}%} is 0:
-							set {Strength.Power2.Enchanting.Display.%{_uuid}%} to "&b%{Strength.Power2.Enchanting.Second.%{_uuid}%}%s"
-						else:
-							set {Strength.Power2.Enchanting.Display.%{_uuid}%} to "&b%{Strength.Power2.Enchanting.Minute.%{_uuid}%}%m %{Strength.Power2.Enchanting.Second.%{_uuid}%}%s"
-					
-					if {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Strength.Power2.Enchanting.Second.%{_uuid}%}
-
-
-					
-					if {Strength.Power2.Enchanting.Second.%{_uuid}%} < 0:
-						remove 1 from {Strength.Power2.Enchanting.Minute.%{_uuid}%}
-						set {Strength.Power2.Enchanting.Second.%{_uuid}%} to 59
-						
-					if {Strength.Power2.Enchanting.Minute.%{_uuid}%} < 0:
-						set {Strength.Power2.Enchanting.Cooldown.%{_uuid}%} to false
-
-						set {Strength.Power2.Enchanting.Display.%{_uuid}%} to "&aReady!"
-
-	
-						
-
-					#Frailer
-
-
-
-
-
-					if {Strength.Power1.Frailer.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Strength.Power1.Frailer.Second.%{_uuid}%}
+					set {Strength.Power2.Enchanting.Display.%uuid of loop-player%} to "&aReady!"
 
 
 					
-					if {Strength.Power1.Frailer.Second.%{_uuid}%} < 0:
-						remove 1 from {Strength.Power1.Frailer.Minute.%{_uuid}%}
-						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 59
 
-
-					if {Strength.Power1.Frailer.Second.%{_uuid}%} is not set:
-						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
-						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
-						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
-
-					if {Strength.Power1.Frailer.Display.%{_uuid}%} is not set:
-						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
-						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
-						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true
-
-						
-					if {Strength.Power1.Frailer.Cooldown.%{_uuid}%} is true:
-						if {Strength.Power1.Frailer.Minute.%{_uuid}%} is 0:
-							set {Strength.Power1.Frailer.Display.%{_uuid}%} to "&b%{Strength.Power1.Frailer.Second.%{_uuid}%}%s"
-						else:
-							set {Strength.Power1.Frailer.Display.%{_uuid}%} to "&b%{Strength.Power1.Frailer.Minute.%{_uuid}%}%m %{Strength.Power1.Frailer.Second.%{_uuid}%}%s"
-
-
-
-					if {Strength.Power1.Frailer.Minute.%{_uuid}%} < 0:
-						set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to false
-						set {Strength.Power1.Frailer.Second.%{_uuid}%} to 0
-						set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 0
-						set {Strength.Power1.Frailer.Display.%{_uuid}%} to "&aReady!"
+				#Frailer
 
 
 
 
-					if {Disabled.%{_uuid}%} is not set:
-						set {Disabled.%{_uuid}%} to 0
+
+				if {Strength.Power1.Frailer.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Strength.Power1.Frailer.Second.%uuid of loop-player%}
 
 
-								
+				
+				if {Strength.Power1.Frailer.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Strength.Power1.Frailer.Minute.%uuid of loop-player%}
+					set {Strength.Power1.Frailer.Second.%uuid of loop-player%} to 59
+
+
+				if {Strength.Power1.Frailer.Second.%uuid of loop-player%} is not set:
+					set {Strength.Power1.Frailer.Second.%uuid of loop-player%} to 0
+					set {Strength.Power1.Frailer.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power1.Frailer.Cooldown.%uuid of loop-player%} to true
+
+				if {Strength.Power1.Frailer.Display.%uuid of loop-player%} is not set:
+					set {Strength.Power1.Frailer.Second.%uuid of loop-player%} to 0
+					set {Strength.Power1.Frailer.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power1.Frailer.Cooldown.%uuid of loop-player%} to true
+
+					
+				if {Strength.Power1.Frailer.Cooldown.%uuid of loop-player%} is true:
+					if {Strength.Power1.Frailer.Minute.%uuid of loop-player%} is 0:
+						set {Strength.Power1.Frailer.Display.%uuid of loop-player%} to "&b%{Strength.Power1.Frailer.Second.%uuid of loop-player%}%s"
+					else:
+						set {Strength.Power1.Frailer.Display.%uuid of loop-player%} to "&b%{Strength.Power1.Frailer.Minute.%uuid of loop-player%}%m %{Strength.Power1.Frailer.Second.%uuid of loop-player%}%s"
+
+
+
+				if {Strength.Power1.Frailer.Minute.%uuid of loop-player%} < 0:
+					set {Strength.Power1.Frailer.Cooldown.%uuid of loop-player%} to false
+					set {Strength.Power1.Frailer.Second.%uuid of loop-player%} to 0
+					set {Strength.Power1.Frailer.Minute.%uuid of loop-player%} to 0
+					set {Strength.Power1.Frailer.Display.%uuid of loop-player%} to "&aReady!"
+
+
+
+
+				if {Disabled.%uuid of loop-player%} is not set:
+					set {Disabled.%uuid of loop-player%} to 0
+
+
+							
 
 
 
@@ -226,10 +222,10 @@ on damage:
 						set {Particle_frailer_%uuid of victim%} to true
 						wait 1 tick
 						set {singlefrailer %{_uuid}%} to false
-						loop 200 times:
-							StrengthLine(attacker, victim)
-							wait 0.1 seconds
-							#wait 0.125 seconds
+						
+						set {StrengthLine.%attacker's uuid%.%victim's uuid%} to true
+						wait 20 seconds
+						set {StrengthLine.%attacker's uuid%.%victim's uuid%} to false
 
 				else:
 
@@ -253,10 +249,10 @@ on damage:
 					set {Particle_frailer_%uuid of victim%} to true
 					wait 1 tick
 					set {singlefrailer %{_uuid}%} to false
-					loop 200 times:
-						StrengthLine(attacker, victim)
-						wait 0.1 seconds
-						#wait 0.125 seconds
+
+					set {StrengthLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 20 seconds
+					set {StrengthLine.%attacker's uuid%.%victim's uuid%} to false
 
 
 			else:
@@ -395,11 +391,28 @@ on left click:
 								apply potion of wither of tier 1 to loop-entity for 20 seconds
 								send "<##F10303>🔮 <##A4FEF1>You have been affected with &f🤺<##F10303>Frailer <##A4FEF1>by <##F10303>%{_strengthholder}%" to loop-entity
 
+
+							else:
+								send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to {_strengthholder}
 				else:
 					set {_uuid} to uuid of player
 					set {_message} to {Strength.Power1.Frailer.Display.%{_uuid}%}
 					replace all "&b" with "" in {_message}
 					send "<##F10303>🔮 <##FDABAA>Your &f🤺<##F10303>Frailer <##FDABAA>skill is on cooldown for <##F10303>%{_message}%" to player
+
+every 1 tick:
+	loop all players:
+		loop all entities:
+			if {StrengthLine.%loop-player-1's uuid%.%loop-entity-2's uuid%} is true:
+				set {_v} to vector from loop-player-1's head to loop-entity-2's head
+				set vector length of {_v} to 0.1
+				set {_loc} to the location 0.7 meters under loop-player-1's head
+				loop (distance between {_loc} and loop-entity-2) / 0.1 times:
+
+					draw 1 dust using dustOption(rgb(241, 3, 3), 1) at {_loc} with force
+					draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
+					set {_loc} to {_loc} ~ {_v}	
+
 
 
 function StrengthCircle(s: number, p: player):
@@ -425,30 +438,6 @@ function StrengthCirclelast(s: number, p: player):
 			draw 1 of dust using dustOption(rgb(241, 3, 3), 1) at {_pl} ~ {_v} with extra 0.000000001
 			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
 		wait 0.4 seconds
-
-function StrengthLine(p1: entity, p2: entity):
-	if {_p2} is a player:
-		if {Particle_frailer_%uuid of {_p2}%} is true:
-			set {_v} to vector from {_p1}'s head to {_p2}'s head
-			set vector length of {_v} to 0.1
-			set {_loc} to the location 0.7 meters under {_p1}'s head
-			loop (distance between {_loc} and {_p2}) / 0.1 times:
-
-				draw 1 dust using dustOption(rgb(241, 3, 3), 1) at {_loc} with force
-				draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
-				set {_loc} to {_loc} ~ {_v}	
-
-	else:
-		if {_p2} is alive:
-			set {_v} to vector from {_p1}'s head to {_p2}'s head
-			set vector length of {_v} to 0.1
-			set {_loc} to the location 0.7 meters under {_p1}'s head
-			loop (distance between {_loc} and {_p2}) / 0.1 times:
-
-				draw 1 dust using dustOption(rgb(241, 3, 3), 1) at {_loc} with force
-				draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
-				set {_loc} to {_loc} ~ {_v}	
-
 
 
 every 1 second:

@@ -1,8 +1,6 @@
 #puff powers
 
-every 1 tick:
-	loop all players:
-		set {_uuid} to uuid of loop-player
+
 		
 
 
@@ -12,148 +10,144 @@ every 1 tick:
 
 every 1 second:
 	loop all players:
-		set {_uuid} to uuid of loop-player
-		set {_make_gem_not_do_cooldown_more_than_1_times} to false
 		loop all items in loop-player's inventory:
-			if name of loop-slot contains "<##EFEFEF>&lᴘᴜғғ":
-				if {_make_gem_not_do_cooldown_more_than_1_times} is false:
-					set {_make_gem_not_do_cooldown_more_than_1_times} to true
-					#Breezy
-					if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is true:
-						if {Puff.Power3.Breezy.Minute.%{_uuid}%} is 0:
-							set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Second.%{_uuid}%}%s"
+			if name of loop-slot contains "<##EFEFEF>&lᴘᴜғғ" or "<##ffcc26>&lGold Gem":
+				#Breezy
+				if {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} is true:
+					if {Puff.Power3.Breezy.Minute.%uuid of loop-player%} is 0:
+						set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"
 
-						else:
-							set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%{_uuid}%}%m %{Puff.Power3.Breezy.Second.%{_uuid}%}%s"		
-					if {Puff.Power3.Breezy.Second.%{_uuid}%} is not set:
-						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 0
-						set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 0
-						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					else:
+						set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%uuid of loop-player%}%m %{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"		
+				if {Puff.Power3.Breezy.Second.%uuid of loop-player%} is not set:
+					set {Puff.Power3.Breezy.Second.%uuid of loop-player%} to 0
+					set {Puff.Power3.Breezy.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} to true
 
-					if {Puff.Power3.Breezy.Display.%{_uuid}%} is not set:
-						set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%{_uuid}%}%m %{Puff.Power3.Breezy.Second.%{_uuid}%}%s"
-						
+				if {Puff.Power3.Breezy.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%uuid of loop-player%}%m %{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"
+					
+			
+				if {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} is true:
+					if {Puff.Power3.Breezy.Minute.%uuid of loop-player%} is 0:
+						set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%uuid of loop-player%}%m %{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Puff.Power3.Breezy.Second.%uuid of loop-player%}
+
+
+
+				if {Puff.Power3.Breezy.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Puff.Power3.Breezy.Minute.%uuid of loop-player%}
+					set {Puff.Power3.Breezy.Second.%uuid of loop-player%} to 59
+					
+				if {Puff.Power3.Breezy.Minute.%uuid of loop-player%} < 0:
+					set {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} to false
+					set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &aReady!"
+
+
+				#Enchanting
+
+				if {Puff.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+
+				if {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true	
+					set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to " &b%{Puff.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power2.Enchanting.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true	
+
+				if {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Puff.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power2.Enchanting.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to " &b %{Puff.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Puff.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Puff.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
 				
-					if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is true:
-						if {Puff.Power3.Breezy.Minute.%{_uuid}%} is 0:
-							set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Second.%{_uuid}%}%s"
-
-						else:
-							set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%{_uuid}%}%m %{Puff.Power3.Breezy.Second.%{_uuid}%}%s"
-
-					if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Puff.Power3.Breezy.Second.%{_uuid}%}
-
-
-
-					if {Puff.Power3.Breezy.Second.%{_uuid}%} < 0:
-						remove 1 from {Puff.Power3.Breezy.Minute.%{_uuid}%}
-						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 59
-						
-					if {Puff.Power3.Breezy.Minute.%{_uuid}%} < 0:
-						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to false
-						set {Puff.Power3.Breezy.Display.%{_uuid}%} to "&f☁ &aReady!"
-
-
-					#Enchanting
-
-					if {Puff.Power2.Enchanting.Second.%{_uuid}%} is not set:
-						set {Puff.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Puff.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-					if {Puff.Power2.Enchanting.Minute.%{_uuid}%} is not set:
-						set {Puff.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Puff.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} to true
-
-
-					if {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} is not set:
-						set {Puff.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Puff.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} to true	
-						set {Puff.Power2.Enchanting.Display.%{_uuid}%} to " &b%{Puff.Power2.Enchanting.Minute.%{_uuid}%}%m %{Puff.Power2.Enchanting.Second.%{_uuid}%}%s"
-
-					if {Puff.Power2.Enchanting.Display.%{_uuid}%} is not set:
-						set {Puff.Power2.Enchanting.Second.%{_uuid}%} to 0
-						set {Puff.Power2.Enchanting.Minute.%{_uuid}%} to 0
-						set {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} to true	
-
-					if {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						set {Puff.Power2.Enchanting.Display.%{_uuid}%} to "&b %{Puff.Power2.Enchanting.Minute.%{_uuid}%}%m %{Puff.Power2.Enchanting.Second.%{_uuid}%}%s"
-
-					if {Puff.Power2.Enchanting.Display.%{_uuid}%} is not set:
-						set {Puff.Power2.Enchanting.Display.%{_uuid}%} to " &b %{Puff.Power2.Enchanting.Minute.%{_uuid}%}%m %{Puff.Power2.Enchanting.Second.%{_uuid}%}%s"
-
-					if {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						if {Puff.Power2.Enchanting.Minute.%{_uuid}%} is 0:
-							set {Puff.Power2.Enchanting.Display.%{_uuid}%} to "&b %{Puff.Power2.Enchanting.Second.%{_uuid}%}%s"
-
-						else:
-							set {Puff.Power2.Enchanting.Display.%{_uuid}%} to "&b %{Puff.Power2.Enchanting.Minute.%{_uuid}%}%m %{Puff.Power2.Enchanting.Second.%{_uuid}%}%s"
-
-					if {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Puff.Power2.Enchanting.Second.%{_uuid}%}
-
-
+				if {Puff.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Puff.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 59
 					
-					if {Puff.Power2.Enchanting.Second.%{_uuid}%} < 0:
-						remove 1 from {Puff.Power2.Enchanting.Minute.%{_uuid}%}
-						set {Puff.Power2.Enchanting.Second.%{_uuid}%} to 59
-						
-					if {Puff.Power2.Enchanting.Minute.%{_uuid}%} < 0:
-						set {Puff.Power2.Enchanting.Cooldown.%{_uuid}%} to false
-						set {Puff.Power2.Enchanting.Display.%{_uuid}%} to " &aReady!"
+				if {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
+					set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to " &aReady!"
 
 
 
-					#Dash
+				#Dash
 
 
 
 
 
-					if {Puff.Power1.Dash.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Puff.Power1.Dash.Second.%{_uuid}%}
+				if {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Puff.Power1.Dash.Second.%uuid of loop-player%}
 
 
-					
-					if {Puff.Power1.Dash.Second.%{_uuid}%} < 0:
-						remove 1 from {Puff.Power1.Dash.Minute.%{_uuid}%}
-						set {Puff.Power1.Dash.Second.%{_uuid}%} to 59
+				
+				if {Puff.Power1.Dash.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Puff.Power1.Dash.Minute.%uuid of loop-player%}
+					set {Puff.Power1.Dash.Second.%uuid of loop-player%} to 59
 
 
-					if {Puff.Power1.Dash.Cooldown.%{_uuid}%} is true:
-						if {Puff.Power1.Dash.Minute.%{_uuid}%} is 0:
-							set {Puff.Power1.Dash.Display.%{_uuid}%} to "&f⏫ &b%{Puff.Power1.Dash.Second.%{_uuid}%}%s"
+				if {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} is true:
+					if {Puff.Power1.Dash.Minute.%uuid of loop-player%} is 0:
+						set {Puff.Power1.Dash.Display.%uuid of loop-player%} to "&f⏫ &b%{Puff.Power1.Dash.Second.%uuid of loop-player%}%s"
 
-						else:
-							set {Puff.Power1.Dash.Display.%{_uuid}%} to "&f⏫ &b%{Puff.Power1.Dash.Minute.%{_uuid}%}%m %{Puff.Power1.Dash.Second.%{_uuid}%}%s"
-
-
-					if {Puff.Power1.Dash.Second.%{_uuid}%} is not set:
-						set {Puff.Power1.Dash.Second.%{_uuid}%} to 0
-						set {Puff.Power1.Dash.Minute.%{_uuid}%} to 0
-
-					if {Puff.Power1.Dash.Cooldown.%{_uuid}%} is not set:
-						set {Puff.Power1.Dash.Second.%{_uuid}%} to 0
-						set {Puff.Power1.Dash.Minute.%{_uuid}%} to 0
-						set {Puff.Power1.Dash.Cooldown.%{_uuid}%} to true	
-
-					if {Puff.Power1.Dash.Display.%{_uuid}%} is not set:
-						set {Puff.Power1.Dash.Second.%{_uuid}%} to 0
-						set {Puff.Power1.Dash.Minute.%{_uuid}%} to 0
-						set {Puff.Power1.Dash.Cooldown.%{_uuid}%} to true	
+					else:
+						set {Puff.Power1.Dash.Display.%uuid of loop-player%} to "&f⏫ &b%{Puff.Power1.Dash.Minute.%uuid of loop-player%}%m %{Puff.Power1.Dash.Second.%uuid of loop-player%}%s"
 
 
-					if {Puff.Power1.Dash.Display.%{_uuid}%} is not set:
-						set {Puff.Power1.Dash.Display.%{_uuid}%} to "&f⏫ &b%{Puff.Power1.Dash.Minute.%{_uuid}%}%m %{Puff.Power1.Dash.Second.%{_uuid}%}%s"
+				if {Puff.Power1.Dash.Second.%uuid of loop-player%} is not set:
+					set {Puff.Power1.Dash.Second.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Minute.%uuid of loop-player%} to 0
+
+				if {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} is not set:
+					set {Puff.Power1.Dash.Second.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} to true	
+
+				if {Puff.Power1.Dash.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power1.Dash.Second.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} to true	
+
+
+				if {Puff.Power1.Dash.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power1.Dash.Display.%uuid of loop-player%} to "&f⏫ &b%{Puff.Power1.Dash.Minute.%uuid of loop-player%}%m %{Puff.Power1.Dash.Second.%uuid of loop-player%}%s"
 
 
 
-					if {Puff.Power1.Dash.Minute.%{_uuid}%} < 0:
-						set {Puff.Power1.Dash.Cooldown.%{_uuid}%} to false
-						set {Puff.Power1.Dash.Display.%{_uuid}%} to "&f⏫ &aReady!"
+				if {Puff.Power1.Dash.Minute.%uuid of loop-player%} < 0:
+					set {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} to false
+					set {Puff.Power1.Dash.Display.%uuid of loop-player%} to "&f⏫ &aReady!"
 
 
 
@@ -162,43 +156,43 @@ every 1 second:
 
 
 
-					#Doublejump
+				#Doublejump
 
 
 
 
 
-					if {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Puff.Power4.Doublejump.Second.%{_uuid}%}
+				if {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Puff.Power4.Doublejump.Second.%uuid of loop-player%}
 
 
-					
-					if {Puff.Power4.Doublejump.Second.%{_uuid}%} < 0:
-						remove 1 from {Puff.Power4.Doublejump.Minute.%{_uuid}%}
-						set {Puff.Power4.Doublejump.Second.%{_uuid}%} to 59
-
-
-
-					if {Puff.Power4.Doublejump.Second.%{_uuid}%} is not set:
-						set {Puff.Power4.Doublejump.Second.%{_uuid}%} to 0
-						set {Puff.Power4.Doublejump.Minute.%{_uuid}%} to 0
-
-					if {Puff.Power4.Doublejump.Minute.%{_uuid}%} is not set:
-						set {Puff.Power4.Doublejump.Second.%{_uuid}%} to 0
-						set {Puff.Power4.Doublejump.Minute.%{_uuid}%} to 0
-						set {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} to false
-
-					if {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} is not set:
-						set {Puff.Power4.Doublejump.Second.%{_uuid}%} to 0
-						set {Puff.Power4.Doublejump.Minute.%{_uuid}%} to 0
-						set {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} to false
+				
+				if {Puff.Power4.Doublejump.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Puff.Power4.Doublejump.Minute.%uuid of loop-player%}
+					set {Puff.Power4.Doublejump.Second.%uuid of loop-player%} to 59
 
 
 
+				if {Puff.Power4.Doublejump.Second.%uuid of loop-player%} is not set:
+					set {Puff.Power4.Doublejump.Second.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} to 0
+
+				if {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} is not set:
+					set {Puff.Power4.Doublejump.Second.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} to false
+
+				if {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} is not set:
+					set {Puff.Power4.Doublejump.Second.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} to false
 
 
-					if {Puff.Power4.Doublejump.Minute.%{_uuid}%} < 0:
-						set {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} to false
+
+
+
+				if {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} < 0:
+					set {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} to false
 
 
 
@@ -301,11 +295,9 @@ on damage:
 						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
 					wait 1.25 seconds
 					push victim down at speed 9
-					loop 200 times:
-						if victim is alive:
-							if attacker is online:
-								PuffLine(attacker, victim)
-								wait 0.1 seconds
+					set {PuffLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 20 seconds
+					set {PuffLine.%attacker's uuid%.%victim's uuid%} to false
 
 			else:
 				set {_uuid} to uuid of attacker
@@ -439,6 +431,8 @@ on left click:
 							push {_p} {_direction} at speed 3
 							push {_p} up at speed 1
 
+						else:
+							send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to {_puffholder}
 
 
 function PuffCircle(s: number, p: player):
@@ -448,7 +442,7 @@ function PuffCircle(s: number, p: player):
 	loop {_iterations} times:
 		set {_angle} to loop-value * {_step}
 		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
-		draw 1 of dust_color_transition using dustTransition(rgb(239, 239, 239), rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of dust using dustOption(rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0.000000001
 		draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
 
 
@@ -461,34 +455,23 @@ function PuffCirclelast(s: number, p: player):
 		loop {_iterations} times:
 			set {_angle} to loop-value-2 * {_step}
 			set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
-			draw 1 of dust_color_transition using dustTransition(rgb(239, 239, 239), rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0.000000001
+			draw 1 of dust using dustOption(rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0.000000001
 			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
 		wait 0.4 seconds
 
-function PuffLine(p1: entity, p2: entity):
-	if {_p2} is a player:
-		if {Particle_frailer_%uuid of {_p2}%} is true:
-			set {_v} to vector from {_p1}'s head to {_p2}'s head
-			set vector length of {_v} to 0.1
-			set {_loc} to the location 0.7 meters under {_p1}'s head
-			loop (distance between {_loc} and {_p2}) / 0.1 times:
+every 1 tick:
+	loop all players:
+		loop all entities:
+			if {PuffLine.%loop-player-1's uuid%.%loop-entity-2's uuid%} is true:
+				set {_v} to vector from loop-player-1's head to loop-entity-2's head
+				set vector length of {_v} to 0.1
+				set {_loc} to the location 0.7 meters under loop-player-1's head
+				loop (distance between {_loc} and loop-entity-2) / 0.1 times:
 
-				draw 1 dust_color_transition using dustTransition(rgb(239, 239, 239), rgb(239, 239, 239), 1) at {_loc} with force
-				draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
-				set {_loc} to {_loc} ~ {_v}	
+					draw 1 dust using dustOption(rgb(239, 239, 239), 1) at {_loc} with force
+					draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
+					set {_loc} to {_loc} ~ {_v}
 
-	else:
-		if {_p2} is alive:
-			set {_v} to vector from {_p1}'s head to {_p2}'s head
-			set vector length of {_v} to 0.1
-			set {_loc} to the location 0.7 meters under {_p1}'s head
-			loop (distance between {_loc} and {_p2}) / 0.1 times:
-
-				draw 1 dust_color_transition using dustTransition(rgb(239, 239, 239), rgb(239, 239, 239), 1) at {_loc} with force
-				draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
-
-
-				set {_loc} to {_loc} ~ {_v}				
 on right click:
 	set {_uuid} to uuid of player
 	if {Disabled.%{_uuid}%} < 1:
@@ -512,9 +495,4 @@ on right click:
 					send "<##EFEFEF>🔮 &cYour &f⏫<##EFEFEF>Dash &cskill is on cooldown for <##efefef>%{Puff.Power1.Dash.Minute.%{_uuid}%}%m %{Puff.Power1.Dash.Second.%{_uuid}%}%s" to player
 
 
-
-every 5 ticks:
-	loop all players:
-		if {Dash...%loop-player%} is true:
-			loop all entities in radius 3 of loop-player:
 

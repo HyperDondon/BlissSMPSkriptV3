@@ -230,48 +230,29 @@ every 1 tick:
 
 every 1 tick:
 	loop all players:
-		set {_uuid} to uuid of loop-player
-		if {Disabled.%{_uuid}%} > 1:
+		if {Disabled.%uuid of loop-player%} > 1:
 
 		else:
-			set {_uuid} to uuid of loop-player
 						
 				
-			if loop-player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+			if loop-player's held item is prismarine shard named "<##ffcc26>&lGold Gem":
+				if custom model data of loop-player's held item is 102:
+					send action bar "%{Gold.Power1.Snap.Display.%uuid of loop-player%}%  %{Gold.Power2.Railer.Display.%uuid of loop-player%}%" to loop-player
+
 				
-				send action bar "&f🤺 %{Strength.Power1.Frailer.Display.%{_uuid}%}%  <##F10303>🔮 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%  &f⚔ %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
-					
 			else:
 
-				if loop-player's held item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+				if loop-player's held item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+					
+					send action bar "&f🤺 %{Strength.Power1.Frailer.Display.%uuid of loop-player%}%  <##F10303>🔮 %{Strength.Power2.Enchanting.Display.%uuid of loop-player%}%  &f⚔ %{Strength.Power3.Chad.Display.%uuid of loop-player%}%" to loop-player
 						
-					send action bar "<##F10303>🔺 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
-				
 				else:
-				
 
-
-
-
-
-
-
-
-
-
-
-
-					if loop-player's held item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
-						send action bar "%{Speed.Power1.SlothSedative.Display.%{_uuid}%}%  <##FEFD17>🔮%{Speed.Power2.Enchanting.Display.%{_uuid}%}%  &f%{Speed.Power3.SpeedStorm.Display.%{_uuid}%}%" to loop-player
-			
-					else:
+					if loop-player's held item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
 							
-
-						if loop-player's held item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
-							send action bar "<##FEFD17>🔺%{Speed.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
-				
-				
-						else:
+						send action bar "<##F10303>🔺 %{Strength.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
+					
+					else:
 					
 
 
@@ -285,39 +266,42 @@ every 1 tick:
 
 
 
+						if loop-player's held item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+							send action bar "%{Speed.Power1.SlothSedative.Display.%uuid of loop-player%}%  <##FEFD17>🔮%{Speed.Power2.Enchanting.Display.%uuid of loop-player%}%  &f%{Speed.Power3.SpeedStorm.Display.%uuid of loop-player%}%" to loop-player
+				
+						else:
+								
 
-							if loop-player's held item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
-								send action bar "%{Fire.Power1.Fireball.Display.%{_uuid}%}%  <##FE8120>🔮 %{Fire.Power2.Enchanting.Display.%{_uuid}%}%  %{Fire.Power3.Campfire.Display.%{_uuid}%}%" to loop-player
+							if loop-player's held item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+								send action bar "<##FEFD17>🔺%{Speed.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
 					
 					
 							else:
-
-								if loop-player's held item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
-									send action bar "<##FE8120>🔺 %{Fire.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
 						
-									
+
+
+
+
+
+
+
+
+
+
+
+
+
+								if loop-player's held item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+									send action bar "%{Fire.Power1.Fireball.Display.%uuid of loop-player%}%  <##FE8120>🔮 %{Fire.Power2.Enchanting.Display.%uuid of loop-player%}%  %{Fire.Power3.Campfire.Display.%uuid of loop-player%}%" to loop-player
+						
+						
 								else:
 
-
-
-
-
-
-
-
-
-
-
-									if loop-player's held item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
-										send action bar "&f%{Life.Power1.HeartDrainer.Display.%{_uuid}%}%  <##FE04B4>🔮%{Life.Power2.Healer.Display.%{_uuid}%}%  &f%{Life.Power3.CircleOfLfe.Display.%{_uuid}%}%" to loop-player
+									if loop-player's held item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+										send action bar "<##FE8120>🔺 %{Fire.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
 							
-							
-							
-									else:
-										if loop-player's held item is a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
-											send action bar "<##FE04B4>🔺%{Life.Power2.Healer.Display.%{_uuid}%}%" to loop-player
-								
 										
+									else:
 
 
 
@@ -329,61 +313,66 @@ every 1 tick:
 
 
 
-
-
+										if loop-player's held item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+											send action bar "&f%{Life.Power1.HeartDrainer.Display.%uuid of loop-player%}%  <##FE04B4>🔮%{Life.Power2.Healer.Display.%uuid of loop-player%}%  &f%{Life.Power3.CircleOfLfe.Display.%uuid of loop-player%}%" to loop-player
+								
+								
+								
 										else:
+											if loop-player's held item is a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+												send action bar "<##FE04B4>🔺%{Life.Power2.Healer.Display.%uuid of loop-player%}%" to loop-player
+									
+											
 
-											if loop-player's held item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
-												send action bar "%{Puff.Power3.Breezy.Display.%{_uuid}%}%  <##efefef>🔮%{Puff.Power2.Enchanting.Display.%{_uuid}%}%  &f%{Puff.Power1.Dash.Display.%{_uuid}%}%" to loop-player
-									
-									
-									
+
+
+
+
+
+
+
+
+
+
+
+
 											else:
 
-												if loop-player's held item is a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
-													send action bar "<##efefef>🔺%{Puff.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+												if loop-player's held item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+													send action bar "%{Puff.Power3.Breezy.Display.%uuid of loop-player%}%  <##efefef>🔮%{Puff.Power2.Enchanting.Display.%uuid of loop-player%}%  &f%{Puff.Power1.Dash.Display.%uuid of loop-player%}%" to loop-player
+										
+										
 										
 												else:
 
-
-
-
-
-
-
-
-
-
-
-													if loop-player's held item is prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
-												
-														send action bar "%{Wealth.Power1.Unfortunate.Display.%{_uuid}%}%  <##0EC912>🔮%{Wealth.Power2.Enchanting.Display.%{_uuid}%}%  %{Wealth.Power3.RichRush.Display.%{_uuid}%}%" to loop-player
+													if loop-player's held item is a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+														send action bar "<##efefef>🔺%{Puff.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
 											
-						
-														
-											
-														
 													else:
-														if loop-player's held item is a amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
 
-															send action bar "<##0EC912>🔺%{Wealth.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+
+
+
+
+
+
+
+
+
+
+														if loop-player's held item is prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+													
+															send action bar "%{Wealth.Power1.Unfortunate.Display.%uuid of loop-player%}%  <##0EC912>🔮%{Wealth.Power2.Enchanting.Display.%uuid of loop-player%}%  %{Wealth.Power3.RichRush.Display.%uuid of loop-player%}%" to loop-player
+												
 							
-
-
-
-
-
-
-
-
-
-
-
-														else:
-
-															if loop-player's held item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
 															
-																if {Astra.Power3.Projection.Activated.%{_uuid}%} is not true:
+												
+															
+														else:
+															if loop-player's held item is a amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+
+																send action bar "<##0EC912>🔺%{Wealth.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
+								
 
 
 
@@ -395,223 +384,244 @@ every 1 tick:
 
 
 
-
-
-
-
-																	send action bar "%{Astra.Power1.Daggers.Display.%{_uuid}%}%  <##A01FFF>🔮 %{entity3.%loop-player%::*}%  &f%{Astra.Power3.Projection.Display.%{_uuid}%}%" to loop-player
-													
-													
 															else:
 
-																if loop-player's held item is a amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
-																	
-																	send action bar "<##A01FFF>🔺%{Astra.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player		
-																	
+																if loop-player's held item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+																
+																	if {Astra.Power3.Projection.Activated.%uuid of loop-player%} is not true:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																		send action bar "%{Astra.Power1.Daggers.Display.%uuid of loop-player%}%  <##A01FFF>🔮 %{entity3.%loop-player%::*}%  &f%{Astra.Power3.Projection.Display.%uuid of loop-player%}%" to loop-player
+														
+														
 																else:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-																	if loop-player's off hand item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
-			
-																		send action bar "&f🤺 %{Strength.Power1.Frailer.Display.%{_uuid}%}%  <##F10303>🔮 %{Strength.Power2.Enchanting.Display.%{_uuid}%}% &f⚔ %{Strength.Power3.Chad.Display.%{_uuid}%}%" to loop-player
-																			
+																	if loop-player's held item is a amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+																		
+																		send action bar "<##A01FFF>🔺%{Astra.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player		
+																		
 																	else:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																		if loop-player's off hand item is prismarine shard named "<##ffcc26>&lGold Gem":
+																			if custom model data of loop-player's off hand item is 102:
+																				send action bar "%{Gold.Power1.Snap.Display.%uuid of loop-player%}%  %{Gold.Power2.Railer.Display.%uuid of loop-player%}%" to loop-player
 															
-																		if loop-player's off hand item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
-																				
-																			send action bar "<##F10303>🔺 %{Strength.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
-																		
+																			
 																		else:
-																		
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-																			if loop-player's off hand item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
-																				send action bar "%{Speed.Power1.SlothSedative.Display.%{_uuid}%}%  <##FEFD17>🔮%{Speed.Power2.Enchanting.Display.%{_uuid}%}%  &f%{Speed.Power3.SpeedStorm.Display.%{_uuid}%}%" to loop-player
-																	
-																			else:
+
+
+																			if loop-player's off hand item is a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+					
+																				send action bar "&f🤺 %{Strength.Power1.Frailer.Display.%uuid of loop-player%}%  <##F10303>🔮 %{Strength.Power2.Enchanting.Display.%uuid of loop-player%}%  &f⚔ %{Strength.Power3.Chad.Display.%uuid of loop-player%}%" to loop-player
 																					
-															
-																				if loop-player's off hand item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
-																					send action bar "<##FEFD17>🔺%{Speed.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
-																		
-																		
+																			else:
+																	
+																				if loop-player's off hand item is a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+																						
+																					send action bar "<##F10303>🔺 %{Strength.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
+																				
 																				else:
-																			
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-																					if loop-player's off hand item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
-																						send action bar "%{Fire.Power1.Fireball.Display.%{_uuid}%}%  <##FE8120>🔮 %{Fire.Power2.Enchanting.Display.%{_uuid}%}%  %{Fire.Power3.Campfire.Display.%{_uuid}%}%" to loop-player
-																			
+																				
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																					if loop-player's off hand item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+																						send action bar "%{Speed.Power1.SlothSedative.Display.%uuid of loop-player%}%  <##FEFD17>🔮%{Speed.Power2.Enchanting.Display.%uuid of loop-player%}%  &f%{Speed.Power3.SpeedStorm.Display.%uuid of loop-player%}%" to loop-player
 																			
 																					else:
-															
-																						if loop-player's off hand item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
-																							send action bar "<##FE8120>🔺 %{Fire.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
-																				
 																							
+																	
+																						if loop-player's off hand item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+																							send action bar "<##FEFD17>🔺%{Speed.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
+																				
+																				
 																						else:
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-																							if loop-player's off hand item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
-																								send action bar "&f%{Life.Power1.HeartDrainer.Display.%{_uuid}%}%  <##FE04B4>🔮%{Life.Power2.Healer.Display.%{_uuid}%}%  &f%{Life.Power3.CircleOfLfe.Display.%{_uuid}%}%" to loop-player
 																					
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																							if loop-player's off hand item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+																								send action bar "%{Fire.Power1.Fireball.Display.%uuid of loop-player%}%  <##FE8120>🔮 %{Fire.Power2.Enchanting.Display.%uuid of loop-player%}%  %{Fire.Power3.Campfire.Display.%uuid of loop-player%}%" to loop-player
 																					
 																					
 																							else:
-																								if loop-player's off hand item is a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
-																									send action bar "<##FE04B4>🔺%{Life.Power2.Healer.Display.%{_uuid}%}%" to loop-player
+																	
+																								if loop-player's off hand item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+																									send action bar "<##FE8120>🔺 %{Fire.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
 																						
-																								
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
+																									
 																								else:
-															
-																									if loop-player's off hand item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
-																										send action bar "%{Puff.Power3.Breezy.Display.%{_uuid}%}%  <##efefef>🔮%{Puff.Power2.Enchanting.Display.%{_uuid}%}%  &f%{Puff.Power1.Dash.Display.%{_uuid}%}%" to loop-player
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																									if loop-player's off hand item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+																										send action bar "&f%{Life.Power1.HeartDrainer.Display.%uuid of loop-player%}%  <##FE04B4>🔮%{Life.Power2.Healer.Display.%uuid of loop-player%}%  &f%{Life.Power3.CircleOfLfe.Display.%uuid of loop-player%}%" to loop-player
 																							
 																							
 																							
 																									else:
-															
-																										if loop-player's off hand item is a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
-																											send action bar "<##efefef>🔺%{Puff.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
+																										if loop-player's off hand item is a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+																											send action bar "<##FE04B4>🔺%{Life.Power2.Healer.Display.%uuid of loop-player%}%" to loop-player
 																								
-																										else:
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-																											if loop-player's off hand item is prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
 																										
-																												send action bar "%{Wealth.Power1.Unfortunate.Display.%{_uuid}%}%  <##0EC912>🔮%{Wealth.Power2.Enchanting.Display.%{_uuid}%}%  %{Wealth.Power3.RichRush.Display.%{_uuid}%}%" to loop-player
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																										else:
+																	
+																											if loop-player's off hand item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+																												send action bar "%{Puff.Power3.Breezy.Display.%uuid of loop-player%}%  <##efefef>🔮%{Puff.Power2.Enchanting.Display.%uuid of loop-player%}%  &f%{Puff.Power1.Dash.Display.%uuid of loop-player%}%" to loop-player
 																									
-																				
-																												
 																									
-																												
+																									
 																											else:
-																												if loop-player's off hand item is a amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
-															
-																													send action bar "<##0EC912>🔺%{Wealth.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player
-																					
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
-															
+																	
+																												if loop-player's off hand item is a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+																													send action bar "<##efefef>🔺%{Puff.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
+																										
 																												else:
-														
-																													if loop-player's off hand item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
-																														if {Astra.Power3.Projection.Activated.%{_uuid}%} is not true:
-	
-														
-														
-														
-														
-														
-														
-														
-														
-														
-														
-														
-														
-														
-														
-																															send action bar "%{Astra.Power1.Daggers.Display.%{_uuid}%}%  <##A01FFF>🔮 %{entity3.%loop-player%::*}%  &f%{Astra.Power3.Projection.Display.%{_uuid}%}%" to loop-player
-																																																				
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																													if loop-player's off hand item is prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+																												
+																														send action bar "%{Wealth.Power1.Unfortunate.Display.%uuid of loop-player%}%  <##0EC912>🔮%{Wealth.Power2.Enchanting.Display.%uuid of loop-player%}%  %{Wealth.Power3.RichRush.Display.%uuid of loop-player%}%" to loop-player
 																											
+																						
+																														
+																											
+																														
 																													else:
-														
-																														if loop-player's off hand item is a amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
-																															send action bar "<##A01FFF>🔺%{Astra.Power2.Enchanting.Display.%{_uuid}%}%" to loop-player	
+																														if loop-player's off hand item is a amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+																	
+																															send action bar "<##0EC912>🔺%{Wealth.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player
+																							
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																	
+																														else:
+																
+																															if loop-player's off hand item is a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+																																if {Astra.Power3.Projection.Activated.%uuid of loop-player%} is not true:
+			
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																
+																																	send action bar "%{Astra.Power1.Daggers.Display.%uuid of loop-player%}%  <##A01FFF>🔮 %{entity3.%loop-player%::*}%  &f%{Astra.Power3.Projection.Display.%uuid of loop-player%}%" to loop-player
+																																																						
+																													
+																															else:
+																
+																																if loop-player's off hand item is a amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+																																	send action bar "<##A01FFF>🔺%{Astra.Power2.Enchanting.Display.%uuid of loop-player%}%" to loop-player	
 
 
 
@@ -906,6 +916,10 @@ command /cooldown <player>:
 		set {Life.Power2.Healer.Minute.%{_uuid}%} to -1
 		set {Life.Power3.CircleOfLfe.Minute.%{_uuid}%} to -1
 
+		# Gold
+		set {Gold.Power1.Snap.Minute.%{_uuid}%} to -1
+		set {Gold.Power2.Railer.Minute.%{_uuid}%} to -1
+
 
 
 
@@ -947,8 +961,9 @@ on join:
 
 	if {ShotFireball.%{_uuid}%} is not set:
 		set {ShotFireball.%{_uuid}%} to false
-	if {Particles.Selected.%{_uuid}%} is not set:
-		add player to {Particles.Normal::*}
+	if {Bliss.Particles.Selected.%{_uuid}%} is not set:
+		add player to {Bliss.Particles.Normal::*}
+		set {Bliss.Particles.Selected.%{_uuid}%} to 1
 
 
 #Anti drop

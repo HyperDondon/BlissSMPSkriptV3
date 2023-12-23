@@ -26,128 +26,124 @@ function heallife(p: player):
 
 every 1 second:
 	loop all players:
-		set {_uuid} to uuid of loop-player
-		set {_make_gem_not_do_cooldown_more_than_1_times} to false
 		loop all items in loop-player's inventory:
-			if name of loop-slot contains "<##FE04B4>&lʟɪғᴇ":
-				if {_make_gem_not_do_cooldown_more_than_1_times} is false:
-					set {_make_gem_not_do_cooldown_more_than_1_times} to true
+			if name of loop-slot contains "<##FE04B4>&lʟɪғᴇ" or "<##ffcc26>&lGold Gem":
 
-					#CircleOfLfe
-					if {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} is true:
-						if {Life.Power3.CircleOfLfe.Minute.%{_uuid}%} is 0:
-							set {Life.Power3.CircleOfLfe.Display.%{_uuid}%} to "💖 &b%{Life.Power3.CircleOfLfe.Second.%{_uuid}%}%s"
+				#CircleOfLfe
+				if {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} is true:
+					if {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%} is 0:
+						set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"
 
-						else:
-							set {Life.Power3.CircleOfLfe.Display.%{_uuid}%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%{_uuid}%}%m %{Life.Power3.CircleOfLfe.Second.%{_uuid}%}%s"		
-					if {Life.Power3.CircleOfLfe.Second.%{_uuid}%} is not set:
-						set {Life.Power3.CircleOfLfe.Second.%{_uuid}%} to 0
-						set {Life.Power3.CircleOfLfe.Minute.%{_uuid}%} to 0
-						set {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} to true
+					else:
+						set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%}%m %{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"		
+				if {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%} is not set:
+					set {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%} to 0
+					set {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%} to 0
+					set {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} to true
 
-					if {Life.Power3.CircleOfLfe.Display.%{_uuid}%} is not set:
-						set {Life.Power3.CircleOfLfe.Display.%{_uuid}%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%{_uuid}%}%m %{Life.Power3.CircleOfLfe.Second.%{_uuid}%}%s"
-						
-				
-					if {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} is true:
-						if {Life.Power3.CircleOfLfe.Minute.%{_uuid}%} is 0:
-							set {Life.Power3.CircleOfLfe.Display.%{_uuid}%} to "💖 &b%{Life.Power3.CircleOfLfe.Second.%{_uuid}%}%s"
-
-						else:
-							set {Life.Power3.CircleOfLfe.Display.%{_uuid}%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%{_uuid}%}%m %{Life.Power3.CircleOfLfe.Second.%{_uuid}%}%s"
-
-					if {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Life.Power3.CircleOfLfe.Second.%{_uuid}%}
-
-
-
-					if {Life.Power3.CircleOfLfe.Second.%{_uuid}%} < 0:
-						remove 1 from {Life.Power3.CircleOfLfe.Minute.%{_uuid}%}
-						set {Life.Power3.CircleOfLfe.Second.%{_uuid}%} to 59
-						
-					if {Life.Power3.CircleOfLfe.Minute.%{_uuid}%} < 0:
-						set {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} to false
-						set {Life.Power3.CircleOfLfe.Display.%{_uuid}%} to "💖 &aReady!"
-
-
-					#Healer
-
-					if {Life.Power2.Healer.Second.%{_uuid}%} is not set:
-						set {Life.Power2.Healer.Second.%{_uuid}%} to 0
-						set {Life.Power2.Healer.Minute.%{_uuid}%} to 0
-						set {Life.Power2.Healer.Cooldown.%{_uuid}%} to true
-
-					if {Life.Power2.Healer.Minute.%{_uuid}%} is not set:
-						set {Life.Power2.Healer.Second.%{_uuid}%} to 0
-						set {Life.Power2.Healer.Minute.%{_uuid}%} to 0
-						set {Life.Power2.Healer.Cooldown.%{_uuid}%} to true
-
-
-					if {Life.Power2.Healer.Cooldown.%{_uuid}%} is not set:
-						set {Life.Power2.Healer.Second.%{_uuid}%} to 0
-						set {Life.Power2.Healer.Minute.%{_uuid}%} to 0
-						set {Life.Power2.Healer.Cooldown.%{_uuid}%} to true	
-						set {Life.Power2.Healer.Display.%{_uuid}%} to " &b%{Life.Power2.Healer.Minute.%{_uuid}%}%m %{Life.Power2.Healer.Second.%{_uuid}%}%s"
-
-					if {Life.Power2.Healer.Display.%{_uuid}%} is not set:
-						set {Life.Power2.Healer.Second.%{_uuid}%} to 0
-						set {Life.Power2.Healer.Minute.%{_uuid}%} to 0
-						set {Life.Power2.Healer.Cooldown.%{_uuid}%} to true	
-
-					remove 1 from {Life.Power2.Healer.Second.%{_uuid}%}
-					set {Life.Power2.Healer.Display.%{_uuid}%} to " &b%{Life.Power2.Healer.Second.%{_uuid}%}%s"
-
-					if {Life.Power2.Healer.Second.%{_uuid}%} < 1:
-						set {Life.Power2.Healer.Second.%{_uuid}%} to 6
-						heallife(loop-player)
-
-					#HeartDrainer
-
-
-
-
-
-					if {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} is true:
-						remove 1 from {Life.Power1.HeartDrainer.Second.%{_uuid}%}
-
-
+				if {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} is not set:
+					set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%}%m %{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"
 					
-					if {Life.Power1.HeartDrainer.Second.%{_uuid}%} < 0:
-						remove 1 from {Life.Power1.HeartDrainer.Minute.%{_uuid}%}
-						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 59
+			
+				if {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} is true:
+					if {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%} is 0:
+						set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"
 
+					else:
+						set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%}%m %{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"
 
-					if {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} is true:
-						if {Life.Power1.HeartDrainer.Minute.%{_uuid}%} is 0:
-							set {Life.Power1.HeartDrainer.Display.%{_uuid}%} to "💘&b%{Life.Power1.HeartDrainer.Second.%{_uuid}%}%s"
-
-						else:
-							set {Life.Power1.HeartDrainer.Display.%{_uuid}%} to "💘&b%{Life.Power1.HeartDrainer.Minute.%{_uuid}%}%m %{Life.Power1.HeartDrainer.Second.%{_uuid}%}%s"
-
-
-					if {Life.Power1.HeartDrainer.Second.%{_uuid}%} is not set:
-						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 0
-						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 0
-
-					if {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} is not set:
-						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 0
-						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 0
-						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true	
-
-					if {Life.Power1.HeartDrainer.Display.%{_uuid}%} is not set:
-						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 0
-						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 0
-						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true	
-
-
-					if {Life.Power1.HeartDrainer.Display.%{_uuid}%} is not set:
-						set {Life.Power1.HeartDrainer.Display.%{_uuid}%} to "💘&b%{Life.Power1.HeartDrainer.Minute.%{_uuid}%}%m %{Life.Power1.HeartDrainer.Second.%{_uuid}%}%s"
+				if {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}
 
 
 
-					if {Life.Power1.HeartDrainer.Minute.%{_uuid}%} < 0:
-						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to false
-						set {Life.Power1.HeartDrainer.Display.%{_uuid}%} to "💘&aReady!"
+				if {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%}
+					set {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%} to 59
+					
+				if {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%} < 0:
+					set {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} to false
+					set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &aReady!"
+
+
+				#Healer
+
+				if {Life.Power2.Healer.Second.%uuid of loop-player%} is not set:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Cooldown.%uuid of loop-player%} to true
+
+				if {Life.Power2.Healer.Minute.%uuid of loop-player%} is not set:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Cooldown.%uuid of loop-player%} to true
+
+
+				if {Life.Power2.Healer.Cooldown.%uuid of loop-player%} is not set:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Cooldown.%uuid of loop-player%} to true	
+					set {Life.Power2.Healer.Display.%uuid of loop-player%} to " &b%{Life.Power2.Healer.Minute.%uuid of loop-player%}%m %{Life.Power2.Healer.Second.%uuid of loop-player%}%s"
+
+				if {Life.Power2.Healer.Display.%uuid of loop-player%} is not set:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Cooldown.%uuid of loop-player%} to true	
+
+				remove 1 from {Life.Power2.Healer.Second.%uuid of loop-player%}
+				set {Life.Power2.Healer.Display.%uuid of loop-player%} to " &b%{Life.Power2.Healer.Second.%uuid of loop-player%}%s"
+
+				if {Life.Power2.Healer.Second.%uuid of loop-player%} < 1:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 6
+					heallife(loop-player)
+
+				#HeartDrainer
+
+
+
+
+
+				if {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Life.Power1.HeartDrainer.Second.%uuid of loop-player%}
+
+
+				
+				if {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%}
+					set {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} to 59
+
+
+				if {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} is true:
+					if {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} is 0:
+						set {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} to "💘&b%{Life.Power1.HeartDrainer.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} to "💘&b%{Life.Power1.HeartDrainer.Minute.%uuid of loop-player%}%m %{Life.Power1.HeartDrainer.Second.%uuid of loop-player%}%s"
+
+
+				if {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} is not set:
+					set {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} to 0
+
+				if {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} is not set:
+					set {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} to true	
+
+				if {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} is not set:
+					set {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} to true	
+
+
+				if {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} is not set:
+					set {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} to "💘&b%{Life.Power1.HeartDrainer.Minute.%uuid of loop-player%}%m %{Life.Power1.HeartDrainer.Second.%uuid of loop-player%}%s"
+
+
+
+				if {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} < 0:
+					set {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} to false
+					set {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} to "💘&aReady!"
 
 
 
@@ -245,10 +241,10 @@ on damage:
 						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
 	
 					set {_vic}'s max health to 6
-	
-					loop 200 times:
-						LifeLine(attacker, victim)
-						wait 0.1 seconds
+
+					set {LifeLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 20 seconds
+					set {LifeLine.%attacker's uuid%.%victim's uuid%} to false
 	
 					set {_vic}'s max health to 10
 
@@ -282,9 +278,9 @@ on damage:
 
 					set {_vic}'s max health to 6
 
-					loop 200 times:
-						LifeLine(attacker, victim)
-						wait 0.1 seconds
+					set {LifeLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 20 seconds
+					set {LifeLine.%attacker's uuid%.%victim's uuid%} to false
 
 					set {_vic}'s max health to 10
 
@@ -461,6 +457,10 @@ on left click:
 							else:
 								add 2 to {_p}'s max health
 
+						else:
+							send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to {_lifeholder}
+
+
 
 		else:
 			set {_uuid} to uuid of player
@@ -469,7 +469,8 @@ on left click:
 			send "<##FE04B4>🔮 <##FDABAA>Your &f💘<##FE04B4>Heart Drainer <##FDABAA>skill is on cooldown for <##FE04B4>%{_message}%" to player
 
 on join:
-	set {_p} to player
+	set {_p} to player 
+	wait 0.5 second
 	if {Bliss.add2health.%{_p}'s uuid%} is true:
 		add 2 to {_p}'s max health
 		set {Bliss.add2health.%{_p}'s uuid%} to false
@@ -478,6 +479,7 @@ on join:
 
 on join:
 	set {_p} to player
+	wait 0.5 second
 	if {Bliss.add4health.%{_p}'s uuid%} is true:
 		add 4 to {_p}'s max health
 		set {Bliss.add4health.%{_p}'s uuid%} to false
@@ -485,6 +487,7 @@ on join:
 
 on join:
 	set {_p} to player
+	wait 0.5 second
 	if {Bliss.remove4health.%{_p}'s uuid%} is true:
 		remove 4 from {_p}'s max health
 		set {Bliss.remove4health.%{_p}'s uuid%} to false
@@ -553,7 +556,7 @@ on right click:
 								
 
 
-								if loop-entity-1 is in {Bliss.Trusted.%{_pluuid}%::*}:
+								if "%{Bliss.Trusted.%{_pluuid}%::*}%" contains "%loop-entity-1's uuid%":
 
 									if loop-entity-1 is not in {_allies::*}:
 										if loop-entity-1's max health < 11:
@@ -603,20 +606,18 @@ on right click:
 every 1 second:
 	loop all entities:
 		if loop-entity is not a player:
-			set {_uuid} to uuid of loop-entity-1
-			if {Bliss.HeartTimer.%{_uuid}%.bad} > -1:
-				remove 1 from {Bliss.HeartTimer.%{_uuid}%.bad}
-				if {Bliss.HeartTimer.%{_uuid}%.bad} is 0:
+			if {Bliss.HeartTimer.%uuid of loop-entity-1%.bad} > -1:
+				remove 1 from {Bliss.HeartTimer.%uuid of loop-entity-1%.bad}
+				if {Bliss.HeartTimer.%uuid of loop-entity-1%.bad} is 0:
 					add 4 to loop-entity's max health
 
 
 
 every 1 second:
 	loop all offline players:
-		set {_uuid} to uuid of loop-offlineplayer
-		if {Bliss.HeartTimer.%{_uuid}%.bad} > -1:
-			remove 1 from {Bliss.HeartTimer.%{_uuid}%.bad}
-			if {Bliss.HeartTimer.%{_uuid}%.bad} is 0:
+		if {Bliss.HeartTimer.%uuid of loop-offlineplayer%.bad} > -1:
+			remove 1 from {Bliss.HeartTimer.%uuid of loop-offlineplayer%.bad}
+			if {Bliss.HeartTimer.%uuid of loop-offlineplayer%.bad} is 0:
 				if loop-offlineplayer is online:
 					add 4 to loop-offlineplayer's max health
 
@@ -624,10 +625,9 @@ every 1 second:
 					set {Bliss.add4health.%loop-offlineplayer's uuid%} to true
 			
 
-		set {_uuid} to uuid of loop-offlineplayer
-		if {Bliss.HeartTimer.%{_uuid}%.good} > -1:
-			remove 1 from {Bliss.HeartTimer.%{_uuid}%.good}
-			if {Bliss.HeartTimer.%{_uuid}%.good} is 0:
+		if {Bliss.HeartTimer.%uuid of loop-offlineplayer%.good} > -1:
+			remove 1 from {Bliss.HeartTimer.%uuid of loop-offlineplayer%.good}
+			if {Bliss.HeartTimer.%uuid of loop-offlineplayer%.good} is 0:
 				if loop-offlineplayer is online:
 					remove 4 from loop-offlineplayer's max health
 
@@ -681,28 +681,19 @@ function LifeCirclelast(s: number, p: player):
 			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
 		wait 0.4 seconds
 
-function LifeLine(p1: entity, p2: entity):
-	if {_p2} is a player:
-		set {_v} to vector from {_p1}'s head to {_p2}'s head
-		set vector length of {_v} to 0.1
-		set {_loc} to the location 0.7 meters under {_p1}'s head
-		loop (distance between {_loc} and {_p2}) / 0.1 times:
 
-			draw 1 dust using dustOption(rgb(254, 4, 180), 1) at {_loc} with force
-			draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
-			set {_loc} to {_loc} ~ {_v}	
+every 1 tick:
+	loop all players:
+		loop all entities:
+			if {LifeLine.%loop-player-1's uuid%.%loop-entity-2's uuid%} is true:
+				set {_v} to vector from loop-player-1's head to loop-entity-2's head
+				set vector length of {_v} to 0.1
+				set {_loc} to the location 0.7 meters under loop-player-1's head
+				loop (distance between {_loc} and loop-entity-2) / 0.1 times:
 
-	else:
-		if {_p2} is alive:
-			set {_v} to vector from {_p1}'s head to {_p2}'s head
-			set vector length of {_v} to 0.1
-			set {_loc} to the location 0.7 meters under {_p1}'s head
-			loop (distance between {_loc} and {_p2}) / 0.1 times:
-
-				draw 1 dust using dustOption(rgb(254, 4, 180), 1) at {_loc} with force
-				draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
-				set {_loc} to {_loc} ~ {_v}	
-
+					draw 1 dust using dustOption(rgb(254, 4, 180), 1) at {_loc} with force
+					draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
+					set {_loc} to {_loc} ~ {_v}	
 
 
 

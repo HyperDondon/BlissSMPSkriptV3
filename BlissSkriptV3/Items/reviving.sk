@@ -23,6 +23,8 @@ on drop:
                                                     add item to {itemrevive::*}
                                                     add item to {itemrevive%uuid of player%::*}
 
+
+
                                                     set {Revive::Gui} to a new chest inventory with 6 row with name "&6&lʀᴇssᴜʀᴇᴄᴛ &7a player"
                                                     set {_s} to 0
                                                     loop {BannedPlayers::*}:
@@ -35,13 +37,18 @@ on drop:
                                                     set {reviveselected.%{_uuid}%} to false
                                                     while {reviveselected.%{_uuid}%} is false:
                                                         wait 1 tick
+                                                    
+                                                    clear dropped item
+                                                    
+
+                                                    #add nbt compound from "{Tags:""ReviveBooks.%uuid of player%""}" to nbt compound of dropped item
 
                                                     set {_beaconloc} to location of {_beacon}
-                                                    circlerevive({_beaconloc})
-                                                    circlerevive2({_beaconloc})
-                                                    lightning({_beaconloc})
+                                                    #circlerevive({_beaconloc})
+                                                    #circlerevive2({_beaconloc})
+                                                    #lightning({_beaconloc})
                                                     wait 1 second
-                                                    circlealllast({_beaconloc})
+                                                    #circlealllast({_beaconloc})
 
 
 
@@ -123,42 +130,39 @@ function circlealllast(pl: location):
 
         wait 0.3 seconds
 
-
+    
 on inventory click:
-	if event-inventory's name is "&6&lʀᴇssᴜʀᴇᴄᴛ &7a player":
-		cancel event
-		if event-item is player head:
-			set {_uuid} to uuid of player
-			set {Reviving::%{_uuid}%} to true
-			set {reviveselected.%{_uuid}%} to true
-			close player's inventory
-			set {_T} to "%event-item's name%"
-			replace all "&e" with "" in {_T}
-			replace all "§e" with "" in {_T}
-			set {_Tplayer} to "%{_T}%" parsed as offline player
-			set {_uuid} to uuid of {_Tplayer}
-			remove {_uuid} from {BannedPlayers::*}
-			
-			loop {itemrevive%uuid of player%::*}:
-				drop a nautilus Shell with custom model data 220 named "<##F878FF>ʀᴇᴠɪᴠᴀʟ <white>ᴛᴏᴍᴇ" with lore "&7ʀᴇssᴜʀᴇᴄᴛ ᴀɴʏᴏɴᴇ ᴛʜᴀᴛ ʜᴀs ʙᴇᴇɴ ᴇʟɪᴍɪɴᴀᴛᴇᴅ" and "" and "&cᴡᴀʀɴɪɴɢ: ʀᴇǫᴜɪʀᴇs ᴀ ᴘᴇᴅɪsᴛᴀʟ" with hidden enchants flag at {itemrevive%uuid of player%::*}
-				set {_i} to loop-value
-				kill {_i}
-				clear {itemrevive%uuid of player%::%loop-value%}
-			wait 12 seconds
-			set {revived.%uuid of {_T}%} to true
-			remove {itemrevive%uuid of player%::*} from {itemrevive::*}
-			clear {itemrevive%uuid of player%::*}
-			set {Reviving::%uuid of player%} to false
-			set {Bliss.GemHealth.%{_uuid}%} to 6
-			unban {_T}
-			broadcast "&a%{_T}% &fᴡᴀѕ &8ʀᴇssᴜʀᴇᴄᴛᴇᴅ"
+    if event-inventory's name is "&6&lʀᴇssᴜʀᴇᴄᴛ &7a player":
+        cancel event
+        if event-item is player head:
+            set {_uuid} to uuid of player
+            set {Reviving::%{_uuid}%} to true
+            set {reviveselected.%{_uuid}%} to true
+            close player's inventory
+            set {_T} to "%event-item's name%"
+            replace all "&e" with "" in {_T}
+            replace all "§e" with "" in {_T}
+            set {_Tplayer} to "%{_T}%" parsed as offline player
+            set {_uuid} to uuid of {_Tplayer}
+            remove {_uuid} from {BannedPlayers::*}
+            
+            wait 12 seconds
+
+            set {revived.%uuid of {_T}%} to true
+            remove {itemrevive%uuid of player%::*} from {itemrevive::*}
+            clear {itemrevive%uuid of player%::*}
+
+            set {Reviving::%uuid of player%} to false
+            set {Bliss.GemHealth.%{_uuid}%} to 6
+            unban {_T}
+            broadcast "&a%{_T}% &fᴡᴀѕ &8ʀᴇssᴜʀᴇᴄᴛᴇᴅ"
 
 on inventory close:
-	if event-inventory's name is "&6&lʀᴇssᴜʀᴇᴄᴛ &7a player":
-		set {Reviving::%uuid of player%} to false
-		#remove {itemrevive%uuid of player%::*} from {itemrevive::*}
-		loop {itemrevive%uuid of player%::*}:
-			remove loop-value from {itemrevive::*}
+    if event-inventory's name is "&6&lʀᴇssᴜʀᴇᴄᴛ &7a player":
+        set {Reviving::%uuid of player%} to false
+        #remove {itemrevive%uuid of player%::*} from {itemrevive::*}
+        loop {itemrevive%uuid of player%::*}:
+            remove loop-value from {itemrevive::*}
         
         
 

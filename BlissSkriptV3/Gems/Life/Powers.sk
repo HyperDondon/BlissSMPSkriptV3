@@ -1,0 +1,701 @@
+#Life Powers
+
+
+
+
+function heallife(p: player):
+	if {_p}'s held item is prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+		set health of {_p} to health of {_p} + 0.5
+
+	if {_p}'s off hand item is prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+		set health of {_p} to health of {_p} + 0.5
+
+
+	if {_p}'s held item is amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+		set health of {_p} to health of {_p} + 0.5
+
+	if {_p}'s off hand item is amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+		set health of {_p} to health of {_p} + 0.5
+
+
+
+
+
+
+
+
+every 1 second:
+	loop all players:
+		loop all items in loop-player's inventory:
+			if name of loop-slot contains "<##FE04B4>&lʟɪғᴇ" or "<##ffcc26>&lGold Gem":
+
+				#CircleOfLfe
+				if {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} is true:
+					if {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%} is 0:
+						set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%}%m %{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"		
+				if {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%} is not set:
+					set {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%} to 0
+					set {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%} to 0
+					set {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} to true
+
+				if {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} is not set:
+					set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%}%m %{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"
+					
+			
+				if {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} is true:
+					if {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%} is 0:
+						set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &b%{Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%}%m %{Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}%s"
+
+				if {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%}
+
+
+
+				if {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%}
+					set {Life.Power3.CircleOfLfe.Second.%uuid of loop-player%} to 59
+					
+				if {Life.Power3.CircleOfLfe.Minute.%uuid of loop-player%} < 0:
+					set {Life.Power3.CircleOfLfe.Cooldown.%uuid of loop-player%} to false
+					set {Life.Power3.CircleOfLfe.Display.%uuid of loop-player%} to "💖 &aReady!"
+
+
+				#Healer
+
+				if {Life.Power2.Healer.Second.%uuid of loop-player%} is not set:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Cooldown.%uuid of loop-player%} to true
+
+				if {Life.Power2.Healer.Minute.%uuid of loop-player%} is not set:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Cooldown.%uuid of loop-player%} to true
+
+
+				if {Life.Power2.Healer.Cooldown.%uuid of loop-player%} is not set:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Cooldown.%uuid of loop-player%} to true	
+					set {Life.Power2.Healer.Display.%uuid of loop-player%} to " &b%{Life.Power2.Healer.Minute.%uuid of loop-player%}%m %{Life.Power2.Healer.Second.%uuid of loop-player%}%s"
+
+				if {Life.Power2.Healer.Display.%uuid of loop-player%} is not set:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power2.Healer.Cooldown.%uuid of loop-player%} to true	
+
+				remove 1 from {Life.Power2.Healer.Second.%uuid of loop-player%}
+				set {Life.Power2.Healer.Display.%uuid of loop-player%} to " &b%{Life.Power2.Healer.Second.%uuid of loop-player%}%s"
+
+				if {Life.Power2.Healer.Second.%uuid of loop-player%} < 1:
+					set {Life.Power2.Healer.Second.%uuid of loop-player%} to 6
+					heallife(loop-player)
+
+				#HeartDrainer
+
+
+
+
+
+				if {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Life.Power1.HeartDrainer.Second.%uuid of loop-player%}
+
+
+				
+				if {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%}
+					set {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} to 59
+
+
+				if {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} is true:
+					if {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} is 0:
+						set {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} to "💘&b%{Life.Power1.HeartDrainer.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} to "💘&b%{Life.Power1.HeartDrainer.Minute.%uuid of loop-player%}%m %{Life.Power1.HeartDrainer.Second.%uuid of loop-player%}%s"
+
+
+				if {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} is not set:
+					set {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} to 0
+
+				if {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} is not set:
+					set {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} to true	
+
+				if {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} is not set:
+					set {Life.Power1.HeartDrainer.Second.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} to 0
+					set {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} to true	
+
+
+				if {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} is not set:
+					set {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} to "💘&b%{Life.Power1.HeartDrainer.Minute.%uuid of loop-player%}%m %{Life.Power1.HeartDrainer.Second.%uuid of loop-player%}%s"
+
+
+
+				if {Life.Power1.HeartDrainer.Minute.%uuid of loop-player%} < 0:
+					set {Life.Power1.HeartDrainer.Cooldown.%uuid of loop-player%} to false
+					set {Life.Power1.HeartDrainer.Display.%uuid of loop-player%} to "💘&aReady!"
+
+
+
+
+
+
+
+
+	
+			
+	
+
+
+on drop prismarine shard:
+	if event-item is prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+		cancel event
+on drop amethyst shard:
+	if event-item is amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+		cancel event		
+
+
+on right click on sugar cane:
+    if player's offhand item is prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+        if player is sneaking:
+            drop 30 xp
+            drop 4 sugar cane
+            make 5 of happy villager at clicked block with offset vector(0.3, 0.3, 0.3) with extra 0
+
+on right click on sugar cane:
+    if player's offhand item is amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+        if player is sneaking:
+            drop 30 xp
+            drop 4 sugar cane
+            make 5 of happy villager at clicked block with offset vector(0.3, 0.3, 0.3) with extra 0
+
+on right click on wheat:
+    if player's offhand item is prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+        if player is sneaking:
+            drop 5 wheat
+            make 5 of happy villager at clicked block with offset vector(0.3, 0.3, 0.3) with extra 0 
+
+on right click on carrot:
+  if player's offhand item is prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+    if player is sneaking:
+      drop 50 xp
+      drop 5 carrot
+      make 5 of happy villager at clicked block with offset vector(0.3, 0.3, 0.3) with extra 0
+
+on eat golden apple:
+	if player's off hand item is a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+		remove absorption from player
+		apply absorption 2 to player for 1 minute
+	if player's off hand item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+		remove absorption from player
+		apply absorption 2 to player for 1 minute
+
+	
+
+
+
+on damage:
+	set {_uuid} to uuid of attacker
+	if {Disabled.%{_uuid}%} < 1:
+		if attacker's held item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+			
+			if {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} is false:
+				if victim is a player:
+
+					if victim is in {Bliss.Trusted.%{_uuid}%::*}:
+						send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to attacker
+
+					else:
+
+					send "<##FE04B4>🔮 <##A4FEF1>You have activated &f💘<##FE04B4>Heart Drainer <##A4FEF1>skill on <##FE04B4>%victim%" to attacker
+					send "<##FE04B4>🔮 <##A4FEF1>Your heart has been reduced by <##FEFD17>40%% for <##FE04B4>60 seconds <##A4FEF1>by <##FE04B4>%attacker%" to victim
+					set {_att} to "%attacker%" parsed as offlineplayer
+	
+					if victim is a player:
+						set {_vic} to "%victim%" parsed as offlineplayer
+	
+					else:
+						set {_vic} to victim
+	
+					if {Bliss.GemHealth.%{_uuid}%} > 4:
+						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 30
+						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 2
+						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 1
+						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} < 3:
+						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 35
+						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+	
+					set {_vic}'s max health to 6
+
+					set {LifeLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 20 seconds
+					set {LifeLine.%attacker's uuid%.%victim's uuid%} to false
+	
+					set {_vic}'s max health to 10
+
+
+
+
+				else:
+
+					send "<##FE04B4>🔮 <##A4FEF1>You have activated &f💘<##FE04B4>Heart Drainer <##A4FEF1>skill on <##FE04B4>%victim%" to attacker
+					send "<##FE04B4>🔮 <##A4FEF1>Your heart has been reduced by <##FEFD17>40%% <##A4FEF1>for <##FE04B4>60 seconds <##A4FEF1>by <##FE04B4>%attacker%" to victim
+					set {_att} to "%attacker%" parsed as offlineplayer
+
+					if victim is a player:
+						set {_vic} to "%victim%" parsed as offlineplayer
+
+					else:
+						set {_vic} to victim
+
+					if {Bliss.GemHealth.%{_uuid}%} > 4:
+						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 30
+						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 2
+						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 1
+						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} < 3:
+						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 35
+						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+
+					set {_vic}'s max health to 6
+
+					set {LifeLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 20 seconds
+					set {LifeLine.%attacker's uuid%.%victim's uuid%} to false
+
+					set {_vic}'s max health to 10
+
+
+			else:
+				set {_uuid} to uuid of attacker
+				set {_message} to {Life.Power1.HeartDrainer.Display.%{_uuid}%}
+				replace all "&b" and "💘" with "" in {_message}
+				send "<##FE04B4>🔮 <##FDABAA>Your &f💘<##FE04B4>Heart Drainer <##FDABAA>skill is on cooldown for <##FE04B4>%{_message}%" to attacker
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+				
+
+on left click:
+	if player's held item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} is false:
+			if {Disabled.%{_uuid}%} < 1:
+				set {_Lifeholder} to player
+
+
+
+
+
+
+				if lore of player's held item contains "<##57FFC7>Pristine":
+					set {_num} to 5
+					set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 30
+					set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 2
+					set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+
+				else:
+					if lore of player's held item contains "<##9DF200>Scratched":
+						set {_num} to 4
+						set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 30
+						set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 2
+						set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+
+					else:
+
+						if lore of player's held item contains "<##3F00D1>Cracked":
+							set {_num} to 3
+							set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 1
+							set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+							set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+					
+						else:
+
+							if lore of player's held item contains "<##EAC700>Damaged":
+								set {_num} to 2
+								set {Strength.Power1.Frailer.Minute.%{_uuid}%} to 2
+								set {Strength.Power1.Frailer.Second.%{_uuid}%} to 55
+								set {Strength.Power1.Frailer.Cooldown.%{_uuid}%} to true	
+
+							else:
+
+								if lore of player's held item contains "<##F10303>Ruined":
+									set {_num} to 1
+									set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 35
+									set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+									set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true	
+									
+								else:
+
+									if lore of player's held item contains "&7Broken":
+										set {_num} to 1
+										set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 35
+										set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+										set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+
+									else:
+
+										if {Bliss.GemHealth.%{_uuid}%} > 5:
+											set {_num} to 5
+											set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 30
+											set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 2
+											set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+					
+
+										else:
+
+											if {Bliss.GemHealth.%{_uuid}%} is 5:
+												set {_num} to 4
+												set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 30
+												set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 2
+												set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+						
+											else:
+
+												if {Bliss.GemHealth.%{_uuid}%} is 4:
+													set {_num} to 3
+													set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 1
+													set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+													set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+
+												else:
+										
+													if {Bliss.GemHealth.%{_uuid}%} is 3:
+														set {_num} to 2
+														set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 35
+														set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+														set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+
+													else:
+
+														if {Bliss.GemHealth.%{_uuid}%} is 2:
+															set {_num} to 1
+															set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 35
+															set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+															set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+															
+														else:
+
+															if {Bliss.GemHealth.%{_uuid}%} is 1:
+																set {_num} to 1
+																set {Life.Power1.HeartDrainer.Second.%{_uuid}%} to 35
+																set {Life.Power1.HeartDrainer.Minute.%{_uuid}%} to 3
+																set {Life.Power1.HeartDrainer.Cooldown.%{_uuid}%} to true
+
+
+
+				send "<##FE04B4>🔮 <##A4FEF1>You have activated group &f💘<##FE04B4>Heart Drainer <##A4FEF1>skill &7(radius %{_num}%)" to player
+				set {_s} to 1
+				loop {_num} + {_num} times:
+
+					if loop-value is not {_num} + {_num}:
+						LifeCircle({_s}, player)
+				
+						add 0.5 to {_s}
+
+					else:
+						LifeCirclelast({_s}, player)
+
+
+				
+				set {_lifeholder} to player
+				loop all entities within {_num} blocks of the player:
+					if loop-entity is not {_lifeholder}:
+						if "%{Bliss.Trusted.%{_uuid}%::*}%" does not contain "%loop-entity's uuid%":
+							set {_p} to loop-entity
+							remove 2 from {_p}'s max health
+							send "<##FE04B4>🔮 <##A4FEF1>Your heart has been reduced by <##FEFD17>15%% <##A4FEF1>for <##FE04B4>60 seconds <##A4FEF1>by <##FE04B4>%{_lifeholder}%" to loop-entity
+							wait 60 seconds
+							if {_p} is a player:
+
+								if {_p} is online:
+									add 2 to {_p}'s max health
+
+								else:
+
+									set {Bliss.add2health.%{_p}'s uuid%} to true
+
+							else:
+								add 2 to {_p}'s max health
+
+						else:
+							send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to {_lifeholder}
+
+
+
+		else:
+			set {_uuid} to uuid of player
+			set {_message} to {Life.Power1.HeartDrainer.Display.%{_uuid}%}
+			replace all "&b" and "💘" with "" in {_message}
+			send "<##FE04B4>🔮 <##FDABAA>Your &f💘<##FE04B4>Heart Drainer <##FDABAA>skill is on cooldown for <##FE04B4>%{_message}%" to player
+
+on join:
+	set {_p} to player 
+	wait 0.5 second
+	if {Bliss.add2health.%{_p}'s uuid%} is true:
+		add 2 to {_p}'s max health
+		set {Bliss.add2health.%{_p}'s uuid%} to false
+
+
+
+on join:
+	set {_p} to player
+	wait 0.5 second
+	if {Bliss.add4health.%{_p}'s uuid%} is true:
+		add 4 to {_p}'s max health
+		set {Bliss.add4health.%{_p}'s uuid%} to false
+
+
+on join:
+	set {_p} to player
+	wait 0.5 second
+	if {Bliss.remove4health.%{_p}'s uuid%} is true:
+		remove 4 from {_p}'s max health
+		set {Bliss.remove4health.%{_p}'s uuid%} to false
+
+
+
+							
+
+				
+
+
+
+							
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on right click:
+	if player's held item is a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} is not true:
+			if {Disabled.%{_uuid}%} < 1:
+				set {_lifeholder} to player
+				send "<##FE04B4>🔮 <##A4FEF1>Activated &f💖<##FE04B4>Privilege Precinct" to player
+				if {Bliss.GemHealth.%{_uuid}%} > 4:
+					set {Life.Power3.CircleOfLfe.Second.%{_uuid}%} to 0
+					set {Life.Power3.CircleOfLfe.Minute.%{_uuid}%} to 3
+					set {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} to true
+				if {Bliss.GemHealth.%{_uuid}%} is 3:
+					set {Life.Power3.CircleOfLfe.Second.%{_uuid}%} to 30
+					set {Life.Power3.CircleOfLfe.Minute.%{_uuid}%} to 3
+					set {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} to true
+				if {Bliss.GemHealth.%{_uuid}%} < 3:
+					set {Life.Power3.CircleOfLfe.Second.%{_uuid}%} to 1
+					set {Life.Power3.CircleOfLfe.Minute.%{_uuid}%} to 4
+					set {Life.Power3.CircleOfLfe.Cooldown.%{_uuid}%} to true
+
+				add 4 to player's max health
+				set {Bliss.HeartTimer.%{_uuid}%.good} to 20
+				set {_numb} to 0
+				greenparticle(player)
+				loop 120 times:
+					add 1 to {_numb}
+					LifePrivCircle(4, player)
+					spawn 1 xp orb at location of player with nbt compound from "{Value:5}"
+					loop all entities within 4 blocks of player:
+						if loop-entity-1 is a player:
+							if loop-entity-1 is not {_lifeholder}:
+
+
+								set {_pluuid} to uuid of {_lifeholder}
+								
+
+
+								if "%{Bliss.Trusted.%{_pluuid}%::*}%" contains "%loop-entity-1's uuid%":
+
+									if loop-entity-1 is not in {_allies::*}:
+										if loop-entity-1's max health < 11:
+											add loop-entity-1 to {_allies::*}
+											remove loop-entity-1 from {_enemies::*}
+											
+											set {_uuid} to uuid of loop-entity-1
+											if {Bliss.HeartTimer.%{_uuid}%.good} < 1:
+												set {Bliss.HeartTimer.%{_uuid}%.good} to 20
+												add 4 to loop-entity-1's max health
+
+							
+									
+								else:
+
+									if loop-entity-1 is not in {_enemies::*}:
+										if loop-entity-1's max health > 6:
+											add loop-entity-1 to {_enemies::*}
+											remove loop-entity-1 from {_allies::*}
+											
+											
+											set {_uuid} to uuid of loop-entity-1
+											if {Bliss.HeartTimer.%{_uuid}%.bad} < 1:
+												set {Bliss.HeartTimer.%{_uuid}%.bad} to 20
+												remove 4 from loop-entity-1's max health
+
+						else:
+							set {_uuid} to uuid of loop-entity-1
+							if {Bliss.HeartTimer.%{_uuid}%.bad} < 1:
+								set {Bliss.HeartTimer.%{_uuid}%.bad} to 20
+								remove 4 from loop-entity-1's max health
+
+						if {_numb} is 120:
+							wait 0.25 seconds
+							send "<##FE04B4>🔮 <##A4FEF1>Your &f💖<##FE04B4>Privilege Precinct <##A4FEF1>has ran out!" 
+
+
+
+												
+
+
+								
+
+
+					wait 0.25 second
+					
+every 1 second:
+	loop all entities:
+		if loop-entity is not a player:
+			if {Bliss.HeartTimer.%uuid of loop-entity-1%.bad} > -1:
+				remove 1 from {Bliss.HeartTimer.%uuid of loop-entity-1%.bad}
+				if {Bliss.HeartTimer.%uuid of loop-entity-1%.bad} is 0:
+					add 4 to loop-entity's max health
+
+
+
+every 1 second:
+	loop all offline players:
+		if {Bliss.HeartTimer.%uuid of loop-offlineplayer%.bad} > -1:
+			remove 1 from {Bliss.HeartTimer.%uuid of loop-offlineplayer%.bad}
+			if {Bliss.HeartTimer.%uuid of loop-offlineplayer%.bad} is 0:
+				if loop-offlineplayer is online:
+					add 4 to loop-offlineplayer's max health
+
+				else:
+					set {Bliss.add4health.%loop-offlineplayer's uuid%} to true
+			
+
+		if {Bliss.HeartTimer.%uuid of loop-offlineplayer%.good} > -1:
+			remove 1 from {Bliss.HeartTimer.%uuid of loop-offlineplayer%.good}
+			if {Bliss.HeartTimer.%uuid of loop-offlineplayer%.good} is 0:
+				if loop-offlineplayer is online:
+					remove 4 from loop-offlineplayer's max health
+
+				else:
+					set {Bliss.remove4health.%loop-offlineplayer's uuid%} to true
+
+
+
+
+			
+
+function greenparticle(p: player):
+	loop 30 times:
+		set {_loc} to the location 1 block above {_p}
+		make 5 of happy villager at {_loc} with offset vector(0.2, 0.5, 0.2) with extra 0 
+		wait 1 second
+
+
+
+
+function LifeCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust using dustOption(rgb(254, 4, 180), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+
+
+function LifePrivCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 3 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust using dustOption(rgb(254, 4, 180), 1) at {_pl} ~ {_v} with extra 0.000000001
+
+
+function LifeCirclelast(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop 10 times:
+		loop {_iterations} times:
+			set {_angle} to loop-value-2 * {_step}
+			set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+			draw 1 of dust using dustOption(rgb(254, 4, 180), 1) at {_pl} ~ {_v} with extra 0.000000001
+			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+		wait 0.4 seconds
+
+
+every 1 tick:
+	loop all players:
+		loop all entities:
+			if {LifeLine.%loop-player-1's uuid%.%loop-entity-2's uuid%} is true:
+				set {_v} to vector from loop-player-1's head to loop-entity-2's head
+				set vector length of {_v} to 0.1
+				set {_loc} to the location 0.7 meters under loop-player-1's head
+				loop (distance between {_loc} and loop-entity-2) / 0.1 times:
+
+					draw 1 dust using dustOption(rgb(254, 4, 180), 1) at {_loc} with force
+					draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
+					set {_loc} to {_loc} ~ {_v}	
+
+
+
+
+

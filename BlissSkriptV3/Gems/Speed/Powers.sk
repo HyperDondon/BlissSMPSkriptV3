@@ -1,0 +1,884 @@
+#speed powers
+		
+
+
+
+every 1 tick:
+	loop all players:
+		if {Speed.SpeedStorm.Activated.%uuid of loop-player%} is not true:
+			if loop-player's off hand item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+				apply potion of speed of tier 1 without particles to {_p} for 0.1 seconds
+				apply potion of dolphins grace of tier 1 without particles to {_p} for 0.1 seconds
+				remove speed from loop-player
+				apply potion of speed of tier 1 without particles to {_p} for 0.1 seconds
+				remove dolphins grace from loop-player
+				apply potion of dolphins grace of tier 1 without particles to {_p} for 0.1 seconds
+
+			if loop-player's held item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+				apply potion of speed of tier 1 without particles to {_p} for 0.1 seconds
+				apply potion of dolphins grace of tier 1 without particles to {_p} for 0.1 seconds
+				remove speed from loop-player
+				apply potion of speed of tier 1 without particles to {_p} for 0.1 seconds
+				remove dolphins grace from loop-player
+				apply potion of dolphins grace of tier 1 without particles to {_p} for 0.1 seconds
+
+			if loop-player's off hand item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+				apply potion of speed of tier 2 without particles to {_p} for 0.1 seconds
+				apply potion of dolphins grace of tier 2 without particles to {_p} for 0.1 seconds
+				remove speed from loop-player
+				apply potion of speed of tier 2 without particles to {_p} for 0.1 seconds
+				remove dolphins grace from loop-player
+				apply potion of dolphins grace of tier 2 without particles to {_p} for 0.1 seconds
+
+			if loop-player's held item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+				apply potion of speed of tier 2 without particles to {_p} for 0.1 seconds
+				apply potion of dolphins grace of tier 2 without particles to {_p} for 0.1 seconds
+				remove speed from loop-player
+				apply potion of speed of tier 2 without particles to {_p} for 0.1 seconds
+				remove dolphins grace from loop-player
+				apply potion of dolphins grace of tier 2 without particles to {_p} for 0.1 seconds
+
+
+
+every 1 second:
+	loop all players:
+		loop all items in loop-player's inventory:
+			if name of loop-slot contains "<##FEFD17>&lsᴘᴇᴇᴅ" or "<##ffcc26>&lGold Gem":
+				#SpeedStorm
+				
+				if {Speed.Power3.SpeedStorm.Second.%uuid of loop-player%} is not set:
+					set {Speed.Power3.SpeedStorm.Second.%uuid of loop-player%} to 0
+					set {Speed.Power3.SpeedStorm.Minute.%uuid of loop-player%} to 0
+					set {Speed.Power3.SpeedStorm.Cooldown.%uuid of loop-player%} to true
+
+				if {Speed.Power3.SpeedStorm.Display.%uuid of loop-player%} is not set:
+					set {Speed.Power3.SpeedStorm.Display.%uuid of loop-player%} to "🌩 &b%{Speed.Power3.SpeedStorm.Minute.%uuid of loop-player%}%m %{Speed.Power3.SpeedStorm.Second.%uuid of loop-player%}%s"
+					
+			
+				if {Speed.Power3.SpeedStorm.Cooldown.%uuid of loop-player%} is true:
+					if {Speed.Power3.SpeedStorm.Minute.%uuid of loop-player%} is 0:
+						set {Speed.Power3.SpeedStorm.Display.%uuid of loop-player%} to "🌩 &b%{Speed.Power3.SpeedStorm.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Speed.Power3.SpeedStorm.Display.%uuid of loop-player%} to "🌩 &b%{Speed.Power3.SpeedStorm.Minute.%uuid of loop-player%}%m %{Speed.Power3.SpeedStorm.Second.%uuid of loop-player%}%s"
+
+				if {Speed.Power3.SpeedStorm.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Speed.Power3.SpeedStorm.Second.%uuid of loop-player%}
+
+
+
+				if {Speed.Power3.SpeedStorm.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Speed.Power3.SpeedStorm.Minute.%uuid of loop-player%}
+					set {Speed.Power3.SpeedStorm.Second.%uuid of loop-player%} to 59
+					
+				if {Speed.Power3.SpeedStorm.Minute.%uuid of loop-player%} < 0:
+					set {Speed.Power3.SpeedStorm.Cooldown.%uuid of loop-player%} to false
+					set {Speed.Power3.SpeedStorm.Display.%uuid of loop-player%} to "🌩 &aReady!"
+
+
+				#Enchanting
+
+				if {Speed.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Speed.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Speed.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Speed.Power2.Enchanting.Minute.%uuid of loop-player%} is not set:
+					set {Speed.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Speed.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+
+
+				if {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} is not set:
+					set {Speed.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Speed.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true	
+					set {Speed.Power2.Enchanting.Display.%uuid of loop-player%} to " &b%{Speed.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Speed.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Speed.Power2.Enchanting.Display.%uuid of loop-player%} is not set:
+					set {Speed.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Speed.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true	
+
+				if {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					set {Speed.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Speed.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Speed.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Speed.Power2.Enchanting.Display.%uuid of loop-player%} is not set:
+					set {Speed.Power2.Enchanting.Display.%uuid of loop-player%} to " &b %{Speed.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Speed.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Speed.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Speed.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Speed.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Speed.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Speed.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Speed.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Speed.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
+				
+				if {Speed.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Speed.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Speed.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					
+				if {Speed.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Speed.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
+					set {Speed.Power2.Enchanting.Display.%uuid of loop-player%} to " &aReady!"
+
+
+
+				#SlothSedative
+
+
+
+
+
+				if {Speed.Power1.SlothSedative.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Speed.Power1.SlothSedative.Second.%uuid of loop-player%}
+
+
+				
+				if {Speed.Power1.SlothSedative.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Speed.Power1.SlothSedative.Minute.%uuid of loop-player%}
+					set {Speed.Power1.SlothSedative.Second.%uuid of loop-player%} to 59
+
+
+				if {Speed.Power1.SlothSedative.Cooldown.%uuid of loop-player%} is true:
+					if {Speed.Power1.SlothSedative.Minute.%uuid of loop-player%} is 0:
+						set {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} to "🎯 &b%{Speed.Power1.SlothSedative.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} to "🎯 &b%{Speed.Power1.SlothSedative.Minute.%uuid of loop-player%}%m %{Speed.Power1.SlothSedative.Second.%uuid of loop-player%}%s"
+
+
+				if {Speed.Power1.SlothSedative.Second.%uuid of loop-player%} is not set:
+					set {Speed.Power1.SlothSedative.Second.%uuid of loop-player%} to 0
+					set {Speed.Power1.SlothSedative.Minute.%uuid of loop-player%} to 0
+
+				if {Speed.Power1.SlothSedative.Cooldown.%uuid of loop-player%} is not set:
+					set {Speed.Power1.SlothSedative.Second.%uuid of loop-player%} to 0
+					set {Speed.Power1.SlothSedative.Minute.%uuid of loop-player%} to 0
+					set {Speed.Power1.SlothSedative.Cooldown.%uuid of loop-player%} to true	
+					set {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} to "🎯 &b%{Speed.Power1.SlothSedative.Minute.%uuid of loop-player%}%m %{Speed.Power1.SlothSedative.Second.%uuid of loop-player%}%s"
+
+				if {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} is not set:
+					set {Speed.Power1.SlothSedative.Second.%uuid of loop-player%} to 0
+					set {Speed.Power1.SlothSedative.Minute.%uuid of loop-player%} to 0
+					set {Speed.Power1.SlothSedative.Cooldown.%uuid of loop-player%} to true	
+
+				if {Speed.Power1.SlothSedative.Cooldown.%uuid of loop-player%} is true:
+					set {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} to "🎯 &b%{Speed.Power1.SlothSedative.Minute.%uuid of loop-player%}%m %{Speed.Power1.SlothSedative.Second.%uuid of loop-player%}%s"
+
+				if {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} is not set:
+					set {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} to "🎯 &b%{Speed.Power1.SlothSedative.Minute.%uuid of loop-player%}%m %{Speed.Power1.SlothSedative.Second.%uuid of loop-player%}%s"
+
+					
+				if {Speed.Power1.SlothSedative.Cooldown.%uuid of loop-player%} is true:
+					set {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} to "🎯 &b%{Speed.Power1.SlothSedative.Minute.%uuid of loop-player%}%m %{Speed.Power1.SlothSedative.Second.%uuid of loop-player%}%s"
+
+
+
+				if {Speed.Power1.SlothSedative.Minute.%uuid of loop-player%} < 0:
+					set {Speed.Power1.SlothSedative.Cooldown.%uuid of loop-player%} to false
+					set {Speed.Power1.SlothSedative.Display.%uuid of loop-player%} to "🎯 &aReady!"
+
+
+
+
+
+
+
+
+				
+on player's held item change:
+	set {_uuid} to uuid of player
+	if {Disabled.%{_uuid}%} < 1:
+		if player's off hand item is prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+			if {Speed.Power2.Enchanting.Cooldown.%{_uuid}%} is not true:
+				if player's held item is a any pickaxe:
+					enchant player's held item with efficiency 5
+					send "<##FEFD17>🔮 <##A4FEF1>Auto Enchanting"
+					set {Speed.Power2.Enchanting.Minute.%{_uuid}%} to 14
+					set {Speed.Power2.Enchanting.Second.%{_uuid}%} to 59
+					set {Speed.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+		
+		if player's off hand item is amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+			if {Speed.Power2.Enchanting.Cooldown.%{_uuid}%} is not true:
+				if player's held item is a any pickaxe:
+					enchant player's held item with efficiency 2
+					send "<##FEFD17>🔺 <##A4FEF1>Auto Enchanting"
+					set {Speed.Power2.Enchanting.Minute.%{_uuid}%} to 14
+					set {Speed.Power2.Enchanting.Second.%{_uuid}%} to 59
+					set {Speed.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+
+on left click:
+	set {_uuid} to uuid of player
+	if {Disabled.%{_uuid}%} < 1:
+		if player's held item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+			set {_uuid} to uuid of player
+			if {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} is not true:
+
+
+
+				apply potion of speed of tier 8 to player for 5 seconds
+				apply potion of haste of tier 8 to player for 9 seconds
+
+
+
+
+
+				if lore of player's held item contains "<##57FFC7>Pristine":
+					set {_num} to 5
+					set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 3
+					set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+					set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+
+				else:
+					if lore of player's held item contains "<##9DF200>Scratched":
+						set {_num} to 4
+						set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 3
+						set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+						set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+
+					else:
+
+						if lore of player's held item contains "<##3F00D1>Cracked":
+							set {_num} to 3
+							set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 5
+							set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+							set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+					
+						else:
+
+							if lore of player's held item contains "<##EAC700>Damaged":
+								set {_num} to 2
+								set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 7
+								set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+								set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+
+							else:
+
+								if lore of player's held item contains "<##F10303>Ruined":
+									set {_num} to 1
+									set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 7
+									set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+									set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+									
+								else:
+
+									if lore of player's held item contains "&7Broken":
+										set {_num} to 1
+										set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 7
+										set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+										set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+
+									else:
+
+										if {Bliss.GemHealth.%{_uuid}%} > 5:
+											set {_num} to 5
+											set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 3
+											set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+											set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+					
+
+										else:
+
+											if {Bliss.GemHealth.%{_uuid}%} is 5:
+												set {_num} to 4
+												set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 3
+												set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+												set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+						
+											else:
+
+												if {Bliss.GemHealth.%{_uuid}%} is 4:
+													set {_num} to 3
+													set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 3
+													set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 15
+													set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+
+												else:
+										
+													if {Bliss.GemHealth.%{_uuid}%} is 3:
+														set {_num} to 2
+														set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 5
+														set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+														set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+
+													else:
+
+														if {Bliss.GemHealth.%{_uuid}%} is 2:
+															set {_num} to 1
+															set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 5
+															set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+															set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true	
+															
+														else:
+
+															if {Bliss.GemHealth.%{_uuid}%} is 1:
+																set {_num} to 1
+																set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 5
+																set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 59
+																set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+
+						
+				send "<##FEFD17>🔮 <##A4FEF1>You have used group &f🎯<##FEFD17>Sloth's Sedative &7(radius %{_num}%)" to player
+
+				set {_s} to 1
+				loop {_num} + {_num} times:
+
+					if loop-value is not {_num} + {_num}:
+						SpeedCircle({_s}, player)
+				
+						add 0.5 to {_s}
+
+					else:
+						SpeedCirclelast({_s}, player)
+
+
+
+				set {_speedholder} to player
+				loop all entities within {_num} blocks of the player:
+					if loop-entity is not {_speedholder}:
+						if "%{Bliss.Trusted.%{_uuid}%::*}%" does not contain "%loop-entity's uuid%":
+							send "<##FEFD17>🔮 <##A4FEF1>You have been affected by group &f🎯<##FEFD17>Sloth's Sedative <##A4FEF1>by <##FEFD17>%{_speedholder}%" to loop-entity
+							apply potion of mining fatigue of tier 2 to loop-entity for 30 seconds
+							apply potion of slowness of tier 3 to loop-entity for 30 seconds
+
+							if loop-entity is a player:
+								execute console command "attribute %loop-entity% minecraft:generic.attack_speed base set 3.2"
+								set {Speed.Attributesets.%loop-entity's uuid%} to 30
+
+							remove all potions from loop-entity
+
+						else:
+							send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to {_speedholder}
+
+			else:
+				set {_uuid} to uuid of player
+				set {_message} to {Speed.Power1.SlothSedative.Display.%{_uuid}%}
+				replace all "&b" and "🎯 " with "" in {_message}
+				send "<##FEFD17>🔮 <##FDABAA>Your &f🎯<##FEFD17>Sloth's Sedative <##FDABAA>skill is on cooldown for <##FEFD17>%{_message}%" to player
+
+on damage:
+	set {_uuid} to uuid of attacker
+	if {Disabled.%{_uuid}%} < 1:
+		if attacker's held item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+			
+			if {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} is not true:
+				if "%{Bliss.Trusted.%{_uuid}%::*}%" contains "%victim's uuid%":
+
+					send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to attacker
+
+				else:
+					send "<##FEFD17>🔮 <##A4FEF1>You have used &f🎯<##FEFD17>Sloth's Sedative <##A4FEF1>on <##FEFD17>%victim%" to attacker
+					set {_speedholder} to attacker
+					send "<##FEFD17>🔮 <##A4FEF1>You have been affected with &f🎯<##FEFD17>Sloth's Sedative <##A4FEF1>by <##FEFD17>%{_speedholder}%" to victim
+					
+
+
+					apply potion of mining fatigue of tier 3 to victim for 40 seconds
+					apply potion of slowness of tier 4 to victim for 40 seconds
+
+					if victim is a player:
+						execute console command "attribute %victim% minecraft:generic.attack_speed base set 2"
+						set {Speed.Attributesets.%victim's uuid%} to 40
+
+					remove all potions from victim
+
+
+					
+
+					if {Bliss.GemHealth.%{_uuid}%} > 4:
+						set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 3
+						set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 29
+						set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 5
+						set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 29
+						set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} < 3:
+						set {Speed.Power1.SlothSedative.Minute.%{_uuid}%} to 7
+						set {Speed.Power1.SlothSedative.Second.%{_uuid}%} to 29
+						set {Speed.Power1.SlothSedative.Cooldown.%{_uuid}%} to true
+
+					set {SpeedLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 40 seconds
+					set {SpeedLine.%attacker's uuid%.%victim's uuid%} to false
+
+			else:
+
+				set {_uuid} to uuid of attacker
+				set {_message} to {Speed.Power1.SlothSedative.Display.%{_uuid}%}
+				replace all "&b" and "🎯 " with "" in {_message}
+				send "<##FEFD17>🔮 <##FDABAA>Your &f🎯<##FEFD17>Sloth's Sedative <##FDABAA>skill is on cooldown for <##FEFD17>%{_message}%" to attacker
+
+every 1 tick:
+	loop all players:
+		loop all entities:
+			if {SpeedLine.%loop-player-1's uuid%.%loop-entity-2's uuid%} is true:
+				set {_v} to vector from loop-player-1's head to loop-entity-2's head
+				set vector length of {_v} to 0.1
+				set {_loc} to the location 0.7 meters under loop-player-1's head
+				loop (distance between {_loc} and loop-entity-2) / 0.1 times:
+
+					draw 1 dust using dustOption(rgb(254, 253, 23), 1) at {_loc} with force
+					draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
+					set {_loc} to {_loc} ~ {_v}	
+
+
+
+
+
+
+
+
+
+every 1 second:
+	loop all offline players:
+		if {Speed.Attributesets.%uuid of loop-offlineplayer%} > 0:
+			remove 1 from {Speed.Attributesets.%uuid of loop-offlineplayer%}
+			if {Speed.Attributesets.%uuid of loop-offlineplayer%} is 0:
+				if {_p} is online:
+					execute console command "attribute %{_p}% minecraft:generic.attack_speed base set 4"
+				else:
+					set {Speed.Attributesetsback.%uuid of loop-offlineplayer%} to true
+
+on join:
+	set {_uuid} to uuid of player
+	if {Speed.Attributesetsback.%{_uuid}%} is true:
+		wait 1 tick
+		execute console command "attribute %player% minecraft:generic.attack_speed base set 4"
+
+	
+every 1 tick:
+	loop all players:
+		if {Speed.SpeedStorm.Activated.%uuid of loop-player%} is true:
+			loop 10 times:
+				set {_num} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.Energy}
+				set {_pl} to location of {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}
+				set y coord of {_pl} to y coord of {_pl} + 10
+
+
+				set {_radiusx} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}'s x coordinate + {_num}  # You can adjust the radius as needed
+				set {_radiusz} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}'s z coordinate + {_num}  # You can adjust the radius as needed
+
+				set {_radiusminusx} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}'s x coordinate - {_num}
+				set {_radiusminusz} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}'s z coordinate - {_num}
+
+				set {_randomX} to a random number between {_radiusminusx} and {_radiusx}
+				set {_randomZ} to a random number between {_radiusminusz} and {_radiusz}
+
+				
+				set {_pl}'s x coordinate to {_randomX}
+				set {_pl}'s z coordinate to {_randomZ}
+				
+
+
+
+
+				draw 1 of campfire cosy smoke at {_pl} with extra 0 with force
+
+
+	
+every 1 second:
+	loop all players:
+		if {Speed.SpeedStorm.Activated.%uuid of loop-player%} is true:
+			set {_num} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.Energy}
+
+			set {_radiusx} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}'s x coordinate + {_num}  # You can adjust the radius as needed
+			set {_radiusz} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}'s z coordinate + {_num}  # You can adjust the radius as needed
+
+			set {_radiusminusx} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}'s x coordinate - {_num}
+			set {_radiusminusz} to {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}'s z coordinate - {_num}
+
+			set {_randomX} to a random number between {_radiusminusx} and {_radiusx}
+			set {_randomZ} to a random number between {_radiusminusz} and {_radiusz}
+
+			set {_location} to location of {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}
+			
+			set {_location}'s x coordinate to {_randomX}
+			set {_location}'s z coordinate to {_randomZ}
+			
+
+			
+																																	
+
+					
+
+			
+			strike lightning at {_location}
+			set {Speed.LastStriked} to "%uuid of loop-player%"
+			wait 0.2 second
+			clear {Speed.LastStriked}
+			
+
+every 1 tick:
+	loop all players:
+		if {Speed.SpeedStorm.Activated.%uuid of loop-player%} is true:
+
+
+			if "%all entities within {Speed.SpeedStorm.Activated.%uuid of loop-player%.Energy} blocks of {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}%" contains loop-player:
+				remove speed from loop-player
+				apply potion of speed of tier 3 without particles to {_p} for 0.1 seconds
+
+			else:
+
+				if loop-player's off hand item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+					apply potion of speed of tier 1 without particles to {_p} for 0.1 seconds
+					apply potion of dolphins grace of tier 1 without particles to {_p} for 0.1 seconds
+					remove speed from loop-player
+					apply potion of speed of tier 1 without particles to {_p} for 0.1 seconds
+					remove dolphins grace from loop-player
+					apply potion of dolphins grace of tier 1 without particles to {_p} for 0.1 seconds
+	
+				if loop-player's held item is a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+					apply potion of speed of tier 1 without particles to {_p} for 0.1 seconds
+					apply potion of dolphins grace of tier 1 without particles to {_p} for 0.1 seconds
+					remove speed from loop-player
+					apply potion of speed of tier 1 without particles to {_p} for 0.1 seconds
+					remove dolphins grace from loop-player
+					apply potion of dolphins grace of tier 1 without particles to {_p} for 0.1 seconds
+	
+				if loop-player's off hand item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+					apply potion of speed of tier 2 without particles to {_p} for 0.1 seconds
+					apply potion of dolphins grace of tier 2 without particles to {_p} for 0.1 seconds
+					remove speed from loop-player
+					apply potion of speed of tier 2 without particles to {_p} for 0.1 seconds
+					remove dolphins grace from loop-player
+					apply potion of dolphins grace of tier 2 without particles to {_p} for 0.1 seconds
+	
+				if loop-player's held item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+					apply potion of speed of tier 2 without particles to {_p} for 0.1 seconds
+					apply potion of dolphins grace of tier 2 without particles to {_p} for 0.1 seconds
+					remove speed from loop-player
+					apply potion of speed of tier 2 without particles to {_p} for 0.1 seconds
+					remove dolphins grace from loop-player
+					apply potion of dolphins grace of tier 2 without particles to {_p} for 0.1 seconds
+
+
+
+				loop all entities within {Speed.SpeedStorm.Activated.%uuid of loop-player%.Energy} blocks of {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}:
+					if loop-entity-2 is not loop-player:
+						if loop-entity-2 is a player:
+							if "%{Bliss.Trusted.%uuid of loop-player%::*}%" contains "%loop-entity-2's uuid%":
+								remove speed from loop-entity-2
+								apply potion of speed of tier 3 to loop-entity-2 for 0.1 seconds
+								set {Speed.Attributesets.%loop-entity-2's uuid%} to {Speed.Attributesets.%uuid of loop-player%}
+								execute console command "attribute %loop-entity-2% minecraft:generic.attack_speed base set 8.8"
+								if loop-entity-2 is not in {_people::*}:
+									add loop-entity-2 to {_people::*}
+
+				loop {_people::*}:
+					if "%all entities within {Speed.SpeedStorm.Activated.%uuid of loop-player%.Energy} blocks of {Speed.SpeedStorm.Activated.%uuid of loop-player%.loc}%" does not contain loop-value-2:
+						if "%{Bliss.Trusted.%uuid of loop-player%::*}%" contains "%loop-value-2's uuid%":
+							execute console command "attribute %loop-value-2% minecraft:generic.attack_speed base set 4"
+				
+
+
+
+
+			
+
+on damage:
+	if damage cause is lightning:
+		if {Speed.LastStriked} is set:
+
+			set {_p} to victim
+			set {_uuid} to uuid of {_p}
+			
+			if {Speed.LastStriked} is "%{_uuid}%":
+				set {_no} to true
+				set {SpeedStorm.Hitwithstrike.%victim's uuid%} to true
+				
+				execute console command "attribute %{_p}% minecraft:generic.attack_speed base set 8.8"
+				
+				cancel event
+				
+			else:
+				set {_ps} to {Speed.LastStriked}
+				set {_p} to {_ps} parsed as offline player
+				set {_pluuid} to uuid of {_p}
+							
+				if {Speed.SpeedStorm.Activated.%{_pluuid}%} is true:
+					if "%{Bliss.Trusted.%{_pluuid}%::*}%" contains "%victim's uuid%":
+
+						add victim's uuid to {_allies::*}
+						remove victim's uuid from {_enemies::*}
+						cancel event
+
+						
+
+						
+						#set {Speed.Attributesets.%victim's uuid%} to 1.2
+
+						#broadcast "Testing %victim% is trusted by %{_p}'s name%"
+					
+							
+
+				
+						
+					else:
+
+						add victim's uuid to {_enemies::*}
+						remove victim's uuid from {_allies::*}
+						if {Speed.SpeedStorm.Movements.%victim's uuid%} is not set:
+							set {Speed.SpeedStorm.Movements.%victim's uuid%} to 0
+
+						add 2 to {Speed.SpeedStorm.Movements.%victim's uuid%}
+
+						#if victim doesn't have potion effect haste:
+							#apply potion of haste of tier 2 to victim for 15 seconds
+
+						#if victim doesn't have potion effect speed:
+							#apply potion of speed of tier 3 to victim for 15 seconds
+						#broadcast "Testing %victim% isn't trusted by %{_p}'s name%"
+							
+							
+
+				#else:
+					#broadcast "works??????"
+
+on any move:
+	if {Speed.SpeedStorm.Movements.%player's uuid%} > 0:
+		cancel event
+
+
+
+
+
+every 1 second:
+	loop all offline players:
+		if {Speed.SpeedStorm.Movements.%loop-offlineplayer's uuid%} > 0:
+			remove 1 from {Speed.SpeedStorm.Movements.%loop-offlineplayer's uuid%}
+
+
+
+								
+								
+
+
+
+
+
+
+
+
+
+
+on right click:
+	set {_uuid} to uuid of player
+	if {Disabled.%{_uuid}%} < 1:
+		if player's held item is a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+			
+			if {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} is not true: 
+				
+				
+				set {Speed.SpeedStorm.Activated.%{_uuid}%} to true
+				
+			
+
+
+				if lore of player's held item contains "<##57FFC7>Pristine":
+					set {_num} to 5
+					set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 1
+					set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 20
+					set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+				
+
+				else:
+					if lore of player's held item contains "<##9DF200>Scratched":
+						set {_num} to 4
+						set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 1
+						set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 40
+						set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+
+					else:
+
+						if lore of player's held item contains "<##3F00D1>Cracked":
+							set {_num} to 3
+							set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 2
+							set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 0
+							set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+					
+						else:
+
+							if lore of player's held item contains "<##EAC700>Damaged":
+								set {_num} to 2
+								set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 2
+								set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 20
+								set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+
+							else:
+
+								if lore of player's held item contains "<##F10303>Ruined":
+									set {_num} to 1
+									set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 2
+									set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 40
+									set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true	
+									
+								else:
+
+									if lore of player's held item contains "&7Broken":
+										set {_num} to 1
+										set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 3
+										set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 0
+										set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+
+									else:
+
+										if {Bliss.GemHealth.%{_uuid}%} > 5:
+											set {_num} to 5
+											set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 1
+											set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 20
+											set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+					
+
+										else:
+
+											if {Bliss.GemHealth.%{_uuid}%} is 5:
+												set {_num} to 4
+												set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 1
+												set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 40
+												set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+						
+											else:
+
+												if {Bliss.GemHealth.%{_uuid}%} is 4:
+													set {_num} to 3
+													set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 2
+													set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 0
+													set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+
+												else:
+										
+													if {Bliss.GemHealth.%{_uuid}%} is 3:
+														set {_num} to 2
+														set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 2
+														set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 20
+														set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true	
+
+													else:
+
+														if {Bliss.GemHealth.%{_uuid}%} is 2:
+															set {_num} to 1
+															set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 2
+															set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 40
+															set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true	
+															
+														else:
+
+															if {Bliss.GemHealth.%{_uuid}%} is 1:
+																set {_num} to 1
+																set {Speed.Power3.SpeedStorm.Minute.%{_uuid}%} to 3
+																set {Speed.Power3.SpeedStorm.Second.%{_uuid}%} to 0
+																set {Speed.Power3.SpeedStorm.Cooldown.%{_uuid}%} to true
+
+						
+				set {Speed.SpeedStorm.Activated.%{_uuid}%.Energy} to {_num}
+				set {Speed.SpeedStorm.Activated.%{_uuid}%.loc} to location of player
+
+				apply potion of haste of tier 2 to player for 40 seconds
+				apply potion of speed of tier 3 to player for 40 seconds
+				execute console command "attribute %player% minecraft:generic.attack_speed base set 6"
+				set {Speed.Attributesets.%player's uuid%} to 40
+				send "<##FEFD17>🔮 <##A4FEF1>You summoned a &f🌩<##FEFD17>speed storm" to player
+				set {_s} to 1
+				loop {_num} + {_num} times:
+
+					if loop-value is not {_num} + {_num}:
+						SpeedStormCircle({_s}, player)
+				
+						add 0.5 to {_s}
+
+					else:
+						SpeedStormCircleLast({_s}, player)
+
+				set {_speedholder} to player
+				loop all entities within {_num} blocks of the player:
+					if loop-entity is not {_speedholder}:
+						if loop-entity is a player:
+							if "%{Bliss.Trusted.%{_uuid}%::*}%" contains "%loop-entity's uuid%":
+							
+								execute console command "attribute %loop-entity% minecraft:generic.attack_speed base set 5.2"
+								set {Speed.Attributesets.%loop-entity's uuid%} to 40
+								
+							else:
+								send "<##FEFD17>🔮 <##A4FEF1>You have been affected with &f🌩<##FEFD17>speed storm <##A4FEF1>by <##FEFD17>%{_speedholder}%" to loop-entity
+
+
+				wait 40 seconds
+				set {Speed.SpeedStorm.Activated.%{_uuid}%} to false
+
+			else:
+				set {_uuid} to uuid of player
+				set {_message} to {Speed.Power3.SpeedStorm.Display.%{_uuid}%}
+				replace all "&b" and "🌩 " with "" in {_message}
+				send "<##FEFD17>🔮 <##FDABAA>Your &f🌩<##FEFD17>Speedy Storm <##FDABAA>skill is on cooldown for <##FEFD17>%{_message}%" to player
+
+
+
+
+
+
+
+
+
+
+function SpeedCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust using dustOption(rgb(254, 253, 23), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+
+
+
+function SpeedStormCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust using dustOption(rgb(254, 253, 23), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of happy villager at {_pl} ~ {_v} with extra 0 with force
+
+
+
+function SpeedCirclelast(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop 10 times:
+		loop {_iterations} times:
+			set {_angle} to loop-value-2 * {_step}
+			set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+			draw 1 of dust using dustOption(rgb(254, 253, 23), 1) at {_pl} ~ {_v} with extra 0.000000001
+			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+		wait 0.1 seconds
+
+
+
+
+function SpeedStormCircleLast(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop 100 times:
+		loop {_iterations} times:
+			set {_angle} to loop-value-2 * {_step}
+			set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+			draw 1 of dust using dustOption(rgb(254, 253, 23), 1) at {_pl} ~ {_v} with extra 0.000000001
+			draw 1 of happy villager at {_pl} ~ {_v} with extra 0 with force
+
+		wait 0.4 seconds
+
+
+

@@ -1,0 +1,847 @@
+on pick up:
+    if event-item is a prismarine shard named "<##ffcc26>&lGold Gem":
+        #Strength Gem
+        remove 999 of prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ" from player
+        
+        remove 999 of amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ" from player
+        
+        
+        #Speed Gem
+        remove 999 of prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ" from player
+        
+        remove 999 of amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ" from player
+        
+        
+        #Puff Gem
+        remove 999 of prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ" from player
+        
+        remove 999 of amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ" from player
+        
+        
+        #Fire Gem
+        remove 999 of prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ" from player
+        
+        remove 999 of amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ" from player
+        
+        
+        #Astra Gem
+        remove 999 of prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ" from player
+        
+        remove 999 of amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ" from player
+        
+        
+        #Life Gem
+        
+        remove 999 of prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ" from player
+        
+        remove 999 of amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ" from player
+        
+
+        #Wealth Gem
+        
+        remove 999 of prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ" from player
+        
+        remove 999 of amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ" from player
+
+        set {StrengthUnlocked.%uuid of player%} to false
+        set {SpeedUnlocked.%uuid of player%} to false
+        set {LifeUnlocked.%uuid of player%} to false
+        set {PuffUnlocked.%uuid of player%} to false
+        set {FireUnlocked.%uuid of player%} to false
+        set {WealthUnlocked.%uuid of player%} to false
+        set {AstraUnlocked.%uuid of player%} to false
+
+        if {Gem.%uuid of player%} is "Strength":
+            send action bar "<##ffcc26>&lSELECTED: <##F10303>🔮 &lsᴛʀᴇɴɢᴛʜ Gem" to player
+            set {GemSelected.%uuid of player%} to "Strength"
+            set {StrengthUnlocked.%uuid of player%} to true
+
+        else if {Gem.%uuid of player%} is "Speed":
+            send action bar "<##ffcc26>&lSELECTED: <##FEFD17>🔮 &lsᴘᴇᴇᴅ Gem" to player
+            set {GemSelected.%uuid of player%} to "Speed"
+            set {SpeedUnlocked.%uuid of player%} to true
+
+        else if {Gem.%uuid of player%} is "Life":
+            send action bar "<##ffcc26>&lSELECTED: <##FE04B4>🔮 &lʟɪғᴇ Gem" to player
+            set {GemSelected.%uuid of player%} to "Life"
+            set {LifeUnlocked.%uuid of player%} to true
+
+        else if {Gem.%uuid of player%} is "Puff":
+            send action bar "<##ffcc26>&lSELECTED: <##EFEFEF>🔮 &lᴘᴜғғ Gem" to player
+            set {GemSelected.%uuid of player%} to "Puff"
+            set {PuffUnlocked.%uuid of player%} to true
+
+        else if {Gem.%uuid of player%} is "Fire":
+            send action bar "<##ffcc26>&lSELECTED: <##FE8120>🔮 &lғɪʀᴇ Gem" to player
+            set {GemSelected.%uuid of player%} to "Fire"
+            set {FireUnlocked.%uuid of player%} to true
+
+        else if {Gem.%uuid of player%} is "Wealth":
+            send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+            set {GemSelected.%uuid of player%} to "Wealth" 
+            set {WealthUnlocked.%uuid of player%} to true 
+
+        else if {Gem.%uuid of player%} is "Astra":
+            send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+            set {GemSelected.%uuid of player%} to "Astra"  
+            set {AstraUnlocked.%uuid of player%} to true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on drop:
+    if event-item is a prismarine shard named "<##ffcc26>&lGold Gem":
+        cancel event
+        if custom model data of event-item is 100:
+
+
+
+
+            if {GemSelected.%uuid of player%} is "Strength":
+                
+                if {SpeedUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FEFD17>🔮 &lsᴘᴇᴇᴅ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Speed"
+
+                else if {LifeUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE04B4>🔮 &lʟɪғᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Life"
+
+                else if {PuffUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##EFEFEF>🔮 &lᴘᴜғғ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Puff"
+
+                else if {FireUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE8120>🔮 &lғɪʀᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Fire"
+
+                else if {WealthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Wealth"
+
+                else if {AstraUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Astra"
+
+
+                else:
+                    set custom model data of event-item to 102
+
+
+
+            else if {GemSelected.%uuid of player%} is "Speed":
+
+                if {LifeUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE04B4>🔮 &lʟɪғᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Life"
+                
+                else if {PuffUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##EFEFEF>🔮 &lᴘᴜғғ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Puff"
+
+                else if {FireUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE8120>🔮 &lғɪʀᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Fire"
+
+                else if {WealthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Wealth"
+
+                else if {AstraUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Astra"
+
+                else if {StrengthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##F10303>🔮 &lsᴛʀᴇɴɢᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Strength"
+
+
+                else:
+                    set custom model data of event-item to 102
+
+            else if {GemSelected.%uuid of player%} is "Life":
+
+                if {PuffUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##EFEFEF>🔮 &lᴘᴜғғ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Puff"
+                
+                else if {FireUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE8120>🔮 &lғɪʀᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Fire"
+
+                else if {WealthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Wealth"
+
+                else if {AstraUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Astra"
+
+                else if {StrengthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##F10303>🔮 &lsᴛʀᴇɴɢᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Strength"
+
+                else if {SpeedUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FEFD17>🔮 &lsᴘᴇᴇᴅ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Speed"
+
+
+                else:
+                    set custom model data of event-item to 102
+
+            else if {GemSelected.%uuid of player%} is "Puff":
+
+
+                if {FireUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE8120>🔮 &lғɪʀᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Fire"
+
+                else if {WealthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Wealth"
+
+                else if {AstraUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Astra"
+                
+                else if {StrengthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##F10303>🔮 &lsᴛʀᴇɴɢᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Strength"
+
+                else if {SpeedUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FEFD17>🔮 &lsᴘᴇᴇᴅ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Speed"
+
+                else if {LifeUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE04B4>🔮 &lʟɪғᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Life"
+
+
+                else:
+                    set custom model data of event-item to 102
+
+
+            else if {GemSelected.%uuid of player%} is "Fire":
+
+                if {WealthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Wealth"
+
+                else if {AstraUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Astra"
+
+                else if {StrengthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##383434>🔮 &lsᴛʀᴇɴɢᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Strength"
+
+                else if {SpeedUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FEFD17>🔮 &lsᴘᴇᴇᴅ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Speed"
+
+                else if {LifeUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE04B4>🔮 &lʟɪғᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Life"
+
+                else if {PuffUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##EFEFEF>🔮 &lᴘᴜғғ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Puff" 
+
+
+                else:
+                    set custom model data of event-item to 102
+
+            else if {GemSelected.%uuid of player%} is "Wealth":
+
+                if {AstraUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Astra"
+
+                else if {StrengthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##F10303>🔮 &lsᴛʀᴇɴɢᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Strength"
+
+                else if {SpeedUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FEFD17>🔮 &lsᴘᴇᴇᴅ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Speed"
+
+                else if {LifeUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE04B4>🔮 &lʟɪғᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Life"
+
+                else if {FireUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##FE8120>🔮 &lғɪʀᴇ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Fire"
+
+                else if {PuffUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##EFEFEF>🔮 &lᴘᴜғғ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Puff" 
+
+                else if {WealthUnlocked.%uuid of player%} is true:
+                    send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+                    set {GemSelected.%uuid of player%} to "Wealth"
+
+                else:
+                    set custom model data of event-item to 102
+
+            else if {GemSelected.%uuid of player%} is "Astra":
+                set custom model data of event-item to 102
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        else:
+            if custom model data of event-item is 102:
+                set custom model data of event-item to 100
+                if {GemSelected.%uuid of player%} is not set:
+                    if {Gem.%uuid of player%} is "Strength":
+                        send action bar "<##ffcc26>&lSELECTED: <##F10303>🔮 &lsᴛʀᴇɴɢᴛʜ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Strength"
+                        set {StrengthUnlocked.%uuid of player%} to true
+    
+                    else if {Gem.%uuid of player%} is "Speed":
+                        send action bar "<##ffcc26>&lSELECTED: <##FEFD17>🔮 &lsᴘᴇᴇᴅ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Speed"
+                        set {SpeedUnlocked.%uuid of player%} to true
+    
+                    else if {Gem.%uuid of player%} is "Life":
+                        send action bar "<##ffcc26>&lSELECTED: <##FE04B4>🔮 &lʟɪғᴇ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Life"
+                        set {LifeUnlocked.%uuid of player%} to true
+    
+                    else if {Gem.%uuid of player%} is "Puff":
+                        send action bar "<##ffcc26>&lSELECTED: <##EFEFEF>🔮 &lᴘᴜғғ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Puff"
+                        set {PuffUnlocked.%uuid of player%} to true
+    
+                    else if {Gem.%uuid of player%} is "Fire":
+                        send action bar "<##ffcc26>&lSELECTED: <##FE8120>🔮 &lғɪʀᴇ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Fire"
+                        set {FireUnlocked.%uuid of player%} to true
+    
+                    else if {Gem.%uuid of player%} is "Wealth":
+                        send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Wealth" 
+                        set {WealthUnlocked.%uuid of player%} to true 
+    
+                    else if {Gem.%uuid of player%} is "Astra":
+                        send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Astra"  
+                        set {AstraUnlocked.%uuid of player%} to true
+    
+                else:
+    
+                    if {StrengthUnlocked.%uuid of player%} is true:
+                        send action bar "<##ffcc26>&lSELECTED: <##F10303>🔮 &lsᴛʀᴇɴɢᴛʜ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Strength"
+    
+                    else if {SpeedUnlocked.%uuid of player%} is true:
+                        send action bar "<##ffcc26>&lSELECTED: <##FEFD17>🔮 &lsᴘᴇᴇᴅ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Speed"
+    
+                    else if {LifeUnlocked.%uuid of player%} is true:
+                        send action bar "<##ffcc26>&lSELECTED: <##FE04B4>🔮 &lʟɪғᴇ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Life"
+    
+                    else if {PuffUnlocked.%uuid of player%} is true:
+                        send action bar "<##ffcc26>&lSELECTED: <##EFEFEF>🔮 &lᴘᴜғғ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Puff"
+    
+                    else if {FireUnlocked.%uuid of player%} is true:
+                        send action bar "<##ffcc26>&lSELECTED: <##FE8120>🔮 &lғɪʀᴇ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Fire"
+    
+                    else if {WealthUnlocked.%uuid of player%} is true:
+                        send action bar "<##ffcc26>&lSELECTED: <##0EC912>🔮 &lᴡᴇᴀʟᴛʜ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Wealth"
+    
+                    else if {AstraUnlocked.%uuid of player%} is true:
+                        send action bar "<##ffcc26>&lSELECTED: <##A01FFF>🔮 &lᴀsᴛʀᴀ Gem" to player
+                        set {GemSelected.%uuid of player%} to "Astra"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on death:
+    if victim has a prismarine shard named "<##ffcc26>&lGold Gem":
+        loop all offline players:
+            if {Disableds.%victim's uuid%.%loop-offlineplayer's uuid%} is true:
+                set {Bliss.Disabled.%loop-offlineplayer's uuid%} to false
+                set {Disableds.%victim's uuid%.%loop-offlineplayer's uuid%} to false
+
+                set {StrengthUnlocked.%uuid of victim%} to false
+                set {SpeedUnlocked.%uuid of victim%} to false
+                set {LifeUnlocked.%uuid of victim%} to false
+                set {FireUnlocked.%uuid of victim%} to false
+                set {PuffUnlocked.%uuid of victim%} to false
+                set {WealthUnlocked.%uuid of victim%} to false
+                set {AstraUnlocked.%uuid of victim%} to false
+
+                if loop-offlineplayer is online:
+                    execute console command "givegems %loop-offlineplayer%"
+
+                else:
+                    set {GiveGems.%loop-offlineplayer's uuid%} to true
+
+on join:
+    if {GiveGems.%player's uuid%} is true:
+        execute console command "givegems %player%"
+
+
+on death:
+    if attacker has a prismarine shard named "<##ffcc26>&lGold Gem":
+        set {_uuid} to uuid of victim
+        if {Bliss.Disabled.%{_uuid}%} is not true:
+            if {Gem.%{_uuid}%} is "Strength":
+                if {StrengthUnlocked.%uuid of attacker%} is not true:
+                    if {Bliss.Tier.%{_uuid}%} is 1:
+                        send "<##ffcc26>&lYou collected a tier 1 gem. The golden gem has upgraded it to tier 2." to attacker
+
+                    send "<##ffcc26>&lYou collected the <##F10303>&lsᴛʀᴇɴɢᴛʜ <##C7C7C7>gem from %victim%, their gem has been disabled!" to attacker
+                    set {Bliss.Disabled.%{_uuid}%} to true
+                    set {Disableds.%attacker's uuid%.%{_uuid}%} to true
+                    set {StrengthUnlocked.%uuid of attacker%} to true
+
+
+            else if {Gem.%{_uuid}%} is "Speed":
+                if {SpeedUnlocked.%uuid of attacker%} is not true:
+                    if {Bliss.Tier.%{_uuid}%} is 1:
+                        send "<##ffcc26>&lYou collected a tier 1 gem. The golden gem has upgraded it to tier 2." to attacker
+
+                    send "<##ffcc26>&lYou collected the <##FEFD17>&lsᴘᴇᴇᴅ <##C7C7C7>gem from %victim%, their gem has been disabled!" to attacker
+                    set {Bliss.Disabled.%{_uuid}%} to true
+                    set {Disableds.%attacker's uuid%.%{_uuid}%} to true
+                    set {SpeedUnlocked.%uuid of attacker%} to true
+
+
+            else if {Gem.%{_uuid}%} is "Life":
+                if {LifeUnlocked.%uuid of attacker%} is not true:
+                    if {Bliss.Tier.%{_uuid}%} is 1:
+                        send "<##ffcc26>&lYou collected a tier 1 gem. The golden gem has upgraded it to tier 2." to attacker
+
+                    send "<##ffcc26>&lYou collected the <##FE04B4>&lʟɪғᴇ <##C7C7C7>gem from %victim%, their gem has been disabled!" to attacker
+                    set {Bliss.Disabled.%{_uuid}%} to true
+                    set {Disableds.%attacker's uuid%.%{_uuid}%} to true
+                    set {LifeUnlocked.%uuid of attacker%} to true
+
+
+            else if {Gem.%{_uuid}%} is "Puff":
+                if {PuffUnlocked.%uuid of attacker%} is not true:
+                    if {Bliss.Tier.%{_uuid}%} is 1:
+                        send "<##ffcc26>&lYou collected a tier 1 gem. The golden gem has upgraded it to tier 2." to attacker
+
+                    send "<##ffcc26>&lYou collected the <##EFEFEF>&lᴘᴜғғ <##C7C7C7>gem from %victim%, their gem has been disabled!" to attacker
+                    set {Bliss.Disabled.%{_uuid}%} to true
+                    set {Disableds.%attacker's uuid%.%{_uuid}%} to true
+                    set {PuffUnlocked.%uuid of attacker%} to true
+
+
+            else if {Gem.%{_uuid}%} is "Fire":
+                if {FireUnlocked.%uuid of attacker%} is not true:
+                    if {Bliss.Tier.%{_uuid}%} is 1:
+                        send "<##ffcc26>&lYou collected a tier 1 gem. The golden gem has upgraded it to tier 2." to attacker
+
+                    send "<##ffcc26>&lYou collected the <##FE8120>&lғɪʀᴇ <##C7C7C7>gem from %victim%, their gem has been disabled!" to attacker
+                    set {Bliss.Disabled.%{_uuid}%} to true
+                    set {Disableds.%attacker's uuid%.%{_uuid}%} to true
+                    set {FireUnlocked.%uuid of attacker%} to true
+
+
+            else if {Gem.%{_uuid}%} is "Wealth":
+                if {WealthUnlocked.%uuid of attacker%} is not true:
+                    if {Bliss.Tier.%{_uuid}%} is 1:
+                        send "<##ffcc26>&lYou collected a tier 1 gem. The golden gem has upgraded it to tier 2." to attacker
+
+                    send "<##ffcc26>&lYou collected the <##0EC912>&lᴡᴇᴀʟᴛʜ <##C7C7C7>gem from %victim%, their gem has been disabled!" to attacker
+                    set {Bliss.Disabled.%{_uuid}%} to true
+                    set {Disableds.%attacker's uuid%.%{_uuid}%} to true
+                    set {WealthUnlocked.%uuid of attacker%} to true
+
+
+            else if {Gem.%{_uuid}%} is "Astra":
+                if {AstraUnlocked.%uuid of attacker%} is not true:
+                    if {Bliss.Tier.%{_uuid}%} is 1:
+                        send "<##ffcc26>&lYou collected a tier 1 gem. The golden gem has upgraded it to tier 2." to attacker
+
+                    send "<##ffcc26>&lYou collected the <##A01FFF>&lᴀsᴛʀᴀ <##C7C7C7>gem from %victim%, their gem has been disabled!" to attacker
+                    set {Bliss.Disabled.%{_uuid}%} to true
+                    set {Disableds.%attacker's uuid%.%{_uuid}%} to true
+                    set {AstraUnlocked.%uuid of attacker%} to true
+
+
+
+every 1 second:
+    loop all players:
+        loop all items in loop-player's inventory:
+            if name of loop-slot contains "<##ffcc26>&lGold Gem":
+                if custom model data of loop-slot is 102:
+                    #Snap
+                    if {Gold.Power1.Snap.Second.%uuid of loop-player%} is not set:
+                        set {Gold.Power1.Snap.Second.%uuid of loop-player%} to 0
+                        set {Gold.Power1.Snap.Minute.%uuid of loop-player%} to 0
+                        set {Gold.Power1.Snap.Cooldown.%uuid of loop-player%} to true
+
+                    if {Gold.Power1.Snap.Minute.%uuid of loop-player%} is not set:
+                        set {Gold.Power1.Snap.Second.%uuid of loop-player%} to 0
+                        set {Gold.Power1.Snap.Minute.%uuid of loop-player%} to 0
+                        set {Gold.Power1.Snap.Cooldown.%uuid of loop-player%} to true
+
+                    if {Gold.Power1.Snap.Cooldown.%uuid of loop-player%} is not set:
+                        set {Gold.Power1.Snap.Second.%uuid of loop-player%} to 0
+                        set {Gold.Power1.Snap.Minute.%uuid of loop-player%} to 0
+                        set {Gold.Power1.Snap.Cooldown.%uuid of loop-player%} to true
+                
+
+
+                    if {Gold.Power1.Snap.Cooldown.%uuid of loop-player%} is true:
+                        if {Gold.Power1.Snap.Minute.%uuid of loop-player%} < 1:
+                            set {Gold.Power1.Snap.Display.%uuid of loop-player%} to "&b%{Gold.Power1.Snap.Second.%uuid of loop-player%}%s"
+                        else:
+                            set {Gold.Power1.Snap.Display.%uuid of loop-player%} to "&b%{Gold.Power1.Snap.Minute.%uuid of loop-player%}%m %{Gold.Power1.Snap.Second.%uuid of loop-player%}%s"
+                    
+                    if {Gold.Power1.Snap.Cooldown.%uuid of loop-player%} is true:
+                        remove 1 from {Gold.Power1.Snap.Second.%uuid of loop-player%}
+
+
+                    if {Gold.Power1.Snap.Minute.%uuid of loop-player%} < 0:
+                        set {Gold.Power1.Snap.Cooldown.%uuid of loop-player%} to false
+                        set {Gold.Power1.Snap.Second.%uuid of loop-player%} to 0
+                        set {Gold.Power1.Snap.Minute.%uuid of loop-player%} to 0
+                        set {Gold.Power1.Snap.Display.%uuid of loop-player%} to "<##ffcc26>&lReady!"
+                        
+
+
+                    if {Gold.Power1.Snap.Second.%uuid of loop-player%} < 0:
+
+                        remove 1 from {Gold.Power1.Snap.Minute.%uuid of loop-player%}
+                        set {Gold.Power1.Snap.Second.%uuid of loop-player%} to 59
+                        
+                    #Railer
+
+
+
+
+
+                    if {Gold.Power2.Railer.Cooldown.%uuid of loop-player%} is true:
+                        remove 1 from {Gold.Power2.Railer.Second.%uuid of loop-player%}
+
+
+                    
+                    if {Gold.Power2.Railer.Second.%uuid of loop-player%} < 0:
+                        remove 1 from {Gold.Power2.Railer.Minute.%uuid of loop-player%}
+                        set {Gold.Power2.Railer.Second.%uuid of loop-player%} to 59
+
+
+                    if {Gold.Power2.Railer.Second.%uuid of loop-player%} is not set:
+                        set {Gold.Power2.Railer.Second.%uuid of loop-player%} to 0
+                        set {Gold.Power2.Railer.Minute.%uuid of loop-player%} to 0
+                        set {Gold.Power2.Railer.Cooldown.%uuid of loop-player%} to true
+
+                    if {Gold.Power2.Railer.Display.%uuid of loop-player%} is not set:
+                        set {Gold.Power2.Railer.Second.%uuid of loop-player%} to 0
+                        set {Gold.Power2.Railer.Minute.%uuid of loop-player%} to 0
+                        set {Gold.Power2.Railer.Cooldown.%uuid of loop-player%} to true
+
+                        
+                    if {Gold.Power2.Railer.Cooldown.%uuid of loop-player%} is true:
+                        if {Gold.Power2.Railer.Minute.%uuid of loop-player%} is 0:
+                            set {Gold.Power2.Railer.Display.%uuid of loop-player%} to "&b%{Gold.Power2.Railer.Second.%uuid of loop-player%}%s"
+                        else:
+                            set {Gold.Power2.Railer.Display.%uuid of loop-player%} to "&b%{Gold.Power2.Railer.Minute.%uuid of loop-player%}%m %{Gold.Power2.Railer.Second.%uuid of loop-player%}%s"
+
+
+
+                    if {Gold.Power2.Railer.Minute.%uuid of loop-player%} < 0:
+                        set {Gold.Power2.Railer.Cooldown.%uuid of loop-player%} to false
+                        set {Gold.Power2.Railer.Second.%uuid of loop-player%} to 0
+                        set {Gold.Power2.Railer.Minute.%uuid of loop-player%} to 0
+                        set {Gold.Power2.Railer.Display.%uuid of loop-player%} to "<##ffcc26>&lReady!"
+
+
+
+
+                    if {Disabled.%uuid of loop-player%} is not set:
+                        set {Disabled.%uuid of loop-player%} to 0
+
+
+                    if {Gold.Power2.Railer.Second.%uuid of loop-player%} < 0:
+
+                        remove 1 from {Gold.Power2.Railer.Minute.%uuid of loop-player%}
+                        
+                        set {Gold.Power2.Railer.Second.%uuid of loop-player%} to 59
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on right click:
+    if player's held item is prismarine shard named "<##ffcc26>&lGold Gem":
+        if custom model data of player's held item is 102:
+            if {Gold.Power1.Snap.Cooldown.%uuid of player%} is false: 
+                send "<##ffcc26>You have used <##A01FFF>&lS<##EFEFEF>&ln<##FEFD17>&la<##FE04B4>&lp" to player
+                
+                set {Gold.Power1.Snap.Second.%uuid of player%} to 0
+                set {Gold.Power1.Snap.Minute.%uuid of player%} to 1
+                set {Gold.Power1.Snap.Cooldown.%uuid of player%} to true
+
+
+
+                PuffCircle(1, player)
+                AstraCircle(1.5, player)
+                StrengthCircle(2, player)
+                SpeedCircle(2.5, player)
+                FireCircle(3, player)
+                LifeCircle(3.5, player)
+                PuffCircle(4, player)
+                AstraCircleLast(4.5, player)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+command /removeallgold:
+    permission: op
+    trigger:
+        set {StrengthUnlocked.%uuid of player%} to true
+        set {SpeedUnlocked.%uuid of player%} to false
+        set {LifeUnlocked.%uuid of player%} to false
+        set {FireUnlocked.%uuid of player%} to false
+        set {PuffUnlocked.%uuid of player%} to false
+        set {WealthUnlocked.%uuid of player%} to false
+        set {AstraUnlocked.%uuid of player%} to false
+
+
+command /giveallgold:
+    permission: op
+    trigger:
+        set {StrengthUnlocked.%uuid of player%} to true
+        set {SpeedUnlocked.%uuid of player%} to true
+        set {LifeUnlocked.%uuid of player%} to true
+        set {FireUnlocked.%uuid of player%} to true
+        set {PuffUnlocked.%uuid of player%} to true
+        set {WealthUnlocked.%uuid of player%} to true
+        set {AstraUnlocked.%uuid of player%} to true
+
+
+
+
+
+
+
+command /testgoldfr:
+    permission: op
+    trigger:
+        broadcast "<##ffcc26>&lThe golden gem has been formed!"
+        set {Gems.Gold.Black} to prismarine shard with custom model data 102 named "<##ffcc26>&lGold Gem" with lore "&eA powerful gem capable of harnessing" and "&ethe power of all the gems" with hidden enchants flag
+        enchant {Gems.Gold.Black} with mending
+
+        set {Gems.Gold.High} to prismarine shard with custom model data 100 named "<##ffcc26>&lGold Gem" with lore "&eA powerful gem capable of harnessing" and "&ethe power of all the gems" with hidden enchants flag
+        enchant {Gems.Gold.High} with mending
+
+        set {Gems.Gold.Normal} to prismarine shard with custom model data 98 named "<##ffcc26>&lGold Gem" with lore "&eA powerful gem capable of harnessing" and "&ethe power of all the gems" with hidden enchants flag
+        enchant {Gems.Gold.Normal} with mending
+
+
+        
+        set {Gold.Power2.Railer.Second.%uuid of player%} to 3
+        set {Gold.Power2.Railer.Minute.%uuid of player%} to 0
+        set {Gold.Power2.Railer.Cooldown.%uuid of player%} to true
+        
+        set {Gold.Power1.Snap.Second.%uuid of player%} to 3
+        set {Gold.Power1.Snap.Minute.%uuid of player%} to 0
+        set {Gold.Power1.Snap.Cooldown.%uuid of player%} to true
+
+        give player {Gems.Gold.Black}
+        give player {Gems.Gold.High}
+        give player {Gems.Gold.Normal}
+
+        puffrailer(player)
+        wealthrailer(player)
+        astrarailer(player)
+        liferailer(player)
+        strengthrailer(player)
+        firerailer(player)
+        speedrailer(player)
+        loop 2 times:
+            play sound "minecraft:entity.warden.sonic_boom" with volume 1 at player 
+
+
+
+
+
+
+
+
+
+function puffrailer(p: player):
+    set {_puffn} to 1
+    loop 10 times:
+        set {_puffloc1} to location {_puffn} metres infront and 4 metres above {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(239, 239, 239), 500) at {_puffloc1} with extra 0 with force
+        add 1 to {_puffn}
+
+
+function wealthrailer(p: player):
+    set {_wealthn} to 1
+    loop 10 times:
+        set {_wealthloc1} to location {_wealthn} metres infront and 3 metres above and 2 right {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(14, 201, 18), 500) at {_wealthloc1} with extra 0 with force
+        add 1 to {_wealthn}
+
+function astrarailer(p: player):
+    set {_astran} to 1
+    loop 10 times:
+        set {_astraloc1} to location {_astran} metres infront and 3 metres above and 2 left {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(160, 31, 255), 500) at {_astraloc1} with extra 0 with force
+        add 1 to {_astran}
+
+function liferailer(p: player):
+    set {_lifen} to 1
+    loop 10 times:
+        set {_lifeloc1} to location {_lifen} metres infront and 1 metres above and 2 right {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(254, 4, 180), 500) at {_lifeloc1} with extra 0 with force
+        add 1 to {_lifen}
+
+
+function strengthrailer(p: player):
+    set {_strengthn} to 1
+    loop 10 times:
+        set {_strengthloc1} to location {_strengthn} metres infront and 1 metres above and 2 left {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(241, 3, 3), 500) at {_strengthloc1} with extra 0 with force
+        add 1 to {_strengthn}
+
+
+function firerailer(p: player):
+    set {_firen} to 1
+    loop 10 times:
+        set {_fireloc1} to location {_firen} metres infront and 1 left {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(254, 129, 32), 500) at {_fireloc1} with extra 0 with force
+        add 1 to {_firen}
+
+
+function speedrailer(p: player):
+    set {_speedn} to 1
+    loop 10 times:
+        set {_speedloc1} to location {_speedn} metres infront and 1 right {_p}
+        loop 50 times:
+            draw 1 dust using dustOption(rgb(254, 253, 23), 500) at {_speedloc1} with extra 0 with force
+        add 1 to {_speedn}
+
+
+
+
+on left click:
+    if player's held item is prismarine shard named "<##ffcc26>&lGold Gem":
+        if custom model data of player's held item is 102:
+            if {Gold.Power2.Railer.Cooldown.%uuid of player%} is false:
+
+                set {Gold.Power2.Railer.Second.%uuid of player%} to 0
+                set {Gold.Power2.Railer.Minute.%uuid of player%} to 1
+                set {Gold.Power2.Railer.Cooldown.%uuid of player%} to true
+
+
+                puffrailer(player)
+                wealthrailer(player)
+                astrarailer(player)
+                liferailer(player)
+                strengthrailer(player)
+                firerailer(player)
+                speedrailer(player)
+                loop 10 times:
+                    play sound "minecraft:entity.warden.sonic_boom" with volume 1 at player 

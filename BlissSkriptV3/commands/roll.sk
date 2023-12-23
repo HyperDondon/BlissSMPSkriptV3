@@ -1,0 +1,557 @@
+command /rollgem <player>:
+	permission: op
+	trigger:
+		set {_uuid} to uuid of arg-1
+		if {Bliss.Disabled.%{_uuid}%} is not true:
+
+		
+			if arg-1 does not have a prismarine shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+				if arg-1 does not have a amethyst shard named "<##A01FFF>&lᴀsᴛʀᴀ &r<##C7C7C7>ɢᴇᴍ":
+					if arg-1 does not have a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+						if arg-1 does not have a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+							if arg-1 does not have a prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ":
+								if arg-1 does not have a amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ":
+									if arg-1 does not have a prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+										if arg-1 does not have a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+											if arg-1 does not have a prismarine shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##FFD773>ɢᴇᴍ":
+												if arg-1 does not have a amethyst shard named "<##FEFD17>&lsᴘᴇᴇᴅ &r<##C7C7C7>ɢᴇᴍ":
+													if arg-1 does not have a prismarine shard named "<##F10303>sᴛʀᴇɴɢᴛʜ &r<##FFD773>ɢᴇᴍ":
+														if arg-1 does not have a amethyst shard named "<##F10303>&lsᴛʀᴇɴɢᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+															if arg-1 does not have a prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+																if arg-1 does not have a amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+																	execute console command "givegems %arg-1%"
+																	
+
+
+
+
+
+
+
+
+
+			if {Gem.%{_uuid}%} is "Strength":
+				set {_currentgem} to 1
+
+			if {Gem.%{_uuid}%} is "Speed":
+				set {_currentgem} to 2
+
+			if {Gem.%{_uuid}%} is "Fire":
+				set {_currentgem} to 3
+
+			if {Gem.%{_uuid}%} is "Life":
+				set {_currentgem} to 4
+
+			if {Gem.%{_uuid}%} is "Puff":
+				set {_currentgem} to 5
+
+			if {Gem.%{_uuid}%} is "Wealth":
+				set {_currentgem} to 6
+
+			if {Gem.%{_uuid}%} is "Astra":
+				set {_currentgem} to 7
+
+			
+
+					
+			loop all items in arg-1's inventory:
+				if lore of loop-slot contains "<##FFE4AB>ᴘᴀssɪᴠᴇs":
+
+					set {Gemrandom.%{_uuid}%} to a random integer between 1 and 7
+					while {_currentgem} is {Gemrandom.%{_uuid}%}:
+						set {Gemrandom.%{_uuid}%} to a random integer between 1 and 7
+							
+					if {Gemrandom.%{_uuid}%} is 1:
+						set {Gem.%{_uuid}%} to "Strength"
+						send "<##FFE4AB>🔮 <##A4FEF1>You have traded your current gem to <##F10303>&lsᴛʀᴇɴɢᴛʜ" to arg-1
+						if {Bliss.GemHealth.%{_uuid}%} is 11:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Pristine+5.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Pristine+5.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 10:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Pristine+4.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Pristine+4.Tier.2}		
+
+						if {Bliss.GemHealth.%{_uuid}%} is 9:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Pristine+3.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Pristine+3.Tier.2}	
+									
+						if {Bliss.GemHealth.%{_uuid}%} is 8:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Pristine+2.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Pristine+2.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 7:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Pristine+1.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Pristine+1.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 6:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Pristine.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Pristine.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 5:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Scratched.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Scratched.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 4:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Cracked.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Cracked.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 3:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Damaged.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Damaged.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 2:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Ruined.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Ruined.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 1:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Strength.Broken.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Strength.Broken.Tier.2}
+
+
+					if {Gemrandom.%{_uuid}%} is 2:
+						set {Gem.%{_uuid}%} to "Speed"
+						send "<##FFE4AB>🔮 <##A4FEF1>You have traded your current gem to <##FEFD17>&lsᴘᴇᴇᴅ" to arg-1
+						if {Bliss.GemHealth.%{_uuid}%} is 11:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Pristine+5.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Pristine+5.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 10:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Pristine+4.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Pristine+4.Tier.2}		
+
+						if {Bliss.GemHealth.%{_uuid}%} is 9:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Pristine+3.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Pristine+3.Tier.2}	
+									
+						if {Bliss.GemHealth.%{_uuid}%} is 8:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Pristine+2.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Pristine+2.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 7:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Pristine+1.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Pristine+1.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 6:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Pristine.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Pristine.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 5:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Scratched.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Scratched.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 4:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Cracked.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Cracked.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 3:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Damaged.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Damaged.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 2:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Ruined.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Ruined.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 1:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Speed.Broken.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Speed.Broken.Tier.2}	
+								
+					if {Gemrandom.%{_uuid}%} is 3:
+						set {Gem.%{_uuid}%} to "Fire"
+						send "<##FFE4AB>🔮 <##A4FEF1>You have traded your current gem to <##FE8120>&lFɪʀᴇ" to arg-1
+						if {Bliss.GemHealth.%{_uuid}%} is 11:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Pristine+5.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Pristine+5.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 10:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Pristine+4.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Pristine+4.Tier.2}		
+
+						if {Bliss.GemHealth.%{_uuid}%} is 9:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Pristine+3.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Pristine+3.Tier.2}	
+									
+						if {Bliss.GemHealth.%{_uuid}%} is 8:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Pristine+2.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Pristine+2.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 7:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Pristine+1.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Pristine+1.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 6:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Pristine.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Pristine.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 5:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Scratched.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Scratched.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 4:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Cracked.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Cracked.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 3:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Damaged.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Damaged.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 2:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Ruined.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Ruined.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 1:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Fire.Broken.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Fire.Broken.Tier.2}	
+								
+					if {Gemrandom.%{_uuid}%} is 4:
+						set {Gem.%{_uuid}%} to "Life"
+						send "<##FFE4AB>🔮 <##A4FEF1>You have traded your current gem to <##FE04B4>&lLɪғᴇ" to arg-1
+						if {Bliss.GemHealth.%{_uuid}%} is 11:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Pristine+5.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Pristine+5.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 10:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Pristine+4.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Pristine+4.Tier.2}		
+
+						if {Bliss.GemHealth.%{_uuid}%} is 9:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Pristine+3.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Pristine+3.Tier.2}	
+									
+						if {Bliss.GemHealth.%{_uuid}%} is 8:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Pristine+2.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Pristine+2.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 7:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Pristine+1.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Pristine+1.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 6:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Pristine.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Pristine.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 5:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Scratched.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Scratched.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 4:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Cracked.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Cracked.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 3:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Damaged.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Damaged.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 2:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Ruined.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Ruined.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 1:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Life.Broken.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Life.Broken.Tier.2}	
+
+
+					if {Gemrandom.%{_uuid}%} is 5:
+						set {Gem.%{_uuid}%} to "Puff"
+						send "<##FFE4AB>🔮 <##A4FEF1>You have traded your current gem to <##EFEFEF>&lᴘᴜғғ" to arg-1
+						if {Bliss.GemHealth.%{_uuid}%} is 11:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Pristine+5.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Pristine+5.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 10:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Pristine+4.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Pristine+4.Tier.2}		
+
+						if {Bliss.GemHealth.%{_uuid}%} is 9:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Pristine+3.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Pristine+3.Tier.2}	
+									
+						if {Bliss.GemHealth.%{_uuid}%} is 8:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Pristine+2.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Pristine+2.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 7:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Pristine+1.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Pristine+1.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 6:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Pristine.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Pristine.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 5:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Scratched.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Scratched.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 4:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Cracked.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Cracked.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 3:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Damaged.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Damaged.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 2:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Ruined.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Ruined.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 1:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Puff.Broken.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Puff.Broken.Tier.2}	
+
+					if {Gemrandom.%{_uuid}%} is 6:
+						set {Gem.%{_uuid}%} to "Wealth"
+						send "<##FFE4AB>🔮 <##A4FEF1>You have traded your current gem to <##0EC912>&lᴡᴇᴀʟᴛʜ" to arg-1
+						if {Bliss.GemHealth.%{_uuid}%} is 11:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Pristine+5.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Pristine+5.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 10:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Pristine+4.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Pristine+4.Tier.2}		
+
+						if {Bliss.GemHealth.%{_uuid}%} is 9:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Pristine+3.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Pristine+3.Tier.2}	
+									
+						if {Bliss.GemHealth.%{_uuid}%} is 8:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Pristine+2.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Pristine+2.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 7:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Pristine+1.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Pristine+1.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 6:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Pristine.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Pristine.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 5:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Scratched.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Scratched.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 4:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Cracked.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Cracked.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 3:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Damaged.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Damaged.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 2:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Ruined.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Ruined.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 1:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Wealth.Broken.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Wealth.Broken.Tier.2}	
+
+
+					if {Gemrandom.%{_uuid}%} is 7:
+						set {Gem.%{_uuid}%} to "Astra"
+						send "<##FFE4AB>🔮 <##A4FEF1>You have traded your current gem to <##A01FFF>&lᴀsᴛʀᴀ" to arg-1
+						if {Bliss.GemHealth.%{_uuid}%} is 11:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Pristine+5.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Pristine+5.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 10:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Pristine+4.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Pristine+4.Tier.2}		
+
+						if {Bliss.GemHealth.%{_uuid}%} is 9:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Pristine+3.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Pristine+3.Tier.2}	
+									
+						if {Bliss.GemHealth.%{_uuid}%} is 8:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Pristine+2.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Pristine+2.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 7:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Pristine+1.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Pristine+1.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 6:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Pristine.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Pristine.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 5:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Scratched.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Scratched.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 4:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Cracked.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Cracked.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 3:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Damaged.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Damaged.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 2:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Ruined.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Ruined.Tier.2}
+
+						if {Bliss.GemHealth.%{_uuid}%} is 1:
+							if {Bliss.Tier.%{_uuid}%} is 1:
+								set loop-slot to {Gems.Astra.Broken.Tier.1}
+							if {Bliss.Tier.%{_uuid}%} is 2:
+								set loop-slot to {Gems.Astra.Broken.Tier.2}	
+
+
+
+
+
+
+					
+
+

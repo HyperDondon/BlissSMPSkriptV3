@@ -1,0 +1,841 @@
+on drop:
+    if item is {Revive}:
+        set {_item} to item
+        loop blocks in radius 4 around player:
+            if loop-block is beacon:
+                set {_beacon} to loop-block
+                set {_ancientdebris} to block under loop-block
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                
+
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    set {_uuid} to uuid of player
+                                                    set {Reviving::%{_uuid}%} to true
+                                                    add item to {itemrevive::*}
+                                                    add item to {itemrevive%uuid of player%::*}
+
+
+
+                                                    set {Revive::Gui} to a new chest inventory with 6 row with name "&6&lʀᴇssᴜʀᴇᴄᴛ &7a player"
+                                                    set {_s} to 0
+                                                    loop {BannedPlayers::*}:
+                                                        set {_T} to loop-value-2 parsed as offline player
+                                                        set slot {_s} of {Revive::Gui} to {_T}'s skull named "&e%{_T}%"
+                                                        add 1 to {_s}
+
+                                                    open {Revive::Gui} to player
+
+                                                    set {reviveselected.%{_uuid}%} to false
+                                                    while {reviveselected.%{_uuid}%} is false:
+                                                        wait 1 tick
+                                                    
+                                                    clear dropped item
+                                                    
+
+                                                    #add nbt compound from "{Tags:""ReviveBooks.%uuid of player%""}" to nbt compound of dropped item
+
+                                                    set {_beaconloc} to location of {_beacon}
+                                                    #circlerevive({_beaconloc})
+                                                    #circlerevive2({_beaconloc})
+                                                    #lightning({_beaconloc})
+                                                    wait 1 second
+                                                    #circlealllast({_beaconloc})
+
+
+
+function circlerevive(pl: location):
+    set {_s} to 1
+    loop 3 times:
+        loop 15 times:
+
+            set {_step} to 1 # Set a larger step value here
+            set {_iterations} to 360 * {_s} / {_step}
+            loop {_iterations} times:
+                set {_angle} to loop-value-3 * {_step}
+                set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the player
+                draw 1 of dust using dustOption(rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0
+                draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+
+            add 0.5 to {_s}
+
+            if {_s} > 7:
+                set {_s} to 1
+
+        wait 1 second
+        
+
+
+
+
+        set {stopparticle} to false
+
+
+
+function circlerevive2(pl: location):
+    set {_s} to 1
+    wait 4 second
+    loop 4 times:
+        loop 15 times:
+
+            set {_step} to 1 # Set a larger step value here
+            set {_iterations} to 360 * {_s} / {_step}
+            loop {_iterations} times:
+                set {_angle} to loop-value-3 * {_step}
+                set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the player
+                draw 1 of dust using dustOption(rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0
+                draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+
+            add 0.5 to {_s}
+
+            if {_s} is 8:
+                set {_s} to 1
+
+        wait 2 second
+        
+
+
+
+
+        set {stopparticle} to false
+
+function lightning(pl: location):
+    strike lightning effect at {_pl}
+    wait 1 second
+    strike lightning effect at {_pl}
+    wait 1 second
+    strike lightning effect at {_pl}
+
+
+            
+function circlealllast(pl: location):
+    wait 1 second
+    loop 40 times:
+    
+        set {_step} to 1 # Set a larger step value here
+        set {_iterations} to 360 * 7.5 / {_step}
+        loop {_iterations} times:
+            set {_angle} to loop-value-2 * {_step}
+            set {_v} to spherical vector radius 7.5, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the player
+            draw 1 of dust using dustOption(rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0
+            draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+
+        wait 0.3 seconds
+
+    
+on inventory click:
+    if event-inventory's name is "&6&lʀᴇssᴜʀᴇᴄᴛ &7a player":
+        cancel event
+        if event-item is player head:
+            set {_uuid} to uuid of player
+            set {Reviving::%{_uuid}%} to true
+            set {reviveselected.%{_uuid}%} to true
+            close player's inventory
+            set {_T} to "%event-item's name%"
+            replace all "&e" with "" in {_T}
+            replace all "§e" with "" in {_T}
+            set {_Tplayer} to "%{_T}%" parsed as offline player
+            set {_uuid} to uuid of {_Tplayer}
+            remove {_uuid} from {BannedPlayers::*}
+            
+            wait 12 seconds
+
+            set {revived.%uuid of {_T}%} to true
+            remove {itemrevive%uuid of player%::*} from {itemrevive::*}
+            clear {itemrevive%uuid of player%::*}
+
+            set {Reviving::%uuid of player%} to false
+            set {Bliss.GemHealth.%{_uuid}%} to 6
+            unban {_T}
+            broadcast "&a%{_T}% &fᴡᴀѕ &8ʀᴇssᴜʀᴇᴄᴛᴇᴅ"
+
+on inventory close:
+    if event-inventory's name is "&6&lʀᴇssᴜʀᴇᴄᴛ &7a player":
+        set {Reviving::%uuid of player%} to false
+        #remove {itemrevive%uuid of player%::*} from {itemrevive::*}
+        loop {itemrevive%uuid of player%::*}:
+            remove loop-value from {itemrevive::*}
+        
+        
+
+on pick up:
+    if event-item is a nautilus shell named "<##F878FF>ʀᴇᴠɪᴠᴀʟ <white>ᴛᴏᴍᴇ":
+        if event-item is {itemrevive::*}:
+            cancel event
+
+
+
+
+    
+on block place of beacon:
+    set {_ancientdebris} to block under event-block
+    set {_gildedright} to block right of {_ancientdebris}
+    set {_gildedleft} to block left of {_ancientdebris}
+
+    if {_ancientdebris} is ancient debris:
+        if block right of {_ancientdebris} is gilded blackstone:
+            if block left of {_ancientdebris} is gilded blackstone:
+                if block infront of {_ancientdebris} is gilded blackstone:
+                    if block behind {_ancientdebris} is gilded blackstone:
+                        if block infront of {_gildedright} is a gold block:
+                            if block behind {_gildedright} is a gold block:
+                                if block infront of {_gildedleft} is a gold block:
+                                    if block behind {_gildedleft} is a gold block:
+                                        add event-block to {Beaconspedes::*}
+                                        execute console command "/summon minecraft:end_crystal %event-block's x coordinate% 320 %event-block's z coordinate% {BeamTarget:{X:%event-block's x coordinate%, Y:%event-block's y coordinate - 1.7%, Z:%event-block's z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+                                        #set {_locationcrys} to location of event-block
+                                        #set y coordinate of {_locationcrys} to 320
+                                        #spawn end crystal at  {_locationcrys} with nbt compound from "{BeamTarget:{X:%event-block's x coordinate%, Y:%event-block's y coordinate - 1.7%, Z:%event-block's z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+
+on block break of beacon:
+    
+    set {_loc} to location of event-block
+    set y coordinate of {_loc} to 320
+    set {_ancientdebris} to block under event-block
+    set {_gildedright} to block right of {_ancientdebris}
+    set {_gildedleft} to block left of {_ancientdebris}
+
+    if {_ancientdebris} is ancient debris:
+        if block right of {_ancientdebris} is gilded blackstone:
+            if block left of {_ancientdebris} is gilded blackstone:
+                if block infront of {_ancientdebris} is gilded blackstone:
+                    if block behind {_ancientdebris} is gilded blackstone:
+                        if block infront of {_gildedright} is a gold block:
+                            if block behind {_gildedright} is a gold block:
+                                if block infront of {_gildedleft} is a gold block:
+                                    if block behind {_gildedleft} is a gold block:
+                                        loop all entities within 0.1 blocks of {_loc}:
+                                            if y coordinate of loop-entity is 320:
+                                                if loop-entity is a end crystal:
+                                                    play sound "minecraft:block.beacon.deactivate" at player
+                                                    remove loop-entity from {crys::*}
+                                                    kill loop-entity
+
+
+
+on block break of gold block:
+    set {_gildedinfornt} to block infront of event-block
+    set {_ancientdebris} to block left of {_gildedinfornt}
+    set {_beacon} to block above {_ancientdebris}
+    if {_gildedinfornt} is a gilded blackstone:
+        if {_ancientdebris} is an ancient debris:
+            if {_beacon} is a beacon:
+                set {_ancientdebris} to block under {_beacon}
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    set {_loc} to location of {_beacon}
+                                                    set y coordinate of {_loc} to 320
+                                                    loop all entities within 0.1 blocks of {_loc}:
+                                                        if y coordinate of loop-entity is 320:
+                                                            if loop-entity is a end crystal:
+                                                                play sound "minecraft:block.beacon.deactivate" at player
+                                                                remove loop-entity from {crys::*}
+                                                                kill loop-entity     
+                                                    
+on block place of gold block:
+    set {_gildedinfornt} to block infront of event-block
+    set {_ancientdebris} to block left of {_gildedinfornt}
+    set {_beacon} to block above {_ancientdebris}
+    if {_gildedinfornt} is a gilded blackstone:
+        if {_ancientdebris} is an ancient debris:
+            if {_beacon} is a beacon:
+                set {_ancientdebris} to block under {_beacon}
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    add {_beacon} to {Beaconspedes::*}
+                                                    execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    
+
+on block break of gold block:
+    set {_gildedinfornt} to block behind event-block
+    set {_ancientdebris} to block right {_gildedinfornt}
+    set {_beacon} to block above {_ancientdebris}
+    if {_gildedinfornt} is a gilded blackstone:
+        if {_ancientdebris} is an ancient debris:
+            if {_beacon} is a beacon:
+                set {_ancientdebris} to block under {_beacon}
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    set {_loc} to location of {_beacon}
+                                                    set y coordinate of {_loc} to 320
+                                                    loop all entities within 0.1 blocks of {_loc}:
+                                                        if y coordinate of loop-entity is 320:
+                                                            if loop-entity is a end crystal:
+                                                                play sound "minecraft:block.beacon.deactivate" at player
+                                                                remove loop-entity from {crys::*}
+                                                                kill loop-entity      
+
+
+on block place of gold block:
+    set {_gildedinfornt} to block behind event-block
+    set {_ancientdebris} to block right {_gildedinfornt}
+    set {_beacon} to block above {_ancientdebris}
+    if {_gildedinfornt} is a gilded blackstone:
+        if {_ancientdebris} is an ancient debris:
+            if {_beacon} is a beacon:
+                set {_ancientdebris} to block under {_beacon}
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    add {_beacon} to {Beaconspedes::*}
+                                                    execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+                 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+                                                    
+
+
+on block break of gold block:
+    set {_gildedinfornt} to block behind event-block
+    set {_ancientdebris} to block left {_gildedinfornt}
+    set {_beacon} to block above {_ancientdebris}
+    if {_gildedinfornt} is a gilded blackstone:
+        if {_ancientdebris} is an ancient debris:
+            if {_beacon} is a beacon:
+                set {_ancientdebris} to block under {_beacon}
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    set {_loc} to location of {_beacon}
+                                                    set y coordinate of {_loc} to 320
+                                                    loop all entities within 0.1 blocks of {_loc}:
+                                                        if y coordinate of loop-entity is 320:
+                                                            if loop-entity is a end crystal:
+                                                                play sound "minecraft:block.beacon.deactivate" at player
+                                                                remove loop-entity from {crys::*}
+                                                                kill loop-entity     
+                                                    
+on block place of gold block:
+    set {_gildedinfornt} to block behind event-block
+    set {_ancientdebris} to block left {_gildedinfornt}
+    set {_beacon} to block above {_ancientdebris}
+    if {_gildedinfornt} is a gilded blackstone:
+        if {_ancientdebris} is an ancient debris:
+            if {_beacon} is a beacon:
+                set {_ancientdebris} to block under {_beacon}
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    add {_beacon} to {Beaconspedes::*}
+                                                    execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+on block break of gold block:
+    set {_gildedinfornt} to block infront event-block
+    set {_ancientdebris} to block right {_gildedinfornt}
+    set {_beacon} to block above {_ancientdebris}
+    if {_gildedinfornt} is a gilded blackstone:
+        if {_ancientdebris} is an ancient debris:
+            if {_beacon} is a beacon:
+                set {_ancientdebris} to block under {_beacon}
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    set {_loc} to location of {_beacon}
+                                                    set y coordinate of {_loc} to 320
+                                                    loop all entities within 0.1 blocks of {_loc}:
+                                                        if y coordinate of loop-entity is 320:
+                                                            if loop-entity is a end crystal:
+                                                                play sound "minecraft:block.beacon.deactivate" at player
+                                                                remove loop-entity from {crys::*}
+                                                                kill loop-entity     
+
+
+on block place of gold block:
+    set {_gildedinfornt} to block infront event-block
+    set {_ancientdebris} to block right {_gildedinfornt}
+    set {_beacon} to block above {_ancientdebris}
+    if {_gildedinfornt} is a gilded blackstone:
+        if {_ancientdebris} is an ancient debris:
+            if {_beacon} is a beacon:
+                set {_ancientdebris} to block under {_beacon}
+                set {_gildedright} to block right of {_ancientdebris}
+                set {_gildedleft} to block left of {_ancientdebris}
+                if {_ancientdebris} is ancient debris:
+                    if block right of {_ancientdebris} is gilded blackstone:
+                        if block left of {_ancientdebris} is gilded blackstone:
+                            if block infront of {_ancientdebris} is gilded blackstone:
+                                if block behind {_ancientdebris} is gilded blackstone:
+                                    if block infront of {_gildedright} is a gold block:
+                                        if block behind {_gildedright} is a gold block:
+                                            if block infront of {_gildedleft} is a gold block:
+                                                if block behind {_gildedleft} is a gold block:
+                                                    add {_beacon} to {Beaconspedes::*}
+                                                    execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+
+on block break of gilded blackstone:
+    set {_ancient} to block left of event-block
+    set {_beacon} to block above {_ancient}
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            set {_loc} to location of {_beacon}
+                                            set y coordinate of {_loc} to 320
+                                            loop all entities within 0.1 blocks of {_loc}:
+                                                if y coordinate of loop-entity is 320:
+                                                    if loop-entity is a end crystal:
+                                                        play sound "minecraft:block.beacon.deactivate" at player
+                                                        remove loop-entity from {crys::*}
+                                                        kill loop-entity
+
+
+
+
+
+on block place of gilded blackstone:
+    set {_ancient} to block left of event-block
+    set {_beacon} to block above {_ancient}
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            add {_beacon} to {Beaconspedes::*}
+                                            execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on block break of gilded blackstone:
+    set {_ancient} to block right of event-block
+    set {_beacon} to block above {_ancient}
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            set {_loc} to location of {_beacon}
+                                            set y coordinate of {_loc} to 320
+                                            loop all entities within 0.1 blocks of {_loc}:
+                                                if y coordinate of loop-entity is 320:
+                                                    if loop-entity is a end crystal:
+                                                        play sound "minecraft:block.beacon.deactivate" at player
+                                                        remove loop-entity from {crys::*}
+                                                        kill loop-entity
+
+
+
+
+
+on block place of gilded blackstone:
+    set {_ancient} to block right of event-block
+    set {_beacon} to block above {_ancient}
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            add {_beacon} to {Beaconspedes::*}
+                                            execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on block break of gilded blackstone:
+    set {_ancient} to block infront of event-block
+    set {_beacon} to block above {_ancient}
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            set {_loc} to location of {_beacon}
+                                            set y coordinate of {_loc} to 320
+                                            loop all entities within 0.1 blocks of {_loc}:
+                                                if y coordinate of loop-entity is 320:
+                                                    if loop-entity is a end crystal:
+                                                        play sound "minecraft:block.beacon.deactivate" at player
+                                                        remove loop-entity from {crys::*}
+                                                        kill loop-entity
+
+
+
+
+
+on block place of gilded blackstone:
+    set {_ancient} to block infront of event-block
+    set {_beacon} to block above {_ancient}
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            add {_beacon} to {Beaconspedes::*}
+                                            execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on block break of gilded blackstone:
+    set {_ancient} to block behind event-block
+    set {_beacon} to block above {_ancient}
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            set {_loc} to location of {_beacon}
+                                            set y coordinate of {_loc} to 320
+                                            loop all entities within 0.1 blocks of {_loc}:
+                                                if y coordinate of loop-entity is 320:
+                                                    if loop-entity is a end crystal:
+                                                        play sound "minecraft:block.beacon.deactivate" at player
+                                                        remove loop-entity from {crys::*}
+                                                        kill loop-entity
+
+
+
+
+
+on block place of gilded blackstone:
+    set {_ancient} to block behind event-block
+    set {_beacon} to block above {_ancient}
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            add {_beacon} to {Beaconspedes::*}
+                                            execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on block break of ancient debris:
+    set {_beacon} to block above event-block
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            set {_loc} to location of {_beacon}
+                                            set y coordinate of {_loc} to 320
+                                            loop all entities within 0.1 blocks of {_loc}:
+                                                if y coordinate of loop-entity is 320:
+                                                    if loop-entity is a end crystal:
+                                                        play sound "minecraft:block.beacon.deactivate" at player
+                                                        remove loop-entity from {crys::*}
+                                                        kill loop-entity
+
+
+
+
+
+on block place of ancient debris:
+    set {_beacon} to block above event-block
+    if {_beacon} is a beacon:
+        set {_ancientdebris} to block under {_beacon}
+        set {_gildedright} to block right of {_ancientdebris}
+        set {_gildedleft} to block left of {_ancientdebris}
+        if {_ancientdebris} is ancient debris:
+            if block right of {_ancientdebris} is gilded blackstone:
+                if block left of {_ancientdebris} is gilded blackstone:
+                    if block infront of {_ancientdebris} is gilded blackstone:
+                        if block behind {_ancientdebris} is gilded blackstone:
+                            if block infront of {_gildedright} is a gold block:
+                                if block behind {_gildedright} is a gold block:
+                                    if block infront of {_gildedleft} is a gold block:
+                                        if block behind {_gildedleft} is a gold block:
+                                            add {_beacon} to {Beaconspedes::*}
+                                            execute console command "/summon minecraft:end_crystal %{_beacon}'s x coordinate% 320 %{_beacon}'s z coordinate% {BeamTarget:{X:%{_beacon}'s x coordinate%, Y:%{_beacon}'s y coordinate - 1.7%, Z:%{_beacon}'s z coordinate%}, Tags:""PedesTag%uuid of player%""}"
+                                           
+
+
+
+
+
+
+
+
+
+
+

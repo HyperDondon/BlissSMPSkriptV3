@@ -1,0 +1,1481 @@
+on right click:
+
+	if player's held item is a player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 2 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 3 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 4 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 5 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 6 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 7 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 8 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 9 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 10 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 11 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 12 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 13 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 14 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 15 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 16 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 17 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 18 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 19 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 20 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 21 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 22 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 23 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 24 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 25 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 26 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 27 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 28 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 29 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 30 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 31 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 32 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 33 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 34 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 35 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 36 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 37 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 38 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 39 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 40 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 41 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 42 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 43 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 44 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 45 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 46 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 47 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 48 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 49 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 50 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 51 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 52 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 53 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 54 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 55 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 56 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 57 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 58 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 59 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 60 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 61 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 62 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's held item is 63 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+			play sound "entity.player.levelup" for player
+on right click:
+
+	if player's held item is 64 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on right click:
+
+	if player's off hand item is a player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 2 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 3 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 4 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 5 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 6 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 7 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 8 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 9 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 10 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 11 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 12 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 13 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 14 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 15 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 16 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 17 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 18 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 19 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 20 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 21 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 22 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 23 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 24 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 25 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 26 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 27 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 28 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 29 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 30 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 31 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 32 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 33 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 34 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 35 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 36 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 37 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 38 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 39 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 40 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 41 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 42 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 43 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 44 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 45 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 46 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 47 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 48 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 49 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 50 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 51 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 52 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 53 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 54 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 55 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 56 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 57 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 58 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 59 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 60 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 61 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 62 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+on right click:
+
+	if player's off hand item is 63 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+			play sound "entity.player.levelup" for player
+
+			
+on right click:
+
+	if player's off hand item is 64 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+
+
+
+on right click:
+
+	if player's off hand item is 64 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		set {_uuid} to uuid of player
+		cancel event
+		cancel event
+		if {Bliss.Tier.%{_uuid}%} is 1:
+			remove 1 of player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" from player's inventory
+			cancel event
+			execute console command "upgradegem %player%"
+			play sound "entity.player.levelup" for player
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on place:
+	if event-block is a player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ":
+		cancel event

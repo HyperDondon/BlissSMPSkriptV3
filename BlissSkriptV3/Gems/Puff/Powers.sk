@@ -1,0 +1,498 @@
+#puff powers
+
+
+		
+
+
+
+
+
+
+every 1 second:
+	loop all players:
+		loop all items in loop-player's inventory:
+			if name of loop-slot contains "<##EFEFEF>&lᴘᴜғғ" or "<##ffcc26>&lGold Gem":
+				#Breezy
+				if {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} is true:
+					if {Puff.Power3.Breezy.Minute.%uuid of loop-player%} is 0:
+						set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%uuid of loop-player%}%m %{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"		
+				if {Puff.Power3.Breezy.Second.%uuid of loop-player%} is not set:
+					set {Puff.Power3.Breezy.Second.%uuid of loop-player%} to 0
+					set {Puff.Power3.Breezy.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} to true
+
+				if {Puff.Power3.Breezy.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%uuid of loop-player%}%m %{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"
+					
+			
+				if {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} is true:
+					if {Puff.Power3.Breezy.Minute.%uuid of loop-player%} is 0:
+						set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &b%{Puff.Power3.Breezy.Minute.%uuid of loop-player%}%m %{Puff.Power3.Breezy.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Puff.Power3.Breezy.Second.%uuid of loop-player%}
+
+
+
+				if {Puff.Power3.Breezy.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Puff.Power3.Breezy.Minute.%uuid of loop-player%}
+					set {Puff.Power3.Breezy.Second.%uuid of loop-player%} to 59
+					
+				if {Puff.Power3.Breezy.Minute.%uuid of loop-player%} < 0:
+					set {Puff.Power3.Breezy.Cooldown.%uuid of loop-player%} to false
+					set {Puff.Power3.Breezy.Display.%uuid of loop-player%} to "&f☁ &aReady!"
+
+
+				#Enchanting
+
+				if {Puff.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+
+				if {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true	
+					set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to " &b%{Puff.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power2.Enchanting.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true	
+
+				if {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Puff.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power2.Enchanting.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to " &b %{Puff.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to "&b %{Puff.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Puff.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Puff.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
+				
+				if {Puff.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Puff.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Puff.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					
+				if {Puff.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Puff.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
+					set {Puff.Power2.Enchanting.Display.%uuid of loop-player%} to " &aReady!"
+
+
+
+				#Dash
+
+
+
+
+
+				if {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Puff.Power1.Dash.Second.%uuid of loop-player%}
+
+
+				
+				if {Puff.Power1.Dash.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Puff.Power1.Dash.Minute.%uuid of loop-player%}
+					set {Puff.Power1.Dash.Second.%uuid of loop-player%} to 59
+
+
+				if {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} is true:
+					if {Puff.Power1.Dash.Minute.%uuid of loop-player%} is 0:
+						set {Puff.Power1.Dash.Display.%uuid of loop-player%} to "&f⏫ &b%{Puff.Power1.Dash.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Puff.Power1.Dash.Display.%uuid of loop-player%} to "&f⏫ &b%{Puff.Power1.Dash.Minute.%uuid of loop-player%}%m %{Puff.Power1.Dash.Second.%uuid of loop-player%}%s"
+
+
+				if {Puff.Power1.Dash.Second.%uuid of loop-player%} is not set:
+					set {Puff.Power1.Dash.Second.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Minute.%uuid of loop-player%} to 0
+
+				if {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} is not set:
+					set {Puff.Power1.Dash.Second.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} to true	
+
+				if {Puff.Power1.Dash.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power1.Dash.Second.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} to true	
+
+
+				if {Puff.Power1.Dash.Display.%uuid of loop-player%} is not set:
+					set {Puff.Power1.Dash.Display.%uuid of loop-player%} to "&f⏫ &b%{Puff.Power1.Dash.Minute.%uuid of loop-player%}%m %{Puff.Power1.Dash.Second.%uuid of loop-player%}%s"
+
+
+
+				if {Puff.Power1.Dash.Minute.%uuid of loop-player%} < 0:
+					set {Puff.Power1.Dash.Cooldown.%uuid of loop-player%} to false
+					set {Puff.Power1.Dash.Display.%uuid of loop-player%} to "&f⏫ &aReady!"
+
+
+
+
+
+
+
+
+				#Doublejump
+
+
+
+
+
+				if {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Puff.Power4.Doublejump.Second.%uuid of loop-player%}
+
+
+				
+				if {Puff.Power4.Doublejump.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Puff.Power4.Doublejump.Minute.%uuid of loop-player%}
+					set {Puff.Power4.Doublejump.Second.%uuid of loop-player%} to 59
+
+
+
+				if {Puff.Power4.Doublejump.Second.%uuid of loop-player%} is not set:
+					set {Puff.Power4.Doublejump.Second.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} to 0
+
+				if {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} is not set:
+					set {Puff.Power4.Doublejump.Second.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} to false
+
+				if {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} is not set:
+					set {Puff.Power4.Doublejump.Second.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} to 0
+					set {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} to false
+
+
+
+
+
+				if {Puff.Power4.Doublejump.Minute.%uuid of loop-player%} < 0:
+					set {Puff.Power4.Doublejump.Cooldown.%uuid of loop-player%} to false
+
+
+
+
+
+on sneak toggle:
+	#if player's gamemode is not creative:
+	if player's off hand item is a amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} is not true:
+			if {Disabled.%{_uuid}%} < 1:
+				draw 5 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				push player forward at speed 0.4
+				push player up at speed 0.2
+				set {Puff.Power4.Doublejump.Second.%{_uuid}%} to 5
+				set {Puff.Power4.Doublejump.Minute.%{_uuid}%} to 0
+				set {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} to true
+				send "<##EFEFEF>🔺 <##A4FEF1>You have used &7Double Jump <##A4FEF1>now on cooldown for &75 seconds" to player
+	if player's off hand item is a prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} is not true:
+			if {Disabled.%{_uuid}%} < 1:
+				push player forward at speed 0.5
+				draw 5 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				push player up at speed 0.3
+				set {Puff.Power4.Doublejump.Second.%{_uuid}%} to 5
+				set {Puff.Power4.Doublejump.Minute.%{_uuid}%} to 0
+				set {Puff.Power4.Doublejump.Cooldown.%{_uuid}%} to true	
+				send "<##EFEFEF>🔮 <##A4FEF1>You have used &7Double Jump <##A4FEF1>now on cooldown for &75 seconds" to player
+				wait 1 ticks
+				draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 4 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 3 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 1 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+				wait 1 ticks
+				draw 2 cloud at player with offset vector(0.1, 0.1, 0.1) with extra 0
+			
+	
+
+on damage:
+	set {_vicuuid} to uuid of victim
+	if {Disabled.%{_vicuuid}%} < 1:
+		if damage cause is fall:
+			if victim's held item is amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+				cancel event
+			if victim's off hand item is amethyst shard named "<##EFEFEF>&lᴘᴜғғ &r<##C7C7C7>ɢᴇᴍ":
+				cancel event
+			if victim's offhand item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+				cancel event
+			if victim's held item is prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+				cancel event
+	if attacker's held item is a prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of attacker
+		if {Disabled.%{_uuid}%} < 1:
+			
+			if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is not true:
+				if "%{Bliss.Trusted.%{_uuid}%::*}%" contains "%victim's uuid%":
+
+					send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to attacker
+
+				else:
+					wait 1 ticks
+					push victim up at speed 6
+					send "<##EFEFEF>🔮 <##A4FEF1>You have been affected with &f☁Breezy bash <##A4FEF1>by <##EFEFEF>%attacker%" to victim
+					send "<##EFEFEF>🔮 <##A4FEF1>You have activated &f☁Breezy bash <##A4FEF1>skill on <##EFEFEF>%victim%" to attacker
+					if {Bliss.GemHealth.%{_uuid}%} > 4:	
+						set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 0
+						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 45
+						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} is 3:	
+						set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 15
+						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					if {Bliss.GemHealth.%{_uuid}%} < 3:	
+						set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 35
+						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					wait 1.25 seconds
+					push victim down at speed 9
+					set {PuffLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 20 seconds
+					set {PuffLine.%attacker's uuid%.%victim's uuid%} to false
+
+			else:
+				set {_uuid} to uuid of attacker
+				if {Puff.Power3.Breezy.Minute.%{_uuid}%} < 1:
+					send "<##EFEFEF>🔮 &cYour &f☁<##EFEFEF>Breezy bash &cskill is on cooldown for <##EFEFEF>%{Puff.Power3.Breezy.Second.%{_uuid}%}%s" to attacker
+				else:
+					send "<##EFEFEF>🔮 &cYour &f☁<##EFEFEF>Breezy bash &cskill is on cooldown for <##EFEFEF>%{Puff.Power3.Breezy.Minute.%{_uuid}%}%m %{Puff.Power3.Breezy.Second.%{_uuid}%}%s" to attacker
+		
+			
+on left click:
+	set {_uuid} to uuid of player
+	if {Disabled.%{_uuid}%} < 1:
+		if player's held item is a prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+			if {Puff.Power3.Breezy.Cooldown.%{_uuid}%} is not true:
+
+				if lore of player's held item contains "<##57FFC7>Pristine":
+					set {_num} to 5
+					set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 0
+					set {Puff.Power3.Breezy.Second.%{_uuid}%} to 45
+					set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+
+				else:
+					if lore of player's held item contains "<##9DF200>Scratched":
+						set {_num} to 4
+						set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 0
+						set {Puff.Power3.Breezy.Second.%{_uuid}%} to 45
+						set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+
+					else:
+
+						if lore of player's held item contains "<##3F00D1>Cracked":
+							set {_num} to 3
+							set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+							set {Puff.Power3.Breezy.Second.%{_uuid}%} to 15
+							set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					
+						else:
+
+							if lore of player's held item contains "<##EAC700>Damaged":
+								set {_num} to 2
+								set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+								set {Puff.Power3.Breezy.Second.%{_uuid}%} to 15
+								set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+
+							else:
+
+								if lore of player's held item contains "<##F10303>Ruined":
+									set {_num} to 1
+									set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+									set {Puff.Power3.Breezy.Second.%{_uuid}%} to 35
+									set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+									
+								else:
+
+									if lore of player's held item contains "&7Broken":
+										set {_num} to 1
+										set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+										set {Puff.Power3.Breezy.Second.%{_uuid}%} to 35
+										set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+
+									else:
+
+										if {Bliss.GemHealth.%{_uuid}%} > 5:
+											set {_num} to 5
+											set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 0
+											set {Puff.Power3.Breezy.Second.%{_uuid}%} to 45
+											set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+					
+
+										else:
+
+											if {Bliss.GemHealth.%{_uuid}%} is 5:
+												set {_num} to 4
+												set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 0
+												set {Puff.Power3.Breezy.Second.%{_uuid}%} to 45
+												set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+						
+											else:
+
+												if {Bliss.GemHealth.%{_uuid}%} is 4:
+													set {_num} to 3
+													set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+													set {Puff.Power3.Breezy.Second.%{_uuid}%} to 15
+													set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+
+												else:
+										
+													if {Bliss.GemHealth.%{_uuid}%} is 3:
+														set {_num} to 2
+														set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+														set {Puff.Power3.Breezy.Second.%{_uuid}%} to 15
+														set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+
+													else:
+
+														if {Bliss.GemHealth.%{_uuid}%} is 2:
+															set {_num} to 1
+															set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+															set {Puff.Power3.Breezy.Second.%{_uuid}%} to 35
+															set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true	
+															
+														else:
+
+															if {Bliss.GemHealth.%{_uuid}%} is 1:
+																set {_num} to 1
+																set {Puff.Power3.Breezy.Minute.%{_uuid}%} to 1
+																set {Puff.Power3.Breezy.Second.%{_uuid}%} to 35
+																set {Puff.Power3.Breezy.Cooldown.%{_uuid}%} to true
+
+						
+				send "<##EFEFEF>🔮 <##A4FEF1>You have activated group &f☁<##EFEFEF>Breezy Bash <##A4FEF1>skill &7(radius %{_num}%)" to player
+				set {_s} to 1
+				loop {_num} + {_num} times:
+
+					if loop-value is not {_num} + {_num}:
+						PuffCircle({_s}, player)
+				
+						add 0.5 to {_s}
+
+					else:
+						PuffCirclelast({_s}, player)
+
+				set {_puffholder} to player
+				loop all entities within {_num} blocks of the player:
+					if loop-entity is not {_puffholder}:
+						if "%{Bliss.Trusted.%{_uuid}%::*}%" does not contain "%loop-entity's uuid%":
+							send "<##EFEFEF>🔮 <##A4FEF1>You have been affected with &f☁<##EFEFEF>Breezy Bash <##A4FEF1>by <##EFEFEF>%{_puffholder}%" to loop-entity
+							set {_p} to loop-entity
+							set {_direction} to vector between {_puffholder} and {_p}
+
+							push {_p} {_direction} at speed 3
+							push {_p} up at speed 1
+
+						else:
+							send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to {_puffholder}
+
+
+function PuffCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust using dustOption(rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+
+
+
+function PuffCirclelast(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop 10 times:
+		loop {_iterations} times:
+			set {_angle} to loop-value-2 * {_step}
+			set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+			draw 1 of dust using dustOption(rgb(239, 239, 239), 1) at {_pl} ~ {_v} with extra 0.000000001
+			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+		wait 0.4 seconds
+
+every 1 tick:
+	loop all players:
+		loop all entities:
+			if {PuffLine.%loop-player-1's uuid%.%loop-entity-2's uuid%} is true:
+				set {_v} to vector from loop-player-1's head to loop-entity-2's head
+				set vector length of {_v} to 0.1
+				set {_loc} to the location 0.7 meters under loop-player-1's head
+				loop (distance between {_loc} and loop-entity-2) / 0.1 times:
+
+					draw 1 dust using dustOption(rgb(239, 239, 239), 1) at {_loc} with force
+					draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
+					set {_loc} to {_loc} ~ {_v}
+
+on right click:
+	set {_uuid} to uuid of player
+	if {Disabled.%{_uuid}%} < 1:
+		if player's held item is a prismarine shard named "<##EFEFEF>&lᴘᴜғғ &r<##FFD773>ɢᴇᴍ":
+			
+			if {Puff.Power1.Dash.Cooldown.%{_uuid}%} is not true:
+				push player up at speed 1
+				set {Puff.Power1.Dash.Second.%{_uuid}%} to 30
+				set {Puff.Power1.Dash.Minute.%{_uuid}%} to 0
+				set {Puff.Power1.Dash.Cooldown.%{_uuid}%} to true
+				push player forward at speed 3
+				send "<##EFEFEF>🔮 <##A4FEF1>You have activated &f⏫<##EFEFEF>Dash <##A4FEF1>skill" to player
+				set {Dash...%player%} to true
+				wait 8 seconds
+				set {Dash...%player%} to false
+			else:
+				set {_uuid} to uuid of player
+				if {Puff.Power1.Dash.Minute.%{_uuid}%} is 0:
+					send "<##EFEFEF>🔮 &cYour &f⏫<##EFEFEF>Dash &cskill is on cooldown for <##efefef>%{Puff.Power1.Dash.Second.%{_uuid}%}%s" to player
+				else:
+					send "<##EFEFEF>🔮 &cYour &f⏫<##EFEFEF>Dash &cskill is on cooldown for <##efefef>%{Puff.Power1.Dash.Minute.%{_uuid}%}%m %{Puff.Power1.Dash.Second.%{_uuid}%}%s" to player
+
+
+

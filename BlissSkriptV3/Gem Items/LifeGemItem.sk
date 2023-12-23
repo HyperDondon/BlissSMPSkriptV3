@@ -1,0 +1,97 @@
+on load:
+#Life
+	#Tier 1
+        #Prstine
+		set {Gems.Life.Pristine.Tier.1} to amethyst shard named "<##FE04B4>&lʟɪғᴇ &r<##C7C7C7>ɢᴇᴍ" with lore "&f&lᴄᴏɴᴛʀᴏʟ ᴛʜᴇ ʙᴀʟᴀɴᴄᴇ ᴏғ ʟɪғᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " <##F30090>🔺 &7Feed animals and grow plants" and " &7by crouch clicking with bare hand, 1.5x dmg" and " &7to undead mobs, 2x saturation" and "" and "<##B8FFFB>&lᴘᴏᴡᴇʀs" and "<##F30090>🔮 &f&lrequired" with hidden enchants flag with custom model data 3
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Life.Pristine.Tier.1}
+
+		#Prstine + 5
+		set {Gems.Life.Pristine+5.Tier.1} to {Gems.Life.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Life.Pristine+5.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Life.Pristine+5.Tier.1} with mending 1
+
+        #Prstine + 4
+		set {Gems.Life.Pristine+4.Tier.1} to {Gems.Life.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Life.Pristine+4.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Life.Pristine+3.Tier.1} to {Gems.Life.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Life.Pristine+3.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Life.Pristine+2.Tier.1} to {Gems.Life.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Life.Pristine+2.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Life.Pristine+1.Tier.1} to {Gems.Life.Pristine.Tier.1}
+		set line 3 of lore of {Gems.Life.Pristine+1.Tier.1} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Life.Scratched.Tier.1} to {Gems.Life.Pristine.Tier.1} with custom model data 23
+		set line 3 of lore of {Gems.Life.Scratched.Tier.1} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Life.Cracked.Tier.1} to {Gems.Life.Pristine.Tier.1} with custom model data 43
+		set line 3 of lore of {Gems.Life.Cracked.Tier.1} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Life.Damaged.Tier.1} to {Gems.Life.Pristine.Tier.1} with custom model data 63
+		set line 3 of lore of {Gems.Life.Damaged.Tier.1} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Life.Ruined.Tier.1} to {Gems.Life.Pristine.Tier.1} with custom model data 83
+		set line 3 of lore of {Gems.Life.Ruined.Tier.1} to "<##F10303>Ruined"
+
+		#Broken
+		set {Gems.Life.Broken.Tier.1} to {Gems.Life.Pristine.Tier.1} with custom model data 95
+		set line 3 of lore of {Gems.Life.Broken.Tier.1} to "&7Broken"
+
+		set custom model data of {Gems.Life.Pristine.Tier.1} to 3
+
+	#Tier 2
+        #Prstine
+		set {Gems.Life.Pristine.Tier.2} to prismarine shard named "<##FE04B4>&lʟɪғᴇ &r<##FFD773>ɢᴇᴍ" with lore "&f&lᴄᴏɴᴛʀᴏʟ ᴛʜᴇ ʙᴀʟᴀɴᴄᴇ ᴏғ ʟɪғᴇ" and "<##FFE4AB>ᴘᴀssɪᴠᴇs" and "<##57FFC7>Pristine" and " <##F30090>🔮 &7Feed animals and grow plants" and " &7by crouch clicking with bare hand. 3x dmg" and " &7to undead mobs, 2x saturation" and " &7Immune to withering, heal half a heart ever 5 seconds" and " &72 more hearts from gapples" and "" and "<##FFE4AB>ᴘᴏᴡᴇʀs" and "&7-&f💘 <##FF429A>ʜᴇᴀʀᴛ ᴅʀᴀɪɴᴇʀ" and " &4🧑🏻 &7Removes 4 hearts &f20s" and " &4🤼 &7Removes 2 hearts &fR4, 1m" and "" and "&7-&f💖 <##B8FFFA>ᴄɪʀᴄʟᴇ ᴏғ ʟɪғᴇ" and "&a🧑🏻 &7Summons a 8 block wide zone that follows you" and " &7Gives trusted +4, Untrusted -4 hearts" and " &7slowly mends armour and tools if trusted" and " &7caster only can steal health while zone is active" and "&a🤼 &7Gives trusted players +5 hearts for &f1m 30s, R4" with hidden enchants flag with custom model data 4
+		add nbt compound from "{Tags:""GemNBT""}" to nbt compound of {Gems.Life.Pristine.Tier.2}
+
+		#Prstine + 5
+		set {Gems.Life.Pristine+5.Tier.2} to {Gems.Life.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Life.Pristine+5.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>5"
+		enchant {Gems.Life.Pristine+5.Tier.2} with mending 1
+
+        #Prstine + 4
+		set {Gems.Life.Pristine+4.Tier.2} to {Gems.Life.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Life.Pristine+4.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>4"
+
+		#Prstine + 3
+		set {Gems.Life.Pristine+3.Tier.2} to {Gems.Life.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Life.Pristine+3.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>3"
+
+		#Prstine + 2
+		set {Gems.Life.Pristine+2.Tier.2} to {Gems.Life.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Life.Pristine+2.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>2"
+
+        #Prstine + 1
+		set {Gems.Life.Pristine+1.Tier.2} to {Gems.Life.Pristine.Tier.2}
+		set line 3 of lore of {Gems.Life.Pristine+1.Tier.2} to "<##57FFC7>Pristine &f+ <##A0EEEE>1"
+
+        #Scratched
+		set {Gems.Life.Scratched.Tier.2} to {Gems.Life.Pristine.Tier.2} with custom model data 24
+		set line 3 of lore of {Gems.Life.Scratched.Tier.2} to "<##9DF200>Scratched"
+
+        #Cracked
+		set {Gems.Life.Cracked.Tier.2} to {Gems.Life.Pristine.Tier.2} with custom model data 44
+		set line 3 of lore of {Gems.Life.Cracked.Tier.2} to "<##3F00D1>Cracked"
+
+		#Damaged
+		set {Gems.Life.Damaged.Tier.2} to {Gems.Life.Pristine.Tier.2} with custom model data 64
+		set line 3 of lore of {Gems.Life.Damaged.Tier.2} to "<##EAC700>Damaged"
+
+		#Ruined
+		set {Gems.Life.Ruined.Tier.2} to {Gems.Life.Pristine.Tier.2} with custom model data 84
+		set line 3 of lore of {Gems.Life.Ruined.Tier.2} to "<##F10303>Ruined"
+
+		#Broken
+		set {Gems.Life.Broken.Tier.2} to {Gems.Life.Pristine.Tier.2} with custom model data 44
+		set line 3 of lore of {Gems.Life.Broken.Tier.2} to "&7Broken"
+
+		set custom model data of {Gems.Life.Pristine.Tier.2} to 4

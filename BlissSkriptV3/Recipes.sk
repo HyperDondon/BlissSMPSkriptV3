@@ -1,0 +1,52 @@
+#on load:
+    # Define the item's details
+    #set {_textureValue} to "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmY2MjRhNDRlNzdiOTVkYmUxY2M3MzU1MzY5NTNlODQwYmE2YzE5YjAxNTdjNTQ5ZDliODI1MzQ2NDhjOGNlNCJ9fX0="
+    #set {_id} to "-1135994195 374558533 -1713180762 2053437446"
+    #set {_customHead} to skull with owner base64-encoded {_textureValue} and id {_id}
+
+    # Register the recipe
+    #register new shaped recipe for 1 {_customHead} named "<##E9C2FF>ᴛʀᴀᴅᴇʀ" using air, air, air, air, air, air, air, air, air
+    #send "<##E9C2FF>ᴛʀᴀᴅᴇʀ" to all players
+
+on load:
+    set {Token} to a nautilus shell named "Totem Token" with custom model data 250
+
+
+    set {Trader} to a player head named "<##E9C2FF><bold>ᴛʀᴀᴅᴇʀ" with lore "&7ʀɪɢʜᴛ-ᴄʟɪᴄᴋ ᴛᴏ ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ɢᴇᴍ ᴛʏᴘᴇ" and "&7ʏᴏᴜ ᴡɪʟʟ ʀᴇᴄᴇɪᴠᴇ ᴀ ʀᴀɴᴅᴏᴍ ᴛɪᴇʀ ᴏɴᴇ ɢᴇᴍ" and "&cᴡᴀʀɴɪɴɢ: ᴜsɪɴɢ ᴛʜɪs ᴡɪʟʟ ʟᴏsᴇ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ɢᴇᴍ" with custom model data 2 with hidden enchants flag
+    set {Trader.nbt} to nbt compound of {Trader}
+    add nbt compound of "{HideEnchantments:4,Tags:""TraderItemNBT"",SkullOwner:{Id:[I;-1135994195,374558533,-1713180762,2053437446],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmY2MjRhNDRlNzdiOTVkYmUxY2M3MzU1MzY5NTNlODQwYmE2YzE5YjAxNTdjNTQ5ZDliODI1MzQ2NDhjOGNlNCJ9fX0=""}]}}}" to {Trader.nbt}
+
+
+    set {Upgrader} to a player head named "<##ACFF82><bold>ᴜᴘɢʀᴀᴅᴇʀ" with lore "&7ʀɪɢʜᴛ-ᴄʟɪᴄᴋ ᴛᴏ ᴜᴘɢʀᴀᴅᴇ ʏᴏᴜʀ ɢᴇᴍ" and "&cᴡᴀʀɴɪɴɢ: ᴜᴘɢʀᴀᴅᴇʀ ᴡɪʟʟ ᴅʀᴏᴘ ᴏɴ ᴅᴇᴀᴛʜ" with custom model data 1 with hidden enchants flag
+    set {Upgrader.nbt} to nbt compound of {Upgrader}
+    add nbt compound of "{Tags:""UpgraderItemNBT"",SkullOwner:{Id:[I;660124231,2128364985,-1717330005,146378663],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDk5MmU0YThmNDNjNzdhYzJlMmQ3OTJkOTYwNGY2MWYzNDM4N2M4NzdhYmEzNzEyZTQwNDdiNzQwYzU3OCJ9fX0=""}]}}}" to {Upgrader.nbt}
+
+    set {UpgraderGray} to a player head named "&8<bold>ᴜᴘɢʀᴀᴅᴇʀ" with lore "&7ʀɪɢʜᴛ-ᴄʟɪᴄᴋ ᴛᴏ ᴜᴘɢʀᴀᴅᴇ ʏᴏᴜʀ ɢᴇᴍ" and "&cᴡᴀʀɴɪɴɢ: ᴜᴘɢʀᴀᴅᴇʀ ᴡɪʟʟ ᴅʀᴏᴘ ᴏɴ ᴅᴇᴀᴛʜ" with custom model data 1 with hidden enchants flag
+    set {UpgraderGray.nbt} to nbt compound of {UpgraderGray}
+    add nbt compound of "{Tags:""UpgraderGrayItemNBT"",SkullOwner:{Id:[I;1586457474,-1706211847,-1155448085,-1718512651],Properties:{textures:[{Value:""eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTY4MmRlNzJiZjYxYzZkMjMzNjRlMmZlMmQ3Y2MyOGRkZjgzMTQ1ZDE4ZjE5Mzg1N2QzNjljZjlkZjY5MiJ9fX0=""}]}}}" to {UpgraderGray.nbt}
+
+
+    set {GemFragment} to a nautilus shell named "Gem Fragment" with custom model data 240
+
+
+    set {Repair} to a nautilus Shell with custom model data 200 named "<##8CF5A9>&lʀᴇᴘᴀɪʀ <##E6E6E6>ᴋɪᴛ" with lore "&7ʀᴇᴘᴀɪʀ ʏᴏᴜʀ ɢᴇᴍ ʙᴀᴄᴋ ᴛᴏ ᴘʀɪsᴛɪɴᴇ sᴛᴀᴛᴇ" and "" and "&cᴡᴀʀɴɪɴɢ: ʀᴇǫᴜɪʀᴇs ᴀ ᴘᴇᴅɪsᴛᴀʟ" with hidden enchants flag
+    set {Repair.nbt} to nbt compound of {Repair}
+
+    set {Revive} to nautilus Shell with custom model data 210 named "<##F878FF>ʀᴇᴠɪᴠᴀʟ <white>ᴛᴏᴍᴇ" with lore "&7ʀᴇssᴜʀᴇᴄᴛ ᴀɴʏᴏɴᴇ ᴛʜᴀᴛ ʜᴀs ʙᴇᴇɴ ᴇʟɪᴍɪɴᴀᴛᴇᴅ" and "" and "&cᴡᴀʀɴɪɴɢ: ʀᴇǫᴜɪʀᴇs ᴀ ᴘᴇᴅɪsᴛᴀʟ" with hidden enchants flag
+
+    register new shapeless recipe for {Token} using totem of undying with id "Token"
+
+    register new shaped recipe for {Trader} with custom model data 2 using diamond block, dragon's breath, diamond block, dragon's breath, sculk catalyst, dragon's breath, diamond block, dragon's breath, diamond block with id "Trader"
+    # Crystal Opal Head
+
+    register new shaped recipe for {Upgrader} using air, netherite ingot, air, netherite ingot, wither skeleton skull, netherite ingot, air, netherite ingot, air with id "Upgrader"
+    # Spruce Crate Head
+
+    register new shaped recipe for {GemFragment} using {Token}, dragon's breath, {Token}, dragon's breath, amethyst block, dragon's breath, {Token}, dragon's breath, {Token} with id "GemFrag"
+
+
+    register new shaped recipe for {Repair} using end crystal, {gemfragment}, end crystal, netherite ingot, {Upgrader}, netherite ingot, end crystal, {gemfragment}, end crystal with id "RepairKit"
+ 
+    register new shaped recipe for {Revive} using yellow candle, {Repair}, yellow candle, {gemfragment}, recovery compass, {gemfragment}, yellow candle, {Repair}, yellow candle with id "RevivalTome"
+
+    

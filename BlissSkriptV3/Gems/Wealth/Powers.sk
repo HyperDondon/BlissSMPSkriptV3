@@ -1,0 +1,587 @@
+#Wealth Powers
+
+
+every 1 second:
+	loop all players:
+		loop all items in loop-player's inventory:
+			if name of loop-slot contains "<##0EC912>&lᴡᴇᴀʟᴛʜ" or "<##ffcc26>&lGold Gem":
+
+
+				#Unfortunate
+
+				if {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} is not set:
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} is not set:
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} is not set:
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} to true
+			
+				if {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} is true:
+					if {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} is 0:
+						set {Wealth.Power1.Unfortunate.Display.%uuid of loop-player%} to "🍀 &b%{Wealth.Power1.Unfortunate.Second.%uuid of loop-player%}%s"
+					else:
+						set {Wealth.Power1.Unfortunate.Display.%uuid of loop-player%} to "🍀 &b%{Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%}%m %{Wealth.Power1.Unfortunate.Second.%uuid of loop-player%}%s"
+				
+				if {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%}
+
+
+				
+				if {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%}
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					
+				if {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} < 0:
+					set {Wealth.Power1.Unfortunate.Cooldown.%uuid of loop-player%} to false
+					set {Wealth.Power1.Unfortunate.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power1.Unfortunate.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power1.Unfortunate.Display.%uuid of loop-player%} to "🍀 &aReady!"
+
+
+				#Enchanting
+
+				if {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} is not set:
+					set {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} is not set:
+					set {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Wealth.Power2.Enchanting.Display.%uuid of loop-player%} to " &b%{Wealth.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+					else:
+						set {Wealth.Power2.Enchanting.Display.%uuid of loop-player%} to " &b%{Wealth.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Wealth.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+				
+				if {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Wealth.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
+				
+				if {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Wealth.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					
+				if {Wealth.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
+
+					set {Wealth.Power2.Enchanting.Display.%uuid of loop-player%} to " &aReady!"
+
+				if {Wealth.Power2.Enchanting.Cooldown.%uuid of loop-player%} is false:
+					set {Wealth.Power2.Enchanting.Display.%uuid of loop-player%} to " &aReady!"
+
+				#RichRush
+
+
+
+
+
+				if {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Wealth.Power3.RichRush.Second.%uuid of loop-player%}
+
+
+				
+				if {Wealth.Power3.RichRush.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Wealth.Power3.RichRush.Minute.%uuid of loop-player%}
+					set {Wealth.Power3.RichRush.Second.%uuid of loop-player%} to 59
+
+
+				if {Wealth.Power3.RichRush.Second.%uuid of loop-player%} is not set:
+					set {Wealth.Power3.RichRush.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} to true
+
+				if {Wealth.Power3.RichRush.Display.%uuid of loop-player%} is not set:
+					set {Wealth.Power3.RichRush.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} to true
+
+					
+				if {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} is true:
+					if {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} is 0:
+						set {Wealth.Power3.RichRush.Display.%uuid of loop-player%} to "💸 &b%{Wealth.Power3.RichRush.Second.%uuid of loop-player%}%s"
+					else:
+						set {Wealth.Power3.RichRush.Display.%uuid of loop-player%} to "💸 &b%{Wealth.Power3.RichRush.Minute.%uuid of loop-player%}%m %{Wealth.Power3.RichRush.Second.%uuid of loop-player%}%s"
+
+
+
+				if {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} < 0:
+					set {Wealth.Power3.RichRush.Cooldown.%uuid of loop-player%} to false
+					set {Wealth.Power3.RichRush.Second.%uuid of loop-player%} to 59
+					set {Wealth.Power3.RichRush.Minute.%uuid of loop-player%} to 1
+					set {Wealth.Power3.RichRush.Display.%uuid of loop-player%} to "💸 &aReady!"
+
+
+
+
+				if {Disabled.%uuid of loop-player%} is not set:
+					set {Disabled.%uuid of loop-player%} to 0
+
+
+
+
+
+
+
+
+on death:
+	if victim is a mob:
+		set {_uuid} to uuid of attacker
+		if {Wealth.Power3.RichRush.Activated.%{_uuid}%} is true:
+			drop the drops
+
+			
+
+
+
+on sneak toggle:
+	if player's off hand item is prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} is not true:
+			if player's held item is a any pickaxe:
+				execute console command "enchant %player% fortune 3"
+				send "&aEnchanting Tool with &eFortune &43"
+				set {Wealth.Power2.Enchanting.Second.%{_uuid}%} to 59
+				set {Wealth.Power2.Enchanting.Minute.%{_uuid}%} to 1
+				set {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+	if player's off hand item is amethyst shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##C7C7C7>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} is not true:
+			if player's held item is a any pickaxe:
+				execute console command "enchant %player% fortune 1"
+				send "&aEnchanting Tool with &eFortune &41"
+				set {Wealth.Power2.Enchanting.Second.%{_uuid}%} to 59
+				set {Wealth.Power2.Enchanting.Minute.%{_uuid}%} to 1
+				set {Wealth.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+#if {Bliss.Wealth.%player%} > 4:
+	#set {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} to true
+	#set {Wealth.Power3.RichRush.Minute.%{_uuid}%} to 1
+	#set {Wealth.Power3.RichRush.Second.%{_uuid}%} to 30
+#if {Bliss.Wealth.%player%} is 3:
+#	set {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} to true
+#	set {Wealth.Power3.RichRush.Minute.%{_uuid}%} to 1
+#	set {Wealth.Power3.RichRush.Second.%{_uuid}%} to 59
+#if {Bliss.Wealth.%player%} < 3:
+#	set {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} to true
+#	set {Wealth.Power3.RichRush.Minute.%{_uuid}%} to 2
+#	set {Wealth.Power3.RichRush.Second.%{_uuid}%} to 45
+
+on left click:
+	if player's held item is a prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Disabled.%{_uuid}%} < 1:
+			if {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} is false:
+
+
+				if lore of player's held item contains "<##57FFC7>Pristine":
+					set {_num} to 5
+					set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+					set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 3
+					set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 50
+
+				else:
+					if lore of player's held item contains "<##9DF200>Scratched":
+						set {_num} to 4
+						set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+						set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+						set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 10
+
+					else:
+
+						if lore of player's held item contains "<##3F00D1>Cracked":
+							set {_num} to 3
+							set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+							set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 40
+							set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+							
+						else:
+
+							if lore of player's held item contains "<##EAC700>Damaged":
+								set {_num} to 2
+								set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+								set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 5
+								set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 20	
+
+							else:
+
+								if lore of player's held item contains "<##F10303>Ruined":
+									set {_num} to 1
+									set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+									set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 5
+									set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 20	
+									
+								else:
+
+									if lore of player's held item contains "&7Broken":
+										set {_num} to 1
+										set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+										set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 5
+										set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 30
+
+									else:
+
+										if {Bliss.GemHealth.%{_uuid}%} > 5:
+											set {_num} to 5
+											set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+											set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 3
+											set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 50
+					
+
+										else:
+
+											if {Bliss.GemHealth.%{_uuid}%} is 5:
+												set {_num} to 4
+												set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+												set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+												set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 10
+						
+											else:
+
+												if {Bliss.GemHealth.%{_uuid}%} is 4:
+													set {_num} to 3
+													set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+													set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 40
+													set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+												else:
+										
+													if {Bliss.GemHealth.%{_uuid}%} is 3:
+														set {_num} to 2
+														set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+														set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 5
+														set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 20	
+
+													else:
+
+														if {Bliss.GemHealth.%{_uuid}%} is 2:
+															set {_num} to 1
+															set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+															set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 5
+															set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 20	
+															
+														else:
+
+															if {Bliss.GemHealth.%{_uuid}%} is 1:
+																set {_num} to 1
+																set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+																set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 5
+																set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 50
+
+					
+					send "<##0EC912>🔮 <##A4FEF1>You have activated group &f🍀<##0EC912>Unfortunate <##A4FEF1>skill &7(radius %{_num}%)" to player
+					set {_s} to 1
+					loop {_num} + {_num} times:
+
+						if loop-value is not {_num} + {_num}:
+							WealthCircle({_s}, player)
+					
+							add 0.5 to {_s}
+
+						else:
+							WealthCirclelast({_s}, player)
+
+
+					
+					set {_wealthholder} to player
+					loop all entities within {_num} blocks of the player:
+						if loop-entity is not player:
+							if "%{Bliss.Trusted.%{_uuid}%::*}%" does not contain "%loop-entity's uuid%":
+								set {Unfortune %loop-entity's uuid%.group} to true
+								send "<##0EC912>🔮 <##A4FEF1>You have been affected with &f🍀<##0EC912>Unfortunate <##A4FEF1>by <##0EC912>%{_wealthholder}%" to loop-entity
+								wait 40 seconds
+								set {Unfortune %loop-entity's uuid%.group} to false
+							else:
+								send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to {_wealthholder}
+
+on damage:
+	set {_uuid} to uuid of attacker
+	if {Disabled.%{_uuid}%} < 1:
+		if {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} is false:
+			if attacker's held item is a prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+
+
+				if "%{Bliss.Trusted.%{_uuid}%::*}%" contains "%victim's uuid%":
+					send "<##FFE4AB>🔮 &fYou cannout cast negative skills on allies!" to attacker
+
+				else:
+					if lore of attacker's held item contains "<##57FFC7>Pristine":
+						set {_num} to 5
+						set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+						set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 3
+						set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 20
+
+					else:
+						if lore of attacker's held item contains "<##9DF200>Scratched":
+							set {_num} to 4
+							set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+							set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 3
+							set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 40
+
+						else:
+
+							if lore of attacker's held item contains "<##3F00D1>Cracked":
+								set {_num} to 3
+								set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+								set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 0
+								set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+								
+							else:
+
+								if lore of attacker's held item contains "<##EAC700>Damaged":
+									set {_num} to 2
+									set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+									set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+									set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 20	
+
+								else:
+
+									if lore of attacker's held item contains "<##F10303>Ruined":
+										set {_num} to 1
+										set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+										set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+										set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 40	
+										
+									else:
+
+										if lore of attacker's held item contains "&7Broken":
+											set {_num} to 1
+											set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+											set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 5
+											set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 0	
+
+										else:
+
+											if {Bliss.GemHealth.%{_uuid}%} > 5:
+												set {_num} to 5
+												set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+												set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 3
+												set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 20
+						
+
+											else:
+
+												if {Bliss.GemHealth.%{_uuid}%} is 5:
+													set {_num} to 4
+													set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+													set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 3
+													set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 40
+							
+												else:
+
+													if {Bliss.GemHealth.%{_uuid}%} is 4:
+														set {_num} to 3
+														set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+														set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+														set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 0
+
+													else:
+											
+														if {Bliss.GemHealth.%{_uuid}%} is 3:
+															set {_num} to 2
+															set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+															set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+															set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 20	
+
+														else:
+
+															if {Bliss.GemHealth.%{_uuid}%} is 2:
+																set {_num} to 1
+																set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+																set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 4
+																set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 40
+																
+															else:
+
+																if {Bliss.GemHealth.%{_uuid}%} is 1:
+																	set {_num} to 1
+																	set {Wealth.Power1.Unfortunate.Cooldown.%{_uuid}%} to true
+																	set {Wealth.Power1.Unfortunate.Minute.%{_uuid}%} to 5
+																	set {Wealth.Power1.Unfortunate.Second.%{_uuid}%} to 0
+																	
+					
+					send "<##0EC912>🔮 <##A4FEF1>You have used &f🍀<##0EC912>Unfortunate <##A4FEF1>on <##0EC912>%victim%" to attacker
+					set {_wealthholder} to attacker
+					send "<##0EC912>🔮 <##A4FEF1>You have been affected with &f🍀<##0EC912>Unfortunate <##A4FEF1>by <##0EC912>%{_wealthholder}%" to victim
+					set {Unfortune %victim's uuid%.single} to true
+
+					set {WealthLine.%attacker's uuid%.%victim's uuid%} to true
+					wait 40 seconds
+					set {WealthLine.%attacker's uuid%.%victim's uuid%} to false
+
+					set {Unfortune %victim's uuid%.single} to false
+					
+
+on damage:
+	if {Unfortune %attacker's uuid%.single} is true:
+		chance of 50%:
+			execute console command "execute as %victim% at @s run playsound minecraft:block.anvil.land master @a ~ ~1 ~ 800 1"
+			cancel event
+
+
+on damage:
+	if {Unfortune %attacker's uuid%.group} is true:
+		chance of 33%:
+			execute console command "execute as %victim% at @s run playsound minecraft:block.anvil.land master @a ~ ~1 ~ 800 1"
+			cancel event
+
+
+on break coal ore:
+	set {_uuid} to uuid of player
+	if {Wealth.Power3.RichRush.Activated.%{_uuid}%} is true:
+		drop 3 coal	
+
+
+on break iron ore:
+	set {_uuid} to uuid of player
+	if {Wealth.Power3.RichRush.Activated.%{_uuid}%} is true:
+		drop 3 iron ingots		
+
+on break diamond ore:
+	set {_uuid} to uuid of player
+	if {Wealth.Power3.RichRush.Activated.%{_uuid}%} is true:
+		drop 3 diamond
+
+on break deepslate diamond ore:
+	set {_uuid} to uuid of player
+	if {Wealth.Power3.RichRush.Activated.%{_uuid}%} is true:
+		drop 3 diamond
+
+on break gold ore:
+	set {_uuid} to uuid of player
+	if {Wealth.Power3.RichRush.Activated.%{_uuid}%} is true:
+		drop 3 raw gold
+
+on break deepslate gold ore:
+	set {_uuid} to uuid of player
+	if {Wealth.Power3.RichRush.Activated.%{_uuid}%} is true:
+		drop 3 raw gold
+
+on break ancient debris:
+	set {_uuid} to uuid of player
+	if {Wealth.Power3.RichRush.Activated.%{_uuid}%} is true:
+		drop 1 netherite scrap
+		
+on right click:
+	if player's held item is a prismarine shard named "<##0EC912>&lᴡᴇᴀʟᴛʜ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} is not true:
+			if {Disabled.%{_uuid}%} < 1:
+				send "<##0EC912>🔮 <##A4FEF1>You have activated &f💸<##0EC912>RichRush"
+				set {Wealth.Power3.RichRush.Cooldown.%{_uuid}%} to true
+				set {Wealth.Power3.RichRush.Minute.%{_uuid}%} to 29
+				set {Wealth.Power3.RichRush.Second.%{_uuid}%} to 59
+
+				set {Wealth.Power3.RichRush.Power.%{_uuid}%} to 300
+				set {Wealth.Power3.RichRush.Activated.%{_uuid}%} to true
+
+
+every 1 second:
+	loop all offline players:
+		set {_p} to loop-offlineplayer
+		set {_uuid} to uuid of {_p}
+		if {Wealth.Power3.RichRush.Power.%{_uuid}%} > 0:
+			remove 1 from {Wealth.Power3.RichRush.Power.%{_uuid}%}
+
+			if {Wealth.Power3.RichRush.Power.%{_uuid}%} is 0:
+				set {Wealth.Power3.RichRush.Activated.%{_uuid}%} to false
+
+				if {_p} is online:
+					send "<##0EC912>🔮 <##A4FEF1>Your &f💸<##0EC912>RichRush <##A4FEF1>has run out!" to {_p}
+
+				else:
+					set {Wealth.Power3.RichRush.Message.%{_uuid}%} to true
+
+on join:
+	set {_uuid} to uuid of player
+	if {Wealth.Power3.RichRush.Message.%{_uuid}%} is true:
+		set {Wealth.Power3.RichRush.Message.%{_uuid}%} to false
+		send "<##0EC912>🔮 <##A4FEF1>Your &f💸<##0EC912>RichRush <##A4FEF1>has run out!" to player
+
+
+
+
+
+
+
+function WealthCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust using dustOption(rgb(14, 201, 18), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+
+
+
+function WealthCirclelast(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop 10 times:
+		loop {_iterations} times:
+			set {_angle} to loop-value-2 * {_step}
+			set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+			draw 1 of dust using dustOption(rgb(14, 201, 18), 1) at {_pl} ~ {_v} with extra 0.000000001
+			draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force
+		wait 0.4 seconds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+every 1 tick:
+	loop all players:
+		loop all entities:
+			if {WealthLine.%loop-player-1's uuid%.%loop-entity-2's uuid%} is true:
+				set {_v} to vector from loop-player-1's head to loop-entity-2's head
+				set vector length of {_v} to 0.1
+				set {_loc} to the location 0.7 meters under loop-player-1's head
+				loop (distance between {_loc} and loop-entity-2) / 0.1 times:
+
+					draw 1 dust using dustOption(rgb(14, 201, 18), 1) at {_loc} with force
+					draw 1 dust_color_transition using dustTransition(black, black, 1) at {_loc} with force
+					set {_loc} to {_loc} ~ {_v}	
+
+
+
+
+
+
+
+
+
+on death:
+	if victim is a player:
+		set {Particle_unfortunate_%uuid of victim%} to false
+
+
+

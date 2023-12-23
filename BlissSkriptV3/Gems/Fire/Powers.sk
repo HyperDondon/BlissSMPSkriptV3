@@ -1,0 +1,770 @@
+#fire gem powers
+
+on load:
+	set {Fire.Campfire} to campfire named "&9Cozy campfire"
+	set {Fire.Campfire.NBT} to nbt compound of {Fire.Campfire}
+	add nbt compound of "{Tags:""FireCamp""}" to {Fire.Campfire.NBT}
+	set {_Fire.Campfire} to {Fire.Campfire}
+
+
+
+
+
+
+
+
+
+every 1 second:
+	loop all players:
+		loop all items in loop-player's inventory:
+			if name of loop-slot contains "<##FE8120>&lғɪʀᴇ" or "<##ffcc26>&lGold Gem":
+
+				#Campfire
+				
+				if {Fire.Power3.Campfire.Second.%uuid of loop-player%} is not set:
+					set {Fire.Power3.Campfire.Second.%uuid of loop-player%} to 0
+					set {Fire.Power3.Campfire.Minute.%uuid of loop-player%} to 0
+					set {Fire.Power3.Campfire.Cooldown.%uuid of loop-player%} to true
+			
+				if {Fire.Power3.Campfire.Cooldown.%uuid of loop-player%} is true:
+					if {Fire.Power3.Campfire.Minute.%uuid of loop-player%} is 0:
+						set {Fire.Power3.Campfire.Display.%uuid of loop-player%} to "&f🥾 &b%{Fire.Power3.Campfire.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Fire.Power3.Campfire.Display.%uuid of loop-player%} to "&f🥾 &b%{Fire.Power3.Campfire.Minute.%uuid of loop-player%}%m %{Fire.Power3.Campfire.Second.%uuid of loop-player%}%s"
+
+				if {Fire.Power3.Campfire.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Fire.Power3.Campfire.Second.%uuid of loop-player%}
+
+
+				
+				if {Fire.Power3.Campfire.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Fire.Power3.Campfire.Minute.%uuid of loop-player%}
+					set {Fire.Power3.Campfire.Second.%uuid of loop-player%} to 59
+					
+				if {Fire.Power3.Campfire.Minute.%uuid of loop-player%} < 0:
+					set {Fire.Power3.Campfire.Cooldown.%uuid of loop-player%} to false
+					set {Fire.Power3.Campfire.Second.%uuid of loop-player%} to 0
+					set {Fire.Power3.Campfire.Minute.%uuid of loop-player%} to 0
+					set {Fire.Power3.Campfire.Display.%uuid of loop-player%} to "&f🥾 &aReady!"
+
+
+				#Enchanting
+
+				if {Fire.Power2.Enchanting.Second.%uuid of loop-player%} is not set:
+					set {Fire.Power2.Enchanting.Second.%uuid of loop-player%} to 0
+					set {Fire.Power2.Enchanting.Minute.%uuid of loop-player%} to 0
+					set {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} to true
+
+				if {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					set {Fire.Power2.Enchanting.Display.%uuid of loop-player%} to "&b%{Fire.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Fire.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+				
+				if {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					if {Fire.Power2.Enchanting.Minute.%uuid of loop-player%} is 0:
+						set {Fire.Power2.Enchanting.Display.%uuid of loop-player%} to "&b%{Fire.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Fire.Power2.Enchanting.Display.%uuid of loop-player%} to "&b%{Fire.Power2.Enchanting.Minute.%uuid of loop-player%}%m %{Fire.Power2.Enchanting.Second.%uuid of loop-player%}%s"
+
+				if {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Fire.Power2.Enchanting.Second.%uuid of loop-player%}
+
+
+				
+				if {Fire.Power2.Enchanting.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Fire.Power2.Enchanting.Minute.%uuid of loop-player%}
+					set {Fire.Power2.Enchanting.Second.%uuid of loop-player%} to 59
+					
+				if {Fire.Power2.Enchanting.Minute.%uuid of loop-player%} < 0:
+					set {Fire.Power2.Enchanting.Cooldown.%uuid of loop-player%} to false
+					set {Fire.Power2.Enchanting.Display.%uuid of loop-player%} to "&aReady!"
+
+
+
+				#Fireball
+
+
+
+
+
+				if {Fire.Power1.Fireball.Cooldown.%uuid of loop-player%} is true:
+					remove 1 from {Fire.Power1.Fireball.Second.%uuid of loop-player%}
+
+
+				
+				if {Fire.Power1.Fireball.Second.%uuid of loop-player%} < 0:
+					remove 1 from {Fire.Power1.Fireball.Minute.%uuid of loop-player%}
+					set {Fire.Power1.Fireball.Second.%uuid of loop-player%} to 59
+
+
+				if {Fire.Power1.Fireball.Cooldown.%uuid of loop-player%} is true:
+					if {Fire.Power1.Fireball.Minute.%uuid of loop-player%} is 0:
+						set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &b%{Fire.Power1.Fireball.Second.%uuid of loop-player%}%s"
+
+					else:
+						set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &b%{Fire.Power1.Fireball.Minute.%uuid of loop-player%}%m %{Fire.Power1.Fireball.Second.%uuid of loop-player%}%s"
+
+
+				if {Fire.Power1.Fireball.Second.%uuid of loop-player%} is not set:
+					set {Fire.Power1.Fireball.Second.%uuid of loop-player%} to 0
+					set {Fire.Power1.Fireball.Minute.%uuid of loop-player%} to 0
+					set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &aReady!"
+
+				if {Fire.Power1.Fireball.Display.%uuid of loop-player%} is not set:
+					set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &b%{Fire.Power1.Fireball.Minute.%uuid of loop-player%}%m %{Fire.Power1.Fireball.Second.%uuid of loop-player%}%s"
+
+					
+
+
+
+				if {Fire.Power1.Fireball.Minute.%uuid of loop-player%} < 0:
+					set {Fire.Power1.Fireball.Cooldown.%uuid of loop-player%} to false
+
+					set {Fire.Power1.Fireball.Display.%uuid of loop-player%} to "&f🧨 &aReady!"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+on player's held item change:
+	set {_uuid} to uuid of player
+	if {Disabled.%{_uuid}%} < 1:
+		if player's off hand item is prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+			if {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} is not true:
+				if player's held item is a any sword:
+					enchant player's held item with fire aspect 2
+					send "<##FE8120>🔮 <##A4FEF1>Auto Enchanting"
+					set {Fire.Power2.Enchanting.Minute.%{_uuid}%} to 14
+					set {Fire.Power2.Enchanting.Second.%{_uuid}%}  to 59
+					set {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+		
+		if player's off hand item is amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+			if {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} is not true:
+				if player's held item is a any sword:
+					enchant player's held item with fire aspect 1
+					send "<##FE8120>🔺 <##A4FEF1>Auto Enchanting"
+					set {Fire.Power2.Enchanting.Minute.%{_uuid}%} to 14
+					set {Fire.Power2.Enchanting.Second.%{_uuid}%}  to 59
+					set {Fire.Power2.Enchanting.Cooldown.%{_uuid}%} to true
+
+
+
+		
+
+
+
+
+on right click:
+	if player's held item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+		if clicked block is not air:
+			if block above clicked block is air:
+				set {_uuid} to uuid of player
+				if {Fire.Power3.Campfire.Cooldown.%{_uuid}%} is false:
+					set {_firecampparticle} to true
+					set {Fire.Power3.Campfire.Second.%{_uuid}%} to 59
+					set {Fire.Power3.Campfire.Minute.%{_uuid}%} to 1
+					set {Fire.Power3.Campfire.Cooldown.%{_uuid}%} to true
+
+					set {Fire.Power3.Campfire.Time.Second.%{_uuid}%} to 0
+					set {Fire.Power3.Campfire.Time.Minute.%{_uuid}%} to 10
+
+					set {Fire.Power3.Campfire.Time.Cooldown.%{_uuid}%} to true
+
+					set {Fire.Power3.Campfire.OGBlock.%{_uuid}%} to clicked block
+					set block above clicked block to soul campfire
+
+
+					set {Fire.Power3.Campfire.Block.%{_uuid}%} to location of clicked block
+
+					spawn armor stand at location 2 block above clicked block
+
+					set {Fire.Power3.Campfire.Timer.%{_uuid}%} to last spawned entity
+					add nbt compound from "{NoGravity:1b,Invisible:1b,CustomNameVisible:1b,Small:1b,Marker:1b}" to nbt compound of {Fire.Power3.Campfire.Timer.%{_uuid}%}
+
+					set name of {Fire.Power3.Campfire.Timer.%{_uuid}%} to "&a10m"
+
+					
+					send "<##FE8120>🔮 <##A4FEF1>You have activated &f🥾<##FE8120>Cozy Campfire <##A4FEF1>skill!" to player
+
+					set {_pl} to location of clicked block
+					set {_step} to 1 # Adjust the step value if needed
+					set {_iterations} to 360 / {_step}
+					set y coordinate of {_pl} to {_pl}'s y coordinate + 1
+			
+					loop 2400 times:
+						loop {_iterations} times:
+							set {_angle} to loop-value-2 * {_step}
+							set {_v} to spherical vector radius 5, yaw {_angle}, pitch (0) # Use yaw to create the circle
+							draw 1 of dust_color_transition using dustTransition(rgb(254, 129, 32), rgb(254, 129, 32), 1) at {_pl} ~ {_v}
+						wait 0.25 seconds
+					
+				else:
+					set {_uuid} to uuid of player
+					if {Fire.Power3.Campfire.Minute.%{_uuid}%} < 1:
+						send "<##FE8120>🔮 &cYour &f🥾&cCozy Campfire &cskill is on cooldown for &f%{Fire.Power3.Campfire.Second.%{_uuid}%}%s" to player
+					else:
+						send "<##FE8120>🔮 &cYour &f🥾&cCozy Campfire &cskill is on cooldown for &f%{Fire.Power3.Campfire.Minute.%{_uuid}%}%m %{Fire.Power3.Campfire.Second.%{_uuid}%}%s" to player
+				
+
+function FireCircle(s: number, p: player):
+	set {_pl} to location of {_p}
+	set {_step} to 1 # Set a larger step value here
+	set {_iterations} to 360 * {_s} / {_step}
+	loop {_iterations} times:
+		set {_angle} to loop-value * {_step}
+		set {_v} to spherical vector radius {_s}, yaw {_angle}, pitch (0) # Pitch is set to 0 to make it around the {_p}
+		draw 1 of dust using dustOption(rgb(254, 129, 32), 1) at {_pl} ~ {_v} with extra 0.000000001
+		draw 1 of smoke at {_pl} ~ {_v} with extra 0 with force						
+
+
+
+every 1 second:
+	loop all offline players:
+		if {Fire.Power3.Campfire.Timer.%uuid of loop-offlineplayer%} is alive:
+			set {_uuid} to uuid of loop-offlineplayer
+			loop all entities within 5 blocks of {Fire.Power3.Campfire.Block.%{_uuid}%}:
+				set {_e} to loop-entity-1
+				add 2 to {_e}'s health
+				apply potion of saturation of tier 1 to {_e} for 1.01 seconds
+
+			
+			
+			if {Fire.Power3.Campfire.Time.Cooldown.%{_uuid}%} is true:
+				remove 1 from {Fire.Power3.Campfire.Time.Second.%{_uuid}%}
+
+
+			
+			if {Fire.Power3.Campfire.Time.Second.%{_uuid}%} < 0:
+				remove 1 from {Fire.Power3.Campfire.Time.Minute.%{_uuid}%}
+				set {Fire.Power3.Campfire.Time.Second.%{_uuid}%} to 59
+
+
+			if {Fire.Power3.Campfire.Time.Cooldown.%{_uuid}%} is true:
+				if {Fire.Power3.Campfire.Time.Minute.%{_uuid}%} is 0:
+					set {Fire.Power3.Campfire.Time.Display.%{_uuid}%} to "&a%{Fire.Power3.Campfire.Time.Second.%{_uuid}%}%s"
+
+				else:
+					set {Fire.Power3.Campfire.Time.Display.%{_uuid}%} to "&a%{Fire.Power3.Campfire.Time.Minute.%{_uuid}%}%m %{Fire.Power3.Campfire.Time.Second.%{_uuid}%}%s"
+
+
+			if {Fire.Power3.Campfire.Time.Second.%{_uuid}%} is not set:
+				set {Fire.Power3.Campfire.Time.Second.%{_uuid}%} to 0
+				set {Fire.Power3.Campfire.Time.Minute.%{_uuid}%} to 0
+
+			if {Fire.Power3.Campfire.Time.Display.%{_uuid}%} is not set:
+				set {Fire.Power3.Campfire.Time.Display.%{_uuid}%} to "&a%{Fire.Power3.Campfire.Time.Minute.%{_uuid}%}%m %{Fire.Power3.Campfire.Time.Second.%{_uuid}%}%s"
+
+				
+
+
+
+			if {Fire.Power3.Campfire.Time.Minute.%{_uuid}%} < 0:
+				set {Fire.Power3.Campfire.Time.Cooldown.%{_uuid}%} to false
+
+				kill {Fire.Power3.Campfire.Timer.%uuid of loop-offlineplayer%}
+
+				set {Fire.Power3.Campfire.Block.%{_uuid}%} to air
+			set name of {Fire.Power3.Campfire.Timer.%uuid of loop-offlineplayer%} to "%{Fire.Power3.Campfire.Time.Display.%{_uuid}%}%"
+
+
+on block break:
+	if block is a soul campfire:
+		loop all offline players:
+			set {_uuid} to uuid of loop-offline player
+
+			set {_xe} to x coord of event-block
+			set {_ye} to y coord of event-block - 1
+			set {_ze} to z coord of event-block
+
+
+			set {_xc} to x coord of {Fire.Power3.Campfire.Block.%{_uuid}%}
+			set {_yc} to y coord of {Fire.Power3.Campfire.Block.%{_uuid}%}
+			set {_zc} to z coord of {Fire.Power3.Campfire.Block.%{_uuid}%}
+
+
+
+			if {_xe} is {_xc}:
+				if {_ye} is {_yc}:
+					if {_ze} is {_zc}:
+						cancel event
+
+	
+
+
+on right click:
+	if player's off hand item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+		if clicked block is not air:
+			if block above clicked block is air:
+				set {_uuid} to uuid of player
+				if {Fire.Power3.Campfire.Cooldown.%{_uuid}%} is false:
+					set {_firecampparticle} to true
+					set {Fire.Power3.Campfire.Second.%{_uuid}%} to 59
+					set {Fire.Power3.Campfire.Minute.%{_uuid}%} to 1
+					set {Fire.Power3.Campfire.Cooldown.%{_uuid}%} to true
+
+					set {Fire.Power3.Campfire.Time.Second.%{_uuid}%} to 0
+					set {Fire.Power3.Campfire.Time.Minute.%{_uuid}%} to 10
+
+					set {Fire.Power3.Campfire.Time.Cooldown.%{_uuid}%} to true
+
+					set {Fire.Power3.Campfire.OGBlock.%{_uuid}%} to clicked block
+					set block above clicked block to soul campfire
+
+
+					set {Fire.Power3.Campfire.Block.%{_uuid}%} to location of clicked block
+
+					spawn armor stand at location 2 block above clicked block
+
+					set {Fire.Power3.Campfire.Timer.%{_uuid}%} to last spawned entity
+					add nbt compound from "{NoGravity:1b,Invisible:1b,CustomNameVisible:1b,Small:1b,Marker:1b}" to nbt compound of {Fire.Power3.Campfire.Timer.%{_uuid}%}
+
+					set name of {Fire.Power3.Campfire.Timer.%{_uuid}%} to "&a10m"
+
+					
+					send "<##FE8120>🔮 <##A4FEF1>You have activated &f🥾<##FE8120>Cozy Campfire <##A4FEF1>skill!" to player
+
+					set {_pl} to location of clicked block
+					set {_step} to 1 # Adjust the step value if needed
+					set {_iterations} to 360 / {_step}
+					set y coordinate of {_pl} to {_pl}'s y coordinate + 1
+			
+					loop 2400 times:
+						loop {_iterations} times:
+							set {_angle} to loop-value-2 * {_step}
+							set {_v} to spherical vector radius 5, yaw {_angle}, pitch (0) # Use yaw to create the circle
+							draw 1 of dust_color_transition using dustTransition(rgb(254, 129, 32), rgb(254, 129, 32), 1) at {_pl} ~ {_v}
+						wait 0.25 seconds
+					
+				else:
+					set {_uuid} to uuid of player
+					if {Fire.Power3.Campfire.Minute.%{_uuid}%} < 1:
+						send "<##FE8120>🔮 &cYour &f🥾&cCozy Campfire &cskill is on cooldown for &f%{Fire.Power3.Campfire.Second.%{_uuid}%}%s" to player
+					else:
+						send "<##FE8120>🔮 &cYour &f🥾&cCozy Campfire &cskill is on cooldown for &f%{Fire.Power3.Campfire.Minute.%{_uuid}%}%m %{Fire.Power3.Campfire.Second.%{_uuid}%}%s" to player
+				
+
+			
+			
+
+every 1 second:
+	loop all players:
+		if blocks in radius 4 of loop-player contains a campfire:
+			execute console command "execute as %loop-player% at @s run effect give @s saturation 1 0 true"
+			execute console command "execute as %loop-player% at @s run effect give @s regeneration 1 0 true"
+
+every 1 tick:
+	loop all players:
+		set {_uuid} to uuid of loop-player
+		if {Fireball.%{_uuid}%} > 0:
+			execute console command "execute as %loop-player% at @s run execute as @e[type=armor_stand,tag=fire%loop-player%] run tp ~ ~1 ~"
+			#execute console command "execute as %loop-player% at @s run particle dust 1 0.42 0 1.4 ~ ~.2 ~ 0.2 0.2 0.2 0 5 force @a"
+
+command /fixfireball <player>:
+	permission: op
+	trigger:
+		execute console command "cooldown %player%"
+		set {_uuid} to uuid of arg-1
+		set {ShotFireball.%{_uuid}%} to false
+		set {Tag..%arg-1%} to 0
+
+
+on left click:
+	if player's held item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Disabled.%{_uuid}%} < 1:
+			if {Fire.Power1.Fireball.Cooldown.%{_uuid}%} is not true:
+				if {ShotFireball.%{_uuid}%} is false:
+					
+					wait 1 tick
+					send "<##FE8120>🔮 <##A4FEF1>Charging &f🧨<##FE8120>fireball"
+					execute console command "execute as %player% at @s run summon armor_stand ~ ~ ~ {Tags:[""fire%player%""],Invisible:1b,Marker:1b}"
+					execute console command "execute as %player% at @s run item replace entity @e[type=armor_stand,distance=0..2] armor.head with fire_charge"
+					make last spawned entity ride player
+
+
+					
+					set {Fireball.%{_uuid}%} to 1
+					set {ShotFireball.%{_uuid}%} to true
+					set {ShootingFireball.%{_uuid}%} to true
+					set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 10
+					set bar progress of {_bar} to 10
+					add player to {_bar}
+					set bar style of {_bar} to solid_bar
+					set bar visibility of {_bar} to true
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 1:
+						set {Fireball.%{_uuid}%} to 2
+						set bar progress of {_bar} to 20
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 2:
+						set {Fireball.%{_uuid}%} to 3
+						set bar progress of {_bar} to 30
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 3:
+						set {Fireball.%{_uuid}%} to 4
+						set bar progress of {_bar} to 40
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 4:
+						set {Fireball.%{_uuid}%} to 5
+						set bar progress of {_bar} to 50
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 5:
+						set {Fireball.%{_uuid}%} to 6
+						set bar progress of {_bar} to 60
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 6:
+						set {Fireball.%{_uuid}%} to 7
+						set bar progress of {_bar} to 70
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 7:
+						set {Fireball.%{_uuid}%} to 8
+						set bar progress of {_bar} to 80
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 8:
+						set {Fireball.%{_uuid}%} to 9
+						set bar progress of {_bar} to 90
+					wait 3 second
+					if {Fireball.%{_uuid}%} is 9:
+						set {Fireball.%{_uuid}%} to 10
+						set bar progress of {_bar} to 100
+
+
+
+every 1 tick:
+	loop all players:
+		if loop-player's offhand item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+			if loop-player has raw iron:
+				remove 1 raw iron from loop-player
+				give loop-player 1 iron ingot
+			if loop-player has raw gold:
+				remove 1 raw gold from loop-player
+				give loop-player 1 gold ingot
+			if loop-player has mutton:
+				remove 1 mutton from loop-player
+				give loop-player 1 cooked mutton
+			if loop-player has cobblestone:
+				remove 1 cobblestone from loop-player
+				give loop-player 1 stone
+		if loop-player's offhand item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+			if loop-player has raw iron:
+				remove 1 raw iron from loop-player
+				give loop-player 1 iron ingot
+			if loop-player has raw gold:
+				remove 1 raw gold from loop-player
+				give loop-player 1 gold ingot
+			if loop-player has mutton:
+				remove 1 mutton from loop-player
+				give loop-player 1 cooked mutton
+			if loop-player has cobblestone:
+				remove 1 cobblestone from loop-player
+				give loop-player 1 stone
+
+
+
+
+on left click:
+	if player's held item is a prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+		set {_uuid} to uuid of player
+		if {Disabled.%{_uuid}%} < 1:
+			if {ShootingFireball.%{_uuid}%} is true:
+				set {_p} to player
+				set {_loc} to location of {_p}
+
+				if {ShotFireball.%{_uuid}%} is true:
+					if {Bliss.GemHealth.%{_uuid}%} > 4:
+						set {Fire.Power1.Fireball.Minute.%{_uuid}%} to 0
+						set {Fire.Power1.Fireball.Second.%{_uuid}%} to 45
+						set {Fire.Power1.Fireball.Cooldown.%{_uuid}%} to true
+						set {ShootingFireball.%{_uuid}%} to false
+
+					if {Bliss.GemHealth.%{_uuid}%} is 3:
+						set {Fire.Power1.Fireball.Minute.%{_uuid}%} to 1
+						set {Fire.Power1.Fireball.Second.%{_uuid}%} to 1
+						set {Fire.Power1.Fireball.Cooldown.%{_uuid}%} to true
+						set {ShootingFireball.%{_uuid}%} to false
+
+					if {Bliss.GemHealth.%{_uuid}%} < 3:
+						set {Fire.Power1.Fireball.Minute.%{_uuid}%} to 1
+						set {Fire.Power1.Fireball.Second.%{_uuid}%} to 25
+						set {Fire.Power1.Fireball.Cooldown.%{_uuid}%} to true
+						set {ShootingFireball.%{_uuid}%} to false
+
+					set {ShotFireball.%{_uuid}%} to false
+					set {ShootingFireball.%{_uuid}%} to true
+
+					if {Fireball.%{_uuid}%} is 10:
+
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {_loc} to the location 0.4 meters under player's head
+						
+
+						make player shoot fireball at speed 2
+
+						
+						set {zerodamage..%player%} to true
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 10
+						set bar visibility of {_bar} to false
+						remove {_bar} from boss bars of player
+
+						
+					if {Fireball.%{_uuid}%} is 9:
+
+						set {_loc} to the location 0.4 meters under player's head
+						
+	
+						make player shoot fireball at speed 2
+						
+						
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {zerodamage..%player%} to true
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 20
+						remove {_bar} from boss bars of player
+						set bar visibility of {_bar} to false
+
+
+
+					if {Fireball.%{_uuid}%} is 8:
+
+						set {_loc} to the location 0.4 meters under player's head
+						
+
+						make player shoot fireball at speed 2
+						
+						
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {zerodamage..%player%} to true
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 30
+						set bar visibility of {_bar} to false
+						remove {_bar} from boss bars of player
+
+
+						
+					if {Fireball.%{_uuid}%} is 7:
+
+						set {_loc} to the location 0.4 meters under player's head
+						
+
+						make player shoot fireball at speed 2
+						
+						
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {zerodamage..%player%} to true
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 40
+						remove {_bar} from boss bars of player
+						set bar visibility of {_bar} to false
+
+
+					if {Fireball.%{_uuid}%} is 6:
+
+						set {_loc} to the location 0.4 meters under player's head
+						
+
+						make player shoot fireball at speed 2
+						
+						
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 50
+						remove {_bar} from boss bars of player
+						set bar visibility of {_bar} to false			
+						set {zerodamage..%player%} to true
+
+
+					if {Fireball.%{_uuid}%} is 5:
+
+						set {_loc} to the location 0.4 meters under player's head
+						
+
+						make player shoot fireball at speed 2
+						
+						
+
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 60
+						remove {_bar} from boss bars of player
+						set bar visibility of {_bar} to false				
+						set {zerodamage..%player%} to true
+
+
+					if {Fireball.%{_uuid}%} is 4:
+
+						set {_loc} to the location 0.4 meters under player's head
+
+						make player shoot fireball at speed 2
+						
+						
+
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 70
+						remove {_bar} from boss bars of player
+						set bar visibility of {_bar} to false
+						set {zerodamage..%player%} to true
+
+
+					if {Fireball.%{_uuid}%} is 3:
+
+						set {_loc} to the location 0.4 meters under player's head
+						
+
+						make player shoot fireball at speed 2
+						
+						
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {zerodamage..%player%} to true
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 80
+						remove {_bar} from boss bars of player
+						set bar visibility of {_bar} to false
+
+
+					if {Fireball.%{_uuid}%} is 2:
+
+						set {_loc} to the location 0.4 meters under player's head
+						
+
+						make player shoot fireball at speed 2
+						
+						
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {zerodamage..%player%} to true
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 90
+						remove {_bar} from boss bars of player
+						set bar visibility of {_bar} to false
+
+
+					if {Fireball.%{_uuid}%} is 1:
+
+						set {_loc} to the location 0.4 meters under player's head
+						
+
+						make player shoot fireball at speed 2
+						
+						
+						send "<##FE8120>🔮 <##A4FEF1>You have launched a <##FE8120>fireball"
+						execute console command "execute as %player% at @s run kill @e[type=armor_stand,distance=0..4]"
+						set {zerodamage..%player%} to true
+						set {_bar} to boss bar with id "fire %{_uuid}%" with title "Fireball Power" with color red with progress 100
+						remove {_bar} from boss bars of player
+						set bar visibility of {_bar} to false
+
+
+		
+on projectile hit:
+	set {_uuid} to uuid of shooter
+	if {ShootingFireball.%{_uuid}%} is true:
+		set {ShootingFireball.%{_uuid}%} to false
+		if {Fireball.%{_uuid}%} is 1:
+			create explosion with force 2 at projectile
+			loop all blocks in radius 4 of projectile:
+				if loop-block is air:
+					chance of 5%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} is 2:
+			create explosion with force 2.5 at projectile
+			loop all blocks in radius 4.5 of projectile:
+				if loop-block is air:
+					chance of 10%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} is 3:
+			create explosion with force 3 at projectile
+			loop all blocks in radius 6 of projectile:
+				if loop-block is air:
+					chance of 10%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} is 4:
+			create explosion with force 4 at projectile
+			loop all blocks in radius 8 of projectile:
+				if loop-block is air:
+					chance of 10%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} is 5:
+			create explosion with force 5 at projectile
+			loop all blocks in radius 8.5 of projectile:
+				if loop-block is air:
+					chance of 15%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} is 6:
+			create explosion with force 5.6 at projectile
+			loop all blocks in radius 10 of projectile:
+				if loop-block is air:
+					chance of 15%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} is 7:
+			create explosion with force 6 at projectile
+			loop all blocks in radius 12 of projectile:
+				if loop-block is air:
+					chance of 20%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} is 8:
+			create explosion with force 6.5 at projectile
+			loop all blocks in radius 14 of projectile:
+				if loop-block is air:
+					chance of 20%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} is 9:
+			create explosion with force 7 at projectile
+			loop all blocks in radius 14 of projectile:
+				if loop-block is air:
+					chance of 20%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+		if {Fireball.%{_uuid}%} > 9:
+			create explosion with force 7 at projectile
+			loop all blocks in radius 16 of projectile:
+				if loop-block is air:
+					chance of 20%
+					set loop-block to fire
+			set {ShotFireball.%shooter%} to false
+
+	
+every 1 second:
+	loop all players:
+		set {_uuid} to uuid of loop-player
+		
+		if loop-player's off hand item or loop-player's held item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+			apply potion of fire resistance of tier 1 to loop-player for 1.03 seconds
+
+
+		if loop-player's off hand item is prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+
+			apply potion of fire resistance of tier 2 to loop-player for 1.03 seconds		
+		
+		if loop-player's held item or loop-player's held item is a amethyst shard named "<##FE8120>&lғɪʀᴇ &r<##C7C7C7>ɢᴇᴍ":
+			apply potion of fire resistance of tier 1 to loop-player for 1.03 seconds
+
+
+
+		if loop-player's held item is prismarine shard named "<##FE8120>&lғɪʀᴇ &r<##FFD773>ɢᴇᴍ":
+
+			apply potion of fire resistance of tier 2 to loop-player for 1.03 seconds

@@ -28,6 +28,10 @@ Requirements:
 
 
 
+
+
+
+
 If you want to fix some astral projection bugs please use citizens and get the correct version (You will get the npc for astral projection):
 
 1.20.1: https://ci.citizensnpcs.co/job/Citizens2/3208/
@@ -35,6 +39,11 @@ If you want to fix some astral projection bugs please use citizens and get the c
 1.19.4: https://ci.citizensnpcs.co/job/Citizens2/2972/
 
 1.19.2: https://ci.citizensnpcs.co/job/Citizens2/2793/
+
+
+
+
+
 
 
 

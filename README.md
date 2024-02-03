@@ -1,5 +1,5 @@
 # Bliss-Skript-V3
-Doesn't work on 1.20.2+
+Doesn't work on 1.20.2+ beacuse the version of Skbee on the github doesn't work that 1.20.2 and higher!
 This Skript remake is still a work in progress. This isn't done and was uploaded for bug fixing!
 
 U NEED SKRIPT 2.6.4 CUZ ADDONS ARE OLD
